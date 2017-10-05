@@ -5,8 +5,12 @@ public class Order {
     private int id;
     private String from;
     private String to;
+    private String until;
+    private String timeframe;
     private String typeOfAnimal;
     private int numberOfAnimals;
+    private String timeEstimation;
+    private String driver;
 
     public int getId() {
         return id;
@@ -32,6 +36,22 @@ public class Order {
         this.to = to;
     }
     
+    public String getUntil() {
+        return until;
+    }
+
+    public void setUntil(String until) {
+        this.until = until;
+    }
+    
+    public String getTimeframe() {
+        return timeframe;
+    }
+
+    public void setTimeframe(String timeframe) {
+        this.timeframe = timeframe;
+    }
+    
     public String getTypeOfAnimal() {
         return typeOfAnimal;
     }
@@ -46,6 +66,22 @@ public class Order {
 
     public void setNumberOfAnimals(int numberOfAnimals) {
         this.numberOfAnimals = numberOfAnimals;
+    }
+    
+    public String getTimeEstimation() {
+        return timeEstimation;
+    }
+
+    public void setTimeEstimation(String timeEstimation) {
+        this.timeEstimation = timeEstimation;
+    }
+    
+    public String getDriver() {
+        return driver;
+    }
+
+    public void setDriver(String driver) {
+        this.driver = driver;
     }
 
 

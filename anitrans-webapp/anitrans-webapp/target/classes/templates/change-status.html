@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+    <title>AniTrans | Change Status</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>AniTrans</h1>
+	<a href="index.html">Home</a> <a href="login.html">Login</a> <a href="orders.html">Orders</a> <a href="tours.html">Tours</a>
+	<h2>Change Status</h2>
+    <form action="#" th:action="@{/change-status}" th:object="${order}" method="post" id="statusOrder">
+    		<p>Status: <input type="radio" th:field="*{status}" value="delivered"> Delivered</input>
+  						<input type="radio" th:field="*{status}" value="undelivered" > Undelivered</input></p>
+        <p>Message: <textarea name="message" form="statusOrder" th:field="*{statusMessage}" /></p>
+        <p><input type="submit" value="Submit" /></p>
+    </form>
+</body>
+</html>

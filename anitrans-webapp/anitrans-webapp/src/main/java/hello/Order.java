@@ -11,6 +11,8 @@ public class Order {
     private int numberOfAnimals;
     private String timeEstimation;
     private String driver;
+    private String status = "undelivered";
+    private String statusMessage = "";
 
     public int getId() {
         return id;
@@ -83,6 +85,22 @@ public class Order {
     public void setDriver(String driver) {
         this.driver = driver;
     }
+    
+    public String getStatus() {
+        return status;
+    }
 
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getStatusMessage() {
+        return statusMessage;
+    }
+
+    public void setStatusMessage(String statusMessage) {
+        this.statusMessage = statusMessage;
+    }
+    
 
 }

@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+    <title>AniTrans | Add Order</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>AniTrans</h1>
+	<a href="login.html">Login</a><a href="orders.html">Orders</a><a href="tours.html">Tours</a>
+	<h2>Add Order</h2>
+	<p>Your order was addes successfully</p>
+    <p th:text="'Order Number: ' + ${order.id}" />
+    <p th:text="'From: ' + ${order.from}" />
+    <p th:text="'To: ' + ${order.to}" />
+    <p th:text="'Type of Animal: ' + ${order.typeOfAnimal}" />
+    <p th:text="'Number of Animals: ' + ${order.numberOfAnimals}" />
+</body>
+</html>

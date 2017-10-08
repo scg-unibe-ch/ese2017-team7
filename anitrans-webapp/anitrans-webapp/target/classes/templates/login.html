@@ -1,19 +1,44 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
-    <title>AniTrans | Login</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+<title>aniTrans | Login</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
+
 <body>
-	<h1>AniTrans</h1>
-	<a href="index.html">Home</a> <a href="login.html">Login</a>
-	<h2>Login</h2>
-    <form action="#" th:action="@{/login}" th:object="${login}" method="post">
-    	<p>Username: <input type="text" th:field="*{username}" /></p>
-        <p>Password: <input type="password" th:field="*{password}" /></p>
-        <p><input type="submit" value="Login" /></p>
+
+<div id='container'>
+            <div id='header'> 
+                <img src="images/logistics.jpg" alt="header" id='header_img' />
+                <ul id='nav'>
+                    <li class='nav_element1'><a href="startseite.html">Home</a></li>
+                    <li class='nav_element2'><a href="orders.html">Orders</a></li>
+                     <li class='nav_element2'><a href="tours.html">Tours</a></li>
+                    <li class='nav_element3'><a href="login.html" class="active">Login</a></li>
+                </ul>
+            </div>
+             
+<div class="ex0">
+<h1><img src="images/logo.png" width="45" height="40" alt="logo" id="logo" />Login</h1>
+</div>
+
+<div id="login_spalte">
+<div class="ex0"> 
+<form action="#" th:action="@{/login}" th:object="${user}" method="post">
+	<p>Username:<input type="text" name="Username*" placeholder=""  size="30" maxlength="200" th:field="*{username}"/></p>
+	<p>E-Mail:<input type="text" name="E-Mail*" placeholder="" size="30" maxlength="200" th:field="*{email}"/></p>
+    <p>Password:<input type="password" name="Password" placeholder="******" size="30" maxlength="200" th:field="*{password}"/></p>
     </form>
-    <a href="register">Register</a>
+    </div>
+</div>
+
+<div class="ex8">     
+<p><button type="submit" value="Login">Login</button>
+<button type="button">Cancel</button></p> 
+<a href="register.html">Register</a>  
+</div>
+      
+</div>    
 </body>
 </html>

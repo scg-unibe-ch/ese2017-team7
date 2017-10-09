@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class HomeController {
 
-    @RequestMapping("/index")
+    @RequestMapping("/startseite")
     public String index() {
-        return "index";
+        return "startseite";
     }
 
 }

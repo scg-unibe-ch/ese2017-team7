@@ -11,12 +11,11 @@ public class ChangeStatusController {
 
     @GetMapping("/change-status")
     public String orderForm(Model model) {
-        model.addAttribute("order", new hello.Order());
         return "change-status";
     }
 
     @PostMapping("/change-status")
-    public String orderSubmit(@ModelAttribute hello.Order order) {
+    public String orderSubmit(@ModelAttribute hello.AniOrder order) {
         return "change-status-success";
     }
 

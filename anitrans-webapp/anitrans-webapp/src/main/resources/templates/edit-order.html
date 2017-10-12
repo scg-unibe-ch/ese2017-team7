@@ -1,25 +1,41 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
-    <title>AniTrans | Edit Order</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <title>aniTrans | Edit Order</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
+
 <body>
-	<h1>AniTrans</h1>
-	<a href="index.html">Home</a> <a href="login.html">Login</a> <a href="orders.html">Orders</a> <a href="tours.html">Tours</a>
+
+<div id='container'>
+            <div id='header'> 
+                <img src="images/logistics.jpg" alt="header" id='header_img' />
+                <ul id='nav'>
+                    <li class='nav_element1'><a href="index.html">Home</a></li>
+                    <li class='nav_element2'><a href="orders.html" class="active">Orders</a></li>
+                     <li class='nav_element2'><a href="tours.html">Tours</a></li>
+                    <li class='nav_element4'><a href="drivers.html">Drivers</a></li>
+                    <li class='nav_element3'><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+             
+<div class="ex0">
 	<h2>Add Order</h2>
     <form action="#" th:action="@{/edit-order}" th:object="${order}" method="post">
     		<p>Order Number: <input type="text" value="2" th:field="*{id}" /></p>
-        <p>From: <input type="text" value="Happy Animals Farm, Hallerstrasse 5, 3012 Bern" th:field="*{from}" /></p>
-        <p>To: <input type="text" value="Slaughterhouse, Dreihubelweg 55, 3250 Lyss"  th:field="*{to}" /></p>
-        <p>Until: <input type="text" value="26.10.2017" th:field="*{until}" /></p>
-        <p>Timeframe: <input type="text" value="15:00 - 17:00" th:field="*{timeframe}" /></p>
-        <p>Type of Animal: <input type="text" value="Cows" th:field="*{typeOfAnimal}" /></p>
-        <p>Number of Animals: <input type="text" value="3" th:field="*{numberOfAnimals}" /></p>
-        <p>Time Estimation: <input type="text" value="1 hour" th:field="*{timeEstimation}" /></p>
-        <p>Driver: <input type="text" value="2" th:field="*{driver}" /></p>
+        <p>From: <input type="text" th:field="*{from}" /></p>
+        <p>To: <input type="text" th:field="*{to}" /></p>
+        <p>Until: <input type="text" th:field="*{until}" /></p>
+        <p>Timeframe: <input type="text" th:field="*{timeframe}" /></p>
+        <p>Start time: <input type="text" th:field="*{startTime}" /></p>
+        <p>Type of Animal: <input type="text" th:field="*{typeOfAnimal}" /></p>
+        <p>Number of Animals: <input type="text" th:field="*{numberOfAnimals}" /></p>
+        <p>Time Estimation: <input type="text" th:field="*{timeEstimation}" /></p>
+        <p>Driver: <input type="text" th:field="*{driver}" /></p>
         <p><input type="submit" value="Submit" /></p>
     </form>
+    </div>
+    </div>
 </body>
 </html>

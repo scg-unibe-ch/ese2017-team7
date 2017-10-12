@@ -1,13 +1,26 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
-    <title>AniTrans | Add Order</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <title>aniTrans | Edit Order</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
+
 <body>
-	<h1>AniTrans</h1>
-	<a href="index.html">Home</a> <a href="login.html">Login</a> <a href="orders.html">Orders</a> <a href="tours.html">Tours</a>
+
+<div id='container'>
+            <div id='header'> 
+                <img src="images/logistics.jpg" alt="header" id='header_img' />
+                <ul id='nav'>
+                    <li class='nav_element1'><a href="index.html">Home</a></li>
+                    <li class='nav_element2'><a href="orders.html" class="active">Orders</a></li>
+                     <li class='nav_element2'><a href="tours.html">Tours</a></li>
+                    <li class='nav_element4'><a href="drivers.html">Drivers</a></li>
+                    <li class='nav_element3'><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+             
+<div class="ex0">
 	<h2>Edit Order</h2>
 	<p>Your order was edited successfully</p>
     <p th:text="'Order Number: ' + ${order.id}" />
@@ -15,9 +28,12 @@
     <p th:text="'To: ' + ${order.to}" />
     <p th:text="'Until: ' + ${order.until}" />
     <p th:text="'Timeframe: ' + ${order.timeframe}" />
+    <p th:text="'Start time: ' + ${order.startTime}" />
     <p th:text="'Type of Animal: ' + ${order.typeOfAnimal}" />
     <p th:text="'Number of Animals: ' + ${order.numberOfAnimals}" />
     <p th:text="'Time Estimation: ' + ${order.timeEstimation}" />
     <p th:text="'Driver: ' + ${order.driver}" />
+    </div>
+    </div>
 </body>
 </html>

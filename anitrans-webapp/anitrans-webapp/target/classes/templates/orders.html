@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+	<link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <title>aniTrans | Tours</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
@@ -12,9 +12,10 @@
             <div id='header'> 
                 <img src="images/logistics.jpg" alt="header" id='header_img' />
                 <ul id='nav'>
-                    <li class='nav_element1'><a href="startseite.html">Home</a></li>
+                    <li class='nav_element1'><a href="index.html">Home</a></li>
                     <li class='nav_element2'><a href="orders.html" class="active">Orders</a></li>
                      <li class='nav_element2'><a href="tours.html">Tours</a></li>
+                    <li class='nav_element4'><a href="drivers.html">Drivers</a></li>
                     <li class='nav_element3'><a href="login.html">Login</a></li>
                 </ul>
             </div>
@@ -33,39 +34,30 @@
 		    <th>Type of Animal</th>
  		   	<th>Number of Animals</th>
  		   	<th>Time Estimation</th>
+ 		   	<th>Start Time</th>
  		   	<th>Driver</th>
  		   	<th>Status</th>
+ 		   	<th>Status Message</th>
  		   	<th></th>
  		 </tr>
-		  <tr>
- 		   <td>1</td>
- 		   <td>Happy Animals Farm, Hallerstrasse 5, 3012 Bern</td> 
- 		   <td>Slaughterhouse, Dreihubelweg 55, 3250 Lyss</td>
- 		   <td>25.10.2017</td>
- 		   <td>13:00 - 17:00</td>
- 		   <td>Sheep</td>
- 		   <td>50</td>
- 		   <td>1 hour</td>
- 		   <td>John Doe</td>
- 		   <td><p>Undelivered</p>
- 		   <p>"Customer wasn't home"</p></td>			   
+		  <tr th:each="order : ${orders}">
+ 		   <td th:text="${order.id}"></td>
+ 		   <td th:text="${order.fromAddr}"></td> 
+ 		   <td  th:text="${order.toAddr}"></td>
+ 		   <td  th:text="${order.until}"></td>
+ 		   <td  th:text="${order.timeframe}"></td>
+ 		   <td  th:text="${order.typeOfAnimal}"></td>
+ 		   <td  th:text="${order.numberOfAnimals}"></td>
+ 		   <td  th:text="${order.timeEstimation}"></td>
+ 		   <td  th:text="${order.startTime}"></td>
+ 		   <td th:text="${order.driver}"></td>
+ 		   <td th:text="${order.orderStatus}"></td>
+ 		   <td th:text="${order.statusMessage}"></td>			   
  		   <td><p>WARNING: This order is already assigned to a driver</p>
  		   <a href="edit-order.html">Edit Order</a></td>
 		  </tr>
-		  <tr>
- 		   <td>2</td>
- 		   <td>Happy Animals Farm, Hallerstrasse 5, 3012 Bern</td> 
- 		   <td>Slaughterhouse, Dreihubelweg 55, 3250 Lyss</td>
- 		   <td>26.10.2017</td>
- 		   <td>15:00 - 17:00</td>
- 		   <td>Cows</td>
- 		   <td>3</td>
- 		   <td>1 hour</td>
- 		   <td></td>
- 		   <td><p>Undelivered</p></td>
- 		   <td><a href="edit-order.html">Edit Order</a></td>
- 		 </tr>
 	</table>
+	
 	</div>
 	</div>
 </body>

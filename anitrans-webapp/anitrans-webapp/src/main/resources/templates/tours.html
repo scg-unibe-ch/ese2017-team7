@@ -25,7 +25,7 @@
 
     <table>
  		<tr>
-   		 <th>Order Number</th>
+   		 	<th>Order Number</th>
 		    <th>From</th> 
 		    <th>To</th>
 		    <th>Until</th>
@@ -33,22 +33,26 @@
 		    <th>Type of Animal</th>
  		   	<th>Number of Animals</th>
  		   	<th>Time Estimation</th>
+ 		   	<th>Start Time</th>
  		   	<th>Driver</th>
  		   	<th>Status</th>
+ 		   	<th>Status Message</th>
+ 		   	<th></th>
  		 </tr>
-		  <tr>
- 		   <td>1</td>
- 		   <td>Happy Animals Farm, Hallerstrasse 5, 3012 Bern</td> 
- 		   <td>Slaughterhouse, Dreihubelweg 55, 3250 Lyss</td>
- 		   <td>25.10.2017</td>
- 		   <td>13:00 - 17:00</td>
- 		   <td>Sheep</td>
- 		   <td>50</td>
- 		   <td>1 hour</td>
- 		   <td>John Doe</td>
- 		   <td><p>Undelivered</p>
- 		   <p>"Customer wasn't home."</p>
- 		   <a href="change-status.html">Change Status</a></td>
+ 		 <tr th:each="order : ${orders}">
+ 		   <td th:text="${order.id}"></td>
+ 		   <td th:text="${order.fromAddr}"></td> 
+ 		   <td  th:text="${order.toAddr}"></td>
+ 		   <td  th:text="${order.until}"></td>
+ 		   <td  th:text="${order.timeframe}"></td>
+ 		   <td  th:text="${order.typeOfAnimal}"></td>
+ 		   <td  th:text="${order.numberOfAnimals}"></td>
+ 		   <td  th:text="${order.timeEstimation}"></td>
+ 		   <td  th:text="${order.startTime}"></td>
+ 		   <td th:text="${order.driver}"></td>
+ 		   <td th:text="${order.orderStatus}"></td>
+ 		   <td th:text="${order.statusMessage}"></td>   
+ 		   <td><a th:href="@{/change-status (id=${order.id})}">Change Status</a></td>
 		  </tr>
 	</table>
 	</div>

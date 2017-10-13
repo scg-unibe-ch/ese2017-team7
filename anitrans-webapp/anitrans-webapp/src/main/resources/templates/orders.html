@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<link rel="stylesheet" type="text/css" href="../css/styles.css" />
-    <title>aniTrans | Tours</title>
+    <title>aniTrans | Orders</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 
@@ -53,8 +53,9 @@
  		   <td th:text="${order.driver}"></td>
  		   <td th:text="${order.orderStatus}"></td>
  		   <td th:text="${order.statusMessage}"></td>			   
- 		   <td><p>WARNING: This order is already assigned to a driver</p>
- 		   <a href="edit-order.html">Edit Order</a></td>
+ 		   <td>
+ 		   <a th:href="@{/edit-order(id=${order.id})}" onclick="return confirm('Are you sure you would like to edit this entry?')">Edit Order</a>
+ 		   <a th:href="@{/delete-order(id=${order.id})}" onclick="return confirm('Are you sure you would like to DELETE this entry?')">Delete Order</a></td>	    		   
 		  </tr>
 	</table>
 	

@@ -24,14 +24,23 @@
 	<h2>Add Order</h2>
     <form action="#" th:action="@{/add-order}" th:object="${aniOrder}" method="post">
         <p>From: <input type="text" th:field="*{fromAddr}" /></p>
+        <p th:if="${#fields.hasErrors('fromAddr')}" th:errors="*{fromAddr}">From Error</p>
         <p>To: <input type="text" th:field="*{toAddr}" /></p>
+        <p th:if="${#fields.hasErrors('toAddr')}" th:errors="*{toAddr}">To Error</p>
         <p>Until: <input type="text" th:field="*{until}" /></p>
+        <p th:if="${#fields.hasErrors('until')}" th:errors="*{until}">Until Error</p>
         <p>Timeframe: <input type="text" th:field="*{timeframe}" /></p>
+        <p th:if="${#fields.hasErrors('timeframe')}" th:errors="*{timeframe}">Timeframe Error</p>
         <p>Type of Animal: <input type="text" th:field="*{typeOfAnimal}" /></p>
+        <p th:if="${#fields.hasErrors('typeOfAnimal')}" th:errors="*{typeOfAnimal}">Type of Animal Error</p>
         <p>Number of Animals: <input type="text" th:field="*{numberOfAnimals}" /></p>
+        <p th:if="${#fields.hasErrors('numberOfAnimals')}" th:errors="*{numberOfAnimals}">Number of Animals Error</p>
         <p>Time Estimation: <input type="text" th:field="*{timeEstimation}" /></p>
+        <p th:if="${#fields.hasErrors('timeEstimation')}" th:errors="*{timeEstimation}">Time Estimation Error</p>
         <p>Start time: <input type="text" th:field="*{startTime}" /></p>
+        <p th:if="${#fields.hasErrors('startTime')}" th:errors="*{startTime}">Start Time Error</p>
         <p>Driver: <input type="text" th:field="*{driver}" /></p>
+        <p th:if="${#fields.hasErrors('driver')}" th:errors="*{driver}">Driver Error</p>
         <p><input type="submit" value="Submit" /></p>
     </form>
     </div>

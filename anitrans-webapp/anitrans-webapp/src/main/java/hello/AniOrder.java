@@ -4,19 +4,38 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity // This tells Hibernate to make a table out of this class
 public class AniOrder {
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
+	@NotNull
+	@Size(min=2, max=255)
 	public String fromAddr;
+	@NotNull
+	@Size(min=2, max=255)
 	private String toAddr;
+	@NotNull
+	@Size(min=2, max=255)
 	private String until;
+	@NotNull
+	@Size(min=2, max=255)
 	private String timeframe;
+	@NotNull
+	@Size(min=2, max=255)
 	private String typeOfAnimal;
+	@NotNull
 	private Integer numberOfAnimals;
+	@NotNull
+	@Size(min=2, max=255)
 	private String timeEstimation;
+	@NotNull
+	@Size(min=2, max=255)
 	private String startTime;
 	private String driver;
 	private String orderStatus = "undelivered";

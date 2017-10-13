@@ -8,5 +8,7 @@ import hello.AniOrder;
 // CRUD refers Create, Read, Update, Delete
 
 public interface OrderRepository extends CrudRepository<AniOrder, Long> {
+	
+	hello.AniOrder findById(Integer id);
 
 }

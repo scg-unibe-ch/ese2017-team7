@@ -10,12 +10,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import javax.validation.Valid;
+import java.util.Date;
+import org.springframework.format.annotation.DateTimeFormat;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Controller
 public class EditOrderController {
 	@Autowired
 	private hello.OrderRepository orderRepository;
-	
+	@Temporal(TemporalType.TIME)
+	@DateTimeFormat(pattern = "HH:mm")
+	Date currentDate = new Date();
 
     @GetMapping("/edit-order")
     public String orderForm(@RequestParam Integer id, Model model) {
@@ -24,6 +30,10 @@ public class EditOrderController {
     			order  = orderRepository.findById(id);
     		} else {
     			order = new hello.AniOrder();
+    		}
+    		
+    		if(new Date().after(order.getStartTime())) {
+    			return "edit-order-forbidden";
     		}
     		
     		model.addAttribute("order", order);
@@ -50,6 +60,10 @@ public class EditOrderController {
         	} else {
         		order = new hello.AniOrder();
         	}
+        	if(new Date().after(order.getStartTime())) {
+    			return "edit-order-forbidden";
+    		}
+        	
         	orderRepository.delete(order);
     	    	return "delete-order-success";
 

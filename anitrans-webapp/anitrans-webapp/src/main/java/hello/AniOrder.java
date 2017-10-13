@@ -8,6 +8,10 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Date;
+import org.springframework.format.annotation.DateTimeFormat;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity // This tells Hibernate to make a table out of this class
 public class AniOrder {
@@ -21,8 +25,9 @@ public class AniOrder {
 	@Size(min=2, max=255)
 	private String toAddr;
 	@NotNull
-	@Size(min=2, max=255)
-	private String until;
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "dd.MM.yyy")
+	private Date until;
 	@NotNull
 	@Size(min=2, max=255)
 	private String timeframe;
@@ -35,8 +40,9 @@ public class AniOrder {
 	@Size(min=2, max=255)
 	private String timeEstimation;
 	@NotNull
-	@Size(min=2, max=255)
-	private String startTime;
+	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "dd.MM.yyy, HH:mm")
+	private Date startTime;
 	private String driver;
 	private String orderStatus = "undelivered";
 	private String statusMessage = "";
@@ -66,11 +72,11 @@ public class AniOrder {
         this.toAddr = toAddr;
     }
     
-    public String getUntil() {
+    public Date getUntil() {
         return until;
     }
 
-    public void setUntil(String until) {
+    public void setUntil(Date until) {
         this.until = until;
     }
     
@@ -106,11 +112,11 @@ public class AniOrder {
         this.timeEstimation = timeEstimation;
     }
     
-    public String getStartTime() {
+    public Date getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(String startTime) {
+    public void setStartTime(Date startTime) {
         this.startTime = startTime;
     }
     

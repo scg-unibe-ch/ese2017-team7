@@ -44,12 +44,12 @@
  		   <td th:text="${order.id}"></td>
  		   <td th:text="${order.fromAddr}"></td> 
  		   <td  th:text="${order.toAddr}"></td>
- 		   <td  th:text="${order.until}"></td>
+ 		   <td  th:text="${#dates.format(order.until, 'dd.MM.yyyy')}"></td>
  		   <td  th:text="${order.timeframe}"></td>
  		   <td  th:text="${order.typeOfAnimal}"></td>
  		   <td  th:text="${order.numberOfAnimals}"></td>
  		   <td  th:text="${order.timeEstimation}"></td>
- 		   <td  th:text="${order.startTime}"></td>
+ 		   <td  th:text="${#dates.format(order.startTime, 'dd.MM.yyy, HH:mm')}"></td>
  		   <td th:text="${order.driver}"></td>
  		   <td th:text="${order.orderStatus}"></td>
  		   <td th:text="${order.statusMessage}"></td>			   

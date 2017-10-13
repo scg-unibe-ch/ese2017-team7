@@ -40,7 +40,14 @@
         <p th:if="${#fields.hasErrors('timeEstimation')}" th:errors="*{timeEstimation}">Time Estimation Error</p>
         <p>Start Time: <input type="datetime-local" th:value="${order.startTime}" th:field="*{startTime}" th:readonly="readonly"/></p>
         <p th:if="${#fields.hasErrors('startTime')}" th:errors="*{startTime}">Start Time Error</p>
-        <p>Driver: <input type="text" th:value="${order.driver}" th:field="*{driver}" th:readonly="readonly"/></p>
+        <p>Driver: <select th:field="*{driver}" th:value="${order.startTime}" th:readonly="readonly">
+        		<option
+         		 th:value="none"
+         		 th:text="none">Driver</option>
+  			<option th:each="user : ${users}" 
+         		 th:value="${user.name}"
+         		 th:text="${user.name}">Driver</option>
+		</select></p>
     		<p>Status: <input type="text" th:value="${order.orderStatus}" th:field="*{orderStatus}" /></p>
         <p>Message: <textarea name="message" form="statusOrder" th:value="${order.statusMessage}" th:field="*{statusMessage}" /></p>
         <p><input type="submit" value="Submit" /></p>

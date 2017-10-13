@@ -14,6 +14,8 @@ import javax.validation.Valid;
 public class OrdersController {
 	@Autowired
 	private hello.OrderRepository orderRepository;
+	@Autowired
+	private hello.UserRepository userRepository;
 
     @RequestMapping("/orders")
     	public String orders(Model model) {

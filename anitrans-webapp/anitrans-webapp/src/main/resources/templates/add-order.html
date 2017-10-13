@@ -39,8 +39,17 @@
         <p th:if="${#fields.hasErrors('timeEstimation')}" th:errors="*{timeEstimation}">Time Estimation Error</p>
         <p>Start time: <input type="datetime-local" th:field="*{startTime}" placeholder="dd.MM.yyy, HH:mm"/></p>
         <p th:if="${#fields.hasErrors('startTime')}" th:errors="*{startTime}">Start Time Error</p>
-        <p>Driver: <input type="text" th:field="*{driver}" /></p>
+        <p>Driver: <select th:field="*{driver}">
+        		<option
+         		 th:value="none"
+         		 th:text="none">Driver</option>
+  			<option th:each="user : ${users}" 
+         		 th:value="${user.name}"
+         		 th:text="${user.name}">Driver</option>
+		</select></p>
         <p th:if="${#fields.hasErrors('driver')}" th:errors="*{driver}">Driver Error</p>
+
+       
         <p><input type="submit" value="Submit" /></p>
     </form>
     </div>

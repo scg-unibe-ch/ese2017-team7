@@ -19,6 +19,8 @@ import javax.persistence.TemporalType;
 public class EditOrderController {
 	@Autowired
 	private hello.OrderRepository orderRepository;
+	@Autowired
+	private hello.UserRepository userRepository;
 	@Temporal(TemporalType.TIME)
 	@DateTimeFormat(pattern = "HH:mm")
 	Date currentDate = new Date();
@@ -37,6 +39,7 @@ public class EditOrderController {
     		}
     		
     		model.addAttribute("order", order);
+    		model.addAttribute("users", userRepository.findAll());
         return "edit-order";
     }
     
@@ -44,6 +47,7 @@ public class EditOrderController {
     public String orderSubmit(@Valid @ModelAttribute hello.AniOrder order, BindingResult bindingResult, Model model) {
     		if (bindingResult.hasErrors()) {
     			model.addAttribute("order", order);
+    			model.addAttribute("users", userRepository.findAll());
             return "edit-order";
     		}
     		

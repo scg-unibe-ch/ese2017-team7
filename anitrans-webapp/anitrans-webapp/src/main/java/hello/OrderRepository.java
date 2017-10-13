@@ -10,5 +10,5 @@ import hello.AniOrder;
 public interface OrderRepository extends CrudRepository<AniOrder, Long> {
 	
 	hello.AniOrder findById(Integer id);
-
+	
 }

@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ChangeStatusController {
 	@Autowired
 	private hello.OrderRepository orderRepository;
+	@Autowired
+	private hello.UserRepository userRepository;
 
     @GetMapping("/change-status")
     public String statusForm(@RequestParam Integer id, Model model) {
@@ -26,6 +28,7 @@ public class ChangeStatusController {
 		}
 		
 		model.addAttribute("order", order);
+		model.addAttribute("users", userRepository.findAll());
     return "change-status";
     }
 
@@ -33,6 +36,7 @@ public class ChangeStatusController {
     public String statusSubmit(@Valid @ModelAttribute hello.AniOrder order, BindingResult bindingResult, Model model) {
     		if (bindingResult.hasErrors()) {
 			model.addAttribute("order", order);
+			model.addAttribute("users", userRepository.findAll());
         return "change-status";
 		}
 		

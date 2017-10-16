@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HomeController {
-
+	
+	//Maps all requests of /index. This only needs to return a static page named index.html
     @RequestMapping("/index")
     public String index() {
         return "index";

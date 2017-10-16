@@ -13,6 +13,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+/*The object used to create the object table in the database. "Object" is a reserved keyword in SQL, so AniOrder is used as a 
+ * combination of order and aniTrans.
+ */
 @Entity // This tells Hibernate to make a table out of this class
 public class AniOrder {
 	@Id

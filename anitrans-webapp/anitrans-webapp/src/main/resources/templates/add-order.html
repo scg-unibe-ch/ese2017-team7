@@ -27,7 +27,7 @@
         <p th:if="${#fields.hasErrors('fromAddr')}" th:errors="*{fromAddr}">From Error</p>
         <p>To: <input type="text" th:field="*{toAddr}" /></p>
         <p th:if="${#fields.hasErrors('toAddr')}" th:errors="*{toAddr}">To Error</p>
-        <p>Until: <input type="datetime-local" th:field="*{until}" placeholder="dd.MM.yyy"/></p>
+        <p>Until: <input type="datetime-local" th:field="*{until}" placeholder="dd.MM.yyyy"/></p>
         <p th:if="${#fields.hasErrors('until')}" th:errors="*{until}">Until Error</p>
         <p>Timeframe: <input type="text" th:field="*{timeframe}" /></p>
         <p th:if="${#fields.hasErrors('timeframe')}" th:errors="*{timeframe}">Timeframe Error</p>
@@ -37,7 +37,7 @@
         <p th:if="${#fields.hasErrors('numberOfAnimals')}" th:errors="*{numberOfAnimals}">Number of Animals Error</p>
         <p>Time Estimation: <input type="text" th:field="*{timeEstimation}" /></p>
         <p th:if="${#fields.hasErrors('timeEstimation')}" th:errors="*{timeEstimation}">Time Estimation Error</p>
-        <p>Start time: <input type="datetime-local" th:field="*{startTime}" placeholder="dd.MM.yyy, HH:mm"/></p>
+        <p>Start time: <input type="datetime-local" th:field="*{startTime}" placeholder="dd.MM.yyyy, HH:mm"/></p>
         <p th:if="${#fields.hasErrors('startTime')}" th:errors="*{startTime}">Start Time Error</p>
         <p>Driver: <select th:field="*{driver}">
         		<option

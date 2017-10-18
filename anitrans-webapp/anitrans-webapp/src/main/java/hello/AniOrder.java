@@ -29,7 +29,7 @@ public class AniOrder {
 	private String toAddr;
 	@NotNull
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern = "dd.MM.yyy")
+	@DateTimeFormat(pattern = "dd.MM.yyyy")
 	private Date until;
 	@NotNull
 	@Size(min=2, max=255)
@@ -44,7 +44,8 @@ public class AniOrder {
 	private String timeEstimation;
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern = "dd.MM.yyy, HH:mm")
+	//@DateTimeFormat(pattern = "yyyy-MM-ddTHH:mm")
+	@DateTimeFormat(pattern = "dd.mm.yyyy, HH:mm")
 	private Date startTime;
 	private String driver;
 	private String orderStatus = "undelivered";

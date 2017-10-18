@@ -1,4 +1,4 @@
-package hello;//this is test comment
+package hello;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

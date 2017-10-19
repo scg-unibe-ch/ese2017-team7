@@ -23,12 +23,27 @@
 <div class="ex0">
 	<h2>Change Status</h2>
     <form action="#" th:action="@{/change-status}" th:object="${order}" method="post" id="statusOrder">
-    		<p>Order Number: <input type="text" th:value="${order.id}" th:field="*{id}" th:readonly="readonly"/></p>
-        <p>From: <input type="text" th:value="${order.fromAddr}" th:field="*{fromAddr}" th:readonly="readonly"/></p>
-        <p th:if="${#fields.hasErrors('fromAddr')}" th:errors="*{fromAddr}">From Error</p>
-        <p>To: <input type="text" th:value="${order.toAddr}" th:field="*{toAddr}" th:readonly="readonly"/></p>
-        <p th:if="${#fields.hasErrors('toAddr')}" th:errors="*{toAddr}">To Error</p>
-        <p>Until: <input type="datetime-local" th:value="${order.until}" th:field="*{until}" th:readonly="readonly"/></p>
+    		<p>Order Number: <input type="text" th:value="${order.orderId}" th:field="*{orderId}" th:readonly="readonly"/></p>
+        
+        <p>From: </p>
+        <p>Name: <input type="text" th:value="${order.fromName}" th:field="*{fromName}" th:readonly="readonly"/></p>
+        <p th:if="${#fields.hasErrors('fromName')}" th:errors="*{fromName}">From Name Error</p>
+        <p>Address: <input type="text" th:value="${order.fromStreet}" th:field="*{fromStreet}" th:readonly="readonly"/></p>
+        <p th:if="${#fields.hasErrors('fromStreet')}" th:errors="*{fromStreet}">From Street Error</p>
+        <p>PLZ / Town: <input type="text" th:value="${order.fromPlz}" th:field="*{fromPlz}" th:readonly="readonly"/><input type="text" th:value="${order.fromTown}" th:field="*{fromTown}" th:readonly="readonly"/></p>
+        <p th:if="${#fields.hasErrors('fromPlz')}" th:errors="*{fromPlz}">From PLZ Error</p>
+        <p th:if="${#fields.hasErrors('fromTown')}" th:errors="*{fromTown}">From Town Error</p>
+
+        <p>To: </p>
+        <p>Name: <input type="text" th:value="${order.toName}" th:field="*{toName}" th:readonly="readonly"/></p>
+        <p th:if="${#fields.hasErrors('toName')}" th:errors="*{toName}">To Name Error</p>
+        <p>Address: <input type="text" th:value="${order.toStreet}" th:field="*{toStreet}" th:readonly="readonly"/></p>
+        <p th:if="${#fields.hasErrors('toStreet')}" th:errors="*{toStreet}">To Street Error</p>
+        <p>PLZ / Town: <input type="text" th:value="${order.toPlz}" th:field="*{toPlz}" th:readonly="readonly"/><input type="text" th:value="${order.toTown}" th:field="*{toTown}" th:readonly="readonly"/></p>
+        <p th:if="${#fields.hasErrors('toPlz')}" th:errors="*{toPlz}">To PLZ Error</p>
+        <p th:if="${#fields.hasErrors('toTown')}" th:errors="*{toTown}">To Town Error</p>
+        
+        <p>Until: <input type="text" th:value="${#dates.format(order.until, 'dd.MM.yyyy')}"  th:field="*{until}" th:readonly="readonly"/></p>
         <p th:if="${#fields.hasErrors('until')}" th:errors="*{until}">Until Error</p>
         <p>Timeframe: <input type="text" th:value="${order.timeframe}" th:field="*{timeframe}" th:readonly="readonly"/></p>
         <p th:if="${#fields.hasErrors('timeframe')}" th:errors="*{timeframe}">Timeframe Error</p>
@@ -38,16 +53,9 @@
         <p th:if="${#fields.hasErrors('numberOfAnimals')}" th:errors="*{numberOfAnimals}">Number of Animals Error</p>
         <p>Time Estimation: <input type="text" th:value="${order.timeEstimation}" th:field="*{timeEstimation}" th:readonly="readonly"/></p>
         <p th:if="${#fields.hasErrors('timeEstimation')}" th:errors="*{timeEstimation}">Time Estimation Error</p>
-        <p>Start Time: <input type="datetime-local" th:value="${order.startTime}" th:field="*{startTime}" th:readonly="readonly"/></p>
+        <p>Start Time: <input type="text" th:value="${#dates.format(order.startTime, 'dd.MM.yyyy, HH:mm')}" th:field="*{startTime}" th:readonly="readonly"/></p>
         <p th:if="${#fields.hasErrors('startTime')}" th:errors="*{startTime}">Start Time Error</p>
-        <p>Driver: <select th:field="*{driver}" th:value="${order.startTime}" th:readonly="readonly">
-        		<option
-         		 th:value="none"
-         		 th:text="none">Driver</option>
-  			<option th:each="user : ${users}" 
-         		 th:value="${user.name}"
-         		 th:text="${user.name}">Driver</option>
-		</select></p>
+        <p>Driver: <input type="text" th:value="${order.driver}" th:field="*{driver}"  th:readonly="readonly" /></p>
     		<p>Status: <input type="text" th:value="${order.orderStatus}" th:field="*{orderStatus}" /></p>
         <p>Message: <textarea name="message" form="statusOrder" th:value="${order.statusMessage}" th:field="*{statusMessage}" /></p>
         <p><input type="submit" value="Submit" /></p>

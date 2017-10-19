@@ -18,7 +18,7 @@ public class User {
     private String email;
     @NotNull
     private String password;
-    private boolean boss = false;
+    private boolean boss = false; //email: mathias.fuchs@anitrans.ch password: theboss
 
 	public Integer getId() {
 		return id;

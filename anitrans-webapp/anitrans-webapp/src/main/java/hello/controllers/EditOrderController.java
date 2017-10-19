@@ -21,6 +21,10 @@ public class EditOrderController {
 	private hello.OrderRepository orderRepository;
 	@Autowired
 	private hello.UserRepository userRepository;
+	@Autowired
+	private hello.AddressRepository addressRepository;
+	@Autowired
+	private hello.NewOrderRepository newOrderRepository;
 	//Gets the current time to check if a tour has already started. If it has in may not be edited or deleted.
 	@Temporal(TemporalType.TIME)
 	@DateTimeFormat(pattern = "HH:mm")
@@ -33,28 +37,37 @@ public class EditOrderController {
     		if(id != null) {
     			order  = orderRepository.findById(id); //finds the correct order by id.
     		} else {
-    			order = new hello.AniOrder(); //if the order doesn't exist, a new one is created.
+    			return "edit-order-forbidden"; //if the order doesn't exist, can't edit it
     		}
     		
     		if(new Date().after(order.getStartTime())) { //if the delivery has already started, the user is redirected to edit-order-forbidden.html.
     			return "edit-order-forbidden";
     		}
     		
-    		model.addAttribute("order", order); //passes the order to edit-order.html
+    		hello.NewOrder newOrder = new hello.NewOrder(order, order.getFromAddr(), order.getToAddr());
+    		
+    		model.addAttribute("order", newOrder); //passes the order to edit-order.html
     		model.addAttribute("users", userRepository.findAll()); //passes all the users to edit-order.html. This is needed to select the driver.
         return "edit-order";
     }
     
     // Maps post requests for /edit-order.
     @PostMapping("/edit-order")
-    public String orderSubmit(@Valid @ModelAttribute hello.AniOrder order, BindingResult bindingResult, Model model) {
+    public String orderSubmit(@Valid @ModelAttribute hello.NewOrder order, BindingResult bindingResult, Model model) {
     		if (bindingResult.hasErrors()) { //Checks if the edited order is still valid. If it's not, the user is sent back to correct the mistakes. Incorrect values will be marked.
     			model.addAttribute("order", order);
     			model.addAttribute("users", userRepository.findAll());
             return "edit-order";
     		}
     		
-		orderRepository.save(order); //Once the order is valid, it is saved. This method won't create a new entry, but will update the old one.
+    		hello.Address fromAddress = new hello.Address(order.getFromName(), order.getFromStreet(), order.getFromTown(), order.getFromPlz());
+    		hello.Address toAddress = new hello.Address(order.getToName(), order.getToStreet(), order.getToTown(), order.getToPlz());
+    		hello.AniOrder aniOrder = new hello.AniOrder(order, fromAddress, toAddress);
+    		
+    		addressRepository.save(fromAddress);
+    		addressRepository.save(toAddress);
+		orderRepository.save(aniOrder); //save the order to the database.
+		newOrderRepository.delete(order);
 		return "edit-order-success";
     }
     
@@ -72,7 +85,10 @@ public class EditOrderController {
     			return "edit-order-forbidden";
     		}
         	
-        	orderRepository.delete(order); //delets the order.
+        
+        	orderRepository.delete(order); //delete the order.
+        	addressRepository.delete(order.getFromAddr()); //delete the addresses
+    		addressRepository.delete(order.getToAddr());
     	    	return "delete-order-success";
 
     }

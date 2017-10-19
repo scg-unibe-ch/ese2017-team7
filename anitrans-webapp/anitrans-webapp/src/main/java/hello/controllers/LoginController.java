@@ -25,6 +25,7 @@ public class LoginController {
     public String loginSubmit(@ModelAttribute hello.Login login, BindingResult bindingResult, Model model) {
     	
      	if (bindingResult.hasErrors()) { //if the logged in user has errors, send the user back to correct the mistakes. Invalid fields will be marked.
+     		model.addAttribute("msg", "Email or password incorrect.");
             return "login";
     		}
     		
@@ -35,7 +36,8 @@ public class LoginController {
     				return "logout";
     			}
     		}
-    			
+    		
+    		model.addAttribute("msg", "Email or password incorrect.");
     		return "login";
     	
         

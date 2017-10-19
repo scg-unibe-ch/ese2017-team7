@@ -1,49 +1,84 @@
 package hello;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-/*The object used to create the object table in the database. "Object" is a reserved keyword in SQL, so AniOrder is used as a 
- * combination of order and aniTrans.
+/*
+ * Used to send the order from the html form to the database
  */
-@Entity // This tells Hibernate to make a table out of this class
-public class AniOrder {
-
+@Entity
+public class NewOrder {
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
-	@OneToOne
-	public Address fromAddr;
-	@OneToOne
-	private Address toAddr;
+	private Integer orderId;
+	@NotNull
+	@Size(min=1, max=255)
+	private String fromName;
+    @NotNull
+    @Size(min=1, max=255)
+    private String fromStreet;
+    @NotNull
+    @Size(min=1, max=255)
+    private String fromTown;
+    @NotNull
+    private int fromPlz;
+    
+    @NotNull
+    @Size(min=1, max=255)
+	private String toName;
+    @NotNull
+    @Size(min=1, max=255)
+    private String toStreet;
+    @NotNull
+    @Size(min=1, max=255)
+    private String toTown;
+    @NotNull
+    private int toPlz;
+    
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern = "yyyy.mmmm.dd")
+	@DateTimeFormat(pattern = "dd.MM.yyyy")
 	private Date until;
+	@NotNull
+	@Size(min=1, max=255)
 	private String timeframe;
+	@NotNull
+	@Size(min=1, max=255)
 	private String typeOfAnimal;
+	@NotNull
 	private Integer numberOfAnimals;
+	@NotNull
+	@Size(min=1, max=255)
 	private String timeEstimation;
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern = "yyyy-mm-dd'T'HH:mm")
+	@DateTimeFormat(pattern = "dd.MM.yyyy, HH:mm")
 	private Date startTime;
 	private String driver;
 	private String orderStatus = "undelivered";
 	private String statusMessage = "";
-	@Autowired
 	
-	public AniOrder(NewOrder order, Address fromAddressId, Address toAddressId) {
-		setId(order.getOrderId());
-		setFromAddr(fromAddressId);
-		setToAddr(toAddressId);
+	
+	public NewOrder(AniOrder order, Address fromAddress, Address toAddress) {
+		setOrderId(order.getId());
+		setFromName(fromAddress.getName());
+		setFromStreet(fromAddress.getStreet());
+		setFromTown(fromAddress.getTown());
+		setFromPlz(fromAddress.getPlz());
+		setToName(toAddress.getName());
+		setToStreet(toAddress.getStreet());
+		setToTown(toAddress.getTown());
+		setToPlz(toAddress.getPlz());
 		setUntil(order.getUntil());
 		setTimeframe(order.getTimeframe());
 		setNumberOfAnimals(order.getNumberOfAnimals());
@@ -54,35 +89,96 @@ public class AniOrder {
 		setOrderStatus(order.getOrderStatus());
 		setStatusMessage(order.getStatusMessage());	
 	}
-	
-	public AniOrder() {
-		
-	}
-	
 
+    
+    public NewOrder() {
+
+    }
+    
     public Integer getId() {
-        return id;
+		return id;
     }
 
     public void setId(Integer id) {
-        this.id = id;
+    		this.id = id;
     }
 
-    public Address getFromAddr() {
-        return fromAddr;
-    }
-
-    public void setFromAddr(Address fromAddr) {
-        this.fromAddr = fromAddr;
+    
+    public Integer getOrderId() {
+    		return orderId;
     }
     
-    public Address getToAddr() {
-        return toAddr;
+    public void setOrderId(Integer orderId) {
+    		this.orderId = orderId;
     }
+    
+    public String getToName() {
+		return toName;
+	}
 
-    public void setToAddr(Address toAddr) {
-        this.toAddr = toAddr;
-    }
+	public void setToName(String name) {
+		this.toName = name;
+	}
+
+	public String getToStreet() {
+		return toStreet;
+	}
+
+	public void setToStreet(String street) {
+		this.toStreet = street;
+	}
+	
+	public String getToTown() {
+		return toTown;
+	}
+
+	public void setToTown(String town) {
+		this.toTown = town;
+	}
+	
+	public int getToPlz() {
+		return toPlz;
+	}
+	
+	public void setToPlz(int plz) {
+		this.toPlz = plz;
+	}
+	
+	public String getFromName() {
+		return fromName;
+	}
+
+	public void setFromName(String name) {
+		this.fromName = name;
+	}
+
+	public String getFromStreet() {
+		return fromStreet;
+	}
+
+	public void setFromStreet(String street) {
+		this.fromStreet = street;
+	}
+	
+	public String getFromTown() {
+		return fromTown;
+	}
+
+	public void setFromTown(String town) {
+		this.fromTown = town;
+	}
+	
+	public int getFromPlz() {
+		return fromPlz;
+	}
+	
+	public void setFromPlz(int plz) {
+		this.fromPlz = plz;
+	}
+	
+
+	
+	
     
     public Date getUntil() {
         return until;

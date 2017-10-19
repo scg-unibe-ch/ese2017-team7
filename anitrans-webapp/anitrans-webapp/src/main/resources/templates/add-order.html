@@ -35,40 +35,37 @@
 	<h2>Add Order</h2>
 
 	
-    <form action="#" th:action="@{/add-order}" th:object="${aniOrder}" method="post">
-        <p>From: <input type="text" th:field="*{fromAddr}" /></p>
-        <p th:if="${#fields.hasErrors('fromAddr')}" th:errors="*{fromAddr}">From Error</p>
-        <p>To: <input type="text" th:field="*{toAddr}" /></p>
-        <p th:if="${#fields.hasErrors('toAddr')}" th:errors="*{toAddr}">To Error</p>
-        <p>Until: <input type="date" class="datepicker" th:field="*{until}" placeholder="yyyy-mm-dd"/> </p>
+    <form action="#" th:action="@{/add-order}" th:object="${newOrder}" method="post">
+        <p>From: </p>
+        <p>Name: <input type="text" th:field="*{fromName}" /></p>
+        <p th:if="${#fields.hasErrors('fromName')}" th:errors="*{fromName}">From Name Error</p>
+        <p>Address: <input type="text" th:field="*{fromStreet}" /></p>
+        <p th:if="${#fields.hasErrors('fromStreet')}" th:errors="*{fromStreet}">From Street Error</p>
+        <p>PLZ / Town: <input type="text" th:field="*{fromPlz}" /><input type="text" th:field="*{fromTown}" /></p>
+        <p th:if="${#fields.hasErrors('fromPlz')}" th:errors="*{fromPlz}">From PLZ Error</p>
+        <p th:if="${#fields.hasErrors('fromTown')}" th:errors="*{fromTown}">From Town Error</p>
+
+        <p>To: </p>
+        <p>Name: <input type="text" th:field="*{toName}" /></p>
+        <p th:if="${#fields.hasErrors('toName')}" th:errors="*{toName}">To Name Error</p>
+        <p>Address: <input type="text" th:field="*{toStreet}" /></p>
+        <p th:if="${#fields.hasErrors('toStreet')}" th:errors="*{toStreet}">To Street Error</p>
+        <p>PLZ / Town: <input type="text" th:field="*{toPlz}" /><input type="text" th:field="*{toTown}" /></p>
+        <p th:if="${#fields.hasErrors('toPlz')}" th:errors="*{toPlz}">To PLZ Error</p>
+        <p th:if="${#fields.hasErrors('toTown')}" th:errors="*{toTown}">To Town Error</p>
+        
+        <p>Until: <input type="text" th:field="*{until}" placeholder="dd.MM.yyyy"/> </p>
         <p th:if="${#fields.hasErrors('until')}" th:errors="*{until}">Until Error</p>
-        <p>Timeframe: <input type="text" th:field="*{timeframe}" /></p>
-        <p th:if="${#fields.hasErrors('timeframe')}" th:errors="*{timeframe}">Timeframe Error</p>
+        <p>Timeframe: <input type="text" th:field="*{timeframe}" placeholder="HH:mm - HH:mm"/></p>
+        <p th:if="${#fields.hasErrors('timeframe')}" th:errors="*{timeframe}" >Timeframe Error</p>
         <p>Type of Animal: <input type="text" th:field="*{typeOfAnimal}" /></p>
         <p th:if="${#fields.hasErrors('typeOfAnimal')}" th:errors="*{typeOfAnimal}">Type of Animal Error</p>
         <p>Number of Animals: <input type="text" th:field="*{numberOfAnimals}" /></p>
         <p th:if="${#fields.hasErrors('numberOfAnimals')}" th:errors="*{numberOfAnimals}">Number of Animals Error</p>
-        <p>Time Estimation: <input type="text" th:field="*{timeEstimation}" /></p>
-        <p th:if="${#fields.hasErrors('timeEstimation')}" th:errors="*{timeEstimation}">Time Estimation Error</p>
-        <p>Start time: <input type="datetime-local" class="timepicker" th:field="*{startTime}" placeholder="yyyy-mm-ddTHH:mm"/> </p>
+        <p>Time Estimation: <input type="text" th:field="*{timeEstimation}" placeholder="HH hours"/></p>
+        <p th:if="${#fields.hasErrors('timeEstimation')}" th:errors="*{timeEstimation}" >Time Estimation Error</p>
+        <p>Start Time: <input type="text" th:field="*{startTime}" placeholder="dd.MM.yyyy, HH:mm"/> </p>
         <p th:if="${#fields.hasErrors('startTime')}" th:errors="*{startTime}">Start Time Error</p>
-        
-       <!--   <script type="text/javascript">
-        $(function() {
-                $(".datepicker").datepicker({ dateFormat: "dd.MM.yy" }).val()
-        });
-        $('.timepicker').timepicker({
-            timeFormat: 'HH:mm',
-            interval: 60,
-            minTime: '00:00',
-            maxTime: '23:59',
-            defaultTime: '11',
-            startTime: '00:00',
-            dynamic: false,
-            dropdown: true,
-            scrollbar: true
-        });
-    </script>-->
     
         <p>Driver: <select th:field="*{driver}">
         		<option

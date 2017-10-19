@@ -18,6 +18,7 @@ public class User {
     private String email;
     @NotNull
     private String password;
+    private boolean boss = false;
 
 	public Integer getId() {
 		return id;
@@ -49,6 +50,14 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public boolean getBoss() {
+		return boss;
+	}
+	
+	public void setBoss(boolean boss) {
+		this.boss = boss;
 	}
     
     

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 13, 2017 at 04:58 PM
+-- Generation Time: Oct 19, 2017 at 12:01 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -43,13 +43,6 @@ CREATE TABLE `ani_order` (
   `until` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `ani_order`
---
-
-INSERT INTO `ani_order` (`id`, `driver`, `from_addr`, `number_of_animals`, `order_status`, `start_time`, `status_message`, `time_estimation`, `timeframe`, `to_addr`, `type_of_animal`, `until`) VALUES
-(1, 'Housi Meyer', 'Lyss', 10, 'undelivered', '2017-12-12 12:00:00', '', '1 hour', '13:00 - 17:00', 'Bern', 'Cows', '2017-12-12');
-
 -- --------------------------------------------------------
 
 --
@@ -58,17 +51,18 @@ INSERT INTO `ani_order` (`id`, `driver`, `from_addr`, `number_of_animals`, `orde
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL
+  `boss` bit(1) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `email`, `name`, `password`) VALUES
-(1, 'housi.meyer@anitrans.ch', 'Housi Meyer', 'password123');
+INSERT INTO `user` (`id`, `boss`, `email`, `name`, `password`) VALUES
+(1, b'1', 'mathias.fuchs@anitrans.ch', 'Mathias Fuchs', 'theboss');
 
 --
 -- Indexes for dumped tables
@@ -94,7 +88,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `ani_order`
 --
 ALTER TABLE `ani_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user`

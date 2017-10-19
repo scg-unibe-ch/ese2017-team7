@@ -44,10 +44,14 @@ public class RegisterController {
         	} else {
         		user = new hello.User(); //if it doesn't exist a new user is created.
         	}
+        	
+        	if(user.getBoss()) {
+        		return "delete-user-forbidden";
+        	}
 
         	
         	userRepository.delete(user); //delets the user.
-    	    	return "delete-order-success";
+    	    	return "delete-user-success";
 
     }
 

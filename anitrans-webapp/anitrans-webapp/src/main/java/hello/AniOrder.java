@@ -22,25 +22,20 @@ public class AniOrder {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
 	@NotNull
-	@Size(min=2, max=255)
 	public String fromAddr;
 	@NotNull
-	@Size(min=2, max=255)
 	private String toAddr;
 	@NotNull
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern = "yyyy-mm-dd")
 	private Date until;
 	@NotNull
-	@Size(min=2, max=255)
 	private String timeframe;
 	@NotNull
-	@Size(min=2, max=255)
 	private String typeOfAnimal;
 	@NotNull
 	private Integer numberOfAnimals;
 	@NotNull
-	@Size(min=2, max=255)
 	private String timeEstimation;
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)

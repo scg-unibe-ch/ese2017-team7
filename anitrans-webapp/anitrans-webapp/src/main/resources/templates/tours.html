@@ -51,8 +51,10 @@
  		   <td  th:text="${#dates.format(order.startTime, 'dd.MM.yyy, HH:mm')}"></td>
  		   <td th:text="${order.driver}"></td>
  		   <td th:text="${order.orderStatus}"></td>
- 		   <td th:text="${order.statusMessage}"></td>   
- 		   <td><a th:href="@{/change-status (id=${order.id})}">Change Status</a></td>
+ 		   <td th:text="${order.statusMessage}"></td>			   
+ 		   <td>
+ 		   <a th:href="@{/change-status(id=${order.id})}" onclick="return confirm('Are you sure you would like to edit this status?')">Change Status</a>
+ 		   </td>
 		  </tr>
 	</table>
 	</div>

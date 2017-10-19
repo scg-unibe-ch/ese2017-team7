@@ -28,16 +28,16 @@
 <div class="ex0"> 
 <form action="#" th:action="@{/register}" th:object="${user}" method="post">
 	<p>Name:<input type="text" name="Name*" placeholder=""  size="30" maxlength="200" th:field="*{name}"/></p>
-	<p>E-Mail:<input type="text" name="E-Mail*" placeholder="" size="30" maxlength="200" th:field="*{email}"/></p>
+	<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</p>
+	<p>E-Mail:<input type="email" name="E-Mail*" placeholder="" size="30" maxlength="200" th:field="*{email}"/></p>
+	<p th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</p>
     <p>Password:<input type="password" name="Password" placeholder="******" size="30" maxlength="200" th:field="*{password}"/></p>
+    <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</p>
+    <p><input type="submit" value="Register" /></p>
     </form>
     </div>
 </div>
 
-<div class="ex8"> 
-<p><button type="submit">Register</button>
-<button type="button">Cancel</button></p> 
-</div>
 
 </div>       
     

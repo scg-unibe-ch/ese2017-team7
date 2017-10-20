@@ -4,10 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.Temporal;
@@ -22,47 +19,47 @@ public class NewOrder {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
 	private Integer orderId;
-	@NotNull
-	@Size(min=1, max=255)
+	@Size(min=1, max=255, message = "Please enter your name.")
 	private String fromName;
-    @NotNull
-    @Size(min=1, max=255)
+    @Size(min=1, max=255, message = "Please enter your street and street number.")
     private String fromStreet;
-    @NotNull
-    @Size(min=1, max=255)
+    @Size(min=1, max=255, message = "Please enter your town.")
     private String fromTown;
-    @NotNull
+    @NotNull(message = "Please enter a valid PLZ.")
     private int fromPlz;
     
     @NotNull
-    @Size(min=1, max=255)
+    @Size(min=1, max=255, message = "Please enter your name.")
 	private String toName;
     @NotNull
-    @Size(min=1, max=255)
+    @Size(min=1, max=255, message = "Please enter your street and street number.")
     private String toStreet;
     @NotNull
-    @Size(min=1, max=255)
+    @Size(min=1, max=255, message = "Please enter your town.")
     private String toTown;
-    @NotNull
+    @NotNull(message = "Please enter a valid PLZ.")
     private int toPlz;
     
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern = "dd.MM.yyyy")
+	@Future(message = "please enter a date which is in the future.")
+	@NotNull(message="Please enter a valid date of the format dd.MM.yyyy.")
 	private Date until;
 	@NotNull
-	@Size(min=1, max=255)
+	@Pattern(regexp = "\\d{1,2}[:]\\d{2}\\s-\\s\\d{1,2}[:]\\d{2}", message = "Please enter a timeframe in the form HH:mm - HH:mm")
 	private String timeframe;
 	@NotNull
-	@Size(min=1, max=255)
+	@Size(min=1, max=255, message = "Please enter a type of animal.")
 	private String typeOfAnimal;
-	@NotNull
+	@NotNull(message = "Please enter the number of animals to be transported.")
 	private Integer numberOfAnimals;
 	@NotNull
-	@Size(min=1, max=255)
+	@Pattern(regexp = "\\d+\\shours?", message = "Please enter a time estimation in the format H hours.")
 	private String timeEstimation;
-	@NotNull
+	@NotNull(message="Please enter a valid date of the format dd.MM.yyyy, HH:mm.")
 	@Temporal(TemporalType.TIMESTAMP)
 	@DateTimeFormat(pattern = "dd.MM.yyyy, HH:mm")
+	@Future(message = "please enter a date which is in the future.")
 	private Date startTime;
 	private String driver;
 	private String orderStatus = "undelivered";

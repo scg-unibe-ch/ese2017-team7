@@ -1,6 +1,7 @@
 package hello.controllers;
 
 import java.util.Date;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,8 +26,9 @@ public class RegisterController {
     
     //Maps post requests for /register. This will need to be implemented, so that a new entry in the User table will be created when someone registers.
     @PostMapping("/register")
-    public String registerSubmit(@ModelAttribute hello.User user, BindingResult bindingResult) {
+    public String registerSubmit(@Valid @ModelAttribute hello.User user, BindingResult bindingResult) {
     	if (bindingResult.hasErrors()) { //if the new user has errors, send the user back to correct the mistakes. Invalid fields will be marked.
+    			System.out.println("in");
             return "register";
     		}
     	
@@ -50,7 +52,7 @@ public class RegisterController {
         	}
 
         	
-        	userRepository.delete(user); //delets the user.
+        	userRepository.delete(user); //delete the user.
     	    	return "delete-user-success";
 
     }

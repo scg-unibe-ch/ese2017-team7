@@ -10,6 +10,11 @@ public class HomeController {
 	
 	//Maps all requests of /index. This only needs to return a static page named index.html
     @RequestMapping("/index")
+    public String home() {
+        return "index";
+    }
+	
+    @RequestMapping("/")
     public String index() {
         return "index";
     }

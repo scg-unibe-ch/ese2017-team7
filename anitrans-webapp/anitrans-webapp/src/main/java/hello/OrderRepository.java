@@ -1,6 +1,7 @@
 package hello;
 
 import org.springframework.data.repository.CrudRepository;
+import java.util.*; 
 
 import hello.AniOrder;
 
@@ -11,5 +12,6 @@ import hello.AniOrder;
 public interface OrderRepository extends CrudRepository<AniOrder, Long> {
 	
 	hello.AniOrder findById(Integer id);
+	List<hello.AniOrder> findByDriver(String driver);
 	
 }

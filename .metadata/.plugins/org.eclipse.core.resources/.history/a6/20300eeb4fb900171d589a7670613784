@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+<title>aniTrans | Login</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+<div id='container'>
+            <div id='header'> 
+                <img src="images/banner.jpg" alt="header" id='header_img' />
+                <ul id='nav'>
+                    <li class='nav_element1'><a href="index.html">Home</a></li>
+                    <li class='nav_element2'><a href="orders.html">Orders</a></li>
+                     <li class='nav_element2'><a href="tours.html">Tours</a></li>
+                    <li class='nav_element4'><a href="drivers.html">Drivers</a></li>
+                    <li class='nav_element3'><a href="login.html" class="active">Login</a></li>
+                </ul>
+            </div>
+             
+<div class="ex0">
+<h1><img src="images/logo.png" width="45" height="40" alt="logo" id="logo" />Login</h1>
+</div>
+
+
+<div class="ex0"> 
+<p th:text="${msg}" />
+<form action="#" th:action="@{/login}" th:object="${login}" method="post">
+	<p>E-Mail:<input type="text" name="email*" placeholder="" th:field="*{email}"/></p>
+    <p>Password:<input type="password" name="password" placeholder="******" th:field="*{password}"/></p>
+    <p><input type="submit" value="Login" /></p>
+    </form>
+    </div>
+
+<div class="ex8">     
+<a href="register.html">Register</a>  
+</div>
+</div>  
+</body>
+</html>

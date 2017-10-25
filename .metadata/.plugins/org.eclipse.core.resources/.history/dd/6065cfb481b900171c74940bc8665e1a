@@ -1,0 +1,12 @@
+package hello.controllers;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+public class ErrorsController {
+	
+	@RequestMapping("/403")
+    public String home() {
+        return "403";
+    }
+
+}

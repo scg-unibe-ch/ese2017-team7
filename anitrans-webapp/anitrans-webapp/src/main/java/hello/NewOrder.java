@@ -46,7 +46,7 @@ public class NewOrder {
 	@NotNull(message="Please enter a valid date of the format dd.MM.yyyy.")
 	private Date until;
 	@NotNull
-	@Pattern(regexp = "\\d{1,2}[:]\\d{2}\\s-\\s\\d{1,2}[:]\\d{2}", message = "Please enter a timeframe in the form HH:mm - HH:mm")
+	@Pattern(regexp = "\\d{1,2}[:]\\d{2}\\s?-\\s?\\d{1,2}[:]\\d{2}", message = "Please enter a timeframe in the form HH:mm - HH:mm")
 	private String timeframe;
 	@NotNull
 	@Size(min=1, max=255, message = "Please enter a type of animal.")

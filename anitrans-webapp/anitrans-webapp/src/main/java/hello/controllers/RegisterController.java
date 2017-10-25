@@ -47,7 +47,7 @@ public class RegisterController {
         		user = new hello.User(); //if it doesn't exist a new user is created.
         	}
         	
-        	if(user.getBoss()) {
+        	if(user.getRole().equals("ROLE_ADMIN")) {
         		return "delete-user-forbidden";
         	}
 

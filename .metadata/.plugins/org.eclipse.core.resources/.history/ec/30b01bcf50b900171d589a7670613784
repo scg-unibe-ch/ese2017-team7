@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+<title>aniTrans | Login</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+		<div id='container'>
+            <div id='header'> 
+                <img src="images/banner.jpg" alt="header" id='header_img' />
+                <ul id='nav'>
+                    <li class='nav_element1'><a href="index.html">Home</a></li>
+                    <li class='nav_element2'><a href="orders.html">Orders</a></li>
+                     <li class='nav_element2'><a href="tours.html">Tours</a></li>
+                    <li class='nav_element4'><a href="drivers.html">Drivers</a></li>
+                    <li class='nav_element3'><a href="login.html" class="active">Login</a></li>
+                </ul>
+            </div>
+            
+         <div class="ex0">
+			<h1><img src="images/logo.png" width="45" height="40" alt="logo" id="logo" />Login</h1>
+		</div>
+
+		<div class="ex0">
+		<div th:if="${param.error}">
+            Invalid username and password.
+        </div>
+        <div th:if="${param.logout}">
+            You have been logged out.
+        </div>
+        <form th:action="@{/login}" method="post">
+            <div><label> E-Mail : <input type="text" name="username"/> </label></div>
+            <div><label> Password: <input type="password" name="password"/> </label></div>
+            <div><input type="submit" value="Sign In"/></div>
+        </form>
+        </div>
+
+<div class="ex8">     
+		<form th:action="@{/register}" method="post">
+            <input type="submit" value="Register"/>
+        </form> 
+
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form> 
+        
+</div>
+</div>  
+</body>
+</html>
+

@@ -1,6 +1,7 @@
 package hello;
 
 import javax.persistence.Entity;
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,12 +18,34 @@ public class User {
     private String name;
     @NotNull
     @Pattern(regexp = "[a-zA-Z0-9_\\-\\.]+@[a-zA-Z0-9_\\-\\.]+\\.\\w+", message = "Please enter a valid email address.")
+    @Column(unique=true, nullable = false)
     private String email;
     @NotNull
     @Size(min=5, max=30, message = "Please enter a password of between 5 and 30 characters.")
     @Pattern(regexp = "(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])[a-zA-Z0-9_\\-]+", message = "The password has to contain a regular letter, a capital letter and a number.")
     private String password;
-    private boolean boss = false; //email: mathias.fuchs@anitrans.ch password: theboss
+    private String role = "ROLE_USER"; //email: mathias.fuchs@anitrans.ch password: theboss
+    boolean enabled = true;
+    
+    public User(Integer id, String name, String email, String password, String role) {
+    		this.id = id;
+    		this.name = name;
+    		this.email = email;
+    		this.password = password;
+    		this.role = role;
+    }
+    
+    public User(User user) {
+    		this.id = user.getId();
+		this.name = user.getName();
+		this.email = user.getEmail();
+		this.password = user.getPassword();
+		this.role = user.getRole();
+    }
+    
+    public User() {
+    	
+    }
 
 	public Integer getId() {
 		return id;
@@ -56,12 +79,12 @@ public class User {
 		this.password = password;
 	}
 	
-	public boolean getBoss() {
-		return boss;
+	public String getRole() {
+		return role;
 	}
 	
-	public void setBoss(boolean boss) {
-		this.boss = boss;
+	public void setRole(String role) {
+		this.role = role;
 	}
     
     

@@ -13,7 +13,7 @@ public class LoginController {
 	@Autowired
 	private hello.UserRepository userRepository;
 	
-	//Maps get requests for /login.
+//	Maps get requests for /login.
     @GetMapping("/login")
     public String loginForm(Model model) {
         model.addAttribute("login", new hello.Login()); //creates a new user. This will need to be changed once the login is implemented.

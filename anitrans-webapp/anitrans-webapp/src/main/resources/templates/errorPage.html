@@ -13,10 +13,10 @@
                 <img src="images/banner.jpg" alt="header" id='header_img' />
 
                 <ul id='nav'>
-                    <li class='nav_element1'><a href="index.html">Home</a></li>
-                    <li class='nav_element2'><a href="orders">Orders</a></li>
-                     <li class='nav_element2'><a href="tours.html">Tours</a></li>
-                    <li class='nav_element4'><a href="drivers.html">Drivers</a></li>
+                    <li class='nav_element1'><a href="index.html" class="active">Home</a></li>
+                    <div sec:authorize="hasRole('ROLE_ADMIN')"><li class='nav_element2'><a href="orders">Orders</a></li></div>
+                    <div sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_USER')"><li class='nav_element2'><a href="tours.html">Tours</a></li></div>
+                    <div sec:authorize="hasRole('ROLE_ADMIN')"><li class='nav_element4'><a href="drivers.html">Drivers</a></li></div>
                     <li class='nav_element3'><a href="login.html">Account</a></li>
                 </ul>
                 

@@ -19,6 +19,9 @@ import org.springframework.security.config.annotation.web.servlet.configuration.
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import javax.sql.DataSource;
+import org.thymeleaf.spring4.SpringTemplateEngine;
+import org.thymeleaf.templateresolver.TemplateResolver;
+
 
 @Configuration
 @EnableWebSecurity
@@ -75,4 +78,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     			.userDetailsService(userDetailsService);
 
     }
+    
+
  }

@@ -11,7 +11,9 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 /*
- * Used to send the order from the html form to the database
+ * The object that is created when the user creates a new order. Contains both AniOrder and Address information.
+ * Implements requirements for the fields. If these requirements aren't met, the user will be presented with
+ * understandable error information.
  */
 @Entity
 public class NewOrder {
@@ -47,7 +49,7 @@ public class NewOrder {
 	private Date until;
 	@NotNull
 	@Pattern(regexp = "\\d{1,2}[:]\\d{2}\\s?-\\s?\\d{1,2}[:]\\d{2}", message = "Please enter a timeframe in the form HH:mm - HH:mm")
-	private String timeframe;
+	private String timeframe; //needs to conform to the format HH:mm-HH:mm or HH:mm - HH:mm
 	@NotNull
 	@Size(min=1, max=255, message = "Please enter a type of animal.")
 	private String typeOfAnimal;
@@ -55,7 +57,7 @@ public class NewOrder {
 	private Integer numberOfAnimals;
 	@NotNull
 	@Pattern(regexp = "\\d+\\shours?", message = "Please enter a time estimation in the format H hours.")
-	private String timeEstimation;
+	private String timeEstimation; //needs to conform to the format HH hour or HH hours
 	@NotNull(message="Please enter a valid date of the format dd.MM.yyyy, HH:mm.")
 	@Temporal(TemporalType.TIMESTAMP)
 	@DateTimeFormat(pattern = "dd.MM.yyyy, HH:mm")

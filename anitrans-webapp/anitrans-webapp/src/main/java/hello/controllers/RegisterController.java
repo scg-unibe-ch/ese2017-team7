@@ -21,7 +21,7 @@ public class RegisterController {
     @GetMapping("/register")
     public String registerForm(Model model) {
         model.addAttribute("user", new hello.User());//create a new user and pass it to register.html
-        return "register";
+        return "register"; //return the template
     }
     
     //Maps post requests for /register. This will need to be implemented, so that a new entry in the User table will be created when someone registers.
@@ -33,7 +33,7 @@ public class RegisterController {
     		}
     	
 		userRepository.save(user); //save the user to the database.
-        return "registration-success";
+        return "registration-success"; //return the template
     }
     
   //Maps get requests for /delete-user. The id of the user to be deleted is passed through the URL.
@@ -48,12 +48,12 @@ public class RegisterController {
         	}
         	
         	if(user.getRole().equals("ROLE_ADMIN")) {
-        		return "delete-user-forbidden";
+        		return "delete-user-forbidden"; //if the user is an admin, it cannot be deleted.
         	}
 
         	
         	userRepository.delete(user); //delete the user.
-    	    	return "delete-user-success";
+    	    	return "delete-user-success"; //return the template
 
     }
 

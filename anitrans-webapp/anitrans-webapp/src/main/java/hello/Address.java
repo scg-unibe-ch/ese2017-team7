@@ -7,7 +7,9 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-//The object to model the database table for users
+/*
+ * This class models the user's address in the database. All of its variables are columns in the database table.
+ */
 @Entity // This tells Hibernate to make a table out of this class
 public class Address {
     @Id

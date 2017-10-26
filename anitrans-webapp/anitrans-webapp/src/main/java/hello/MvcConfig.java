@@ -9,14 +9,17 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 public class MvcConfig extends WebMvcConfigurerAdapter {
-
-  @Bean(name = "dataSource")
+	
+	/*
+	 * Defines where the user information for Spring Security comes from. 
+	 */
+	@Bean(name = "dataSource")
   	public DriverManagerDataSource dataSource() {
 	  DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
 	  driverManagerDataSource.setDriverClassName("com.mysql.jdbc.Driver");
-	  driverManagerDataSource.setUrl("jdbc:mysql://localhost:3306/ese_team7");
-	  driverManagerDataSource.setUsername("root");
-	  driverManagerDataSource.setPassword("");
+	  driverManagerDataSource.setUrl("jdbc:mysql://localhost:3306/ese_team7"); //Database URL
+	  driverManagerDataSource.setUsername("root"); // Database username (standard is root)
+	  driverManagerDataSource.setPassword(""); //Database password (standard is none)
 	  return driverManagerDataSource;
   }
  

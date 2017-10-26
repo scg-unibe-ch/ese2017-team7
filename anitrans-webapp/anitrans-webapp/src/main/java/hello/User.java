@@ -7,7 +7,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.*;
 
-//The object to model the database table for users
+/*
+ * Models the User for the database. Since every user can only have one role, this is stored here as well and not 
+ * in a separate table.
+ */
 @Entity // This tells Hibernate to make a table out of this class
 public class User {
     @Id
@@ -19,12 +22,12 @@ public class User {
     @NotNull
     @Pattern(regexp = "[a-zA-Z0-9_\\-\\.]+@[a-zA-Z0-9_\\-\\.]+\\.\\w+", message = "Please enter a valid email address.")
     @Column(unique=true, nullable = false)
-    private String email;
+    private String email; //needs to conform to a regular email address (characters, digits, _, - and ., then @, then characters, digits, _, - and ., then ., then characters)
     @NotNull
     @Size(min=5, max=30, message = "Please enter a password of between 5 and 30 characters.")
     @Pattern(regexp = "(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])[a-zA-Z0-9_\\-]+", message = "The password has to contain a regular letter, a capital letter and a number.")
-    private String password;
-    private String role = "ROLE_USER"; //email: mathias.fuchs@anitrans.ch password: theboss
+    private String password; //needs to contain a capital letter, a small letter and a number.
+    private String role = "ROLE_USER"; //Standard role is ROLE_USER. ROLE_ADMIN login info: email: mathias.fuchs@anitrans.ch password: theboss.
     boolean enabled = true;
     
     public User(Integer id, String name, String email, String password, String role) {

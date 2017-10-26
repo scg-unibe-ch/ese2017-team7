@@ -41,14 +41,14 @@ public class EditOrderController {
     		}
     		
     		if(new Date().after(order.getStartTime())) { //if the delivery has already started, the user is redirected to edit-order-forbidden.html.
-    			return "edit-order-forbidden";
+    			return "edit-order-forbidden"; //return the template
     		}
     		
     		hello.NewOrder newOrder = new hello.NewOrder(order, order.getFromAddr(), order.getToAddr());
     		
     		model.addAttribute("order", newOrder); //passes the order to edit-order.html
     		model.addAttribute("users", userRepository.findAll()); //passes all the users to edit-order.html. This is needed to select the driver.
-        return "edit-order";
+        return "edit-order"; //return the template
     }
     
     // Maps post requests for /edit-order.
@@ -57,18 +57,19 @@ public class EditOrderController {
     		if (bindingResult.hasErrors()) { //Checks if the edited order is still valid. If it's not, the user is sent back to correct the mistakes. Incorrect values will be marked.
     			model.addAttribute("order", order);
     			model.addAttribute("users", userRepository.findAll());
-            return "edit-order";
+            return "edit-order"; //return the template
     		}
     		
+    		// create addresses and aniOrders from the data
     		hello.Address fromAddress = new hello.Address(order.getFromName(), order.getFromStreet(), order.getFromTown(), order.getFromPlz());
     		hello.Address toAddress = new hello.Address(order.getToName(), order.getToStreet(), order.getToTown(), order.getToPlz());
     		hello.AniOrder aniOrder = new hello.AniOrder(order, fromAddress, toAddress);
     		
-    		addressRepository.save(fromAddress);
-    		addressRepository.save(toAddress);
+    		addressRepository.save(fromAddress); //save the address to the database.
+    		addressRepository.save(toAddress); //save the address to the database.
 		orderRepository.save(aniOrder); //save the order to the database.
 		newOrderRepository.delete(order);
-		return "edit-order-success";
+		return "edit-order-success"; //return the template
     }
     
     //Maps get requests for /delete-order. The id of the order to be deleted is passed through the URL.

@@ -8,6 +8,9 @@ import hello.User;
 // CRUD refers Create, Read, Update, Delete
 // The repository for the user object. Methods to search the database will go in here.
 
+/*
+ * Repository for NewOrders. These are only used to pass information from the form-fields to the AniOrder table.
+ */
 public interface NewOrderRepository extends CrudRepository<NewOrder, Long> {
 	
 

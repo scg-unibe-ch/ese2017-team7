@@ -25,7 +25,10 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-
+/*
+ * Service used to find users and their roles for the login process. 
+ * Shouldn't have to be changed.
+ */
 @Service
 public class UserRepositoryUserDetailsService implements UserDetailsService {
  
@@ -36,7 +39,13 @@ public class UserRepositoryUserDetailsService implements UserDetailsService {
     public UserRepositoryUserDetailsService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-
+    
+    /*
+     * (non-Javadoc)
+     * @see org.springframework.security.core.userdetails.UserDetailsService#loadUserByUsername(java.lang.String)
+     * 
+     * Finds the user by email, but needs to be called loadUserByUsername.
+     */
     @Override
     public UserDetails loadUserByUsername(String username)
             throws UsernameNotFoundException {
@@ -44,10 +53,12 @@ public class UserRepositoryUserDetailsService implements UserDetailsService {
         if(user == null) {
             throw new UsernameNotFoundException("Could not find user " + username);
         }
-        //List<GrantedAuthority> authorities = convert(user.getRole());
         return new CustomUserDetails(user);
     }
     
+    /*
+     * Needed to store additional info for the user.
+     */
     private final static class CustomUserDetails extends User implements UserDetails {
     		
 

@@ -6,7 +6,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
-//The object is created when someone tries to log in
+/* 
+ * The object is created when someone tries to log in.
+ * Isn't used anymore now that Spring Security is implemented.
+ */
 public class Login {
 	@NotNull
     private String email;

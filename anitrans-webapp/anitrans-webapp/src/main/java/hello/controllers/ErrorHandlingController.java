@@ -11,7 +11,8 @@ import org.springframework.boot.autoconfigure.web.ErrorController;
 public class ErrorHandlingController implements ErrorController{
 
     private static final String PATH = "/error";
-
+    
+    //returns the custom error page instead of the regular whitepage
     @RequestMapping(value = PATH)
     public String error() {
         return "errorPage";

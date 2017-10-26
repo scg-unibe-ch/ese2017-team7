@@ -20,7 +20,7 @@ public class OrdersController {
     @RequestMapping("/orders")
     	public String orders(Model model) {
     	    model.addAttribute("orders", orderRepository.findAll()); //Finds all the orders which are to be displayed in orders.html
-    	    return "orders";
+    	    return "orders"; //returns the template 
     }
 
 }

@@ -14,6 +14,7 @@ public class HomeController {
         return "index";
     }
 	
+  //Maps all requests of the main address. This only needs to return a static page named index.html
     @RequestMapping("/")
     public String index() {
         return "index";

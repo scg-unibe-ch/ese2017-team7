@@ -26,8 +26,7 @@ public class LoginController {
     		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
     		if (!(auth instanceof AnonymousAuthenticationToken)) {
 
-    			/* The user is logged in :) */
-    			return "logout";
+    			return "logout"; // the user is already logged in, so send him to the logout page.
     		}
     	
         model.addAttribute("login", new hello.Login()); //creates a new user. This will need to be changed once the login is implemented.

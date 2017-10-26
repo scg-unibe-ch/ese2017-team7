@@ -16,6 +16,7 @@ public class ToursController {
 	@Autowired
 	private hello.UserRepository userRepository;
 	
+	//returns the username (email) of the user who is currently logged in.
 	public String getUserName() {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		if (!(authentication instanceof AnonymousAuthenticationToken)) {
@@ -30,11 +31,11 @@ public class ToursController {
     @RequestMapping("/tours")
     public String index(Model model) {
     		if(!getUserName().equals("")) {
-    			hello.User currentUser = userRepository.findByEmail(getUserName());
-    			model.addAttribute("orders", orderRepository.findByDriver(currentUser.getName())); //Finds all the orders to be displayed on tours.html
-    	        return "tours";		
+    			hello.User currentUser = userRepository.findByEmail(getUserName()); //gets the user who is currently logged in
+    			model.addAttribute("orders", orderRepository.findByDriver(currentUser.getName())); //Finds all the orders to be displayed on tours.html (only the ones which the current user is driving).
+    	        return "tours";	//return the template	
     		} else {
-    			return "tours";
+    			return "tours"; //return the template
     		}
     		
     }

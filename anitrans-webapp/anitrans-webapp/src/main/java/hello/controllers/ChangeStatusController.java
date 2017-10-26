@@ -38,7 +38,7 @@ public class ChangeStatusController {
 		
 		model.addAttribute("order", newOrder); //passes the order to change-status.html
 		model.addAttribute("users", userRepository.findAll()); //passes all the users to change-status.html. this is needed to select the driver.
-    return "change-status";
+    return "change-status"; //return the template
     }
     
     //Maps post requests for /change-status. 
@@ -47,18 +47,19 @@ public class ChangeStatusController {
     		if (bindingResult.hasErrors()) { //check if the changed order is still valid. If it has errors, send the user back to correct them. Wrong values will be marked.
 			model.addAttribute("order", order);
 			model.addAttribute("users", userRepository.findAll());
-        return "change-status";
+        return "change-status"; //return the template
 		}
 		
+    		//create addresses and aniOrders from the data.
     		hello.Address fromAddress = new hello.Address(order.getFromName(), order.getFromStreet(), order.getFromTown(), order.getFromPlz());
     		hello.Address toAddress = new hello.Address(order.getToName(), order.getToStreet(), order.getToTown(), order.getToPlz());
     		hello.AniOrder aniOrder = new hello.AniOrder(order, fromAddress, toAddress);
     		
-    		addressRepository.save(fromAddress);
-    		addressRepository.save(toAddress);
+    		addressRepository.save(fromAddress); //save the address to the database.
+    		addressRepository.save(toAddress); //save the address to the database.
 		orderRepository.save(aniOrder); //save the order to the database.
 		newOrderRepository.delete(order);
-        return "change-status-success";
+        return "change-status-success"; //return the template
     }
 
 }

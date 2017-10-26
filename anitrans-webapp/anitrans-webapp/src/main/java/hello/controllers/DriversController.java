@@ -14,7 +14,7 @@ public class DriversController {
 	// Maps the /drivers subpage and implements its connection with the database and the "Users" table.
     @RequestMapping("/drivers")
     public String index(Model model) {
-    		model.addAttribute("drivers", userRepository.findAll()); //Finds all the orders which are to be displayed in orders.html
+    		model.addAttribute("drivers", userRepository.findAll()); //Finds all the drivers which are to be displayed in drivers.html
         return "drivers";
     }
 

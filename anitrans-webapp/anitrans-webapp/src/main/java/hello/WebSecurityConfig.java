@@ -26,6 +26,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	DataSource dataSource;
 	
+	/*
+	 * Used to find user info for the login process.
+	 */
 	@Autowired
 	public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
 		auth.jdbcAuthentication().dataSource(dataSource)
@@ -33,6 +36,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.authoritiesByUsernameQuery("select email, role from user where email=?");
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * @see org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter#configure(org.springframework.security.config.annotation.web.builders.HttpSecurity)
+	 * 
+	 * Defines which rights are needed to view certain pages.
+	 * Possible rights are none (can only see .permitAll()), ADMIN (the boss, can see everything 
+	 * and USER (drivers, can only see their tours).
+	 */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -52,7 +63,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         			.and()
         		.exceptionHandling().accessDeniedPage("/error");
     }
-
+    
+    /*
+     * Configures the valid username-password combination.
+     * They are taken from the database using the userDetailsService (UserRepositoryDetailsService).
+     * This is where one would define additional users, which are not found in the database.
+     */
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth, UserDetailsService userDetailsService) throws Exception {
     		auth

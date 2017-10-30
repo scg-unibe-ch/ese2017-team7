@@ -27,7 +27,7 @@ public class AniOrder {
 	private String timeframe;
 	private String typeOfAnimal;
 	private Integer numberOfAnimals;
-	private String timeEstimation;
+	private float timeEstimation;
 	@Temporal(TemporalType.TIMESTAMP)
 	@DateTimeFormat(pattern = "yyyy-mm-dd'T'HH:mm")
 	private Date startTime;
@@ -112,11 +112,11 @@ public class AniOrder {
         this.numberOfAnimals = numberOfAnimals;
     }
     
-    public String getTimeEstimation() {
+    public float getTimeEstimation() {
         return timeEstimation;
     }
 
-    public void setTimeEstimation(String timeEstimation) {
+    public void setTimeEstimation(float timeEstimation) {
         this.timeEstimation = timeEstimation;
     }
     

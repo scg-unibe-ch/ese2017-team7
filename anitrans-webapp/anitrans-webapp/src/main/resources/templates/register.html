@@ -24,6 +24,7 @@
 <h1><img src="images/logo.png" width="45" height="40" alt="logo" id="logo" />Register</h1>
 </div>
 
+<p th:text="${errorMsg}"></p>
 <div class="ex0"> 
 <form action="#" th:action="@{/register}" th:object="${user}" method="post">
 	<p>Name:<input type="text" th:field="*{name}"/></p>

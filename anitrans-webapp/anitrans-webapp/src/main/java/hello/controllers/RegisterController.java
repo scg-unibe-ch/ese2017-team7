@@ -26,11 +26,15 @@ public class RegisterController {
     
     //Maps post requests for /register. This will need to be implemented, so that a new entry in the User table will be created when someone registers.
     @PostMapping("/register")
-    public String registerSubmit(@Valid @ModelAttribute hello.User user, BindingResult bindingResult) {
+    public String registerSubmit(@Valid @ModelAttribute hello.User user, BindingResult bindingResult, Model model) {
+    if	(userRepository.findByEmail(user.getEmail()) != null) {
+    		model.addAttribute("errorMsg", "There is already someone registered with that email address.");
+    		return "register";
+    }
     	if (bindingResult.hasErrors()) { //if the new user has errors, send the user back to correct the mistakes. Invalid fields will be marked.
-    			System.out.println("in");
             return "register";
-    		}
+    	}
+    	
     	
 		userRepository.save(user); //save the user to the database.
         return "registration-success"; //return the template

@@ -32,8 +32,9 @@ public class AddOrderController {
     
     //Maps post requests for /add-order
     @PostMapping("/add-order")
-    public String orderSubmit(@Valid @ModelAttribute hello.NewOrder order, BindingResult bindingResult) {
+    public String orderSubmit(@Valid @ModelAttribute hello.NewOrder order, BindingResult bindingResult, Model model) {
     		if (bindingResult.hasErrors()) { //if the new order has errors, send the user back to correct the mistakes. Invalid fields will be marked.
+    			model.addAttribute("users", userRepository.findAll()); //find all the users and pass them to add-order.html. This is needed to select the driver.
             return "add-order"; //returns the template
     		}
     		

@@ -36,6 +36,14 @@
 
 	
     <form action="#" th:action="@{/add-order}" th:object="${newOrder}" method="post">
+    		<div th:if="${#fields.hasErrors('*')}">
+                <h3>Please fix the following error(s)</h3>
+          <ul>
+            <li th:each="err : ${#fields.errors('*')}"
+                th:text="${err}">Input is incorrect</li>
+          </ul>
+        </div>
+    	
         <p>From: </p>
         <p>Name: <input type="text" th:field="*{fromName}" /></p>
         <p th:if="${#fields.hasErrors('fromName')}" th:errors="*{fromName}">From Name Error</p>
@@ -62,10 +70,11 @@
         <p th:if="${#fields.hasErrors('typeOfAnimal')}" th:errors="*{typeOfAnimal}">Type of Animal Error</p>
         <p>Number of Animals: <input type="text" th:field="*{numberOfAnimals}" /></p>
         <p th:if="${#fields.hasErrors('numberOfAnimals')}" th:errors="*{numberOfAnimals}">Number of Animals Error</p>
-        <p>Time Estimation: <input type="text" th:field="*{timeEstimation}" placeholder="HH hours"/></p>
+        <p>Time Estimation (in hrs): <input type="text" th:field="*{timeEstimation}" placeholder="HH"/></p>
         <p th:if="${#fields.hasErrors('timeEstimation')}" th:errors="*{timeEstimation}" >Time Estimation Error</p>
         <p>Start Time: <input type="text" th:field="*{startTime}" placeholder="dd.MM.yyyy, HH:mm"/> </p>
         <p th:if="${#fields.hasErrors('startTime')}" th:errors="*{startTime}">Start Time Error</p>
+        <form:errors path=""></form:errors>
     
         <p>Driver: <select th:field="*{driver}">
         		<option

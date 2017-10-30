@@ -51,7 +51,7 @@
         <p th:if="${#fields.hasErrors('typeOfAnimal')}" th:errors="*{typeOfAnimal}">Type of Animal Error</p>
         <p>Number of Animals: <input type="text" th:value="${order.numberOfAnimals}" th:field="*{numberOfAnimals}" th:readonly="readonly"/></p>
         <p th:if="${#fields.hasErrors('numberOfAnimals')}" th:errors="*{numberOfAnimals}">Number of Animals Error</p>
-        <p>Time Estimation: <input type="text" th:value="${order.timeEstimation}" th:field="*{timeEstimation}" th:readonly="readonly"/></p>
+        <p>Time Estimation (in hrs): <input type="text" th:value="${order.timeEstimation}" th:field="*{timeEstimation}" th:readonly="readonly"/></p>
         <p th:if="${#fields.hasErrors('timeEstimation')}" th:errors="*{timeEstimation}">Time Estimation Error</p>
         <p>Start Time: <input type="text" th:value="${#dates.format(order.startTime, 'dd.MM.yyyy, HH:mm')}" th:field="*{startTime}" th:readonly="readonly"/></p>
         <p th:if="${#fields.hasErrors('startTime')}" th:errors="*{startTime}">Start Time Error</p>

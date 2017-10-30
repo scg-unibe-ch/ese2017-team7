@@ -1,0 +1,5 @@
+package hello.annotations;
+
+public class MyScriptAssertValidator {
+
+}

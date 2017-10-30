@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+<title>aniTrans | Register</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+<div id='container'>
+            <div id='header'> 
+                <img src="images/banner.jpg" alt="header" id='header_img' />
+                <ul id='nav'>
+                    <li class='nav_element1'><a href="index.html">Home</a></li>
+                    <div sec:authorize="hasRole('ROLE_ADMIN')"><li class='nav_element2'><a href="orders">Orders</a></li></div>
+                    <div sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_USER')"><li class='nav_element2'><a href="tours.html">Tours</a></li></div>
+                    <div sec:authorize="hasRole('ROLE_ADMIN')"><li class='nav_element4'><a href="drivers.html">Drivers</a></li></div>
+                    <li class='nav_element3'><a href="login.html" class="active">Account</a></li>
+                </ul>
+            </div>
+             
+<div class="ex0">
+<h1><img src="images/logo.png" width="45" height="40" alt="logo" id="logo" />Register</h1>
+</div>
+
+<div class="ex0"> 
+<form action="#" th:action="@{/register}" th:object="${user}" method="post">
+	<p>Name:<input type="text" th:field="*{name}"/></p>
+	<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</p>
+	<p>E-Mail:<input type="email" th:field="*{email}"/></p>
+	<p th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</p>
+    <p>Password:<input type="password" th:field="*{password}"/></p>
+    <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</p>
+    <p><input type="submit" value="Register" /></p>
+    </form>
+    </div>
+
+
+
+</div>       
+    
+    
+</body>
+</html>

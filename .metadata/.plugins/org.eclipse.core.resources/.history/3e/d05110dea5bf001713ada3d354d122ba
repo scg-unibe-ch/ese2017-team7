@@ -1,0 +1,71 @@
+package hello;
+
+import javax.persistence.Entity;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.*;
+
+/*
+ * Models the Vehicle for the database. Since every user can only have one role, this is stored here as well and not 
+ * in a separate table.
+ */
+@Entity // This tells Hibernate to make a table out of this class
+public class Vehicle {
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Integer id;
+    @NotNull
+    private int numberOfVehicles = 1;
+    @NotNull
+    @Size(min=1, max=255, message = "Please add the name of an image as name.jpg or name.png.")
+    @Pattern(regexp = "[\\s\\S]+((.png)|(.jpg)|(.jpeg)|(.JPG)|(.JPEG)|(.PNG))", message = "Please add the name of an image as name.jpg or name.png.")
+    private String image; //images can be .jpg or .png
+    @NotNull
+    @Pattern(regexp = "[a-zA-Z0-9_\\-\\.]+@[a-zA-Z0-9_\\-\\.]+\\.\\w+", message = "Please enter the name of the vehicle.")
+    private String name; 
+    
+    
+    public Vehicle(Integer id, String image, String name) {
+    		this.id = id;
+    		this.image = image;
+    		this.name = name;
+    }
+    
+    public Vehicle(Vehicle vehicle) {
+    		this.id = vehicle.getId();
+    		this.image = vehicle.getImage();
+		this.name = vehicle.getName();
+    }
+    
+    public Vehicle() {
+    	
+    }
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+}
+

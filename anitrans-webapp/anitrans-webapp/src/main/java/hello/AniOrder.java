@@ -32,6 +32,7 @@ public class AniOrder {
 	@DateTimeFormat(pattern = "yyyy-mm-dd'T'HH:mm")
 	private Date startTime;
 	private String driver;
+	private String vehicle;
 	private String orderStatus = "undelivered"; //can be either "delivered" or "undelivered"
 	private String statusMessage = "";
 	@Autowired
@@ -47,6 +48,7 @@ public class AniOrder {
 		setTimeEstimation(order.getTimeEstimation());
 		setStartTime(order.getStartTime());
 		setDriver(order.getDriver());
+		setVehicle(order.getVehicle());
 		setOrderStatus(order.getOrderStatus());
 		setStatusMessage(order.getStatusMessage());	
 	}
@@ -136,6 +138,14 @@ public class AniOrder {
         this.driver = driver;
     }
     
+    public String getVehicle() {
+    		return vehicle;
+    }
+    
+    public void setVehicle(String vehicle) {
+    		this.vehicle = vehicle;
+    }
+    
     public String getOrderStatus() {
         return orderStatus;
     }
@@ -151,7 +161,5 @@ public class AniOrder {
     public void setStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
     }
-  
-    
 
 }

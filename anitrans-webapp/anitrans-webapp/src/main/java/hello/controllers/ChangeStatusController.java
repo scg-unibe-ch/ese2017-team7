@@ -21,6 +21,8 @@ public class ChangeStatusController {
 	private hello.AddressRepository addressRepository;
 	@Autowired
 	private hello.NewOrderRepository newOrderRepository;
+	@Autowired
+	private hello.VehicleRepository vehicleRepository;
 
 	/*
 	 * Maps get requests for /change-status. The id of the order to be edited has to be passed through the URL.
@@ -38,6 +40,7 @@ public class ChangeStatusController {
 		
 		model.addAttribute("order", newOrder); //passes the order to change-status.html
 		model.addAttribute("users", userRepository.findAll()); //passes all the users to change-status.html. this is needed to select the driver.
+		model.addAttribute("vehicles", vehicleRepository.findAll()); //find all the vehicles and pass them to add-order.html. This is needed to select the vehicle.
     return "change-status"; //return the template
     }
     
@@ -47,6 +50,7 @@ public class ChangeStatusController {
     		if (bindingResult.hasErrors()) { //check if the changed order is still valid. If it has errors, send the user back to correct them. Wrong values will be marked.
 			model.addAttribute("order", order);
 			model.addAttribute("users", userRepository.findAll());
+			model.addAttribute("vehicles", vehicleRepository.findAll()); //find all the vehicles and pass them to add-order.html. This is needed to select the vehicle.
         return "change-status"; //return the template
 		}
 		

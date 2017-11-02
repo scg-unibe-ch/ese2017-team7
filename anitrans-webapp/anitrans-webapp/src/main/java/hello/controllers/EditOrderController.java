@@ -25,6 +25,9 @@ public class EditOrderController {
 	private hello.AddressRepository addressRepository;
 	@Autowired
 	private hello.NewOrderRepository newOrderRepository;
+	@Autowired
+	private hello.VehicleRepository vehicleRepository;
+	
 	//Gets the current time to check if a tour has already started. If it has in may not be edited or deleted.
 	@Temporal(TemporalType.TIME)
 	@DateTimeFormat(pattern = "HH:mm")
@@ -48,6 +51,7 @@ public class EditOrderController {
     		
     		model.addAttribute("order", newOrder); //passes the order to edit-order.html
     		model.addAttribute("users", userRepository.findAll()); //passes all the users to edit-order.html. This is needed to select the driver.
+    		model.addAttribute("vehicles", vehicleRepository.findAll()); //find all the vehicles and pass them to add-order.html. This is needed to select the vehicle.
         return "edit-order"; //return the template
     }
     
@@ -57,6 +61,7 @@ public class EditOrderController {
     		if (bindingResult.hasErrors()) { //Checks if the edited order is still valid. If it's not, the user is sent back to correct the mistakes. Incorrect values will be marked.
     			model.addAttribute("order", order);
     			model.addAttribute("users", userRepository.findAll());
+    			model.addAttribute("vehicles", vehicleRepository.findAll()); //find all the vehicles and pass them to add-order.html. This is needed to select the vehicle.
             return "edit-order"; //return the template
     		}
     		

@@ -1,0 +1,85 @@
+package hello;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.servlet.configuration.EnableWebMvcSecurity;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import javax.sql.DataSource;
+import org.thymeleaf.spring4.SpringTemplateEngine;
+import org.thymeleaf.templateresolver.TemplateResolver;
+
+
+@Configuration
+@EnableWebSecurity
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+	@Autowired
+	DataSource dataSource;
+	
+	/*
+	 * Used to find user info for the login process.
+	 */
+	@Autowired
+	public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
+		auth.jdbcAuthentication().dataSource(dataSource)
+				.usersByUsernameQuery("select email, password, enabled from user where email=?")
+				.authoritiesByUsernameQuery("select email, role from user where email=?");
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter#configure(org.springframework.security.config.annotation.web.builders.HttpSecurity)
+	 * 
+	 * Defines which rights are needed to view certain pages.
+	 * Possible rights are none (can only see .permitAll()), ADMIN (the boss, can see everything 
+	 * and USER (drivers, can only see their tours).
+	 */
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+            .authorizeRequests()
+                .antMatchers("/", "/index", "/index.html", "/register", "/register.html", "/css/*", "/images/*").permitAll()
+                .antMatchers("/orders", "/orders.html", "/add-order", "/edit-order", "/delete-order", "/drivers", "/delete-driver", 
+                		"/add-order.html", "/edit-order.html", "/delete-order.html", "/drivers.html", "/delete-driver.html", 
+                		"/vehicles.html", "/delete-vehicle.html", "/vehicles", "/delete-vehicle", "/add-vehicle.html", "/new-vehicle.html", 
+                		"/add-vehicle.", "/new-vehicle").access("hasRole('ADMIN')")
+                .antMatchers("/tours", "/change-status", "/tours.html", "/change-status.html", "/logout", "/logout.html").access("hasRole('ADMIN') or hasRole('USER')")
+                .anyRequest().authenticated()
+                .and()
+            .formLogin()
+                .loginPage("/login")
+                .permitAll()
+                .and()
+            .logout()
+                .permitAll()
+        			.and()
+        		.exceptionHandling().accessDeniedPage("/error");
+    }
+    
+    /*
+     * Configures the valid username-password combination.
+     * They are taken from the database using the userDetailsService (UserRepositoryDetailsService).
+     * This is where one would define additional users, which are not found in the database.
+     */
+    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder auth, UserDetailsService userDetailsService) throws Exception {
+    		auth
+    			.userDetailsService(userDetailsService);
+
+    }
+    
+
+ }

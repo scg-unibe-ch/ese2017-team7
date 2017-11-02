@@ -21,12 +21,15 @@ public class AddOrderController {
 	private hello.AddressRepository addressRepository;
 	@Autowired
 	private hello.NewOrderRepository newOrderRepository;
+	@Autowired
+	private hello.VehicleRepository vehicleRepository;
 	
 	 //Maps get requests for /add-order. 
     @GetMapping("/add-order")
     public String orderForm(Model model) {
     		model.addAttribute("newOrder", new hello.NewOrder());  //create a new order and pass it to add-order.html
     		model.addAttribute("users", userRepository.findAll()); //find all the users and pass them to add-order.html. This is needed to select the driver.
+    		model.addAttribute("vehicles", vehicleRepository.findAll()); //find all the vehicles and pass them to add-order.html. This is needed to select the vehicle.
         return "add-order"; //returns the template
     }
     
@@ -35,6 +38,7 @@ public class AddOrderController {
     public String orderSubmit(@Valid @ModelAttribute hello.NewOrder order, BindingResult bindingResult, Model model) {
     		if (bindingResult.hasErrors()) { //if the new order has errors, send the user back to correct the mistakes. Invalid fields will be marked.
     			model.addAttribute("users", userRepository.findAll()); //find all the users and pass them to add-order.html. This is needed to select the driver.
+    			model.addAttribute("vehicles", vehicleRepository.findAll()); //find all the vehicles and pass them to add-order.html. This is needed to select the vehicle.
             return "add-order"; //returns the template
     		}
     		

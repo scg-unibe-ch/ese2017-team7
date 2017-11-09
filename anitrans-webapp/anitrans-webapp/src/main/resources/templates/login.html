@@ -33,17 +33,19 @@
         <div th:if="${param.logout}">
             You have been logged out.
         </div>
+        
         <form th:action="@{/login}" method="post">
-            <div><label> E-Mail : <input type="text" name="username"/> </label></div>
-            <div><label> Password: <input type="password" name="password"/> </label></div>
-            <div><input type="submit" value="Sign In"/></div>
+            <label> E-Mail: <input type="text" name="username"/></label>
+            <br/>
+            <label>Password: <input type="password" name="password"/></label>
+           <p><label><button class='b1'>Sign In</button></label></p>
         </form>
         </div>
 
-<div class="ex8">    
-		<h1>Register</h1> 
+<div class="ex0">
+			<h1><img src="images/logo.png" width="45" height="40" alt="logo" id="logo" />Register</h1>
 		<form action="/register.html">
-            <input type="submit" value="Register"/>
+            <button class='b1'>Register</button>
         </form>       
 </div>
 </div>  

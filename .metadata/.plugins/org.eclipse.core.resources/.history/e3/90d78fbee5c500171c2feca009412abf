@@ -54,6 +54,7 @@ public class EditOrderController {
     		model.addAttribute("order", newOrder); //passes the order to edit-order.html
     		model.addAttribute("users", userRepository.findAll()); //passes all the users to edit-order.html. This is needed to select the driver.
     		model.addAttribute("vehicles", vehicleRepository.findAll()); //find all the vehicles and pass them to add-order.html. This is needed to select the vehicle.
+    		orderRepository.delete(order);
         return "edit-order"; //return the template
     }
     
@@ -71,7 +72,7 @@ public class EditOrderController {
     		}
     		
     		//Get the custom errors and if there are any, send the user back to correct his results.
-    		if(bindingResult.hasErrors() || (vehicle != null && counter.countVehiclesInUse(vehicle, order.getUntil(), order.getOrderId()) >= vehicle.getNumberOfVehicles()) || (driver != null && counter.checkIfDriverBusy(driver, order.getUntil(), order.getOrderId()))) {
+    		if(bindingResult.hasErrors() || (vehicle != null && counter.countVehiclesInUse(vehicle, order.getUntil()) >= vehicle.getNumberOfVehicles()) || (driver != null && counter.checkIfDriverBusy(driver, order.getUntil()))) {
         		model = getErrors(order, bindingResult, model);
         		model.addAttribute("order", order);
         		model.addAttribute("users", userRepository.findAll()); //find all the users and pass them to add-order.html. This is needed to select the driver.
@@ -85,6 +86,8 @@ public class EditOrderController {
     		hello.Address fromAddress = new hello.Address(order.getFromName(), order.getFromStreet(), order.getFromTown(), order.getFromPlz());
     		hello.Address toAddress = new hello.Address(order.getToName(), order.getToStreet(), order.getToTown(), order.getToPlz());
     		hello.AniOrder aniOrder = new hello.AniOrder(order, fromAddress, toAddress);
+    		
+    		System.out.println(order.getId());
     		
     		addressRepository.save(fromAddress); //save the address to the database.
     		addressRepository.save(toAddress); //save the address to the database.
@@ -122,11 +125,11 @@ public class EditOrderController {
     		hello.Vehicle vehicle = vehicleRepository.findByName(order.getVehicle());
     		hello.User driver = userRepository.findById(order.getDriverId());
 		
-		if(counter.countVehiclesInUse(vehicle, order.getUntil(), order.getOrderId()) >= vehicle.getNumberOfVehicles()) {
+		if(counter.countVehiclesInUse(vehicle, order.getUntil()) >= vehicle.getNumberOfVehicles()) {
 			model.addAttribute("vehicleError", "The chosen vehicle isn't available on the chosen date.");
 		}
     		
-		if(counter.checkIfDriverBusy(driver, order.getUntil(), order.getOrderId())) {
+		if(counter.checkIfDriverBusy(driver, order.getUntil())) {
 			model.addAttribute("driverError", "The chosen driver isn't available on the chosen date.");
 		}
     	

@@ -122,11 +122,11 @@ public class EditOrderController {
     		hello.Vehicle vehicle = vehicleRepository.findByName(order.getVehicle());
     		hello.User driver = userRepository.findById(order.getDriverId());
 		
-		if(counter.countVehiclesInUse(vehicle, order.getUntil(), order.getOrderId()) >= vehicle.getNumberOfVehicles()) {
+		if(counter.countVehiclesInUse(vehicle, order.getUntil()) >= vehicle.getNumberOfVehicles()) {
 			model.addAttribute("vehicleError", "The chosen vehicle isn't available on the chosen date.");
 		}
     		
-		if(counter.checkIfDriverBusy(driver, order.getUntil(), order.getOrderId())) {
+		if(counter.checkIfDriverBusy(driver, order.getUntil())) {
 			model.addAttribute("driverError", "The chosen driver isn't available on the chosen date.");
 		}
     	

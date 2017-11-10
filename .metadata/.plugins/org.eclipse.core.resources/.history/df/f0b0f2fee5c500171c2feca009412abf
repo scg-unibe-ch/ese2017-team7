@@ -20,7 +20,7 @@ public class CounterService {
 	/*
 	 * Counts how many of a vehicle type are in use on a specific date
 	 */
-	public int countVehiclesInUse(hello.Vehicle vehicleType, Date date, int orderId) {
+	public int countVehiclesInUse(hello.Vehicle vehicleType, Date date) {
 		Iterable<hello.AniOrder> orders = orderRepository.findAll();
 		int counter = 0;
 		
@@ -30,7 +30,7 @@ public class CounterService {
 		if(vehicleType != null) {
 			for(hello.AniOrder order : orders) {
 				hello.Vehicle currentVehicle = vehicleRepository.findByName(order.getVehicle());
-				if(currentVehicle != null && (currentVehicle.getId() == vehicleType.getId()) && order.getId() != orderId) {
+				if(currentVehicle != null && (currentVehicle.getId() == vehicleType.getId())) {
 					if(((date.getTime() - order.getUntil().getTime() < 86400000) && (date.getTime() - order.getUntil().getTime() >= 0)) || ((date.getTime() - order.getUntil().getTime() > -86400000) && (date.getTime() - order.getUntil().getTime() <= 0))) {
 						counter++;
 					}	
@@ -45,7 +45,7 @@ public class CounterService {
 	/*
 	 * Checks if a driver is busy on a specific date.
 	 */
-	public boolean checkIfDriverBusy(hello.User driver, Date date, int orderId) {
+	public boolean checkIfDriverBusy(hello.User driver, Date date) {
 		Iterable<hello.AniOrder> orders = orderRepository.findAll();
 		boolean busy = false;
 		
@@ -58,7 +58,7 @@ public class CounterService {
 				int currentDriverId = order.getDriverId();
 				if(currentDriverId != -1) {
 					hello.User currentDriver = userRepository.findById(currentDriverId);
-					if(currentDriver != null && (currentDriver.getId() == driver.getId())  && order.getId() != orderId) {
+					if(currentDriver != null && (currentDriver.getId() == driver.getId())) {
 						if(((date.getTime() - order.getUntil().getTime() < 86400000) && (date.getTime() - order.getUntil().getTime() >= 0)) || ((date.getTime() - order.getUntil().getTime() > -86400000) && (date.getTime() - order.getUntil().getTime() <= 0))) {
 							busy = true;
 						}	

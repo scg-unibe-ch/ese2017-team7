@@ -71,7 +71,7 @@ public class EditOrderController {
     		}
     		
     		//Get the custom errors and if there are any, send the user back to correct his results.
-    		if(bindingResult.hasErrors() || (vehicle != null && counter.countVehiclesInUse(vehicle, order.getUntil(), order.getOrderId()) >= vehicle.getNumberOfVehicles()) || (driver != null && counter.checkIfDriverBusy(driver, order.getUntil(), order.getOrderId()))) {
+    		if(bindingResult.hasErrors() || (vehicle != null && counter.countVehiclesInUse(vehicle, order.getUntil()) >= vehicle.getNumberOfVehicles()) || (driver != null && counter.checkIfDriverBusy(driver, order.getUntil()))) {
         		model = getErrors(order, bindingResult, model);
         		model.addAttribute("order", order);
         		model.addAttribute("users", userRepository.findAll()); //find all the users and pass them to add-order.html. This is needed to select the driver.
@@ -122,11 +122,11 @@ public class EditOrderController {
     		hello.Vehicle vehicle = vehicleRepository.findByName(order.getVehicle());
     		hello.User driver = userRepository.findById(order.getDriverId());
 		
-		if(counter.countVehiclesInUse(vehicle, order.getUntil(), order.getOrderId()) >= vehicle.getNumberOfVehicles()) {
+		if(counter.countVehiclesInUse(vehicle, order.getUntil()) >= vehicle.getNumberOfVehicles()) {
 			model.addAttribute("vehicleError", "The chosen vehicle isn't available on the chosen date.");
 		}
     		
-		if(counter.checkIfDriverBusy(driver, order.getUntil(), order.getOrderId())) {
+		if(counter.checkIfDriverBusy(driver, order.getUntil())) {
 			model.addAttribute("driverError", "The chosen driver isn't available on the chosen date.");
 		}
     	

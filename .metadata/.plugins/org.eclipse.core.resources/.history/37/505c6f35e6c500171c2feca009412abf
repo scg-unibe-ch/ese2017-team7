@@ -39,7 +39,7 @@ public class VehicleController {
         		Date currentDate = new Date(); //Is automatically set to the current date
     			
     			this.vehicle = vehicle;
-    			this.availableVehicles = vehicle.getNumberOfVehicles() - counter.countVehiclesInUse(vehicle, currentDate, -1); //-1 is passed as the order id because there is no order id which is relevant
+    			this.availableVehicles = vehicle.getNumberOfVehicles() - counter.countVehiclesInUse(vehicle, currentDate, -1);
     		}
     		
     		public hello.Vehicle getVehicle(){

@@ -32,6 +32,8 @@
                 th:text="${err}">Input is incorrect</li>
           </ul>
         </div>
+        <p th:text="${vehicleError}"></p>
+        		<p th:text="${driverError}"></p>
     
     		<p>Order Number: <input type="text" th:value="${order.orderId}" th:field="*{orderId}" th:readonly="readonly"/></p>
     		
@@ -70,10 +72,11 @@
          		 th:value="none"
          		 th:text="none">Driver</option>
   			<option th:each="user : ${users}" 
-         		 th:value="${user.name}"
-         		 th:text="${user.name}">Driver</option>
+         		 th:value="${user.id + ' - ' + user.name}"
+         		 th:text="${user.id + ' - ' + user.name}">Driver</option>
 		</select></p>
         <p th:if="${#fields.hasErrors('driver')}" th:errors="*{driver}">Driver Error</p>
+        <p th:text="${driverError}"></p>
         
         <p>Vehicle: <select th:field="*{vehicle}" th:value="${order.vehicle}">
         		<option
@@ -84,6 +87,7 @@
          		 th:text="${vehicle.name}">Vehicle</option>
 		</select></p>
         <p th:if="${#fields.hasErrors('vehicle')}" th:errors="*{vehicle}">Vehicle Error</p>
+        <p th:text="${vehicleError}"></p>
         
         <p>Status: <select th:field="*{orderStatus}" th:value="${order.orderStatus}">
         		<option

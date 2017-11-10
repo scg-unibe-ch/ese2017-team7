@@ -32,6 +32,7 @@ public class AniOrder {
 	@DateTimeFormat(pattern = "yyyy-mm-dd'T'HH:mm")
 	private Date startTime;
 	private String driver;
+	private int driverId;
 	private String vehicle;
 	private String orderStatus = "undelivered"; //can be either "delivered" or "undelivered"
 	private String statusMessage = "";
@@ -48,9 +49,10 @@ public class AniOrder {
 		setTimeEstimation(order.getTimeEstimation());
 		setStartTime(order.getStartTime());
 		setDriver(order.getDriver());
+		setDriverId(order.getDriver());
 		setVehicle(order.getVehicle());
 		setOrderStatus(order.getOrderStatus());
-		setStatusMessage(order.getStatusMessage());	
+		setStatusMessage(order.getStatusMessage());
 	}
 	
 	public AniOrder() {
@@ -135,7 +137,20 @@ public class AniOrder {
     }
 
     public void setDriver(String driver) {
-        this.driver = driver;
+        this.driver = driver.substring(4);
+    }
+    
+    public void setDriverId(String driver) {
+    		if(!driver.equals("none")) {
+			driverId = Integer.parseInt(driver.substring(0, 1));
+		} else {
+			driverId = -1;
+		}
+    }
+    
+    //returns -1 if the driver isn't set yet.
+    public int getDriverId() {
+    		return driverId;
     }
     
     public String getVehicle() {

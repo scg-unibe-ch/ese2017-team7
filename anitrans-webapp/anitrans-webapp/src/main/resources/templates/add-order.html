@@ -44,6 +44,9 @@
                 th:text="${err}">Input is incorrect</li>
           </ul>
         </div>
+            <p th:text="${vehicleError}"></p>
+        		<p th:text="${driverError}"></p>
+        
     	
         <p>From: </p>
         <p>Name: <input type="text" th:field="*{fromName}" /></p>
@@ -75,7 +78,6 @@
         <p th:if="${#fields.hasErrors('timeEstimation')}" th:errors="*{timeEstimation}" >Time Estimation Error</p>
         <p>Start Time: <input type="text" th:field="*{startTime}" placeholder="dd.MM.yyyy, HH:mm"/> </p>
         <p th:if="${#fields.hasErrors('startTime')}" th:errors="*{startTime}">Start Time Error</p>
-        <form:errors path=""></form:errors>
         
         <p>Vehicle: <select th:field="*{vehicle}">
         		<option
@@ -86,16 +88,18 @@
          		 th:text="${vehicle.name}">Vehicle</option>
 		</select></p>
         <p th:if="${#fields.hasErrors('vehicle')}" th:errors="*{vehicle}">Vehicle Error</p>
+        <p th:text="${vehicleError}"></p>
     
         <p>Driver: <select th:field="*{driver}">
         		<option
          		 th:value="none"
          		 th:text="none">Driver</option>
   			<option th:each="user : ${users}" 
-         		 th:value="${user.name}"
-         		 th:text="${user.name}">Driver</option>
+         		 th:value="${user.id + ' - ' + user.name}"
+         		 th:text="${user.id + ' - ' + user.name}">Driver</option>
 		</select></p>
         <p th:if="${#fields.hasErrors('driver')}" th:errors="*{driver}">Driver Error</p>
+        <p th:text="${driverError}"></p>
 
        
         <p><input type="submit" value="Submit" /></p>

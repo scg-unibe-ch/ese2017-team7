@@ -1,0 +1,38 @@
+package hello;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import java.util.Date;
+import org.springframework.beans.factory.annotation.Autowired;
+
+/*
+ * This service class is used to count things.
+ */
+@Service
+public class CounterService {
+	@Autowired
+	private hello.OrderRepository orderRepository;
+	@Autowired
+	private hello.VehicleRepository vehicleRepository;
+	
+	/*
+	 * Counts how many of a vehicle type are in use on a specific date
+	 */
+	public int countVehiclesInUse(hello.Vehicle vehicleType, Date date) {
+		Iterable<hello.AniOrder> orders = orderRepository.findAll();
+		int counter = 0;
+		
+		/*
+		 * Compares the vehicle of every order with the vehicle type. If they're the same, it increases the counter.
+		 */
+		for(hello.AniOrder order : orders) {
+			hello.Vehicle currentVehicle = vehicleRepository.findByName(order.getVehicle());
+			if(order.getUntil().equals(date) && (currentVehicle.getId() == vehicleType.getId())) {
+				counter++;
+			}
+		}
+		
+		return counter;
+	}
+	
+}

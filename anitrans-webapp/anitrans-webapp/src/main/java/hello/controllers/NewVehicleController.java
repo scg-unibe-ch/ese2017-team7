@@ -29,6 +29,10 @@ public class NewVehicleController {
     //Maps post requests for /new-vehicle
     @PostMapping("/new-vehicle")
     public String vehicleSubmit(@Valid @ModelAttribute hello.Vehicle vehicle, BindingResult bindingResult, Model model) {
+    		if	(vehicleRepository.findByName(vehicle.getName()) != null) {
+    			model.addAttribute("errorMsg", "There is already a vehicle with that name.");
+    			return "new-vehicle";
+    		}
     		if (bindingResult.hasErrors()) { //if the new vehicle has errors, send the user back to correct the mistakes. Invalid fields will be marked.
             return "new-vehicle"; //returns the template
     		}

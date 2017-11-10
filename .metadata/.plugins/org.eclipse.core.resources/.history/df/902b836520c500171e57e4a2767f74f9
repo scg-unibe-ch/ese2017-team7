@@ -1,0 +1,25 @@
+package hello;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import java.util.Date;
+import org.springframework.beans.factory.annotation.Autowired;
+
+/*
+ * This service class is used to count things.
+ */
+@Service
+public class CounterService {
+	
+	/*
+	 * Counts how many of a vehicle type are in use on a specific date
+	 */
+	public int countVehiclesInUse(hello.Vehicle vehicleType, Date date) {
+		@Autowired
+		private hello.VehicleRepository vehicleRepository;
+		
+		
+		return 0;
+	}
+	
+}

@@ -35,7 +35,7 @@
  		   <td th:text="${driver.id}"></td>
  		   <td th:text="${driver.name}"></td> 
  		   <td th:text="${driver.email}"></td>
- 		   <td><a th:href="@{/delete-driver(id=${driver.id})}" onclick="return confirm('Are you sure you would like to DELETE this driver?')">Delete Driver</a></td>	 
+ 		   <td><a th:href="@{/delete-driver(id=${driver.id})}" onclick="return confirm('Are you sure you would like to DELETE this driver?')"><button class='b3'>Delete Driver</button></a></td>	 
 		  </tr>
 		  
 	</table>

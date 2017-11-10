@@ -24,8 +24,10 @@
 <div class="ex0">
 <h1><img src="images/logo.png" width="45" height="40" alt="logo" id="logo" />Vehicles</h1>
 	
-	<a href="/new-vehicle">Create new Vehicle Type</a>
+	<a href="/new-vehicle"><button class='b2'>Create new Vehicle Type</button></a>
+</div>
 	
+<div class="ex0">	
     <table>
  		<tr>
  			<th>Id</th>
@@ -33,8 +35,8 @@
 		    <th>Count</th>
 		    <th>Name</th>
 		    <th>Available Vehicles</th>
-		    <th></th>
-		    <th></th>
+		    <th>Add Vehicle</th>
+		    <th>Delete Vehicle</th>
  		 </tr>
 		  <tr th:each="vehicle : ${vehicles}">
  		   <td th:text="${vehicle.vehicle.id}"></td>
@@ -44,8 +46,8 @@
  		   <td th:text="${vehicle.vehicle.numberOfVehicles}" align="center"></td>
  		   <td th:text="${vehicle.vehicle.name}"></td>
  		   <td th:text="${vehicle.availableVehicles}" align="center"></td>
- 		   <td><a th:href="@{/delete-vehicle(id=${vehicle.vehicle.id})}" onclick="return confirm('Are you sure you would like to DELETE one of these vehicles?')">Delete one Vehicle</a></td>
- 		   <td><a th:href="@{/add-vehicle(id=${vehicle.vehicle.id})}">Add one Vehicle</a></td>	 
+ 		   <td><a th:href="@{/add-vehicle(id=${vehicle.vehicle.id})}"><button class='b4'>+</button></a></td>
+ 		   <td><a th:href="@{/delete-vehicle(id=${vehicle.vehicle.id})}" onclick="return confirm('Are you sure you would like to DELETE one of these vehicles?')"><button class='b4'>-</button></a></td>	 
 		  </tr>
 		  
 	</table>

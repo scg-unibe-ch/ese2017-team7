@@ -34,20 +34,31 @@
 		    <th>Image</th> 
 		    <th>Count</th>
 		    <th>Name</th>
+<<<<<<< HEAD
 		    <th>Available Vehicles</th>
+		    <th></th>
+		    <th></th>
+=======
 		    <th>Add Vehicle</th>
 		    <th>Delete Vehicle</th>
+>>>>>>> c046a3c45369f48899c94591b50fd7113a4ee213
  		 </tr>
 		  <tr th:each="vehicle : ${vehicles}">
  		   <td th:text="${vehicle.vehicle.id}"></td>
  		   <td>
 				<img th:src="${vehicle.vehicle.image}" width="80"/>			
  		   </td> 
+<<<<<<< HEAD
  		   <td th:text="${vehicle.vehicle.numberOfVehicles}" align="center"></td>
  		   <td th:text="${vehicle.vehicle.name}"></td>
  		   <td th:text="${vehicle.availableVehicles}" align="center"></td>
- 		   <td><a th:href="@{/add-vehicle(id=${vehicle.vehicle.id})}"><button class='b4'>+</button></a></td>
- 		   <td><a th:href="@{/delete-vehicle(id=${vehicle.vehicle.id})}" onclick="return confirm('Are you sure you would like to DELETE one of these vehicles?')"><button class='b4'>-</button></a></td>	 
+ 		   <td><a th:href="@{/delete-vehicle(id=${vehicle.vehicle.id})}" onclick="return confirm('Are you sure you would like to DELETE one of these vehicles?')">Delete one Vehicle</a></td>
+ 		   <td><a th:href="@{/add-vehicle(id=${vehicle.vehicle.id})}">Add one Vehicle</a></td>	 
+=======
+ 		   <td th:text="${vehicle.name}"></td>
+ 		   <td><a th:href="@{/add-vehicle(id=${vehicle.id})}"><button class='b4'>+</button></a></td>
+ 		   <td><a th:href="@{/delete-vehicle(id=${vehicle.id})}" onclick="return confirm('Are you sure you would like to DELETE one of these vehicles?')"><button class='b4'>-</button></a></td>	 
+>>>>>>> c046a3c45369f48899c94591b50fd7113a4ee213
 		  </tr>
 		  
 	</table>

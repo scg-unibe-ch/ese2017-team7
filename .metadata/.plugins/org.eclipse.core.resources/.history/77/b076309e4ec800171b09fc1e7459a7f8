@@ -87,7 +87,7 @@ public class NewOrder {
 		setTypeOfAnimal(order.getTypeOfAnimal());
 		setTimeEstimation(order.getTimeEstimation());
 		setStartTime(order.getStartTime());
-		setDriver(order.getDriverId() + " - " + order.getDriver());
+		setDriver(order.getDriver());
 		setVehicle(order.getVehicle());
 		setOrderStatus(order.getOrderStatus());
 		setStatusMessage(order.getStatusMessage());	

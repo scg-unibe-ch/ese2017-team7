@@ -20,7 +20,7 @@ public class ChangeStatusController {
 	@Autowired
 	private hello.AddressRepository addressRepository;
 	@Autowired
-	private hello.EditedOrderRepository EditedOrderRepository;
+	private hello.NewOrderRepository newOrderRepository;
 	@Autowired
 	private hello.VehicleRepository vehicleRepository;
 
@@ -36,9 +36,9 @@ public class ChangeStatusController {
 			order = new hello.AniOrder(); //if the order doesn't exists, a new order is created.
 		}
 		
-		hello.EditedOrder EditedOrder = new hello.EditedOrder(order, order.getFromAddr(), order.getToAddr());
+		hello.NewOrder newOrder = new hello.NewOrder(order, order.getFromAddr(), order.getToAddr());
 		
-		model.addAttribute("order", EditedOrder); //passes the order to change-status.html
+		model.addAttribute("order", newOrder); //passes the order to change-status.html
 		model.addAttribute("users", userRepository.findAll()); //passes all the users to change-status.html. this is needed to select the driver.
 		model.addAttribute("vehicles", vehicleRepository.findAll()); //find all the vehicles and pass them to add-order.html. This is needed to select the vehicle.
     return "change-status"; //return the template
@@ -46,7 +46,7 @@ public class ChangeStatusController {
     
     //Maps post requests for /change-status. 
     @PostMapping("/change-status")
-    public String statusSubmit(@Valid @ModelAttribute hello.EditedOrder order, BindingResult bindingResult, Model model) {
+    public String statusSubmit(@Valid @ModelAttribute hello.NewOrder order, BindingResult bindingResult, Model model) {
     		if (bindingResult.hasErrors()) { //check if the changed order is still valid. If it has errors, send the user back to correct them. Wrong values will be marked.
 			model.addAttribute("order", order);
 			model.addAttribute("users", userRepository.findAll());
@@ -62,7 +62,7 @@ public class ChangeStatusController {
     		addressRepository.save(fromAddress); //save the address to the database.
     		addressRepository.save(toAddress); //save the address to the database.
 		orderRepository.save(aniOrder); //save the order to the database.
-		EditedOrderRepository.delete(order);
+		newOrderRepository.delete(order);
         return "change-status-success"; //return the template
     }
 

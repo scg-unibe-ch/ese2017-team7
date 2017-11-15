@@ -55,23 +55,6 @@ public class AniOrder {
 		setStatusMessage(order.getStatusMessage());
 	}
 	
-	public AniOrder(EditedOrder order, Address fromAddressId, Address toAddressId) {
-		setId(order.getOrderId());
-		setFromAddr(fromAddressId);
-		setToAddr(toAddressId);
-		setUntil(order.getUntil());
-		setTimeframe(order.getTimeframe());
-		setNumberOfAnimals(order.getNumberOfAnimals());
-		setTypeOfAnimal(order.getTypeOfAnimal());
-		setTimeEstimation(order.getTimeEstimation());
-		setStartTime(order.getStartTime());
-		setDriver(order.getDriver());
-		setDriverId(order.getDriver());
-		setVehicle(order.getVehicle());
-		setOrderStatus(order.getOrderStatus());
-		setStatusMessage(order.getStatusMessage());
-	}
-	
 	public AniOrder() {
 		
 	}

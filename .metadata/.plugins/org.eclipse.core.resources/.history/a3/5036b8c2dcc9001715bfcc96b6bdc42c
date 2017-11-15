@@ -47,12 +47,12 @@ public class ChangeStatusController {
     //Maps post requests for /change-status. 
     @PostMapping("/change-status")
     public String statusSubmit(@Valid @ModelAttribute hello.EditedOrder order, BindingResult bindingResult, Model model) {
-    		if (bindingResult.hasErrors()) { //check if the changed order is still valid. If it has errors, send the user back to correct them. Wrong values will be marked.
+    		/*if (bindingResult.hasErrors()) { //check if the changed order is still valid. If it has errors, send the user back to correct them. Wrong values will be marked.
 			model.addAttribute("order", order);
 			model.addAttribute("users", userRepository.findAll());
 			model.addAttribute("vehicles", vehicleRepository.findAll()); //find all the vehicles and pass them to add-order.html. This is needed to select the vehicle.
 			return "change-status"; //return the template
-		}
+		}*/
 		
     		//create addresses and aniOrders from the data.
     		hello.Address fromAddress = new hello.Address(order.getFromName(), order.getFromStreet(), order.getFromTown(), order.getFromPlz());

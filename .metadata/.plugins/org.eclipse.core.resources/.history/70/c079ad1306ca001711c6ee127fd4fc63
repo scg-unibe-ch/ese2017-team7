@@ -121,7 +121,6 @@ public class EditOrderController {
     private Model getErrors(@Valid @ModelAttribute hello.NewOrder order, BindingResult bindingResult, Model model) {
     		hello.Vehicle vehicle = vehicleRepository.findByName(order.getVehicle());
     		hello.User driver = userRepository.findById(order.getDriverId());
-    		
 		if(vehicle != null) {
 			if(counter.countVehiclesInUse(vehicle, order.getUntil(), order.getOrderId()) >= vehicle.getNumberOfVehicles()) {
 				model.addAttribute("vehicleError", "The chosen vehicle isn't available on the chosen date.");

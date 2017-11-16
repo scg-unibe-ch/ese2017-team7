@@ -9,7 +9,7 @@ import javax.validation.constraints.Size;
 
 /*
 kkkk
- * This class models the user's address in the database. All of its variables are columns in the database table.
+ * This class models the user's address in the database. All of its variables are columns in the database table. This is a test comment
  */
 @Entity // This tells Hibernate to make a table out of this class
 public class Address {

@@ -1,10 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.springframework.security.core.userdetails.UserDetailsService"/>
-<fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.web.ErrorController"/>
-<fullyQualifiedTypeName name="hello.AniOrder"/>
-<fullyQualifiedTypeName name="hello.CounterService"/>
-<fullyQualifiedTypeName name="hello.Vehicle"/>
-<fullyQualifiedTypeName name="org.springframework.context.support.ReloadableResourceBundleMessageSource"/>
-<fullyQualifiedTypeName name="org.springframework.context.support.ResourceBundleMessageSource"/>
-</qualifiedTypeNameHistroy>
+<qualifiedTypeNameHistroy/>

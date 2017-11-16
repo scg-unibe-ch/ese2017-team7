@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<section name="Workbench">
-	<section name="org.springframework.ide.eclipse.aop.ui.inplace.AopReferenceModelInplaceDialog">
-		<item value="130" key="size.height"/>
-		<item value="429" key="location.y"/>
-		<item value="360" key="size.width"/>
-		<item value="660" key="location.x"/>
-	</section>
-</section>

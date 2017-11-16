@@ -5,4 +5,6 @@
 <fullyQualifiedTypeName name="hello.AniOrder"/>
 <fullyQualifiedTypeName name="hello.CounterService"/>
 <fullyQualifiedTypeName name="hello.Vehicle"/>
+<fullyQualifiedTypeName name="org.springframework.context.support.ReloadableResourceBundleMessageSource"/>
+<fullyQualifiedTypeName name="org.springframework.context.support.ResourceBundleMessageSource"/>
 </qualifiedTypeNameHistroy>

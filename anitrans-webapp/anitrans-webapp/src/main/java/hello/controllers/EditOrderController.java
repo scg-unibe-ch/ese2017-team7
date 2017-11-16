@@ -61,14 +61,14 @@ public class EditOrderController {
     @PostMapping("/edit-order")
     public String orderSubmit(@Valid @ModelAttribute hello.NewOrder order, BindingResult bindingResult, Model model) {
     		hello.Vehicle vehicle = vehicleRepository.findByName(order.getVehicle());
-    		hello.User driver = userRepository.findById(order.getDriverId());
-		
-    		if(bindingResult.hasErrors()) {
-    			model.addAttribute("order", order);
-    			model.addAttribute("users", userRepository.findAll()); //find all the users and pass them to add-order.html. This is needed to select the driver.
-    			model.addAttribute("vehicles", vehicleRepository.findAll()); //find all the vehicles and pass them to add-order.html. This is needed to select the vehicle.
-    			return "edit-order";
-    		}
+		hello.User driver = userRepository.findById(order.getDriverId());
+    	
+		if(bindingResult.hasErrors()) {
+			model.addAttribute("order", order);
+			model.addAttribute("users", userRepository.findAll()); //find all the users and pass them to edit-order.html. This is needed to select the driver.
+			model.addAttribute("vehicles", vehicleRepository.findAll()); //find all the vehicles and pass them to edit-order.html. This is needed to select the vehicle.
+			return "edit-order";
+		}
     		
     		//Get the custom errors and if there are any, send the user back to correct his results.
     		if(bindingResult.hasErrors() || (vehicle != null && counter.countVehiclesInUse(vehicle, order.getUntil(), order.getOrderId()) >= vehicle.getNumberOfVehicles()) || (driver != null && counter.checkIfDriverBusy(driver, order.getUntil(), order.getOrderId()))) {

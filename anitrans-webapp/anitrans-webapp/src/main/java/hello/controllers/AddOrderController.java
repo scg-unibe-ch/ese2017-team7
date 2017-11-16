@@ -85,8 +85,7 @@ public class AddOrderController {
     			if(counter.checkIfDriverBusy(driver, order.getUntil(), -1)) {//-1 is passed as the order id because there is no order id which is relevant
     				model.addAttribute("driverError", "The chosen driver isn't available on the chosen date.");
     			}
-    		}
-		
+    		}		
     	
     		return model;
     }

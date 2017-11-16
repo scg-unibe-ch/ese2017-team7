@@ -1,0 +1,5 @@
+typeMismatch.NewOrder.until=Please enter a date of the format dd.MM.yyyy
+typeMismatch.NewOrder.startTime=Please enter a date of the format dd.MM.yyyy, HH:mm
+
+typeMismatch.EditedOrder.until=Please enter a date of the format dd.MM.yyyy
+typeMismatch.EditedOrder.startTime=Please enter a date of the format dd.MM.yyyy, HH:mm

@@ -1,0 +1,6 @@
+typeMismatch.newOrder.until=Please enter a date of the format dd.MM.yyyy
+typeMismatch.newOrder.startTime=Please enter a date of the format dd.MM.yyyy, HH:mm
+tpyeMistmatch.newOrder.date =jjj
+
+typeMismatch.EditedOrder.until=Please enter a date of the format dd.MM.yyyy
+typeMismatch.EditedOrder.startTime=Please enter a date of the format dd.MM.yyyy, HH:mm

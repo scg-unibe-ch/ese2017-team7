@@ -29,6 +29,10 @@
                     <div sec:authorize="hasRole('ROLE_ADMIN')"><li class='nav_element4'><a href="drivers.html">Drivers</a></li></div>
                     <div sec:authorize="hasRole('ROLE_ADMIN')"><li class='nav_element4'><a href="vehicles.html" class="active">Vehicles</a></li></div>
                     <li class='nav_element3'><a href="login.html">Account</a></li>
+                    <div sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_USER')"><li class='nav_element3'>
+                    		<form th:action="@{/logout}" method="post">
+            					<button class='b1'>Sign Out</button>
+        					</form> </li></div>
                 </ul>
             </div>
              

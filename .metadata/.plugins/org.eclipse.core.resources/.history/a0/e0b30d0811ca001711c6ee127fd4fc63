@@ -1,0 +1,5 @@
+typeMismatch.postForm.date=Please enter a date of the format dd.MM.yyyy, or rather dd.MM.yyyy, HH:mm.
+typeMismatch.newOrder.until=Please enter a date of the format dd.MM.yyyy
+tpyeMismatch.newOrder.startTime=Please enter a date of the format dd.MM.yyyy, HH:mm
+typeMismatch.field=Please enter a date of the format dd.MM.yyyy, or rather dd.MM.yyyy, HH:mm.
+typeMismatch.command.field=Please enter a date of the format dd.MM.yyyy, or rather dd.MM.yyyy, HH:mm.

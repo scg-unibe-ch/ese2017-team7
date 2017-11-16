@@ -2,6 +2,8 @@ package hello;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -29,5 +31,15 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
 	  resolver.setPrefix("/WEB-INF/jsp/");
 	  resolver.setSuffix(".jsp");
 	  return resolver;
-  }   
+  }  
+  
+  @Bean(name = "messageSource")
+  public ResourceBundleMessageSource getMessageSource() {
+      ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+      messageSource.setBasename("validation");
+      messageSource.setDefaultEncoding("UTF-8");
+      messageSource.setUseCodeAsDefaultMessage(true);
+      return messageSource;
+  }
+  
 }

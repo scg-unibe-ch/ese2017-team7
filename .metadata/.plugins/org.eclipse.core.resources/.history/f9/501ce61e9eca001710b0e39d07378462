@@ -30,41 +30,57 @@
     <form action="#" th:action="@{/edit-order}" th:object="${order}" method="post" id="statusOrder">
     
     		<div th:if="${#fields.hasErrors('*')}">
-                <h3 style="color:red;">Please fix the following error(s)</h3>
+                <h3>Please fix the following error(s)</h3>
+          <ul>
+            <li th:each="err : ${#fields.errors('*')}"
+                th:text="${err}">Input is incorrect</li>
+          </ul>
         </div>
+            <p th:text="${vehicleError}"></p>
+        		<p th:text="${driverError}"></p>
     
     		<p>Order Number: <input type="text" th:value="${order.orderId}" th:field="*{orderId}" th:readonly="readonly"/></p>
     		
     		<p>From: </p>
         <p>Name: <input type="text" th:value="${order.fromName}" th:field="*{fromName}" /></p>
-        <p th:if="${#fields.hasErrors('fromName')}" th:errors="*{fromName}" style="color:red;">From Name Error</p>
+        <p th:if="${#fields.hasErrors('fromName')}" th:errors="*{fromName}">From Name Error</p>
         <p>Address: <input type="text" th:value="${order.fromStreet}" th:field="*{fromStreet}" /></p>
-        <p th:if="${#fields.hasErrors('fromStreet')}" th:errors="*{fromStreet}" style="color:red;">From Street Error</p>
+        <p th:if="${#fields.hasErrors('fromStreet')}" th:errors="*{fromStreet}">From Street Error</p>
         <p>PLZ / Town: <input type="text" th:value="${order.fromPlz}" th:field="*{fromPlz}" /><input type="text" th:value="${order.fromTown}" th:field="*{fromTown}" /></p>
-        <p th:if="${#fields.hasErrors('fromPlz')}" th:errors="*{fromPlz}" style="color:red;">From PLZ Error</p>
-        <p th:if="${#fields.hasErrors('fromTown')}" th:errors="*{fromTown}" style="color:red;">From Town Error</p>
+        <p th:if="${#fields.hasErrors('fromPlz')}" th:errors="*{fromPlz}">From PLZ Error</p>
+        <p th:if="${#fields.hasErrors('fromTown')}" th:errors="*{fromTown}">From Town Error</p>
 
         <p>To: </p>
         <p>Name: <input type="text" th:value="${order.toName}" th:field="*{toName}" /></p>
-        <p th:if="${#fields.hasErrors('toName')}" th:errors="*{toName}" style="color:red;">To Name Error</p>
+        <p th:if="${#fields.hasErrors('toName')}" th:errors="*{toName}">To Name Error</p>
         <p>Address: <input type="text" th:value="${order.toStreet}" th:field="*{toStreet}" /></p>
-        <p th:if="${#fields.hasErrors('toStreet')}" th:errors="*{toStreet}" style="color:red;">To Street Error</p>
+        <p th:if="${#fields.hasErrors('toStreet')}" th:errors="*{toStreet}">To Street Error</p>
         <p>PLZ / Town: <input type="text" th:value="${order.toPlz}" th:field="*{toPlz}" /><input type="text" th:value="${order.toTown}" th:field="*{toTown}" /></p>
-        <p th:if="${#fields.hasErrors('toPlz')}" th:errors="*{toPlz}" style="color:red;">To PLZ Error</p>
-        <p th:if="${#fields.hasErrors('toTown')}" th:errors="*{toTown}" style="color:red;">To Town Error</p>
+        <p th:if="${#fields.hasErrors('toPlz')}" th:errors="*{toPlz}">To PLZ Error</p>
+        <p th:if="${#fields.hasErrors('toTown')}" th:errors="*{toTown}">To Town Error</p>
     
         <p>Until: <input type="text" th:value="${#dates.format(order.until, 'dd.MM.yyyy')}"  th:field="*{until}" placeholder="dd.MM.yyyy"/></p>
-        <p th:if="${#fields.hasErrors('until')}" th:errors="*{until}" style="color:red;">Until Error</p>
+        <p th:if="${#fields.hasErrors('until')}" th:errors="*{until}">Until Error</p>
         <p>Timeframe: <input type="text" th:value="${order.timeframe}" th:field="*{timeframe}" placeholder="HH:mm - HH:mm"/></p>
-        <p th:if="${#fields.hasErrors('timeframe')}" th:errors="*{timeframe}"  style="color:red;">Timeframe Error</p>
+        <p th:if="${#fields.hasErrors('timeframe')}" th:errors="*{timeframe}" >Timeframe Error</p>
         <p>Type of Animal: <input type="text" th:value="${order.typeOfAnimal}" th:field="*{typeOfAnimal}" /></p>
-        <p th:if="${#fields.hasErrors('typeOfAnimal')}" th:errors="*{typeOfAnimal}" style="color:red;">Type of Animal Error</p>
+        <p th:if="${#fields.hasErrors('typeOfAnimal')}" th:errors="*{typeOfAnimal}">Type of Animal Error</p>
         <p>Number of Animals: <input type="text" th:value="${order.numberOfAnimals}" th:field="*{numberOfAnimals}"/></p>
-        <p th:if="${#fields.hasErrors('numberOfAnimals')}" th:errors="*{numberOfAnimals}" style="color:red;">Number of Animals Error</p>
+        <p th:if="${#fields.hasErrors('numberOfAnimals')}" th:errors="*{numberOfAnimals}">Number of Animals Error</p>
         <p>Time Estimation (in hrs): <input type="text" th:value="${order.timeEstimation}" th:field="*{timeEstimation}" placeholder="HH"/></p>
-        <p th:if="${#fields.hasErrors('timeEstimation')}" th:errors="*{timeEstimation}"  style="color:red;">Time Estimation Error</p>
+        <p th:if="${#fields.hasErrors('timeEstimation')}" th:errors="*{timeEstimation}" >Time Estimation Error</p>
         <p>Start Time: <input type="text" th:value="${#dates.format(order.startTime, 'dd.MM.yyyy, HH:mm')}" th:field="*{startTime}" placeholder="dd.MM.yyyy, HH:mm"/></p>
-        <p th:if="${#fields.hasErrors('startTime')}" th:errors="*{startTime}"  style="color:red;">Start Time Error</p>
+        <p th:if="${#fields.hasErrors('startTime')}" th:errors="*{startTime}" >Start Time Error</p>
+        <p>Driver: <select th:field="*{driver}" th:value="${order.startTime}">
+        		<option
+         		 th:value="none"
+         		 th:text="none">Driver</option>
+  			<option th:each="user : ${users}" 
+         		 th:value="${user.id + ' - ' + user.name}"
+         		 th:text="${user.id + ' - ' + user.name}">Driver</option>
+		</select></p>
+        <p th:if="${#fields.hasErrors('driver')}" th:errors="*{driver}">Driver Error</p>
+        <p th:text="${driverError}"></p>
         
         <p>Vehicle: <select th:field="*{vehicle}" th:value="${order.vehicle}">
         		<option
@@ -74,20 +90,9 @@
          		 th:value="${vehicle.name}"
          		 th:text="${vehicle.name}">Vehicle</option>
 		</select></p>
-        <p th:if="${#fields.hasErrors('vehicle')}" th:errors="*{vehicle}" style="color:red;">Vehicle Error</p>
-        <p th:text="${vehicleError}" style="color:red;"></p>
+        <p th:if="${#fields.hasErrors('vehicle')}" th:errors="*{vehicle}">Vehicle Error</p>
+        <p th:text="${vehicleError}"></p>
         
-        <p>Driver: <select th:field="*{driver}" th:value="${order.driver}">
-        		<option
-         		 th:value="none"
-         		 th:text="none">Driver</option>
-  			<option th:each="user : ${users}" 
-         		 th:value="${user.id + ' - ' + user.name}"
-         		 th:text="${user.id + ' - ' + user.name}">Driver</option>
-		</select></p>
-        <p th:if="${#fields.hasErrors('driver')}" th:errors="*{driver}" style="color:red;">Driver Error</p>
-        <p th:text="${driverError}" style="color:red;"></p>
-
         <p>Status: <select th:field="*{orderStatus}" th:value="${order.orderStatus}">
         		<option
          		 th:value="undelivered"

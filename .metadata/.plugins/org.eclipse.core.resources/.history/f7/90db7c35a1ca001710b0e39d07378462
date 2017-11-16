@@ -31,7 +31,7 @@ public class CounterService {
 			for(hello.AniOrder order : orders) {
 				hello.Vehicle currentVehicle = vehicleRepository.findByName(order.getVehicle());
 				if(currentVehicle != null && (currentVehicle.getId() == vehicleType.getId()) && order.getId() != orderId) {
-					if(((date.getTime() - order.getUntil().getTime() < 86400000) && (date.getTime() - order.getUntil().getTime() >= 0)) || ((date.getTime() - order.getUntil().getTime() > -0) && (date.getTime() - order.getUntil().getTime() <= 0))) {
+					if(((date.getTime() - order.getUntil().getTime() < 66400000) && (date.getTime() - order.getUntil().getTime() >= 0)) || ((date.getTime() - order.getUntil().getTime() > -66400000) && (date.getTime() - order.getUntil().getTime() <= 0))) {
 						counter++;
 					}	
 				}

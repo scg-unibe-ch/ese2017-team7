@@ -30,6 +30,10 @@
     <form action="#" th:action="@{/change-status}" th:object="${order}" method="post" id="statusOrder">
     	<div th:if="${#fields.hasErrors('*')}">
                 <h3>Please fix the following error(s)</h3>
+          <ul>
+            <li th:each="err : ${#fields.errors('*')}"
+                th:text="${err}">Input is incorrect</li>
+          </ul>
         </div>
         
     		<p>Order Number: <input type="text" th:value="${order.orderId}" th:field="*{orderId}" th:readonly="readonly"/></p>

@@ -2301,23 +2301,3 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.springso
 
 !ENTRY org.eclipse.jface.text 2 0 2017-11-16 08:12:08.719
 !MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
-
-!ENTRY org.eclipse.jface.text 2 0 2017-11-16 08:54:14.279
-!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
-
-!ENTRY org.eclipse.jface.text 2 0 2017-11-16 08:54:14.280
-!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
-
-!ENTRY org.eclipse.lsp4e 1 0 2017-11-16 09:55:32.802
-!MESSAGE Non IFiles not supported yet
-!SESSION 2017-11-16 10:00:36.479 -----------------------------------------------
-eclipse.buildId=3.9.0.201707061823-RELEASE-e47
-java.version=1.8.0_60
-java.vendor=Oracle Corporation
-BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_GB
-Framework arguments:  -product org.springsource.sts.ide -keyring /Users/YvesChapuis/.eclipse_keyring
-Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.springsource.sts.ide -keyring /Users/YvesChapuis/.eclipse_keyring
-
-!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-11-16 10:00:55.663
-!MESSAGE Exception caught during execution of command '[git, --version]' in '/usr/bin', return code '1', error message 'xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
-'

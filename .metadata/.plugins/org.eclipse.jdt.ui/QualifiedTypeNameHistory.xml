@@ -7,6 +7,4 @@
 <fullyQualifiedTypeName name="hello.Vehicle"/>
 <fullyQualifiedTypeName name="org.springframework.context.support.ReloadableResourceBundleMessageSource"/>
 <fullyQualifiedTypeName name="org.springframework.context.support.ResourceBundleMessageSource"/>
-<fullyQualifiedTypeName name="hello.AddressRepository"/>
-<fullyQualifiedTypeName name="hello.User"/>
 </qualifiedTypeNameHistroy>

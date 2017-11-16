@@ -40,7 +40,7 @@ public class NewVehicleController {
     		vehicle.setImage("images/" + vehicle.getImage());
     		
     		vehicleRepository.save(vehicle); //save the vehicle to the database.
-		return "add-vehicle-success"; //returns the template
+		return "vehicles"; //returns the template
     }
     
   //Maps get requests for /delete-vehicle. The id of the vehicle to be deleted is passed through the URL.

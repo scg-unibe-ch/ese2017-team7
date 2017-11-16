@@ -1,0 +1,17 @@
+package hello;
+
+import org.springframework.stereotype.Service;
+import org.springframework.format.annotation.DateTimeFormat;
+
+/*
+ * This service class is used to count things.
+ */
+@Service
+public class CounterService {
+	
+	public int countVehiclesInUse(hello.Vehicle vehicleType, Date date) {
+		
+		return 0;
+	}
+	
+}

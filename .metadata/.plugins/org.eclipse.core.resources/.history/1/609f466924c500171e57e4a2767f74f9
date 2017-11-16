@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <title>aniTrans | Vehicles</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+<div id='container'>
+            <div id='header'> 
+                <img src="images/banner.jpg" alt="header" id='header_img' />
+                <ul id='nav'>
+                    <li class='nav_element1'><a href="index.html">Home</a></li>
+                    <div sec:authorize="hasRole('ROLE_ADMIN')"><li class='nav_element2'><a href="orders">Orders</a></li></div>
+                    <div sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_USER')"><li class='nav_element2'><a href="tours.html">Tours</a></li></div>
+                    <div sec:authorize="hasRole('ROLE_ADMIN')"><li class='nav_element4'><a href="drivers.html">Drivers</a></li></div>
+                    <div sec:authorize="hasRole('ROLE_ADMIN')"><li class='nav_element4'><a href="vehicles.html" class="active">Vehicles</a></li></div>
+                    <li class='nav_element3'><a href="login.html">Account</a></li>
+                </ul>
+            </div>
+             
+<div class="ex0">
+<h1><img src="images/logo.png" width="45" height="40" alt="logo" id="logo" />Vehicles</h1>
+	
+	<a href="/new-vehicle">Create new Vehicle Type</a>
+	
+    <table>
+ 		<tr>
+ 			<th>Id</th>
+		    <th>Image</th> 
+		    <th>Count</th>
+		    <th>Name</th>
+		    <th>Available Vehicles</th>
+		    <th></th>
+		    <th></th>
+ 		 </tr>
+		  <tr th:each="vehicle : ${vehicles}">
+ 		   <td th:text="${vehicle.vehicle.id}"></td>
+ 		   <td>
+				<img th:src="${vehicle.vehicle.image}" width="40"/>			
+ 		   </td> 
+ 		   <td th:text="${vehicle.vehicle.numberOfVehicles}"></td>
+ 		   <td th:text="${vehicle.vehicle.name}"></td>
+ 		   <td th:text="${vehicle.availableVehicles}"></td>
+ 		   <td><a th:href="@{/delete-vehicle(id=${vehicle.id})}" onclick="return confirm('Are you sure you would like to DELETE one of these vehicles?')">Delete one Vehicle</a></td>
+ 		   <td><a th:href="@{/add-vehicle(id=${vehicle.id})}">Add one Vehicle</a></td>	 
+		  </tr>
+		  
+	</table>
+
+	</div>
+	
+	</div>
+</body>
+</html>

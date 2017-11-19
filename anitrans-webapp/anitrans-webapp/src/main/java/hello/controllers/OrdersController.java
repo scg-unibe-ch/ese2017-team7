@@ -23,6 +23,5 @@ public class OrdersController {
     	    model.addAttribute("orders", orderRepository.findAll()); //Finds all the orders which are to be displayed in orders.html
     	    return "orders"; //returns the template 
     }
-    
 
 }

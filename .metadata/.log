@@ -1025,6 +1025,7 @@ org.eclipse.core.internal.resources.ResourceException: Resource is out of sync w
 !SUBENTRY 1 org.eclipse.core.resources 4 274 2017-11-16 12:55:10.417
 !MESSAGE Resource is out of sync with the file system: '/anitrans-webapp/src/main/java/hello/Address.java'.
 <<<<<<< HEAD
+<<<<<<< HEAD
 !SESSION 2017-11-17 14:08:18.587 -----------------------------------------------
 eclipse.buildId=3.9.1.201710111105-RELEASE-e47
 java.version=1.8.0_151
@@ -1041,6 +1042,8 @@ org.eclipse.emf.ecore.resource.impl.ResourceSetImpl$1DiagnosticWrappedException:
 	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandLoadHelper(ResourceSetImpl.java:278)
 	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getResource(ResourceSetImpl.java:406)
 =======
+=======
+>>>>>>> c73f3149540e03213b3db2f02149ec6d0e240b17
 !SESSION 2017-11-17 14:04:36.933 -----------------------------------------------
 eclipse.buildId=3.9.0.201707061823-RELEASE-e47
 java.version=1.8.0_60
@@ -1087,6 +1090,9 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 	at org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl.<clinit>(ExtensibleURIConverterImpl.java:393)
 	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getURIConverter(ResourceSetImpl.java:499)
 	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getResource(ResourceSetImpl.java:369)
+<<<<<<< HEAD
+>>>>>>> c73f3149540e03213b3db2f02149ec6d0e240b17
+=======
 >>>>>>> c73f3149540e03213b3db2f02149ec6d0e240b17
 	at org.eclipse.e4.ui.internal.workbench.ResourceHandler.getResource(ResourceHandler.java:286)
 	at org.eclipse.e4.ui.internal.workbench.ResourceHandler.loadResource(ResourceHandler.java:262)
@@ -1104,6 +1110,7 @@ org.eclipse.core.internal.resources.ResourceException: The project description f
 	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
 	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<<<<<<< HEAD
 <<<<<<< HEAD
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -1144,6 +1151,8 @@ java.lang.Exception
 	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:253)
 	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:614)
 =======
+=======
+>>>>>>> c73f3149540e03213b3db2f02149ec6d0e240b17
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:497)
@@ -1190,6 +1199,9 @@ java.lang.NullPointerException
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1044)
 	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
 	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:680)
+<<<<<<< HEAD
+>>>>>>> c73f3149540e03213b3db2f02149ec6d0e240b17
+=======
 >>>>>>> c73f3149540e03213b3db2f02149ec6d0e240b17
 	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
 	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:594)
@@ -1201,6 +1213,7 @@ java.lang.NullPointerException
 	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
 	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<<<<<<< HEAD
 <<<<<<< HEAD
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -1299,6 +1312,8 @@ not correct please set the HOME environment variable and restart Eclipse. Otherw
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
 =======
+=======
+>>>>>>> c73f3149540e03213b3db2f02149ec6d0e240b17
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:497)
@@ -1352,4 +1367,7 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.springso
 
 !ENTRY org.eclipse.lsp4e 1 0 2017-11-17 14:15:46.387
 !MESSAGE Non IFiles not supported yet
+<<<<<<< HEAD
+>>>>>>> c73f3149540e03213b3db2f02149ec6d0e240b17
+=======
 >>>>>>> c73f3149540e03213b3db2f02149ec6d0e240b17

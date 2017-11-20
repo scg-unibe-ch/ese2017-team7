@@ -12,21 +12,24 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import hello.NewUser;
+import hello.User;
+
 @Controller
 public class RegisterController {
 	@Autowired
-	private hello.UserRepository userRepository;
+	private hello.NewUserRepository userRepository;
 	
 	// Maps get requests for /register. 
     @GetMapping("/register")
     public String registerForm(Model model) {
-        model.addAttribute("user", new hello.User());//create a new user and pass it to register.html
+        model.addAttribute("user", new hello.NewUser());//create a new user and pass it to register.html
         return "register"; //return the template
     }
     
     //Maps post requests for /register. This will need to be implemented, so that a new entry in the User table will be created when someone registers.
     @PostMapping("/register")
-    public String registerSubmit(@Valid @ModelAttribute hello.User user, BindingResult bindingResult, Model model) {
+    public String registerSubmit(@Valid @ModelAttribute hello.NewUser user, BindingResult bindingResult, Model model) {
     if	(userRepository.findByEmail(user.getEmail()) != null) {
     		model.addAttribute("errorMsg", "There is already someone registered with that email address.");
     		return "register";
@@ -44,11 +47,11 @@ public class RegisterController {
     @GetMapping("/delete-driver")
     public String deleteOrder(@RequestParam Integer id, Model model) {
 
-    	    	hello.User user;
+    	    	NewUser user;
         	if(id != null) {
         		user  = userRepository.findById(id); //finds the user to be deleted.
         	} else {
-        		user = new hello.User(); //if it doesn't exist a new user is created.
+        		user = new hello.NewUser(); //if it doesn't exist a new user is created.
         	}
         	
         	if(user.getRole().equals("ROLE_ADMIN")) {

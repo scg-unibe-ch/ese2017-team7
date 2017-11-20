@@ -1,5 +1,7 @@
 package hello.controllers;
 
+import hello.AniOrder;
+import hello.NewOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +14,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.validation.Valid;
 import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -38,20 +43,22 @@ public class EditOrderController {
 	// Maps get requests for /edit-order. The id of the order to be edited needs to be passed through the URL.
     @GetMapping("/edit-order")
     public String orderForm(@RequestParam Integer id, Model model) {
-    		hello.AniOrder order;
-    		if(id != null) {
-    			order  = orderRepository.findById(id); //finds the correct order by id.
-    		} else {
-    			return "edit-order-forbidden"; //if the order doesn't exist, can't edit it
-    		}
-    		
+    		hello.AniOrder order = null;
+				if (id != null) {
+					order = orderRepository.findById(id); //finds the correct order by id.
+				} else {
+					return "edit-order-forbidden"; //if the order doesn't exist, can't edit it
+				}
+
     		if(new Date().after(order.getStartTime())) { //if the delivery has already started, the user is redirected to edit-order-forbidden.html.
     			return "edit-order-forbidden"; //return the template
     		}
-    		
-    		hello.NewOrder newOrder = new hello.NewOrder(order, order.getFromAddr(), order.getToAddr());
-    		
-    		model.addAttribute("order", newOrder); //passes the order to edit-order.html
+			hello.NewOrder newOrder = new hello.NewOrder(order, order.getFromAddr(), order.getToAddr());
+
+			if(!model.containsAttribute("order")) {
+				model.addAttribute("order", newOrder); //passes the order to edit-order.html
+			}
+
     		model.addAttribute("users", userRepository.findAll()); //passes all the users to edit-order.html. This is needed to select the driver.
     		model.addAttribute("vehicles", vehicleRepository.findAll()); //find all the vehicles and pass them to add-order.html. This is needed to select the vehicle.
         return "edit-order"; //return the template
@@ -59,15 +66,16 @@ public class EditOrderController {
     
     // Maps post requests for /edit-order.
     @PostMapping("/edit-order")
-    public String orderSubmit(@Valid @ModelAttribute hello.NewOrder order, BindingResult bindingResult, Model model) {
+    public ModelAndView orderSubmit(@Valid @ModelAttribute hello.NewOrder order, BindingResult bindingResult, Model model, RedirectAttributes ra) {
     		hello.Vehicle vehicle = vehicleRepository.findByName(order.getVehicle());
 		hello.User driver = userRepository.findById(order.getDriverId());
-    	
-		if(bindingResult.hasErrors()) {
-			model.addAttribute("order", order);
-			model.addAttribute("users", userRepository.findAll()); //find all the users and pass them to edit-order.html. This is needed to select the driver.
-			model.addAttribute("vehicles", vehicleRepository.findAll()); //find all the vehicles and pass them to edit-order.html. This is needed to select the vehicle.
-			return "edit-order";
+
+
+		if (bindingResult.hasErrors()) {
+			ra.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX+"order", bindingResult);
+			ra.addFlashAttribute("order", order);
+
+			return new ModelAndView("redirect:/edit-order?id=" + order.getOrderId());
 		}
     		
     		//Get the custom errors and if there are any, send the user back to correct his results.
@@ -76,7 +84,7 @@ public class EditOrderController {
         		model.addAttribute("order", order);
         		model.addAttribute("users", userRepository.findAll()); //find all the users and pass them to add-order.html. This is needed to select the driver.
         		model.addAttribute("vehicles", vehicleRepository.findAll()); //find all the vehicles and pass them to add-order.html. This is needed to select the vehicle.
-       		return "edit-order";
+       		return new ModelAndView("redirect:/tours?activeIndex=" + order.getOrderId());
         	}
     	
 
@@ -90,7 +98,7 @@ public class EditOrderController {
     		addressRepository.save(toAddress); //save the address to the database.
 		orderRepository.save(aniOrder); //save the order to the database.
 		newOrderRepository.delete(order);
-		return "edit-order-success"; //return the template
+		return new ModelAndView("redirect:/edit-order-success"); //return the template
     }
     
     //Maps get requests for /delete-order. The id of the order to be deleted is passed through the URL.

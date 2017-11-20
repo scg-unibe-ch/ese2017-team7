@@ -40,7 +40,6 @@ INDEX VERSION 1.130+/Users/YvesChapuis/Documents/GitHub/ese2017-team7/.metadata/
 2654179871.index
 3688864839.index
 502914178.index
-122501881.index
 2031501391.index
 2055766152.index
 2230684893.index

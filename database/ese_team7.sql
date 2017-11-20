@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 10, 2017 at 08:20 AM
+-- Generation Time: Nov 20, 2017 at 09:59 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -41,18 +41,28 @@ CREATE TABLE `address` (
 --
 
 INSERT INTO `address` (`id`, `name`, `plz`, `street`, `town`) VALUES
-(1, 'Happy Animals Farm', 1212, 'Heavenstreet 12', 'Heaven'),
-(2, 'Evil Slaughterhouse', 6666, 'Devilroad 666', 'Hell'),
-(3, 'Dragonstone Castle', 1234, 'On the Sea', 'Dragonstone'),
-(4, 'The Wall', 4567, 'In the North', 'The Wall'),
-(5, 'Harry Potter', 1111, 'Privet Drive 4', 'Little Whinging'),
-(6, 'Hogwarts', 2222, 'Hogwarts', 'Hogwarts'),
-(7, 'Happy Animals Farm', 1212, 'Heavenstreet 12', 'Heaven'),
-(8, 'Evil Slaughterhouse', 6666, 'Devilroad 666', 'Hell'),
-(9, 'Happy Animals Farm', 1212, 'Heavenstreet 12', 'Heaven'),
-(10, 'Evil Slaughterhouse', 6666, 'Devilroad 666', 'Hell'),
-(11, 'Farmer', 1234, 'First Street', 'Special Town'),
-(12, 'Manager', 5678, 'C Road', 'One City');
+(1, 'Mathias Fuchs', 3000, 'Hallerstrasse 5', 'Bern'),
+(2, 'Arya Stark', 1111, 'Castle', 'Winterfell'),
+(3, 'John Snow', 1111, 'Castle', 'Winterfell'),
+(4, 'Tyrion Lannister', 3333, 'Castel', 'Casterly Rock'),
+(5, 'Zürich Flughafen', 6000, 'Flughafenstrasse 1', 'Zürich'),
+(6, 'Zirkus Knie', 1111, 'on the Road', 'Anywhere'),
+(7, 'Zürich Flughafen', 6000, 'Flughafenstrasse 1', 'Zürich'),
+(8, 'Zirkus Knie', 1111, 'on the Road', 'Anywhere'),
+(9, 'Casterly Rock', 3333, 'Castle', 'Casterly Rock'),
+(10, 'King\'s Landing', 6666, 'Red  Keep', 'King\'s Landing'),
+(11, 'Casterly Rock', 3333, 'Castle', 'Casterly Rock'),
+(12, 'King\'s Landing', 6666, 'Red  Keep', 'King\'s Landing'),
+(13, 'Dragonstone', 8888, 'On the sea', 'Dragonstone'),
+(14, 'Winterfell', 1111, 'Castle', 'Winterfell'),
+(15, 'Happy Animals Farm', 2345, 'Firststreet 4', 'Somewhere'),
+(16, 'Evil Slaughterhouse', 6666, 'Hell Road', 'Hell'),
+(17, 'Mathias Fuchs', 3000, 'Hallerstrasse 5', 'Bern'),
+(18, 'Arya Stark', 1111, 'Castle', 'Winterfell'),
+(19, 'John Snow', 1111, 'Castle', 'Winterfell'),
+(20, 'Tyrion Lannister', 2222, 'Castle', 'Casterly Rock'),
+(21, 'Zürich Flughafen', 6000, 'Flughafenstrasse 1', 'Zürich'),
+(22, 'Zirkus Knie', 1111, 'on the Road', 'Anywhere');
 
 -- --------------------------------------------------------
 
@@ -63,6 +73,7 @@ INSERT INTO `address` (`id`, `name`, `plz`, `street`, `town`) VALUES
 CREATE TABLE `ani_order` (
   `id` int(11) NOT NULL,
   `driver` varchar(255) DEFAULT NULL,
+  `driver_id` int(11) NOT NULL,
   `number_of_animals` int(11) DEFAULT NULL,
   `order_status` varchar(255) DEFAULT NULL,
   `start_time` datetime DEFAULT NULL,
@@ -73,19 +84,47 @@ CREATE TABLE `ani_order` (
   `until` date DEFAULT NULL,
   `vehicle` varchar(255) DEFAULT NULL,
   `from_addr_id` int(11) DEFAULT NULL,
-  `to_addr_id` int(11) DEFAULT NULL,
-  `driver_id` int(11) NOT NULL
+  `to_addr_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ani_order`
 --
 
-INSERT INTO `ani_order` (`id`, `driver`, `number_of_animals`, `order_status`, `start_time`, `status_message`, `time_estimation`, `timeframe`, `type_of_animal`, `until`, `vehicle`, `from_addr_id`, `to_addr_id`, `driver_id`) VALUES
-(1, 'Mathias Fuchs', 666, 'undelivered', '6666-06-06 06:00:00', 'Exploded on the way, sorry..', 6.6, '06:00 - 18:00', 'Sheep', '6666-06-06', 'Big Transporter', 9, 10, 1),
-(2, 'John Snow', 10, 'undelivered', '2017-11-12 00:00:00', '', 7, '10:00-12:00', 'Horse', '2017-11-12', 'Medium Transporter', 3, 4, 2),
-(3, 'Harry Potter', 2, 'undelivered', '2017-12-22 10:00:00', '', 4, '14:00-18:00', 'Owls', '2017-12-22', 'Tiny Transporter', 5, 6, 3),
-(4, 'Mathias Fuchs', 4, 'undelivered', '2017-11-09 08:00:00', '', 2, '10:00 - 12:00', 'Cows', '2017-11-09', 'Big Transporter', 11, 12, 1);
+INSERT INTO `ani_order` (`id`, `driver`, `driver_id`, `number_of_animals`, `order_status`, `start_time`, `status_message`, `time_estimation`, `timeframe`, `type_of_animal`, `until`, `vehicle`, `from_addr_id`, `to_addr_id`) VALUES
+(1, 'Mathias Fuchs', 5, 1, 'undelivered', '2017-12-23 12:00:00', '', 4, '10:00-18:00', 'Elephant', '2017-12-23', 'Big Transporter', 21, 22),
+(2, 'Tyrion Lannister', 8, 3, 'undelivered', '2017-11-17 03:00:00', 'exploded on the way, sorry boss!', 5, '10:00-12:00', 'Horses', '2017-11-17', 'Medium Transporter', 11, 12),
+(3, 'John Snow', 7, 3, 'undelivered', '2017-12-22 03:00:00', '', 8, '14:00-16:00', 'Dragons', '2017-12-22', 'Big Transporter', 13, 14),
+(4, 'Arya Stark', 6, 10, 'delivered', '2017-11-06 06:00:00', 'all good', 6, '06:00 - 18:00', 'Sheep', '2017-11-06', 'Big Transporter', 15, 16);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `edited_order`
+--
+
+CREATE TABLE `edited_order` (
+  `id` int(11) NOT NULL,
+  `driver` varchar(255) DEFAULT NULL,
+  `from_name` varchar(255) DEFAULT NULL,
+  `from_plz` int(11) NOT NULL,
+  `from_street` varchar(255) DEFAULT NULL,
+  `from_town` varchar(255) DEFAULT NULL,
+  `number_of_animals` int(11) NOT NULL,
+  `order_id` int(11) DEFAULT NULL,
+  `order_status` varchar(255) DEFAULT NULL,
+  `start_time` datetime NOT NULL,
+  `status_message` varchar(255) DEFAULT NULL,
+  `time_estimation` float NOT NULL,
+  `timeframe` varchar(255) NOT NULL,
+  `to_name` varchar(255) NOT NULL,
+  `to_plz` int(11) NOT NULL,
+  `to_street` varchar(255) NOT NULL,
+  `to_town` varchar(255) NOT NULL,
+  `type_of_animal` varchar(255) NOT NULL,
+  `until` date NOT NULL,
+  `vehicle` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -119,6 +158,26 @@ CREATE TABLE `new_order` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `new_user`
+--
+
+CREATE TABLE `new_user` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `enabled` bit(1) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `plz` int(11) NOT NULL,
+  `role` varchar(255) DEFAULT NULL,
+  `street` varchar(255) NOT NULL,
+  `town` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -126,20 +185,23 @@ CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
   `enabled` bit(1) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `password` varchar(30) NOT NULL,
-  `role` varchar(255) DEFAULT NULL
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `password` binary(60) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `role` varchar(255) DEFAULT NULL,
+  `address_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `email`, `enabled`, `name`, `password`, `role`) VALUES
-(1, 'mathias.fuchs@anitrans.ch', b'1', 'Mathias Fuchs', 'theboss', 'ROLE_ADMIN'),
-(2, 'john.snow@anitrans.ch', b'1', 'John Snow', 'Winter1sC0ming', 'ROLE_USER'),
-(3, 'harry.poter@anitrans.ch', b'1', 'Harry Potter', 'L0rdV0ldem0ord', 'ROLE_USER'),
-(4, 'arya.stark@anitrans.ch', b'1', 'Arya Stark', 'N00ne', 'ROLE_USER');
+INSERT INTO `user` (`id`, `email`, `enabled`, `first_name`, `last_name`, `password`, `phone`, `role`, `address_id`) VALUES
+(5, 'mathias.fuchs@anitrans.ch', b'1', 'Mathias', 'Fuchs', 0x2432612431302451327763426c2e767a70534262765245774c424f5a4f556d2e6f4e46315934416346397a646f58737464445733674a2f584c74714f, '0795556677', 'ROLE_ADMIN', 17),
+(6, 'arya.stark@anitrans.ch', b'1', 'Arya', 'Stark', 0x243261243130244d38685153444c4533637653643255676a53376679756f434856345a44476e514e4d4a3168586773664d3844626937444341413179, '0776667788', 'ROLE_USER', 18),
+(7, 'john.snow@anitrans.ch', b'1', 'John', 'Snow', 0x243261243130245053425576534a7847486347642f45306752656d392e617555794c646a3149716b6e63416b33697152316d71636d504c4963457947, '0324445566', 'ROLE_USER', 19),
+(8, 'tyrion.lannister@anitrans.ch', b'1', 'Tyrion', 'Lannister', 0x243261243130246575523963496a59636475523472314c563553396d2e624578675049697776716539594e55352f7644523072567447764c484c3457, '0554446677', 'ROLE_USER', 20);
 
 -- --------------------------------------------------------
 
@@ -183,16 +245,29 @@ ALTER TABLE `ani_order`
   ADD KEY `FKtl40l947f9cl8wdtgq21r9ppj` (`to_addr_id`);
 
 --
+-- Indexes for table `edited_order`
+--
+ALTER TABLE `edited_order`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `new_order`
 --
 ALTER TABLE `new_order`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `new_user`
+--
+ALTER TABLE `new_user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FKddefmvbrws3hvl5t0hnnsv8ox` (`address_id`);
 
 --
 -- Indexes for table `vehicle`
@@ -208,25 +283,37 @@ ALTER TABLE `vehicle`
 -- AUTO_INCREMENT for table `address`
 --
 ALTER TABLE `address`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `ani_order`
 --
 ALTER TABLE `ani_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `edited_order`
+--
+ALTER TABLE `edited_order`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `new_order`
 --
 ALTER TABLE `new_order`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `new_user`
+--
+ALTER TABLE `new_user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `vehicle`
@@ -244,6 +331,12 @@ ALTER TABLE `vehicle`
 ALTER TABLE `ani_order`
   ADD CONSTRAINT `FKqdbest6ramycfy4fo0w9h4htb` FOREIGN KEY (`from_addr_id`) REFERENCES `address` (`id`),
   ADD CONSTRAINT `FKtl40l947f9cl8wdtgq21r9ppj` FOREIGN KEY (`to_addr_id`) REFERENCES `address` (`id`);
+
+--
+-- Constraints for table `user`
+--
+ALTER TABLE `user`
+  ADD CONSTRAINT `FKddefmvbrws3hvl5t0hnnsv8ox` FOREIGN KEY (`address_id`) REFERENCES `address` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

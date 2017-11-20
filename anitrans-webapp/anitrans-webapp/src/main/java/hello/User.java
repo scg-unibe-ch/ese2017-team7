@@ -8,6 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.*;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 /*
  * Models the User for the database. Since every user can only have one role, this is stored here as well and not 
  * in a separate table.
@@ -32,8 +35,6 @@ public class User {
     @OneToOne
 	public Address address;
     @NotNull
-    @Size(min=5, max=30, message = "Please enter a password of between 5 and 30 characters.")
-    @Pattern(regexp = "(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])[a-zA-Z0-9_$@$!%*?&£öäüéàè\\-]+", message = "The password has to contain a regular letter, a capital letter and a number. Allowed special characters are _ @ $ ! % * ? & £ ö ä ü é à è.")
     private String password; //needs to contain a capital letter, a small letter and a number.
     private String role = "ROLE_USER"; //Standard role is ROLE_USER. ROLE_ADMIN login info: email: mathias.fuchs@anitrans.ch password: theboss.
     boolean enabled = true;
@@ -66,7 +67,7 @@ public class User {
 		this.email = newUser.getEmail();
 		this.phone = newUser.getPhone();
 		this.address = address;
-		this.password = newUser.getPassword();
+		setPassword(newUser.getPassword());
 		this.role = newUser.getRole();
     }
     
@@ -131,7 +132,8 @@ public class User {
 	}
 
 	public void setPassword(String password) {
-		this.password = password;
+		PasswordEncoder encoder = new BCryptPasswordEncoder();		
+		this.password = encoder.encode(password);
 	}
 	
 	public String getRole() {

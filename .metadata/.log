@@ -1758,3 +1758,29 @@ java.lang.Exception
 
 !ENTRY org.eclipse.lsp4e 1 0 2017-11-20 08:53:40.610
 !MESSAGE Non IFiles not supported yet
+!SESSION 2017-11-20 10:19:47.216 -----------------------------------------------
+eclipse.buildId=3.9.0.201707061823-RELEASE-e47
+java.version=1.8.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_GB
+Framework arguments:  -product org.springsource.sts.ide -keyring /Users/YvesChapuis/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.springsource.sts.ide -keyring /Users/YvesChapuis/.eclipse_keyring
+
+!ENTRY org.eclipse.jface.text 2 0 2017-11-20 10:20:02.496
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2017-11-20 10:20:02.499
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2017-11-20 10:20:08.692
+!MESSAGE Exception caught during execution of command '[git, --version]' in '/usr/bin', return code '1', error message 'xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
+'
+
+!ENTRY org.eclipse.jdt.launching 4 150 2017-11-20 10:20:26.286
+!MESSAGE Referenced classpath provider does not exist: org.springframework.ide.eclipse.boot.launch.BootMavenClassPathProvider
+
+!ENTRY org.eclipse.lsp4e 1 0 2017-11-20 10:20:53.133
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2017-11-20 10:20:53.142
+!MESSAGE Non IFiles not supported yet

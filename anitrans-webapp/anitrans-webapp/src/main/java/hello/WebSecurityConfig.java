@@ -61,7 +61,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/orders", "/orders.html", "/add-order", "/edit-order", "/delete-order", "/drivers", "/delete-driver", 
                 		"/add-order.html", "/edit-order.html", "/delete-order.html", "/drivers.html", "/delete-driver.html", 
                 		"/vehicles.html", "/delete-vehicle.html", "/vehicles", "/delete-vehicle", "/add-vehicle.html", "/new-vehicle.html", 
-                		"/add-vehicle.", "/new-vehicle").access("hasRole('ADMIN')")
+                		"/add-vehicle.", "/new-vehicle", "/edit-order-success").access("hasRole('ADMIN')")
                 .antMatchers("/tours", "/change-status", "/tours.html", "/change-status.html", "/logout", "/logout.html").access("hasRole('ADMIN') or hasRole('USER')")
                 .anyRequest().authenticated()
                 .and()

@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import javax.validation.Valid;
@@ -145,6 +146,13 @@ public class EditOrderController {
 		
     	
     		return model;
+    }
+    
+    
+  //Maps all requests of /edit-order-success. This is needed because of the ModelAndView
+    @RequestMapping("/edit-order-success")
+    public String success() {
+        return "edit-order-success";
     }
     
 

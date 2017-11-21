@@ -31,20 +31,20 @@
     <table>
  		<tr>
    		 	<th>Id</th>
-		    <th>Name</th> 
+		    <th>First Name</th> 
 		    <th>Last Name</th>
-		    <th>Address</th>
-		    <th>Phone</th>
 		    <th>Email address</th>
+		    <th>Phone</th>
+		    <th>Address</th>
 		    <th></th>
  		 </tr>
 		  <tr th:each="driver : ${drivers}">
  		   <td th:text="${driver.id}"></td>
- 		   <td th:text="${driver.name}"></td>
+ 		   <td th:text="${driver.firstName}"></td> 
  		   <td th:text="${driver.lastName}"></td> 
- 		   <td th:text="${driver.address}"></td>
- 		   <td th:text="${driver.phone}"></td>
  		   <td th:text="${driver.email}"></td>
+ 		   <td th:text="${driver.phone}"></td> 
+ 		   <td th:text="${driver.address}"></td> 
  		   <td><a th:href="@{/delete-driver(id=${driver.id})}" onclick="return confirm('Are you sure you would like to DELETE this driver?')"><button class='b3'>Delete Driver</button></a></td>	 
 		  </tr>
 		  

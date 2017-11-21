@@ -5,6 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import hello.SortingService;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.validation.BindingResult;
@@ -14,13 +17,23 @@ import javax.validation.Valid;
 public class OrdersController {
 	@Autowired
 	private hello.OrderRepository orderRepository;
-
+	@Autowired
+	private SortingService service;
+	
 	
 	// Maps all requests for  /orders. 
     @RequestMapping("/orders")
     	public String orders(Model model) {
-    	    model.addAttribute("orders", orderRepository.findAll()); //Finds all the orders which are to be displayed in orders.html
+    	    
+    	    ArrayList<AniOrder> ordred = service.sort();
+    	    
+    	    model.addAttribute("completedOrders", ordred); //Finds all the orders which are to be displayed in orders.html
+    	    model.addAttribute("notCompletedOrders", ordred); //Finds all the orders which are to be displayed in orders.html
+
     	    return "orders"; //returns the template 
     }
 
 }
+
+
+//might need more methods, 2 methods one to get completed and one for non-completed 

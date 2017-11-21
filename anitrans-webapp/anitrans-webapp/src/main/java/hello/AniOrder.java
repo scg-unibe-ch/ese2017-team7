@@ -151,7 +151,7 @@ public class AniOrder {
     public void setStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
     }
-  
     
+   
+    }
 
-}

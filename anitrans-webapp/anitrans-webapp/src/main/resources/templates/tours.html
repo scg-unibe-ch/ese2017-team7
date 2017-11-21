@@ -24,6 +24,7 @@
 <div class="ex0">
 <h1><img src="images/logo.png" width="45" height="40" alt="logo" id="logo" />Tours</h1>
 
+	<h2>Undelivered</h2>
     <table>
  		<tr>
    		 	<th>Order Number</th>
@@ -40,7 +41,43 @@
  		   	<th>Status Message</th>
  		   	<th></th>
  		 </tr>
- 		 <tr th:each="order : ${orders}">
+ 		 <tr th:each="order : ${unsuccessfulOrders}">
+ 		   <td th:text="${order.id}"></td>
+ 		   <td th:text="${order.fromAddr}"></td> 
+ 		   <td  th:text="${order.toAddr}"></td>
+ 		   <td  th:text="${#dates.format(order.until, 'dd.MM.yyyy')}"></td>
+ 		   <td  th:text="${order.timeframe}"></td>
+ 		   <td  th:text="${order.typeOfAnimal}"></td>
+ 		   <td  th:text="${order.numberOfAnimals}"></td>
+ 		   <td  th:text="${order.timeEstimation} +  hours"></td>
+ 		   <td  th:text="${#dates.format(order.startTime, 'dd.MM.yyyy, HH:mm')}"></td>
+ 		   <td th:text="${order.driver}"></td>
+ 		   <td th:text="${order.orderStatus}"></td>
+ 		   <td th:text="${order.statusMessage}"></td>			   
+ 		   <td>
+ 		   <a th:href="@{/change-status(id=${order.id})}" onclick="return confirm('Are you sure you would like to edit this status?')">Change Status</a>
+ 		   </td>
+		  </tr>
+	</table>
+	
+	<h2>Undelivered</h2>
+    <table>
+ 		<tr>
+   		 	<th>Order Number</th>
+		    <th>From</th> 
+		    <th>To</th>
+		    <th>Until</th>
+		    <th>Timeframe</th>
+		    <th>Type of Animal</th>
+ 		   	<th>Number of Animals</th>
+ 		   	<th>Time Estimation</th>
+ 		   	<th>Start Time</th>
+ 		   	<th>Driver</th>
+ 		   	<th>Status</th>
+ 		   	<th>Status Message</th>
+ 		   	<th></th>
+ 		 </tr>
+ 		 <tr th:each="order : ${successfulOrders}">
  		   <td th:text="${order.id}"></td>
  		   <td th:text="${order.fromAddr}"></td> 
  		   <td  th:text="${order.toAddr}"></td>

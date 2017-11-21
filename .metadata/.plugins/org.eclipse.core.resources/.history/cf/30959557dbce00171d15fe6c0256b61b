@@ -17,11 +17,12 @@ public class SortingService {
 	private hello.OrderRepository orderRepository;
 	
 	
-	public ArrayList<AniOrder> getSuccessful (Iterable<hello.AniOrder> repository) {
+	public ArrayList<AniOrder> getSuccessful () {
+		Iterable<hello.AniOrder> listOrder = orderRepository.findAll();
 		ArrayList<hello.AniOrder> allOrders = new ArrayList<>();
 		
 		//convert Iterable to ArrayList
-		for(hello.AniOrder order : repository) {
+		for(hello.AniOrder order : listOrder) {
 			allOrders.add(order);
 		}
 
@@ -37,11 +38,12 @@ public class SortingService {
 
 	}
 	
-	public ArrayList<AniOrder> getUnsuccessful (Iterable<hello.AniOrder> repository) {
+	public ArrayList<AniOrder> getUnsuccessful () {
+		Iterable<hello.AniOrder> listOrder = orderRepository.findAll();
 		ArrayList<hello.AniOrder> allOrders = new ArrayList<>();
 		
 		//convert Iterable to ArrayList
-		for(hello.AniOrder order : repository) {
+		for(hello.AniOrder order : listOrder) {
 			allOrders.add(order);
 		}
 

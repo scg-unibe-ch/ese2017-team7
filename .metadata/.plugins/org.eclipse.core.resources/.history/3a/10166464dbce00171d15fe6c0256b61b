@@ -28,8 +28,8 @@ public class OrdersController {
     @RequestMapping("/orders")
     	public String orders(Model model) {
     	    
-    	    ArrayList<hello.AniOrder> successfulOrders = service.getSuccessful(orderRepository.findAll());
-    	    ArrayList<hello.AniOrder> unsuccessfulOrders = service.getUnsuccessful(orderRepository.findAll());
+    	    ArrayList<hello.AniOrder> successfulOrders = service.getSuccessful();
+    	    ArrayList<hello.AniOrder> unsuccessfulOrders = service.getUnsuccessful();
     	    
     	    model.addAttribute("successfulOrders", successfulOrders); //Finds all the orders which are to be displayed in orders.html
     	    model.addAttribute("unsuccessfulOrders", unsuccessfulOrders); //Finds all the orders which are to be displayed in orders.html

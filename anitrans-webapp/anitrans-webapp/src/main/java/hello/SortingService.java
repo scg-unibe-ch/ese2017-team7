@@ -17,35 +17,47 @@ public class SortingService {
 	private hello.OrderRepository orderRepository;
 	
 	
-//	if (orderStatus == "undelivered") {
-//		//sortUndelivered
-//	}
-//	
-//	else {
-//		//sortDelivered
-//	}
-	
-	public ArrayList<AniOrder> sort () {
+	public ArrayList<AniOrder> getSuccessful () {
 		Iterable<hello.AniOrder> listOrder = orderRepository.findAll();
+		ArrayList<hello.AniOrder> allOrders = new ArrayList<>();
 		
-		
+		//convert Iterable to ArrayList
+		for(hello.AniOrder order : listOrder) {
+			allOrders.add(order);
+		}
 
+		ArrayList<hello.AniOrder> successfulOrders = new ArrayList<>();		
+		// go through ArrayList form back to frond, add all delivered orders
+		for(int i = allOrders.size(); i >= 0; i--) {
+			if(allOrders.get(i).getOrderStatus().equals("delivered")) {
+				successfulOrders.add(allOrders.get(i));
+			}
+		}
 		
-		List<T> target = new ArrayList<>();				//new conversion
-		listOrder.forEachRemaining(target::add);
-		
-		return list(listOrder);	
-		
-//		List<hello.AniOrder> = sortedList;
-//			return sortedList;
+		return successfulOrders;	//return all the delivered orders
 
-//		for (int i = 0; i < listOrder.length; i++) {
-//			System.out.print(listOrder.getId());
-		//}
+	}
+	
+	public ArrayList<AniOrder> getUnsuccessful () {
+		Iterable<hello.AniOrder> listOrder = orderRepository.findAll();
+		ArrayList<hello.AniOrder> allOrders = new ArrayList<>();
+		
+		//convert Iterable to ArrayList
+		for(hello.AniOrder order : listOrder) {
+			allOrders.add(order);
+		}
+
+		ArrayList<hello.AniOrder> unsuccessfulOrders = new ArrayList<>();			
+		// go through ArrayList form back to frond, add all delivered orders
+		for(int i = allOrders.size(); i >= 0; i--) {
+			if(allOrders.get(i).getOrderStatus().equals("undelivered")) {
+				unsuccessfulOrders.add(allOrders.get(i));
+			}
+		}
+		
+		return unsuccessfulOrders;	//return all the undelivered orders
+		
 	}
 	
 	
 	}
-//go through with for loop, order.getId()    print(order.getId())
-
-//create one list for completed and one for uncompleted

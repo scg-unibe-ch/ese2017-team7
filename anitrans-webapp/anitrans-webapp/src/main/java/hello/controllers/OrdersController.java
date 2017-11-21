@@ -11,6 +11,9 @@ import hello.SortingService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.validation.BindingResult;
+
+import java.util.ArrayList;
+
 import javax.validation.Valid;
 
 @Controller
@@ -25,10 +28,11 @@ public class OrdersController {
     @RequestMapping("/orders")
     	public String orders(Model model) {
     	    
-    	    ArrayList<AniOrder> ordred = service.sort();
+    	    ArrayList<hello.AniOrder> successfulOrders = service.getSuccessful();
+    	    ArrayList<hello.AniOrder> unsuccessfulOrders = service.getUnsuccessful();
     	    
-    	    model.addAttribute("completedOrders", ordred); //Finds all the orders which are to be displayed in orders.html
-    	    model.addAttribute("notCompletedOrders", ordred); //Finds all the orders which are to be displayed in orders.html
+    	    model.addAttribute("successfulOrders", successfulOrders); //Finds all the orders which are to be displayed in orders.html
+    	    model.addAttribute("unsuccessfulOrders", unsuccessfulOrders); //Finds all the orders which are to be displayed in orders.html
 
     	    return "orders"; //returns the template 
     }

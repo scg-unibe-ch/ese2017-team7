@@ -60,4 +60,14 @@ public class SortingService {
 	}
 	
 	
+<<<<<<< HEAD
 	}
+=======
+	}
+
+//GOALS
+
+//go through with for loop, order.getId()    print(order.getId())
+
+//create one list for completed and one for uncompleted
+>>>>>>> 597189cd759a331796289cbf55967b16a81ea994

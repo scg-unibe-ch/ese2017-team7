@@ -43,6 +43,14 @@ public class ToursController {
     			//Finds all the orders to be displayed on tours.html (only the ones which the current user is driving).
     			ArrayList<hello.AniOrder> successfulOrders = service.getSuccessful(orderRepository.findByDriver(currentUser.getName()));
         	    ArrayList<hello.AniOrder> unsuccessfulOrders = service.getUnsuccessful(orderRepository.findByDriver(currentUser.getName()));
+        	    
+        	    if(successfulOrders.size() <= 0) {
+    	    			model.addAttribute("successfulOrdersError", "There are no delivered tours.");
+        	    }
+        	    if(unsuccessfulOrders.size() <= 0) {
+        	    		model.addAttribute("unsuccessfulOrdersError", "There are no undelivered tours.");
+        	    }
+
         	    model.addAttribute("successfulOrders", successfulOrders); 
         	    model.addAttribute("unsuccessfulOrders", unsuccessfulOrders);
 

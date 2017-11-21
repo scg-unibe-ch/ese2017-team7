@@ -32,6 +32,13 @@ public class OrdersController {
     	    ArrayList<hello.AniOrder> successfulOrders = service.getSuccessful(orderRepository.findAll());
     	    ArrayList<hello.AniOrder> unsuccessfulOrders = service.getUnsuccessful(orderRepository.findAll());
     	    
+    	    if(successfulOrders.size() <= 0) {
+    	    		model.addAttribute("successfulOrdersError", "There are no delivered orders.");
+    	    }
+    	    if(unsuccessfulOrders.size() <= 0) {
+	    		model.addAttribute("unsuccessfulOrdersError", "There are no undelivered orders.");
+	    }
+    	    
     	    model.addAttribute("successfulOrders", successfulOrders); //Finds all the orders which are to be displayed in orders.html
     	    model.addAttribute("unsuccessfulOrders", unsuccessfulOrders); //Finds all the orders which are to be displayed in orders.html
 

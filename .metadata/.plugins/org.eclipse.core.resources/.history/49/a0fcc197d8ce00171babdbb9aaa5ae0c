@@ -28,7 +28,7 @@ public class SortingService {
 
 		ArrayList<hello.AniOrder> successfulOrders = new ArrayList<>();		
 		// go through ArrayList form back to frond, add all delivered orders
-		for(int i = allOrders.size()-1; i >= 0; i--) {
+		for(int i = allOrders.size(); i >= 0; i--) {
 			if(allOrders.get(i).getOrderStatus().equals("delivered")) {
 				successfulOrders.add(allOrders.get(i));
 			}
@@ -49,7 +49,7 @@ public class SortingService {
 
 		ArrayList<hello.AniOrder> unsuccessfulOrders = new ArrayList<>();			
 		// go through ArrayList form back to frond, add all delivered orders
-		for(int i = allOrders.size()-1; i >= 0; i--) {
+		for(int i = allOrders.size(); i >= 0; i--) {
 			if(allOrders.get(i).getOrderStatus().equals("undelivered")) {
 				unsuccessfulOrders.add(allOrders.get(i));
 			}

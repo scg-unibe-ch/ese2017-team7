@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 21, 2017 at 08:02 AM
+-- Generation Time: Nov 21, 2017 at 05:54 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -80,7 +80,9 @@ INSERT INTO `address` (`id`, `name`, `plz`, `street`, `town`) VALUES
 (38, 'Zürich Flughafen', 6000, 'Flughafenstrasse 1', 'Zürich'),
 (39, 'Zirkus Knie', 1111, 'on the Road', 'Anywhere'),
 (40, 'Zürich Flughafen', 6000, 'Flughafenstrasse 1', 'Zürich'),
-(41, 'Zirkus Knie', 1111, 'on the Road', 'Anywhere');
+(41, 'Zirkus Knie', 1111, 'on the Road', 'Anywhere'),
+(42, 'Dragonstone', 8888, 'On the sea', 'Dragonstone'),
+(43, 'Winterfell', 1111, 'Castle', 'Winterfell');
 
 -- --------------------------------------------------------
 
@@ -112,7 +114,7 @@ CREATE TABLE `ani_order` (
 INSERT INTO `ani_order` (`id`, `driver`, `driver_id`, `number_of_animals`, `order_status`, `start_time`, `status_message`, `time_estimation`, `timeframe`, `type_of_animal`, `until`, `vehicle`, `from_addr_id`, `to_addr_id`) VALUES
 (1, 'Mathias Fuchs', 5, 1, 'undelivered', '2017-12-23 12:00:00', '', 4, '10:00-18:00', 'Elephant', '2017-12-23', 'Big Transporter', 40, 41),
 (2, 'Tyrion Lannister', 8, 3, 'undelivered', '2017-11-17 03:00:00', 'exploded on the way, sorry boss!', 5, '10:00-12:00', 'Horses', '2017-11-17', 'Medium Transporter', 11, 12),
-(3, 'John Snow', 7, 3, 'undelivered', '2017-12-22 03:00:00', '', 8, '14:00-16:00', 'Dragons', '2017-12-22', 'Big Transporter', 13, 14),
+(3, 'John Snow', 7, 3, 'undelivered', '2017-12-22 03:00:00', '', 8, '14:00-16:00', 'Dragons', '2017-12-22', 'Big Transporter', 42, 43),
 (4, 'Arya Stark', 6, 10, 'delivered', '2017-11-06 06:00:00', 'all good', 6, '06:00 - 18:00', 'Sheep', '2017-11-06', 'Big Transporter', 15, 16);
 
 -- --------------------------------------------------------
@@ -208,18 +210,19 @@ CREATE TABLE `user` (
   `password` binary(60) NOT NULL,
   `phone` varchar(255) NOT NULL,
   `role` varchar(255) DEFAULT NULL,
-  `address_id` int(11) DEFAULT NULL
+  `address_id` int(11) DEFAULT NULL,
+  `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `email`, `enabled`, `first_name`, `last_name`, `password`, `phone`, `role`, `address_id`) VALUES
-(5, 'mathias.fuchs@anitrans.ch', b'1', 'Mathias', 'Fuchs', 0x2432612431302451327763426c2e767a70534262765245774c424f5a4f556d2e6f4e46315934416346397a646f58737464445733674a2f584c74714f, '0795556677', 'ROLE_ADMIN', 17),
-(6, 'arya.stark@anitrans.ch', b'1', 'Arya', 'Stark', 0x243261243130244d38685153444c4533637653643255676a53376679756f434856345a44476e514e4d4a3168586773664d3844626937444341413179, '0776667788', 'ROLE_USER', 18),
-(7, 'john.snow@anitrans.ch', b'1', 'John', 'Snow', 0x243261243130245053425576534a7847486347642f45306752656d392e617555794c646a3149716b6e63416b33697152316d71636d504c4963457947, '0324445566', 'ROLE_USER', 19),
-(8, 'tyrion.lannister@anitrans.ch', b'1', 'Tyrion', 'Lannister', 0x243261243130246575523963496a59636475523472314c563553396d2e624578675049697776716539594e55352f7644523072567447764c484c3457, '0554446677', 'ROLE_USER', 20);
+INSERT INTO `user` (`id`, `email`, `enabled`, `first_name`, `last_name`, `password`, `phone`, `role`, `address_id`, `name`) VALUES
+(5, 'mathias.fuchs@anitrans.ch', b'1', 'Mathias', 'Fuchs', 0x2432612431302451327763426c2e767a70534262765245774c424f5a4f556d2e6f4e46315934416346397a646f58737464445733674a2f584c74714f, '0795556677', 'ROLE_ADMIN', 17, ''),
+(6, 'arya.stark@anitrans.ch', b'1', 'Arya', 'Stark', 0x243261243130244d38685153444c4533637653643255676a53376679756f434856345a44476e514e4d4a3168586773664d3844626937444341413179, '0776667788', 'ROLE_USER', 18, ''),
+(7, 'john.snow@anitrans.ch', b'1', 'John', 'Snow', 0x243261243130245053425576534a7847486347642f45306752656d392e617555794c646a3149716b6e63416b33697152316d71636d504c4963457947, '0324445566', 'ROLE_USER', 19, ''),
+(8, 'tyrion.lannister@anitrans.ch', b'1', 'Tyrion', 'Lannister', 0x243261243130246575523963496a59636475523472314c563553396d2e624578675049697776716539594e55352f7644523072567447764c484c3457, '0554446677', 'ROLE_USER', 20, '');
 
 -- --------------------------------------------------------
 
@@ -301,7 +304,7 @@ ALTER TABLE `vehicle`
 -- AUTO_INCREMENT for table `address`
 --
 ALTER TABLE `address`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `ani_order`
@@ -313,25 +316,25 @@ ALTER TABLE `ani_order`
 -- AUTO_INCREMENT for table `edited_order`
 --
 ALTER TABLE `edited_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `new_order`
 --
 ALTER TABLE `new_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `new_user`
 --
 ALTER TABLE `new_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `vehicle`

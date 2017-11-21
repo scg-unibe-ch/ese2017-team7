@@ -14,7 +14,7 @@ import hello.User;
  */
 public interface NewUserRepository extends CrudRepository<NewUser, Long> {
 	
-	hello.NewUser findById(Integer id);
-	hello.NewUser findByEmail(String email);
+	hello.User findById(Integer id);
+	hello.User findByEmail(String email);
 
 }

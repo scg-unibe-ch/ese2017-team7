@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 hello/NewOrder.class
 hello/Login.class
 hello/OrderRepository.class
@@ -33,3 +34,20 @@ hello/AniOrder.class
 hello/controllers/NewVehicleController.class
 hello/controllers/OrdersController.class
 hello/Vehicle.class
+=======
+hello\controllers\DriversController.class
+hello\AniOrder.class
+hello\controllers\RegisterController.class
+hello\Application.class
+hello\OrderRepository.class
+hello\controllers\HomeController.class
+hello\controllers\ToursController.class
+hello\controllers\AddOrderController.class
+hello\controllers\EditOrderController.class
+hello\UserRepositoryUserDetailsService$1.class
+hello\controllers\ChangeStatusController.class
+hello\controllers\OrdersController.class
+hello\UserRepository.class
+hello\controllers\LoginController.class
+hello\User.class
+>>>>>>> sorting

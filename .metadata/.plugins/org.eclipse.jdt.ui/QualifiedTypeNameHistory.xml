@@ -1,7 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.springframework.security.authentication.encoding.Md5PasswordEncoder"/>
-<fullyQualifiedTypeName name="org.springframework.security.authentication.encoding.PasswordEncoder"/>
-<fullyQualifiedTypeName name="org.springframework.security.crypto.password.PasswordEncoder"/>
-<fullyQualifiedTypeName name="org.springframework.security.authentication.dao.DaoAuthenticationProvider"/>
-</qualifiedTypeNameHistroy>
+<qualifiedTypeNameHistroy/>

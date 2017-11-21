@@ -1,10 +1,15 @@
 package hello.controllers;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import hello.SortingService;
+
 import org.springframework.security.core.*;
 import org.springframework.security.core.context.*;
 import org.springframework.security.authentication.*;
@@ -39,5 +44,24 @@ public class ToursController {
     		}
     		
     }
+   
+    	
+    	@Autowired
+    	private SortingService service;
+    	
+    	
+    	// Maps all requests for  /orders. 
+        @RequestMapping("/orders")
+        	public String orders(Model model) {
+        	    
+        	    ArrayList<hello.AniOrder> successfulOrders = service.getSuccessful();
+        	    ArrayList<hello.AniOrder> unsuccessfulOrders = service.getUnsuccessful();
+        	    
+        	    model.addAttribute("successfulOrders", successfulOrders); //Finds all the orders which are to be displayed in orders.html
+        	    model.addAttribute("unsuccessfulOrders", unsuccessfulOrders); //Finds all the orders which are to be displayed in orders.html
 
-}
+        	    return "orders"; //returns the template 
+        }
+
+    }
+

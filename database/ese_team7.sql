@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 21, 2017 at 05:54 PM
+-- Generation Time: Nov 22, 2017 at 03:13 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -82,7 +82,8 @@ INSERT INTO `address` (`id`, `name`, `plz`, `street`, `town`) VALUES
 (40, 'Zürich Flughafen', 6000, 'Flughafenstrasse 1', 'Zürich'),
 (41, 'Zirkus Knie', 1111, 'on the Road', 'Anywhere'),
 (42, 'Dragonstone', 8888, 'On the sea', 'Dragonstone'),
-(43, 'Winterfell', 1111, 'Castle', 'Winterfell');
+(43, 'Winterfell', 1111, 'Castle', 'Winterfell'),
+(44, 'Yves Chapuis', 3250, 'Dreihubelweg 49', 'Lyss');
 
 -- --------------------------------------------------------
 
@@ -210,19 +211,18 @@ CREATE TABLE `user` (
   `password` binary(60) NOT NULL,
   `phone` varchar(255) NOT NULL,
   `role` varchar(255) DEFAULT NULL,
-  `address_id` int(11) DEFAULT NULL,
-  `name` varchar(255) NOT NULL
+  `address_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `email`, `enabled`, `first_name`, `last_name`, `password`, `phone`, `role`, `address_id`, `name`) VALUES
-(5, 'mathias.fuchs@anitrans.ch', b'1', 'Mathias', 'Fuchs', 0x2432612431302451327763426c2e767a70534262765245774c424f5a4f556d2e6f4e46315934416346397a646f58737464445733674a2f584c74714f, '0795556677', 'ROLE_ADMIN', 17, ''),
-(6, 'arya.stark@anitrans.ch', b'1', 'Arya', 'Stark', 0x243261243130244d38685153444c4533637653643255676a53376679756f434856345a44476e514e4d4a3168586773664d3844626937444341413179, '0776667788', 'ROLE_USER', 18, ''),
-(7, 'john.snow@anitrans.ch', b'1', 'John', 'Snow', 0x243261243130245053425576534a7847486347642f45306752656d392e617555794c646a3149716b6e63416b33697152316d71636d504c4963457947, '0324445566', 'ROLE_USER', 19, ''),
-(8, 'tyrion.lannister@anitrans.ch', b'1', 'Tyrion', 'Lannister', 0x243261243130246575523963496a59636475523472314c563553396d2e624578675049697776716539594e55352f7644523072567447764c484c3457, '0554446677', 'ROLE_USER', 20, '');
+INSERT INTO `user` (`id`, `email`, `enabled`, `first_name`, `last_name`, `password`, `phone`, `role`, `address_id`) VALUES
+(5, 'mathias.fuchs@anitrans.ch', b'1', 'Mathias', 'Fuchs', 0x2432612431302451327763426c2e767a70534262765245774c424f5a4f556d2e6f4e46315934416346397a646f58737464445733674a2f584c74714f, '0795556677', 'ROLE_ADMIN', 17),
+(6, 'arya.stark@anitrans.ch', b'1', 'Arya', 'Stark', 0x243261243130244d38685153444c4533637653643255676a53376679756f434856345a44476e514e4d4a3168586773664d3844626937444341413179, '0776667788', 'ROLE_USER', 18),
+(7, 'john.snow@anitrans.ch', b'1', 'John', 'Snow', 0x243261243130245053425576534a7847486347642f45306752656d392e617555794c646a3149716b6e63416b33697152316d71636d504c4963457947, '0324445566', 'ROLE_USER', 19),
+(8, 'tyrion.lannister@anitrans.ch', b'1', 'Tyrion', 'Lannister', 0x243261243130246575523963496a59636475523472314c563553396d2e624578675049697776716539594e55352f7644523072567447764c484c3457, '0554446677', 'ROLE_USER', 20);
 
 -- --------------------------------------------------------
 
@@ -304,13 +304,13 @@ ALTER TABLE `vehicle`
 -- AUTO_INCREMENT for table `address`
 --
 ALTER TABLE `address`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `ani_order`
 --
 ALTER TABLE `ani_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `edited_order`
@@ -322,7 +322,7 @@ ALTER TABLE `edited_order`
 -- AUTO_INCREMENT for table `new_order`
 --
 ALTER TABLE `new_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `new_user`
@@ -334,7 +334,7 @@ ALTER TABLE `new_user`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `vehicle`

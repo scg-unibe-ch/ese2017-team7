@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
-		<item value="/Users/YvesChapuis/Documents/GitHub/ese2017-team7/anitrans-webapp/anitrans-webapp"/>
-		<item value="D:\Eigene Dateien\Dokumente\sts-bundle\ese2017-team7\anitrans-webapp\anitrans-webapp"/>
-		<item value="D:\Eigene Dateien\Dokumente\sts-bundle\ese2017-team7\anitrans-webapp"/>
+		<item value="/Users/YvesChapuis/Documents/GitHub/ese2017-team7"/>
 	</list>
 	<list key="installedFeatures">
 		<item value="com.ianbrandt.tools.m2e.mdp.feature:0.0.4.201409291703"/>
@@ -115,12 +113,4 @@
 		<item value="org.springsource.sts.package:3.9.0.201707061823-RELEASE-e47"/>
 		<item value="org.springsource.sts:3.9.0.201707061823-RELEASE"/>
 	</list>
-	<section name="WORKBENCH_SETTINGS">
-		<list key="ENABLED_TRANSFERS">
-		</list>
-	</section>
-	<section name="ChooseWorkspaceDialogSettings">
-		<item value="978" key="DIALOG_X_ORIGIN"/>
-		<item value="521" key="DIALOG_Y_ORIGIN"/>
-	</section>
 </section>

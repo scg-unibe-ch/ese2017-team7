@@ -18,28 +18,36 @@ import hello.User;
 @Controller
 public class RegisterController {
 	@Autowired
-	private hello.NewUserRepository userRepository;
+	private hello.UserRepository userRepository;
+	//@Autowired
+	@Autowired
+	private hello.AddressRepository addressRepository;
 	
 	// Maps get requests for /register. 
     @GetMapping("/register")
     public String registerForm(Model model) {
-        model.addAttribute("user", new hello.NewUser());//create a new user and pass it to register.html
+        model.addAttribute("newUser", new hello.NewUser());//create a new user and pass it to register.html
         return "register"; //return the template
     }
     
     //Maps post requests for /register. This will need to be implemented, so that a new entry in the User table will be created when someone registers.
     @PostMapping("/register")
-    public String registerSubmit(@Valid @ModelAttribute hello.NewUser user, BindingResult bindingResult, Model model) {
-    if	(userRepository.findByEmail(user.getEmail()) != null) {
-    		model.addAttribute("errorMsg", "There is already someone registered with that email address.");
-    		return "register";
-    }
+    public String registerSubmit(@Valid @ModelAttribute hello.NewUser newUser, BindingResult bindingResult, Model model) {
     	if (bindingResult.hasErrors()) { //if the new user has errors, send the user back to correct the mistakes. Invalid fields will be marked.
             return "register";
     	}
     	
-    	
-		userRepository.save(user); //save the user to the database.
+    	if	(userRepository.findByEmail(newUser.getEmail()) != null) {
+    		model.addAttribute("errorMsg", "There is already someone registered with that email address.");
+    		return "register";
+    }
+    	hello.Address address = new hello.Address(newUser.getName(), newUser.getStreet(), newUser.getTown(), newUser.getPlz());
+    	hello.User user = new hello.User(newUser, address);
+    		System.out.println(user.getPassword());
+    		
+    		addressRepository.save(address); //save the address to the database.
+		userRepository.save(user); //save the order to the database.
+		model.addAttribute(user);
         return "registration-success"; //return the template
     }
     
@@ -47,11 +55,11 @@ public class RegisterController {
     @GetMapping("/delete-driver")
     public String deleteOrder(@RequestParam Integer id, Model model) {
 
-    	    	NewUser user;
+    	    	User user;
         	if(id != null) {
         		user  = userRepository.findById(id); //finds the user to be deleted.
         	} else {
-        		user = new hello.NewUser(); //if it doesn't exist a new user is created.
+        		user = new hello.User(); //if it doesn't exist a new user is created.
         	}
         	
         	if(user.getRole().equals("ROLE_ADMIN")) {
@@ -60,6 +68,7 @@ public class RegisterController {
 
         	
         	userRepository.delete(user); //delete the user.
+        	addressRepository.delete(user.getAddress());
     	    	return "delete-user-success"; //return the template
 
     }

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class DriversController {
 	@Autowired
-	private hello.NewUserRepository userRepository;
+	private hello.UserRepository userRepository;
 	
 	// Maps the /drivers subpage and implements its connection with the database and the "Users" table.
     @RequestMapping("/drivers")

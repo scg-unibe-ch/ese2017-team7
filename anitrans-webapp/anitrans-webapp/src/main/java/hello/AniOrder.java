@@ -8,7 +8,7 @@ import java.util.Date;
 
 /*
  * The object used to create the object table in the database. "Object" is a reserved keyword in SQL, so AniOrder is used as a 
- * combination of order and aniTrans.
+ * combination of order and the name "aniTrans".
  * All of the variables are columns of the database table.
  */
 @Entity // This tells Hibernate to make a table out of this class
@@ -192,6 +192,7 @@ public class AniOrder {
 
     public void setStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
-    }
+    } 
+   
+   }
 
-}

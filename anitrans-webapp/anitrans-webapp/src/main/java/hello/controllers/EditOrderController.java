@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import javax.validation.Valid;
@@ -28,8 +29,6 @@ public class EditOrderController {
 	private hello.UserRepository userRepository;
 	@Autowired
 	private hello.AddressRepository addressRepository;
-	@Autowired
-	private hello.NewOrderRepository newOrderRepository;
 	@Autowired
 	private hello.VehicleRepository vehicleRepository;
 	@Autowired
@@ -97,7 +96,6 @@ public class EditOrderController {
     		addressRepository.save(fromAddress); //save the address to the database.
     		addressRepository.save(toAddress); //save the address to the database.
 		orderRepository.save(aniOrder); //save the order to the database.
-		newOrderRepository.delete(order);
 		return new ModelAndView("redirect:/edit-order-success"); //return the template
     }
     
@@ -145,6 +143,13 @@ public class EditOrderController {
 		
     	
     		return model;
+    }
+    
+    
+  //Maps all requests of /edit-order-success. This is needed because of the ModelAndView
+    @RequestMapping("/edit-order-success")
+    public String success() {
+        return "edit-order-success";
     }
     
 

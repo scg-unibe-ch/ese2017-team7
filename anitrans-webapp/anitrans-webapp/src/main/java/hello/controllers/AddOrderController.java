@@ -20,8 +20,6 @@ public class AddOrderController {
 	@Autowired
 	private hello.AddressRepository addressRepository;
 	@Autowired
-	private hello.NewOrderRepository newOrderRepository;
-	@Autowired
 	private hello.VehicleRepository vehicleRepository;
 	@Autowired
 	hello.CounterService counter;
@@ -64,7 +62,6 @@ public class AddOrderController {
     		addressRepository.save(fromAddress); //save the address to the database.
     		addressRepository.save(toAddress); //save the address to the database.
 		orderRepository.save(aniOrder); //save the order to the database.
-		newOrderRepository.delete(order); //delete the newOrder from the database as it is no longer needed.
 		return "add-order-success"; //returns the template
     }
     

@@ -19,8 +19,7 @@ import hello.User;
 public class RegisterController {
 	@Autowired
 	private hello.UserRepository userRepository;
-	@Autowired
-	private hello.NewUserRepository newUserRepository;
+	//@Autowired
 	@Autowired
 	private hello.AddressRepository addressRepository;
 	
@@ -48,7 +47,6 @@ public class RegisterController {
     		
     		addressRepository.save(address); //save the address to the database.
 		userRepository.save(user); //save the order to the database.
-		newUserRepository.delete(newUser); //delete the newOrder from the database as it is no longer needed.
 		model.addAttribute(user);
         return "registration-success"; //return the template
     }

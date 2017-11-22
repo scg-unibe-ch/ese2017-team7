@@ -30,8 +30,6 @@ public class EditOrderController {
 	@Autowired
 	private hello.AddressRepository addressRepository;
 	@Autowired
-	private hello.NewOrderRepository newOrderRepository;
-	@Autowired
 	private hello.VehicleRepository vehicleRepository;
 	@Autowired
 	hello.CounterService counter;
@@ -98,7 +96,6 @@ public class EditOrderController {
     		addressRepository.save(fromAddress); //save the address to the database.
     		addressRepository.save(toAddress); //save the address to the database.
 		orderRepository.save(aniOrder); //save the order to the database.
-		newOrderRepository.delete(order);
 		return new ModelAndView("redirect:/edit-order-success"); //return the template
     }
     

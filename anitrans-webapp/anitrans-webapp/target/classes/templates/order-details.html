@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <title>aniTrans | Order Details</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+<div id='container'>
+            <div id='header'> 
+                <img src="images/banner.jpg" alt="header" id='header_img' />
+                <ul id='nav'>
+                    <li class='nav_element1'><a href="index.html">Home</a></li>
+                    <div sec:authorize="hasRole('ROLE_ADMIN')"><li class='nav_element2'><a href="orders" class="active">Orders</a></li></div>
+                    <div sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_USER')"><li class='nav_element2'><a href="tours.html">Tours</a></li></div>
+                    <div sec:authorize="hasRole('ROLE_ADMIN')"><li class='nav_element4'><a href="drivers.html">Drivers</a></li></div>
+                    <div sec:authorize="hasRole('ROLE_ADMIN')"><li class='nav_element4'><a href="vehicles.html">Vehicles</a></li></div>
+                    <li class='nav_element3'><a href="login.html">Account</a></li>
+                    <div sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_USER')"><li class='nav_element3'>
+                    		<form th:action="@{/logout}" method="post">
+            					<button class='b1'>Sign Out</button>
+        					</form> </li></div>
+                </ul>
+            </div>
+             
+<div class="ex0">
+	<h2>Order Details</h2>
+		
+		<table class="details">
+    		<tr><td class="details"><p th:text="${'OrderNumber: ' + order.orderId}" ></p></td></tr>
+    		</table>
+    		
+    		<h3>From</h3>
+    		<table class="details">
+        <tr><td class="details"><p th:text="${'Name: ' + order.fromName}"></p></td></tr>
+        <tr><td class="details"><p th:text="${'Address: ' + order.fromStreet}"></p></td></tr>
+        <tr><td class="details"><p th:text="${'PLZ / Town: ' + order.fromPlz + ' ' +  order.fromTown}"></p></td></tr>
+        </table>
+
+
+        <h3>To</h3>
+        <table class="details">
+        <tr><td class="details"><p th:text="${'Name: ' + order.toName}"></p></td></tr>
+        <tr><td class="details"><p th:text="${'Address: ' + order.toStreet}"></p></td></tr>
+        <tr><td class="details"><p th:text="${'PLZ / Town: ' + order.toPlz + ' ' +   order.toTown}"></p></td></tr>
+        </table>
+    		
+    		<h3>Details</h3>
+    		<table class="details">
+        <tr><td class="details"><p th:text="${'Until: ' + #dates.format(order.until, 'dd.MM.yyyy')}"></p></td></tr>
+        <tr><td class="details"><p th:text="${'Timeframe: ' + order.timeframe}"></p></td></tr>
+        <tr><td class="details"><p th:text="${'Type of Animal: ' + order.typeOfAnimal}"></p></td></tr>
+        <tr><td class="details"><p th:text="${'Number of Animals: ' + order.numberOfAnimals}"></p></td></tr>
+        <tr><td class="details"><p th:text="${'Time estimation: ' + order.timeEstimation} + 'hrs'" ></p></td></tr>
+        <tr><td class="details"><p th:text="${'Start time: ' + #dates.format(order.startTime, 'dd.MM.yyyy, HH:mm')}"></p></td></tr>
+        
+        <tr><td class="details"><p th:text="${'Vehicle: ' + order.vehicle}" ></p></td></tr>
+        <tr><td class="details"><p th:text="${'Driver: ' + order.driver}" ></p></td></tr>
+        
+		<tr><td class="details"><p th:text="${'Status: ' + order.orderStatus}" ></p></td></tr>
+        <tr><td class="details"><p th:text="${'Status Message: ' + order.statusMessage}" ></p> </td></tr>
+        </table>       
+
+    </div>
+    </div>
+</body>
+</html>

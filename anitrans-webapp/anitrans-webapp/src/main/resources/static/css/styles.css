@@ -63,6 +63,16 @@ ul { color:#333; font-size:11pt; }
 table, th, td {
    border: 1px solid black;
 }
+
+table.details, th.details, td.details {
+	border: none;
+	width: 400px;
+}
+
+table.details {
+	display: block;
+}
+
 table {
     border-collapse: collapse;
     width: 100%;

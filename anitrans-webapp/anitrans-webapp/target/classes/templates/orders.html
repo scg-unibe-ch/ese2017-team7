@@ -30,7 +30,8 @@
  
     <a href="/add-order"><button class='b2'>Add Order</button></a>
     <h2>Undelivered Orders</h2>
-    <table>
+    <button id="undeliveredButton"  class='b3' onclick="toggleUndelivered(this.id)">Hide Table</button>
+    <table id="undelivered">
  		<tr>
    		 	<th>Order Number</th>
 		    <th>From</th> 
@@ -66,9 +67,10 @@
  		   <a th:href="@{/delete-order(id=${order.id})}" onclick="return confirm('Are you sure you would like to DELETE this entry?')"><button class='b1'>Delete Order</button></a></td>	    		   
 		  </tr>
 	</table>
-	<p th:text="${successfulOrdersError}"></p>
+	<p id="undeliveredError"  th:text="${unsuccessfulOrdersError}"></p>
 	<h2>Delivered Orders</h2>
-    <table>
+	<button id="deliveredButton"  class='b3' onclick="toggleDelivered(this.id)">Hide Table</button>
+    <table id="delivered">
  		<tr>
    		 	<th>Order Number</th>
 		    <th>From</th> 
@@ -98,8 +100,41 @@
  		   <td th:text="${order.statusMessage}"></td>			   
 		  </tr>
 	</table>
-	<p th:text="${successfulOrdersError}"></p>
+	<p id="deliveredError" th:text="${successfulOrdersError}"></p>
 	</div>
 	</div>
+	
+	<script>
+		function toggleDelivered(id) {
+    			var table = document.getElementById("delivered");
+    			var error = document.getElementById("deliveredError");
+    			var button = document.getElementById(id);
+    			if (table.style.display === "none") {
+    				table.style.display = "table";
+    				error.style.display = "block";
+    				 button.firstChild.data = "Hide Table";
+   			} else {
+   				table.style.display = "none";
+   				error.style.display = "none";
+   				button.firstChild.data = "Show Table";
+  	  		}
+		}
+		function toggleUndelivered(id) {
+			var table = document.getElementById("undelivered");
+			var error = document.getElementById("undeliveredError");
+			var button = document.getElementById(id);
+			if (table.style.display === "none") {
+				table.style.display = "table";
+				error.style.display = "block";
+				button.firstChild.data = "Hide Table";
+			} else {
+				table.style.display = "none";
+				error.style.display = "none";
+				button.firstChild.data = "Show Table";
+	  		}
+	}
+</script>
+	
+	
 </body>
 </html>

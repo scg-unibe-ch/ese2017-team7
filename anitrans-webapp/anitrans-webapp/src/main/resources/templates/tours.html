@@ -29,8 +29,9 @@
 <div class="ex0">
 <h1><img src="images/logo.png" width="45" height="40" alt="logo" id="logo" />Tours</h1>
 
-	<h2>Undelivered</h2>
-    <table>
+	<h2>Undelivered Tours</h2>
+	<button id="undeliveredButton"  class='b3' onclick="toggleUndelivered(this.id)">Hide Table</button>
+    <table id="undelivered">
  		<tr>
    		 	<th>Order Number</th>
 		    <th>From</th> 
@@ -66,9 +67,10 @@
  		   </td>
 		  </tr>
 	</table>
-	<p th:text="${unsuccessfulOrdersError}"></p>
-	<h2>Delivered</h2>
-    <table>
+	<p id="undeliveredError" th:text="${unsuccessfulOrdersError}"></p>
+	<h2>Delivered Tours</h2>
+	<button id="deliveredButton"  class='b3' onclick="toggleDelivered(this.id)">Hide Table</button>
+    <table id="delivered">
  		<tr>
    		 	<th>Order Number</th>
 		    <th>From</th> 
@@ -103,9 +105,41 @@
  		   </td>
 		  </tr>
 	</table>
-	<p th:text="${successfulOrdersError}"></p>
+	<p id="deliveredError" th:text="${successfulOrdersError}"></p>
 	</div>
 	
 	</div>
+	
+	<script>
+		function toggleDelivered(id) {
+    			var table = document.getElementById("delivered");
+    			var error = document.getElementById("deliveredError");
+    			var button = document.getElementById(id);
+    			if (table.style.display === "none") {
+    				table.style.display = "table";
+    				error.style.display = "block";
+    				 button.firstChild.data = "Hide Table";
+   			} else {
+   				table.style.display = "none";
+   				error.style.display = "none";
+   				button.firstChild.data = "Show Table";
+  	  		}
+		}
+		function toggleUndelivered(id) {
+			var table = document.getElementById("undelivered");
+			var error = document.getElementById("undeliveredError");
+			var button = document.getElementById(id);
+			if (table.style.display === "none") {
+				table.style.display = "table";
+				error.style.display = "block";
+				button.firstChild.data = "Hide Table";
+			} else {
+				table.style.display = "none";
+				error.style.display = "none";
+				button.firstChild.data = "Show Table";
+	  		}
+	}
+</script>
+	
 </body>
 </html>

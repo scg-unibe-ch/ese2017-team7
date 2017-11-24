@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 22, 2017 at 03:13 PM
+-- Generation Time: Nov 24, 2017 at 12:47 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -41,49 +41,22 @@ CREATE TABLE `address` (
 --
 
 INSERT INTO `address` (`id`, `name`, `plz`, `street`, `town`) VALUES
-(1, 'Mathias Fuchs', 3000, 'Hallerstrasse 5', 'Bern'),
-(2, 'Arya Stark', 1111, 'Castle', 'Winterfell'),
-(3, 'John Snow', 1111, 'Castle', 'Winterfell'),
-(4, 'Tyrion Lannister', 3333, 'Castel', 'Casterly Rock'),
-(5, 'Zürich Flughafen', 6000, 'Flughafenstrasse 1', 'Zürich'),
-(6, 'Zirkus Knie', 1111, 'on the Road', 'Anywhere'),
-(7, 'Zürich Flughafen', 6000, 'Flughafenstrasse 1', 'Zürich'),
-(8, 'Zirkus Knie', 1111, 'on the Road', 'Anywhere'),
-(9, 'Casterly Rock', 3333, 'Castle', 'Casterly Rock'),
-(10, 'King\'s Landing', 6666, 'Red  Keep', 'King\'s Landing'),
-(11, 'Casterly Rock', 3333, 'Castle', 'Casterly Rock'),
-(12, 'King\'s Landing', 6666, 'Red  Keep', 'King\'s Landing'),
-(13, 'Dragonstone', 8888, 'On the sea', 'Dragonstone'),
-(14, 'Winterfell', 1111, 'Castle', 'Winterfell'),
-(15, 'Happy Animals Farm', 2345, 'Firststreet 4', 'Somewhere'),
-(16, 'Evil Slaughterhouse', 6666, 'Hell Road', 'Hell'),
+(11, 'Casterly Rock', 3700, 'Schlossstrasse 16', 'Spiez'),
+(12, 'King\'s Landing', 3005, 'Bundesplatz 3', 'Bern'),
+(15, 'Happy Animals Farm', 3294, 'Hofstattweg 5', 'Büren a.A.'),
+(16, 'Evil Slaughterhouse', 9000, 'Bühlgasse 28', 'St. Gallen'),
 (17, 'Mathias Fuchs', 3000, 'Hallerstrasse 5', 'Bern'),
 (18, 'Arya Stark', 1111, 'Castle', 'Winterfell'),
 (19, 'John Snow', 1111, 'Castle', 'Winterfell'),
 (20, 'Tyrion Lannister', 2222, 'Castle', 'Casterly Rock'),
-(21, 'Zürich Flughafen', 6000, 'Flughafenstrasse 1', 'Zürich'),
-(22, 'Zirkus Knie', 1111, 'on the Road', 'Anywhere'),
-(24, 'Zürich Flughafen', 6000, 'Flughafenstrasse 1', 'Zürich'),
-(25, 'Zirkus Knie', 1111, 'on the Road', 'Anywhere'),
-(26, 'Zürich Flughafen', 6000, 'Flughafenstrasse 1', 'Zürich'),
-(27, 'Zirkus Knie', 1111, 'on the Road', 'Anywhere'),
-(28, 'Zürich Flughafen', 6000, 'Flughafenstrasse 1', 'Zürich'),
-(29, 'Zirkus Knie', 1111, 'on the Road', 'Anywhere'),
-(30, 'Zürich Flughafen', 6000, 'Flughafenstrasse 1', 'Zürich'),
-(31, 'Zirkus Knie', 1111, 'on the Road', 'Anywhere'),
-(32, 'Zürich Flughafen', 6000, 'Flughafenstrasse 1', 'Zürich'),
-(33, 'Zirkus Knie', 1111, 'on the Road', 'Anywhere'),
-(34, 'Zürich Flughafen', 6000, 'Flughafenstrasse 1', 'Zürich'),
-(35, 'Zirkus Knie', 1111, 'on the Road', 'Anywhere'),
-(36, 'Zürich Flughafen', 6000, 'Flughafenstrasse 1', 'Zürich'),
-(37, 'Zirkus Knie', 1111, 'on the Road', 'Anywhere'),
-(38, 'Zürich Flughafen', 6000, 'Flughafenstrasse 1', 'Zürich'),
-(39, 'Zirkus Knie', 1111, 'on the Road', 'Anywhere'),
-(40, 'Zürich Flughafen', 6000, 'Flughafenstrasse 1', 'Zürich'),
-(41, 'Zirkus Knie', 1111, 'on the Road', 'Anywhere'),
-(42, 'Dragonstone', 8888, 'On the sea', 'Dragonstone'),
-(43, 'Winterfell', 1111, 'Castle', 'Winterfell'),
-(44, 'Yves Chapuis', 3250, 'Dreihubelweg 49', 'Lyss');
+(48, 'Dragonstone', 9990, 'Lars Kruses Vej 11', 'Skagen'),
+(49, 'Winterfell', 3600, 'Schlossberg 1', 'Thun'),
+(61, 'Coop', 3250, 'Beundengasse 2 ', 'Lyss'),
+(62, 'Yves Chapuis', 3250, 'Dreihubelweg 49', 'Lyss'),
+(73, 'Bauernhof', 3250, 'Rossiweg 4', 'Lyss'),
+(74, 'Brockenhaus', 3250, 'Schulgasse 6', 'Lyss'),
+(75, 'Zürich Flughafen', 8302, 'Flughofstrasse 3', 'Kloten'),
+(76, 'Zirkus Knie', 6084, 'Wasserwendi', 'Hasliberg');
 
 -- --------------------------------------------------------
 
@@ -113,10 +86,12 @@ CREATE TABLE `ani_order` (
 --
 
 INSERT INTO `ani_order` (`id`, `driver`, `driver_id`, `number_of_animals`, `order_status`, `start_time`, `status_message`, `time_estimation`, `timeframe`, `type_of_animal`, `until`, `vehicle`, `from_addr_id`, `to_addr_id`) VALUES
-(1, 'Mathias Fuchs', 5, 1, 'undelivered', '2017-12-23 12:00:00', '', 4, '10:00-18:00', 'Elephant', '2017-12-23', 'Big Transporter', 40, 41),
 (2, 'Tyrion Lannister', 8, 3, 'undelivered', '2017-11-17 03:00:00', 'exploded on the way, sorry boss!', 5, '10:00-12:00', 'Horses', '2017-11-17', 'Medium Transporter', 11, 12),
-(3, 'John Snow', 7, 3, 'undelivered', '2017-12-22 03:00:00', '', 8, '14:00-16:00', 'Dragons', '2017-12-22', 'Big Transporter', 42, 43),
-(4, 'Arya Stark', 6, 10, 'delivered', '2017-11-06 06:00:00', 'all good', 6, '06:00 - 18:00', 'Sheep', '2017-11-06', 'Big Transporter', 15, 16);
+(3, 'John Snow', 7, 3, 'undelivered', '2017-12-22 03:00:00', '', 8, '14:00-16:00', 'Dragons', '2017-12-22', 'Big Transporter', 48, 49),
+(4, 'Arya Stark', 6, 10, 'delivered', '2017-11-06 06:00:00', 'all good', 6, '06:00 - 18:00', 'Sheep', '2017-11-06', 'Big Transporter', 15, 16),
+(7, 'Mathias Fuchs', 5, 5, 'delivered', '2017-12-22 10:00:00', 'ok', 2, '10:00-12:00', 'Horses', '2017-12-22', 'Big Transporter', 61, 62),
+(13, '', -1, 10, 'undelivered', '2017-12-22 13:00:00', '', 1, '14:00-15:00', 'Sheep', '2017-12-22', 'Big Transporter', 73, 74),
+(14, 'Mathias Fuchs', 5, 1, 'delivered', '2017-12-23 12:00:00', 'yay', 4, '10:00-18:00', 'Elephant', '2017-12-23', 'Big Transporter', 75, 76);
 
 -- --------------------------------------------------------
 
@@ -245,7 +220,8 @@ INSERT INTO `vehicle` (`id`, `image`, `name`, `number_of_vehicles`) VALUES
 (1, 'images/bigTransporter.jpg', 'Big Transporter', 3),
 (2, 'images/mediumTransporter.jpg', 'Medium Transporter', 3),
 (3, 'images/smallTransporter.jpg', 'Small Transporter', 5),
-(4, 'images/tinyTransporter.jpg', 'Tiny Transporter', 7);
+(4, 'images/tinyTransporter.jpg', 'Tiny Transporter', 7),
+(6, 'images/car.jpg', 'Car', 2);
 
 --
 -- Indexes for dumped tables
@@ -304,19 +280,19 @@ ALTER TABLE `vehicle`
 -- AUTO_INCREMENT for table `address`
 --
 ALTER TABLE `address`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT for table `ani_order`
 --
 ALTER TABLE `ani_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `edited_order`
 --
 ALTER TABLE `edited_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `new_order`
@@ -340,7 +316,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `vehicle`
 --
 ALTER TABLE `vehicle`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables

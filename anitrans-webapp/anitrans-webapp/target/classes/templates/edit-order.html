@@ -32,6 +32,8 @@
     		<div th:if="${#fields.hasErrors('*')}">
                 <h3 style="color:red;">Please fix the following error(s)</h3>
         </div>
+        <p th:text="${vehicleError}" style="color:red;"></p>
+        <p th:text="${driverError}" style="color:red;"></p>
     
     		<p>Order Number: <input type="text" th:value="${order.orderId}" th:field="*{orderId}" th:readonly="readonly"/></p>
     		

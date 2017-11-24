@@ -78,24 +78,29 @@ public class EditOrderController {
 		}
     		
     		//Get the custom errors and if there are any, send the user back to correct his results.
-    		if(bindingResult.hasErrors() || (vehicle != null && counter.countVehiclesInUse(vehicle, order.getUntil(), order.getOrderId()) >= vehicle.getNumberOfVehicles()) || (driver != null && counter.checkIfDriverBusy(driver, order.getUntil(), order.getOrderId()))) {
-        		model = getErrors(order, bindingResult, model);
-        		model.addAttribute("order", order);
-        		model.addAttribute("users", userRepository.findAll()); //find all the users and pass them to add-order.html. This is needed to select the driver.
-        		model.addAttribute("vehicles", vehicleRepository.findAll()); //find all the vehicles and pass them to add-order.html. This is needed to select the vehicle.
-       		return new ModelAndView("redirect:/tours?activeIndex=" + order.getOrderId());
+    		if((vehicle != null && counter.countVehiclesInUse(vehicle, order.getUntil(), order.getOrderId()) >= vehicle.getNumberOfVehicles()) || (driver != null && counter.checkIfDriverBusy(driver, order.getUntil(), order.getOrderId()))) {
+        		ra = getErrors(order, bindingResult, ra);
+        		ra.addFlashAttribute("order", order);
+        		ra.addFlashAttribute("users", userRepository.findAll()); //find all the users and pass them to add-order.html. This is needed to select the driver.
+        		ra.addFlashAttribute("vehicles", vehicleRepository.findAll()); //find all the vehicles and pass them to add-order.html. This is needed to select the vehicle.
+        		return new ModelAndView("redirect:/edit-order?id=" + order.getOrderId());
         	}
     	
-
+    		hello.AniOrder oldOrder = orderRepository.findById(order.getOrderId());
     		
     		// create addresses and aniOrders from the data
     		hello.Address fromAddress = new hello.Address(order.getFromName(), order.getFromStreet(), order.getFromTown(), order.getFromPlz());
     		hello.Address toAddress = new hello.Address(order.getToName(), order.getToStreet(), order.getToTown(), order.getToPlz());
     		hello.AniOrder aniOrder = new hello.AniOrder(order, fromAddress, toAddress);
     		
+    		orderRepository.delete(oldOrder);	
+    		addressRepository.delete(oldOrder.getFromAddr()); //delete the old addresses to avoid duplicates
+    		addressRepository.delete(oldOrder.getToAddr());
+    		
     		addressRepository.save(fromAddress); //save the address to the database.
     		addressRepository.save(toAddress); //save the address to the database.
-		orderRepository.save(aniOrder); //save the order to the database.
+		orderRepository.save(aniOrder); //save the order to the database.	
+		
 		return new ModelAndView("redirect:/edit-order-success"); //return the template
     }
     
@@ -124,25 +129,25 @@ public class EditOrderController {
     /*
      * Gets all the custom errors and error messages
      */
-    private Model getErrors(@Valid @ModelAttribute hello.NewOrder order, BindingResult bindingResult, Model model) {
+    private RedirectAttributes getErrors(@Valid @ModelAttribute hello.NewOrder order, BindingResult bindingResult, RedirectAttributes ra) {
     		hello.Vehicle vehicle = vehicleRepository.findByName(order.getVehicle());
     		hello.User driver = userRepository.findById(order.getDriverId());
     		
 		if(vehicle != null) {
 			if(counter.countVehiclesInUse(vehicle, order.getUntil(), order.getOrderId()) >= vehicle.getNumberOfVehicles()) {
-				model.addAttribute("vehicleError", "The chosen vehicle isn't available on the chosen date.");
+				ra.addFlashAttribute("vehicleError", "The chosen vehicle isn't available on the chosen date.");
 			}
 		}
 		
     		
 		if(driver != null) {
 			if(counter.checkIfDriverBusy(driver, order.getUntil(), order.getOrderId())) {
-				model.addAttribute("driverError", "The chosen driver isn't available on the chosen date.");
+				ra.addFlashAttribute("driverError", "The chosen driver isn't available on the chosen date.");
 			}
 		}
 		
     	
-    		return model;
+    		return ra;
     }
     
     

@@ -84,6 +84,7 @@
  		   	<th>Time Estimation</th>
  		   	<th>Start Time</th>
  		   	<th>Driver</th>
+ 		   	<th>Vehicle</th>
  		   	<th>Status</th>
  		   	<th>Status Message</th>
  		   	<th></th>
@@ -99,6 +100,7 @@
  		   <td  th:text="${order.timeEstimation} +  hours"></td>
  		   <td  th:text="${#dates.format(order.startTime, 'dd.MM.yyy, HH:mm')}"></td>
  		   <td th:text="${order.driver}"></td>
+ 		   <td th:text="${order.vehicle}"></td>
  		   <td th:text="${order.orderStatus}"></td>
  		   <td th:text="${order.statusMessage}"></td>	
  		   <td><a th:href="@{/order-details(id=${order.id})}" ><button class='b1'>View Order</button></a></td>	  		   

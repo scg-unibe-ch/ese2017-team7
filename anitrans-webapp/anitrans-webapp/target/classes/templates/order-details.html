@@ -27,44 +27,70 @@
             </div>
              
 <div class="ex0">
-	<h2>Order Details</h2>
-	<table class="details">
-    		<tr><td class="details"><p th:text="${'OrderNumber: ' + order.orderId}" ></p></td></tr>
-    	</table>
+	<h2 th:text="${'Order number ' + order.orderId}"></h2>
 	<div id="map"></div>
 	<div class="orderDetails">
-		<h2>Details</h2>
-		<table class="details">
-        <tr><td class="details"><p th:text="${'Until: ' + #dates.format(order.until, 'dd.MM.yyyy')}"></p></td></tr>
-        <tr><td class="details"><p th:text="${'Timeframe: ' + order.timeframe}"></p></td></tr>
-        <tr><td class="details"><p th:text="${'Type of Animal: ' + order.typeOfAnimal}"></p></td></tr>
-        <tr><td class="details"><p th:text="${'Number of Animals: ' + order.numberOfAnimals}"></p></td></tr>
-        <tr><td class="details"><p th:text="${'Time estimation: ' + order.timeEstimation} + 'hrs'" ></p></td></tr>
-        <tr><td class="details"><p th:text="${'Start time: ' + #dates.format(order.startTime, 'dd.MM.yyyy, HH:mm')}"></p></td></tr>
-        
-        <tr><td class="details"><p th:text="${'Vehicle: ' + order.vehicle}" ></p></td></tr>
-        <tr><td class="details"><p th:text="${'Driver: ' + order.driver}" ></p></td></tr>
-        
-		<tr><td class="details"><p th:text="${'Status: ' + order.orderStatus}" ></p></td></tr>
-        <tr><td class="details"><p th:text="${'Status Message: ' + order.statusMessage}" ></p> </td></tr>
+		<table >
+        <tr>
+        <th></th>
+        <th>Details</th>
+        </tr>
+        <tr>
+        <td><p>Timeframe</p></td>
+        <td><p th:text="${order.timeframe}"></p></td>
+        </tr>
+        <tr>
+        <td><p>Type of Animal</p></td>
+        <td><p th:text="${order.typeOfAnimal}"></p></td>
+        </tr>
+        <tr>
+        <td><p>Number of Animals</p></td>
+        <td><p th:text="${order.numberOfAnimals}"></p></td>
+        </tr>
+        <tr>
+        <td><p>Time estimation</p></td>
+        <td><p th:text="${order.timeEstimation} + 'hrs'" ></p></td>
+        </tr>
+        <tr>
+        <td><p>Start time</p></td>
+        <td><p th:text="${#dates.format(order.startTime, 'dd.MM.yyyy, HH:mm')}"></p></td>
+        </tr>
+        <tr>
+        <td><p>Vehicle</p></td>
+        <td><p th:text="${order.vehicle}" ></p></td>
+        </tr>
+        <tr>
+        <td><p>Driver</p></td>
+        <td><p th:text="${order.driverName}" ></p></td>
+        </tr>
+		<tr>
+		<td><p>Status</p></td>
+		<td><p th:text="${order.orderStatus}" ></p></td>
+		</tr>
+        <tr>
+        <td><p>Status message</p></td>
+        <td><p th:text="${order.statusMessage}" ></p></td>
+        </tr>
         </table> 
     </div>
-	
 	<div class="route">
-    		<h2>From</h2>
-    		<table class="details">
-        <tr><td class="details"><p th:text="${'Name: ' + order.fromName}"></p></td></tr>
-        <tr><td class="details"><p th:text="${'Address: ' + order.fromStreet}"></p></td></tr>
-        <tr><td class="details"><p th:text="${'PLZ / Town: ' + order.fromPlz + ' ' +  order.fromTown}"></p></td></tr>
-        </table>
-    </div>
-		
-	<div class="route">
-        <h2>To</h2>
-        <table class="details">
-        <tr><td class="details"><p th:text="${'Name: ' + order.toName}"></p></td></tr>
-        <tr><td class="details"><p th:text="${'Address: ' + order.toStreet}"></p></td></tr>
-        <tr><td class="details"><p th:text="${'PLZ / Town: ' + order.toPlz + ' ' +   order.toTown}"></p></td></tr>
+    		<table>
+    		<tr>
+    		<th>From</th>
+    		<th>To</th>
+ 		</tr>
+        <tr>
+        <td><p th:text="${order.fromName}"></p></td>
+        <td><p th:text="${order.toName}"></p></td>
+        </tr>
+        <tr>
+        <td><p th:text="${order.fromStreet}"></p></td>
+        <td><p th:text="${order.toStreet}"></p></td>
+        </tr>
+        <tr>
+        <td><p th:text="${order.fromPlz + ' ' +  order.fromTown}"></p></td>
+        <td><p th:text="${order.toPlz + ' ' +  order.toTown}"></p></td>
+        </tr>
         </table>
         </div>
     </div>

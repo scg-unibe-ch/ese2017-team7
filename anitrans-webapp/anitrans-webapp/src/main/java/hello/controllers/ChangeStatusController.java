@@ -20,7 +20,7 @@ public class ChangeStatusController {
 	@Autowired
 	private hello.AddressRepository addressRepository;
 	@Autowired
-	private hello.EditedOrderRepository EditedOrderRepository;
+	private hello.EditedOrderRepository editedOrderRepository;
 	@Autowired
 	private hello.VehicleRepository vehicleRepository;
 
@@ -54,15 +54,21 @@ public class ChangeStatusController {
 			return "change-status"; //return the template
 		}
 		
+    		hello.AniOrder oldOrder = orderRepository.findById(order.getOrderId());
+    		
     		//create addresses and aniOrders from the data.
     		hello.Address fromAddress = new hello.Address(order.getFromName(), order.getFromStreet(), order.getFromTown(), order.getFromPlz());
     		hello.Address toAddress = new hello.Address(order.getToName(), order.getToStreet(), order.getToTown(), order.getToPlz());
     		hello.AniOrder aniOrder = new hello.AniOrder(order, fromAddress, toAddress);
     		
+    		orderRepository.delete(oldOrder);	
+    		addressRepository.delete(oldOrder.getFromAddr()); //delete the old addresses to avoid duplicates
+    		addressRepository.delete(oldOrder.getToAddr());
+    		
     		addressRepository.save(fromAddress); //save the address to the database.
     		addressRepository.save(toAddress); //save the address to the database.
 		orderRepository.save(aniOrder); //save the order to the database.
-		EditedOrderRepository.delete(order);
+
         return "change-status-success"; //return the template
     }
 

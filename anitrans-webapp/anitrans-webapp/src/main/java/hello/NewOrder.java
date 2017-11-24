@@ -234,6 +234,10 @@ public class NewOrder {
     public String getDriver() {
         return driver;
     }
+    
+    public String getDriverName() {
+        return driver.substring(4);
+    }
 
     public void setDriver(String driver) {
         this.driver = driver;

@@ -4,6 +4,7 @@
 	<link rel="stylesheet" type="text/css" href="css/styles.css" />
     <title>aniTrans | Order Details</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
 </head>
 
 <body>
@@ -27,28 +28,13 @@
              
 <div class="ex0">
 	<h2>Order Details</h2>
-		
-		<table class="details">
+	<table class="details">
     		<tr><td class="details"><p th:text="${'OrderNumber: ' + order.orderId}" ></p></td></tr>
-    		</table>
-    		
-    		<h3>From</h3>
-    		<table class="details">
-        <tr><td class="details"><p th:text="${'Name: ' + order.fromName}"></p></td></tr>
-        <tr><td class="details"><p th:text="${'Address: ' + order.fromStreet}"></p></td></tr>
-        <tr><td class="details"><p th:text="${'PLZ / Town: ' + order.fromPlz + ' ' +  order.fromTown}"></p></td></tr>
-        </table>
-
-
-        <h3>To</h3>
-        <table class="details">
-        <tr><td class="details"><p th:text="${'Name: ' + order.toName}"></p></td></tr>
-        <tr><td class="details"><p th:text="${'Address: ' + order.toStreet}"></p></td></tr>
-        <tr><td class="details"><p th:text="${'PLZ / Town: ' + order.toPlz + ' ' +   order.toTown}"></p></td></tr>
-        </table>
-    		
-    		<h3>Details</h3>
-    		<table class="details">
+    	</table>
+	<div id="map"></div>
+	<div class="orderDetails">
+		<h2>Details</h2>
+		<table class="details">
         <tr><td class="details"><p th:text="${'Until: ' + #dates.format(order.until, 'dd.MM.yyyy')}"></p></td></tr>
         <tr><td class="details"><p th:text="${'Timeframe: ' + order.timeframe}"></p></td></tr>
         <tr><td class="details"><p th:text="${'Type of Animal: ' + order.typeOfAnimal}"></p></td></tr>
@@ -61,9 +47,65 @@
         
 		<tr><td class="details"><p th:text="${'Status: ' + order.orderStatus}" ></p></td></tr>
         <tr><td class="details"><p th:text="${'Status Message: ' + order.statusMessage}" ></p> </td></tr>
-        </table>       
+        </table> 
+    </div>
+	
+	<div class="route">
+    		<h2>From</h2>
+    		<table class="details">
+        <tr><td class="details"><p th:text="${'Name: ' + order.fromName}"></p></td></tr>
+        <tr><td class="details"><p th:text="${'Address: ' + order.fromStreet}"></p></td></tr>
+        <tr><td class="details"><p th:text="${'PLZ / Town: ' + order.fromPlz + ' ' +  order.fromTown}"></p></td></tr>
+        </table>
+    </div>
+		
+	<div class="route">
+        <h2>To</h2>
+        <table class="details">
+        <tr><td class="details"><p th:text="${'Name: ' + order.toName}"></p></td></tr>
+        <tr><td class="details"><p th:text="${'Address: ' + order.toStreet}"></p></td></tr>
+        <tr><td class="details"><p th:text="${'PLZ / Town: ' + order.toPlz + ' ' +   order.toTown}"></p></td></tr>
+        </table>
+        </div>
+    </div>
 
+    <script type="text/javascript" th:inline="javascript">
+    /*<![CDATA[*/
+    	
+    	function initMap() {
+            var directionsService = new google.maps.DirectionsService;
+            var directionsDisplay = new google.maps.DirectionsRenderer;
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 7,
+              center: {lat: 41.85, lng: -87.65}
+            });
+            directionsDisplay.setMap(map);
+
+            window.onload = function() {
+        		calculateAndDisplayRoute(directionsService, directionsDisplay);
+        	};
+          }
+    
+      function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+          directionsService.route({
+            origin: [[${order.fromStreet + ', ' + order.fromPlz + ' ' + order.fromTown}]],
+            destination: [[${order.toStreet + ', ' + order.toPlz + ' ' + order.toTown}]],
+            travelMode: 'DRIVING'
+          }, function(response, status) {
+            if (status === 'OK') {
+              directionsDisplay.setDirections(response);
+            } else {
+              window.alert('Directions request failed due to ' + status);
+            }
+          });
+        }
+
+     /*]]>*/
+    </script>
+
+    <script async="async" defer="defer" th:src="@{https://maps.googleapis.com/maps/api/js(key=${'AIzaSyCGPeaukv85DwgmDmxeCU2xSbeNaVNfk2k'},callback=initMap)}"></script>
+    
     </div>
-    </div>
+    
 </body>
 </html>

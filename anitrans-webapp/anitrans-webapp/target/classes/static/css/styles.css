@@ -26,6 +26,7 @@ body {
     display: table;
     margin-left: auto;
     margin-right: auto;
+    height:100%;
 }
 
 #container {
@@ -67,6 +68,14 @@ table, th, td {
 table.details, th.details, td.details {
 	border: none;
 	width: 400px;
+}
+
+.route {
+	float:left;
+}
+
+.orderDetails {
+	float:left;
 }
 
 table.details {
@@ -449,4 +458,8 @@ background: black;
     label {
   width:150px;
   display: inline-block;
-}
+    }
+  
+  #map {
+  	height: 400px;
+   }

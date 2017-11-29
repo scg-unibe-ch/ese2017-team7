@@ -48,8 +48,10 @@ public class EditOrderController {
 				} else {
 					return "edit-order-forbidden"; //if the order doesn't exist, can't edit it
 				}
-
-    		if(new Date().after(order.getStartTime())) { //if the delivery has already started, the user is redirected to edit-order-forbidden.html.
+		Date date = new Date(); //today
+		
+		//If the order is set to take place today, redirect the user to edit-order-forbidden
+		if(((date.getTime() - order.getUntil().getTime() < 86400000) && (date.getTime() - order.getUntil().getTime() >= 0)) || ((date.getTime() - order.getUntil().getTime() > -0) && (date.getTime() - order.getUntil().getTime() <= 0))) {
     			return "edit-order-forbidden"; //return the template
     		}
 			hello.NewOrder newOrder = new hello.NewOrder(order, order.getFromAddr(), order.getToAddr());

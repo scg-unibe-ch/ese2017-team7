@@ -42,7 +42,7 @@ body {
 
 #container {
     padding-top: 0;
-    background-color: beige;
+    background-color: white;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
@@ -95,7 +95,7 @@ table {
 }
 th {
     text-align: middle;
-    background-color: #efa372;
+    background-color: #ffe6b3;
 }
    
 td {
@@ -117,14 +117,10 @@ a {
 	color: #333;
 	}
 	
-div.ex8 {
-    padding: 0px 10px;
-    margin-left: 10px;
-}
-
 div.ex0 {
     padding: 10px 10px;
     margin-left: 10px;
+    
 }
 
 div.ex1 {
@@ -168,12 +164,30 @@ div.ex7 {
     margin-left: 10px;
 }
 
+div.ex8 {
+    padding: 0px 10px;
+    margin-left: 10px;
+}
+
+
+div.ex9 {
+ 	width: 300px;
+ 	background-color: #333;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+}
+
+
 ul#nav .active{
     border-color: white;
     border-left-color: black; 
     border-top-color: black;
-    color: white; 
-    background-color:#efa372;
+    color: black; 
+    background-color: #ffe6b3;
 }
 
 li.nav_element1 {
@@ -190,7 +204,7 @@ li.nav_element1 a {
 }
 
 li.nav_element1 a:hover {
-    background-color:darkgrey;
+    background-color:black;
 }
 
 li.nav_element2 {
@@ -207,7 +221,7 @@ li.nav_element2 a {
 }
 
 li.nav_element2 a:hover {
-    background-color:darkgrey;
+    background-color:black;
 }
 
 li.nav_element3 {
@@ -223,7 +237,7 @@ li.nav_element3 a {
 }
 
 li.nav_element3 a:hover {
-    background-color:darkgrey;
+    background-color:black;
 }
 
 li.nav_element3 button {
@@ -247,7 +261,7 @@ li.nav_element3 button {
 }
 
 li.nav_element3 button:hover {
-      background-color:darkgrey;
+      background-color:black;
 }
 
 li.nav_element4 {
@@ -263,7 +277,7 @@ li.nav_element4 a {
 }
 
 li.nav_element4 a:hover {
-    background-color:darkgrey;
+    background-color:black;
 }
 
 #login_spalte{
@@ -288,6 +302,12 @@ li.nav_element4 a:hover {
     text-align:left;
     margin-left: 20px;
     margin-right: 20px;
+  	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 0px solid #000000;
+	background-color:  #ffe6b3;
+	box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
     
 }
 #text2{
@@ -298,6 +318,12 @@ li.nav_element4 a:hover {
     margin-right: 20px;
     text-align:left;
     clear: both;
+  	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 0px solid #000000;
+	background-color:  #ffe6b3;
+	box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }
 #text3{
     width:50%;
@@ -307,6 +333,12 @@ li.nav_element4 a:hover {
     margin-right: 20px;
     text-align:left;
     clear: both;
+      	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 0px solid #000000;
+	background-color:  #ffe6b3;
+	box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }
 #text4{
     width:50%;
@@ -316,6 +348,12 @@ li.nav_element4 a:hover {
     margin-right: 20px;
     text-align:left;
     clear: both;
+    border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 0px solid #000000;
+	background-color:  #ffe6b3;
+	box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }
 
 
@@ -325,6 +363,9 @@ img#route{
     height: 300px;
     margin-right: 20px;
     margin-top: 20px;
+   	-webkit-box-shadow: -2px -1px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: -2px -1px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: -2px -1px 5px 0px rgba(0,0,0,0.75);
    }
 
 img#storage{
@@ -333,6 +374,9 @@ img#storage{
         height: 300px;
         margin-left: 20px;
         margin-top: 20px;
+   		-webkit-box-shadow: -2px -1px 5px 0px rgba(0,0,0,0.75);
+		-moz-box-shadow: -2px -1px 5px 0px rgba(0,0,0,0.75);
+		box-shadow: -2px -1px 5px 0px rgba(0,0,0,0.75);        
        }
 
 img#forest{
@@ -341,7 +385,9 @@ img#forest{
     height: 300px;
     margin-right: 20px;
     margin-top: 20px;
-    
+    -webkit-box-shadow: -2px -1px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: -2px -1px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: -2px -1px 5px 0px rgba(0,0,0,0.75);
 }
 
 img#sunset{
@@ -350,6 +396,9 @@ img#sunset{
     height: 300px;
     margin-left: 20px;
     margin-top: 20px;
+    -webkit-box-shadow: -2px -1px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: -2px -1px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: -2px -1px 5px 0px rgba(0,0,0,0.75);
    }
 
 button.b1 {
@@ -420,6 +469,19 @@ button.b4 {
   height: 40px;
 }
 
+button.b5{
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 12px;
+  color: #ffffff;
+  background: black;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  width: 90px;
+  height: 40px;
+  float: left;
+}
+
 button:hover {
   background:black;
   text-decoration: none;
@@ -470,3 +532,24 @@ background: black;
   #map {
   	height: 400px;
    }
+
+input[type=text] {
+    width: 100%;
+    background-color:#ffffff;
+    color: black;
+    padding: 14px 70px;
+    margin: 8px 0;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    text-align: left;
+}
+
+input[type=password] {
+    width: 100%;
+    background-color:#ffffff;
+    color: white;
+    padding: 14px 70px;
+    margin: 8px 0;
+    border: 1px solid #000000;
+    border-radius: 4px;
+}

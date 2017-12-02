@@ -479,12 +479,12 @@ button.b5{
   text-decoration: none;
   width: 90px;
   height: 40px;
-  float: left;
 }
 
 button:hover {
-  background:black;
+  background:#ffe6b3;
   text-decoration: none;
+  color: black;
 }
 
 .styled-select select {
@@ -534,7 +534,7 @@ background: black;
    }
 
 input[type=text] {
-    width: 100%;
+    width: 150px;
     background-color:#ffffff;
     color: black;
     padding: 14px 70px;
@@ -545,11 +545,39 @@ input[type=text] {
 }
 
 input[type=password] {
-    width: 100%;
+    width: 150px;
     background-color:#ffffff;
-    color: white;
+    color: black;
     padding: 14px 70px;
     margin: 8px 0;
     border: 1px solid #000000;
     border-radius: 4px;
+}
+
+input[type=email] {
+    width: 150px;
+    background-color:#ffffff;
+    color: black;
+    padding: 14px 70px;
+    margin: 8px 0;
+    border: 1px solid #000000;
+    border-radius: 4px;
+}
+
+input[type=submit] {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 12px;
+  color: #ffffff;
+  background: black;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  width: 90px;
+  height: 40px;
+}
+
+input[type=submit] button:hover {
+  background:#ffe6b3;
+  text-decoration: none;
+  color: black;
 }

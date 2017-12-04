@@ -20,8 +20,6 @@ public class ChangeStatusController {
 	@Autowired
 	private hello.AddressRepository addressRepository;
 	@Autowired
-	private hello.EditedOrderRepository editedOrderRepository;
-	@Autowired
 	private hello.VehicleRepository vehicleRepository;
 
 	/*

@@ -275,5 +275,32 @@ public class NewOrder {
     public void setStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
     }
+    
+    public boolean equals(NewOrder newOrder) {
+    		if(this.getOrderId() == newOrder.getOrderId() &&
+	    			this.getFromName().equals(newOrder.getFromName()) &&
+	    			this.getFromStreet().equals(newOrder.getFromStreet()) &&
+	    			this.getFromTown().equals(newOrder.getFromTown()) &&
+	    			this.getFromPlz() == newOrder.getFromPlz() &&
+	    			this.getToName().equals(newOrder.getToName()) &&
+	    			this.getToStreet().equals(newOrder.getToStreet()) &&
+	    			this.getToTown().equals(newOrder.getToTown()) &&
+	    			this.getToPlz() == newOrder.getToPlz() &&
+	    			this.getUntil().equals(newOrder.getUntil()) &&
+	    			this.getTimeframe().equals(newOrder.getTimeframe()) &&
+	    			this.getNumberOfAnimals().equals(newOrder.getNumberOfAnimals()) &&
+	    			this.getTypeOfAnimal().equals(newOrder.getTypeOfAnimal()) &&
+	    			this.getTimeEstimation() == newOrder.getTimeEstimation() &
+	    			this.getStartTime().equals(newOrder.getStartTime()) &&
+	    			this.getDriver().equals(newOrder.getDriver()) &&
+	    			this.getVehicle().equals(newOrder.getVehicle()) &&
+	    			this.getOrderStatus().equals(newOrder.getOrderStatus()) &&
+	    			this.getStatusMessage().equals(newOrder.getStatusMessage())) {
+    			return true;
+    		} else {
+    			return false;
+    		}
+    	
+    }
 
 }

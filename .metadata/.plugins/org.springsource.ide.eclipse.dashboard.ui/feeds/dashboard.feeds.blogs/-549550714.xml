@@ -5,7 +5,87 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2017-11-29T00:18:00Z</updated>
+  <updated>2017-11-29T13:41:32Z</updated>
+  <entry>
+    <title>Spring Integration 5.0 GA Available</title>
+    <link rel="alternate" href="https://spring.io/blog/2017/11/29/spring-integration-5-0-ga-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Artem Bilan</name>
+    </author>
+    <id>tag:spring.io,2017-11-28:3113</id>
+    <updated>2017-11-29T13:41:32Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the Spring Integration team I am pleased to announce that the GA release for the Spring Integration 5.0 version (&lt;code&gt;5.0.0.RELEASE&lt;/code&gt;) is now available.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;It can be downloaded from Maven Central, JCenter, and our &lt;a href="https://repo.spring.io/release"&gt;release repository&lt;/a&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;compile "org.springframework.integration:spring-integration-core:5.0.0.RELEASE"&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;First of all, special thanks to all community members for their ongoing active contributions to the framework!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Several &lt;a href="https://jira.spring.io/jira/secure/ReleaseNote.jspa?projectId=10121&amp;amp;version=16196"&gt;JIRAs&lt;/a&gt; (and some GitHub issues), since the previously announced &lt;a href="https://spring.io/blog/2017/11/01/spring-integration-5-0-release-candidate-1-available"&gt;RC1&lt;/a&gt;, are included in this release, mostly bug fixes from early adopters and Reference Manual improvements.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Well, this was a long story (almost 17 months) to come to this next generation for the Framework and here are some highlights of the major features:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The Spring Framework &lt;code&gt;5.0&lt;/code&gt; code base with more reach functionality via Java 8 features;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Upgrade to the latest Spring projects dependencies with some new functionality from there;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Java DSL is now included into the Core project with a bunch of improvements and more organic Java 8 integration and code base;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Reactive Streams support via &lt;code&gt;FluxMessageChannel&lt;/code&gt;, &lt;code&gt;ReactiveStreamsConsumer&lt;/code&gt; and direct &lt;code&gt;org.reactivestreams.Subscriber&lt;/code&gt; implementation in the &lt;code&gt;AbstractMessageHandler&lt;/code&gt;;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;New Spring WebFlux module with full Reactive support for requests and replies;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;New Spring Integration Testing Framework with the &lt;code&gt;@SpringIntegrationTest&lt;/code&gt; and &lt;code&gt;MockIntegration&lt;/code&gt; features;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;- Significant performance boost for most POJO EIP method invocations.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;For a complete list of changes in &lt;code&gt;5.0&lt;/code&gt;, also see the &lt;a href="http://docs.spring.io/spring-integration/docs/5.0.0.RELEASE/reference/html/whats-new.html"&gt;What&amp;#8217;s New&lt;/a&gt; chapter in the reference manual.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;In addition we have released maintenance &lt;a href="https://jira.spring.io/jira/secure/ReleaseNote.jspa?projectId=10121&amp;amp;version=16347"&gt;4.3.13&lt;/a&gt; version with a bunch of important bug fixes and improvements.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="admonitionblock important"&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class="icon"&gt;
+&lt;div class="title"&gt;Important&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class="content"&gt;
+I along with most of my colleagues on the Spring team will be at &lt;a href="https://springoneplatform.io"&gt;Spring One Platform&lt;/a&gt; speaking about these new features in Spring Integration.
+Please, &lt;a href="https://springoneplatform.io/sessions/spring-integration-5-0-whats-new"&gt;meet me&lt;/a&gt; there to hear about these amazing features from first hands!
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Any feedback, feature ideas, critics, bug reports and questions are welcome via appropriate communication channels:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-integration/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://jira.spring.io/browse/INT"&gt;JIRA&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/blob/master/CONTRIBUTING.adoc"&gt;Contributing&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-integration"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-integration"&gt;Chat&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</content>
+  </entry>
   <entry>
     <title>Spring Tips: Spring Cloud Gateway</title>
     <link rel="alternate" href="https://spring.io/blog/2017/11/29/spring-tips-spring-cloud-gateway" />
@@ -1087,38 +1167,5 @@ dependencies {&#xD;
     <content type="html">&lt;p&gt;Speaker: &lt;a href="https://www.twitter.com/starbuxman"&gt;Josh Long&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Hi Spring fans! In this installment of Spring Tips, we&amp;rsquo;ll look at the Spring Boot build plugin, &amp;ldquo;fat&amp;rdquo; .jars, executable .jars, and &amp;ldquo;thin&amp;rdquo; .jars.&lt;/p&gt;
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/arOqTOEtAVA" frameborder="0" gesture="media" allowfullscreen&gt;&lt;/iframe&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - November 14th 2017</title>
-    <link rel="alternate" href="https://spring.io/blog/2017/11/14/this-week-in-spring-november-14th-2017" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2017-11-14:3094</id>
-    <updated>2017-11-14T19:26:53Z</updated>
-    <content type="html">&lt;p&gt;Hi Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! This week I am in Casablanca, Morocco for the amazing Devoxx Morocco event talking to developers in the hub of North Africa. &lt;/p&gt;
-&lt;p&gt;Can you believe it&amp;rsquo;s already the middle of November? And can you believe we are less than a month away from the &lt;a href="https://springoneplatform.io/"&gt;amazing SpringOne Platform&lt;/a&gt; event in San Francisco, CA? I hope you&amp;rsquo;re going!&lt;/p&gt;
-&lt;p&gt;Now, without further ado, let&amp;rsquo;s get to it.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Spring messaging ninja Oleg Zhurakousky just announced &lt;a href="https://spring.io/blog/2017/11/09/spring-cloud-stream-elmhurst-m3-2-0-0-m3-release-announcement"&gt;Spring Cloud Stream Elmhurst.M3 / 2.0.0.M3&lt;/a&gt;. The new release improves content-type resolution, support for Apache Kafka 0.11+, and introduces a good deal of nice samples.&lt;/li&gt;
-  &lt;li&gt;Spring Data Geode/GemFire lead John Blum &lt;a href="https://spring.io/blog/2017/11/07/spring-session-data-geode-gemfire-2-0-0-rc1-available"&gt;just announced Spring Data Geode / GemFire 2.0.0.RC1&lt;/a&gt;. The new release updates dependencies, builds on Java 8 (introducing Java 8 types and lambdas), and introduces new samples.&lt;/li&gt;
-  &lt;li&gt;In this last week&amp;rsquo;s installment of &lt;em&gt;Spring Tips&lt;/em&gt; &lt;a href="https://spring.io/blog/2017/11/08/spring-tips-bootiful-kotlin-redux"&gt;I revisit Kotlin and Spring&lt;/a&gt;, looking at some of the DSLs available in Spring and their use. This one&amp;rsquo;s been a long time in coming and it&amp;rsquo;s wonderful to see how far things have come!&lt;/li&gt;
-  &lt;li&gt;Spring messaging ninja Artem Bilan &lt;a href="https://spring.io/blog/2017/11/09/spring-for-apache-kafka-2-1-rc1-and-2-0-1-1-3-1-available"&gt;just announced Spring for Apache Kafka 2.1RC1 and 2.0.1 and 1.3.1&lt;/a&gt; which - mainly - introduces support for Apache Kafka 1.0.&lt;/li&gt;
-  &lt;li&gt;Spring Cloud Task contributor &lt;a href="https://spring.io/blog/2017/11/10/spring-cloud-task-2-0-0-m2-is-now-available"&gt;Glenn Renfro just announced Spring Cloud Task 2.0.0.M2&lt;/a&gt;. This release updates the code to be compatible with Spring Boot 2.0.0.M5 (and all the other downstream dependencies that depend on it).&lt;/li&gt;
-  &lt;li&gt;This Devoxx BE talk on &lt;a href="https://www.youtube.com/watch?v=_DkvVtDPiFM&amp;list=PLRsbF2sD7JVqZ4RpHYkqSuCNhxumGP5eo&amp;index=109"&gt;consumer driven contract testing with Spring Cloud Contract&lt;/a&gt; by Ben Ooms looks interesting&lt;/li&gt;
-  &lt;li&gt;I happen to know that this talk by Keycloak contributor Sebastien Blanc &lt;a href="https://www.youtube.com/watch?v=3I4TXPxCCVE&amp;list=PLRsbF2sD7JVqZ4RpHYkqSuCNhxumGP5eo&amp;index=81"&gt;on using Spring Boot and RedHat&amp;rsquo;s Keycloak&lt;/a&gt; OAuth identity provider is worth a watch.&lt;/li&gt;
-  &lt;li&gt;Spring Framework and Spring co-founder Juergen Hoeller gave a great talk at Devoxx Belgium &lt;a href="https://www.youtube.com/watch?v=69tJKcmKVQk&amp;list=PLRsbF2sD7JVqZ4RpHYkqSuCNhxumGP5eo&amp;index=72"&gt;introducing Spring Framework 5 themes and trends&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;I also had fun co-presenting with my buddy Mark Heckler &lt;a href="https://www.youtube.com/watch?v=yAXgkSlrmBA&amp;list=PLRsbF2sD7JVqZ4RpHYkqSuCNhxumGP5eo&amp;index=64"&gt;on building reactive Spring applications at Devoxx BE&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;This talk by Spring team legend Thomas Risberg &lt;a href="https://www.youtube.com/watch?v=EerHub6PoEA&amp;list=PLRsbF2sD7JVqZ4RpHYkqSuCNhxumGP5eo&amp;index=60"&gt;on how to build Spring Boot applications on Kubernetes&lt;/a&gt; is defnitely worth watching.&lt;/li&gt;
-  &lt;li&gt;I had a lot of fun presenting at Devoxx BE with my buddy and Okta Developer Advocate Matt Raible in this talk called &lt;a href="https://www.youtube.com/watch?v=tCyLDzhz_mg&amp;list=PLRsbF2sD7JVqZ4RpHYkqSuCNhxumGP5eo&amp;index=51"&gt;Building Cloud Native Progressive Web Apps&lt;/a&gt;. In it we look at using Spring Boot, Spring Cloud and Kotlin to build a robust microservices-based backend and then we build a TypeScript-based Angular client to talk to that microservices system.&lt;/li&gt;
-  &lt;li&gt;This looks interesting - it&amp;rsquo;s a Devoxx BE talk by Arne Vandamme and Steven Gentens on building web applications using something called &lt;a href="https://www.youtube.com/watch?v=00Jn3d12L2M&amp;list=PLRsbF2sD7JVqZ4RpHYkqSuCNhxumGP5eo&amp;index=40"&gt;the Across Platform (with Spring)&lt;/a&gt;. I&amp;rsquo;ve got it bookmarked!&lt;/li&gt;
-  &lt;li&gt;You should definitely check out this talk on &lt;a href="https://www.youtube.com/watch?v=LQN2ptVdaJE&amp;list=PLRsbF2sD7JVqZ4RpHYkqSuCNhxumGP5eo&amp;index=38"&gt;Spring Framework 5 hidden gems&lt;/a&gt; by Spring Framework lead Juergen Hoeller&lt;/li&gt;
-  &lt;li&gt;I &lt;em&gt;love&lt;/em&gt; this Devoxx BE talk by Kotlin and Spring ninja Sébastien Deleuze on, well, &lt;a href="https://www.youtube.com/watch?v=kbMXAjWEft0&amp;list=PLRsbF2sD7JVqZ4RpHYkqSuCNhxumGP5eo&amp;index=36"&gt;Spring Boot and Kotlin&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;This Devoxx BE talk by Spring teammembers Stephane Nicoll and Brian Clozel on &lt;a href="https://www.youtube.com/watch?v=Q-9bUsrLVpI&amp;list=PLRsbF2sD7JVqZ4RpHYkqSuCNhxumGP5eo&amp;index=5"&gt;building Spring Boot 2.0 web applications&lt;/a&gt; is a must-watch!&lt;/li&gt;
-  &lt;li&gt;I really liked this Devoxx BE talk by Jisha Abubaker on Google&amp;rsquo;s developer relations engineering team. In it she looks at &lt;a href="https://www.youtube.com/watch?v=-pMxdcfWrhs&amp;list=PLRsbF2sD7JVqZ4RpHYkqSuCNhxumGP5eo&amp;index=22"&gt;using some of the Google Cloud Spring Boot starters&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;This post is interesting - Hibernate Developer Advocate Vlad Mihalcea looks at how to &lt;a href="https://vladmihalcea.com/2017/11/14/how-to-emulate-createdby-and-lastmodifiedby-from-spring-data-using-the-generatortype-hibernate-annotation/amp/"&gt;simulate Spring Data&amp;rsquo;s &lt;code&gt;@CreatedBy&lt;/code&gt; and &lt;code&gt;@LastModifiedBy&lt;/code&gt; with straight Hibernate&lt;/a&gt;. Interesting.. but why not just use Hibernate &lt;em&gt;and&lt;/em&gt; Spring Data JPA? N&amp;rsquo;er a more natural pair was there :)&lt;/li&gt;
-  &lt;li&gt;This has zero things to do with Spring, but I&amp;rsquo;m honored to have been included &lt;a href="https://www.pearsonfrank.com/blog/20-java-professionals-need-follow-twitter"&gt;in this a list of twenty Java developers you should follow on Twitter&lt;/a&gt;. If you want to &lt;a href="http://twitter.com/starbuxman"&gt;follow l&amp;rsquo;il &amp;rsquo;ol me&lt;/a&gt;, I&amp;rsquo;d appreciate it, but you should &lt;em&gt;definitely&lt;/em&gt; follow some of the rest of the folks on that list. Most of them are friends and I can&amp;rsquo;t recommend &amp;rsquo;em highly enough.&lt;/li&gt;
-&lt;/ul&gt;</content>
   </entry>
 </feed>

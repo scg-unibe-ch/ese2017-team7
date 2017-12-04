@@ -10,7 +10,7 @@
 
 <div id='container'>
             <div id='header'> 
-                <img src="images/banner.jpg" alt="header" id='header_img' />
+                <img src="images/AniTransHeader.png" alt="header" id='header_img' />
                 <ul id='nav'>
                     <li class='nav_element1'><a href="index.html">Home</a></li>
                     <div sec:authorize="hasRole('ROLE_ADMIN')"><li class='nav_element2'><a href="orders" class="active">Orders</a></li></div>
@@ -24,17 +24,19 @@
         					</form> </li></div>
                 </ul>
             </div>
+            
+<div class="ex0">
+<h1><img src="images/logo.png" width="45" height="40" alt="logo" id="logo" />Add Order</h1>
+</div>            
              
 <div class="ex0">
-	<h2>Add Order</h2>
 
-	
     <form action="#" th:action="@{/add-order}" th:object="${newOrder}" method="post" id="statusOrder">
     		<div th:if="${#fields.hasErrors('*')}">
                 <h3 style="color:red;">Please fix the following error(s)</h3>
         </div>
         
-    	
+<div class="ex9">     	
         <p>From: </p>
         <p>Name: <input type="text" th:field="*{fromName}" /></p>
         <p th:if="${#fields.hasErrors('fromName')}" th:errors="*{fromName}" style="color:red;">From Name Error</p>
@@ -43,7 +45,9 @@
         <p>PLZ / Town: <input type="text" th:field="*{fromPlz}" /><input type="text" th:field="*{fromTown}" /></p>
         <p th:if="${#fields.hasErrors('fromPlz')}" th:errors="*{fromPlz}" style="color:red;">From PLZ Error</p>
         <p th:if="${#fields.hasErrors('fromTown')}" th:errors="*{fromTown}" style="color:red;">From Town Error</p>
+</div>
 
+<div class="ex9"> 
         <p>To: </p>
         <p>Name: <input type="text" th:field="*{toName}" /></p>
         <p th:if="${#fields.hasErrors('toName')}" th:errors="*{toName}" style="color:red;">To Name Error</p>
@@ -52,7 +56,9 @@
         <p>PLZ / Town: <input type="text" th:field="*{toPlz}" /><input type="text" th:field="*{toTown}" /></p>
         <p th:if="${#fields.hasErrors('toPlz')}" th:errors="*{toPlz}" style="color:red;">To PLZ Error</p>
         <p th:if="${#fields.hasErrors('toTown')}" th:errors="*{toTown}" style="color:red;">To Town Error</p>
+</div>      
         
+<div class="ex9">         
         <p>Until: <input type="text" th:field="*{until}" placeholder="dd.MM.yyyy"/> </p>
         <p th:if="${#fields.hasErrors('until')}" th:errors="*{until}" style="color:red;">Until Error</p>
         <p>Timeframe: <input type="text" th:field="*{timeframe}" placeholder="HH:mm - HH:mm"/></p>
@@ -65,7 +71,9 @@
         <p th:if="${#fields.hasErrors('timeEstimation')}" th:errors="*{timeEstimation}"  style="color:red;">Time Estimation Error</p>
         <p>Start Time: <input type="text" th:field="*{startTime}" placeholder="dd.MM.yyyy, HH:mm"/> </p>
         <p th:if="${#fields.hasErrors('startTime')}" th:errors="*{startTime}" style="color:red;">Start Time Error</p>
+</div>
         
+<div class="ex9">         
         <p>Vehicle: <select th:field="*{vehicle}">
         		<option
          		 th:value="none"
@@ -76,7 +84,9 @@
 		</select></p>
         <p th:if="${#fields.hasErrors('vehicle')}" th:errors="*{vehicle}" style="color:red;">Vehicle Error</p>
         <p th:text="${vehicleError}" style="color:red;"></p>
-    
+ </div>
+
+<div class="ex9">     
         <p>Driver: <select th:field="*{driver}">
         		<option
          		 th:value="none"
@@ -87,10 +97,11 @@
 		</select></p>
         <p th:if="${#fields.hasErrors('driver')}" th:errors="*{driver}" style="color:red;">Driver Error</p>
         <p th:text="${driverError}" style="color:red;"></p>
-
+</div>
        
-        <p><button class='b1'>Submit</button></p>
+        <label><button class='b5'>Submit</button></label>
     </form>
+    
     </div>
     </div>
 </body>

@@ -11,7 +11,7 @@
 
 		<div id='container'>
             <div id='header'> 
-                <img src="images/banner.jpg" alt="header" id='header_img' />
+                <img src="images/AniTransHeader.png" alt="header" id='header_img' />
                 <ul id='nav'>
                     <li class='nav_element1'><a href="index.html">Home</a></li>
                     <div sec:authorize="hasRole('ROLE_ADMIN')"><li class='nav_element2'><a href="orders">Orders</a></li></div>
@@ -38,21 +38,20 @@
             You have been logged out.
         </div>
         
+        <div class="ex9">
         <form th:action="@{/login}" method="post">
             <label> E-Mail: <input type="text" name="username"/></label>
             <br/>
             <label>Password: <input type="password" name="password"/></label>
-           <p><label><button class='b1'>Sign In</button></label></p>
+           <p><label><button class='b5'>Sign In</button></label></p>
         </form>
+
+        <form action="/register.html">
+            <label><button class='b5'>Register</button></label>
+        </form>   
+        </div>
         </div>
 
-<div class="ex0">
-			<h1><img src="images/logo.png" width="45" height="40" alt="logo" id="logo" />Register</h1>
-		<form action="/register.html">
-            <button class='b1'>Register</button>
-        </form>       
-</div>
 </div>  
 </body>
 </html>
-

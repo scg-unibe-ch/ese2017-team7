@@ -6,6 +6,9 @@
 	</list>
 	<list key="installedFeatures">
 		<item value="com.ianbrandt.tools.m2e.mdp.feature:0.0.4.201409291703"/>
+		<item value="com.objectaid.uml.addon:1.2.2"/>
+		<item value="com.objectaid.uml.cls:1.2.2"/>
+		<item value="com.objectaid.uml.seq:1.2.2"/>
 		<item value="org.aspectj:1.8.10.201704242114"/>
 		<item value="org.eclipse.ajdt:2.2.4.201704242114"/>
 		<item value="org.eclipse.cft.server.core.feature:1.2.2.v201706141943"/>
@@ -34,8 +37,8 @@
 		<item value="org.eclipse.emf:2.13.0.v20170609-0928"/>
 		<item value="org.eclipse.epp.mpc:1.6.0.v20170616-0843"/>
 		<item value="org.eclipse.gef:3.11.0.201606061308"/>
-		<item value="org.eclipse.help:2.2.100.v20170612-0950"/>
-		<item value="org.eclipse.jdt:3.13.0.v20170612-0950"/>
+		<item value="org.eclipse.help:2.2.101.v20171009-0410"/>
+		<item value="org.eclipse.jdt:3.13.1.v20171009-0410"/>
 		<item value="org.eclipse.jgit:4.8.0.201706111038-r"/>
 		<item value="org.eclipse.jst.common.fproj.enablement.jdt:3.8.0.v201603091933"/>
 		<item value="org.eclipse.jst.enterprise_ui.feature:3.9.0.v201701262152"/>
@@ -67,8 +70,8 @@
 		<item value="org.eclipse.oomph.setup.core:1.8.0.v20170531-0903"/>
 		<item value="org.eclipse.oomph.setup:1.8.0.v20170531-0903"/>
 		<item value="org.eclipse.pde:3.13.0.v20170612-0950"/>
-		<item value="org.eclipse.platform:4.7.0.v20170612-1255"/>
-		<item value="org.eclipse.rcp:4.7.0.v20170612-1255"/>
+		<item value="org.eclipse.platform:4.7.1.v20171009-0410"/>
+		<item value="org.eclipse.rcp:4.7.1.v20171009-0410"/>
 		<item value="org.eclipse.recommenders.mylyn.rcp.feature:2.4.9.v20170613-1301"/>
 		<item value="org.eclipse.recommenders.rcp.feature:2.4.9.v20170613-1301"/>
 		<item value="org.eclipse.rse.core:3.7.3.201704251225"/>

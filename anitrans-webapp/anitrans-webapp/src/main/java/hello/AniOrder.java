@@ -193,6 +193,27 @@ public class AniOrder {
     public void setStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
     } 
+    
+    public boolean equals(AniOrder aniOrder) {
+		if(this.getId() == aniOrder.getId() &&
+    			this.getFromAddr().equals(aniOrder.getFromAddr()) &&
+    			this.getToAddr() == aniOrder.getToAddr() &&
+    			this.getUntil().equals(aniOrder.getUntil()) &&
+    			this.getTimeframe().equals(aniOrder.getTimeframe()) &&
+    			this.getNumberOfAnimals().equals(aniOrder.getNumberOfAnimals()) &&
+    			this.getTypeOfAnimal().equals(aniOrder.getTypeOfAnimal()) &&
+    			this.getTimeEstimation() == aniOrder.getTimeEstimation() &
+    			this.getStartTime().equals(aniOrder.getStartTime()) &&
+    			this.getDriver().equals(aniOrder.getDriver()) &&
+    			this.getVehicle().equals(aniOrder.getVehicle()) &&
+    			this.getOrderStatus().equals(aniOrder.getOrderStatus()) &&
+    			this.getStatusMessage().equals(aniOrder.getStatusMessage())) {
+			return true;
+		} else {
+			return false;
+		}
+	
+}
    
    }
 

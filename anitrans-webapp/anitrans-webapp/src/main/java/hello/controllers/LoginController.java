@@ -29,7 +29,6 @@ public class LoginController {
     			return "logout"; // the user is already logged in, so send him to the logout page.
     		}
     	
-        model.addAttribute("login", new hello.Login()); //creates a new user. This will need to be changed once the login is implemented.
         return "login";
     }
 

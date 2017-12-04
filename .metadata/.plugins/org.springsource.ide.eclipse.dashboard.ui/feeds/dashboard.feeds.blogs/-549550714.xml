@@ -5,7 +5,67 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2017-12-03T21:52:16Z</updated>
+  <updated>2017-12-04T14:59:03Z</updated>
+  <entry>
+    <title>Spring Batch 4.0.0.RELEASE is now available</title>
+    <link rel="alternate" href="https://spring.io/blog/2017/12/04/spring-batch-4-0-0-release-is-now-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Michael Minella</name>
+    </author>
+    <id>tag:spring.io,2017-12-04:3123</id>
+    <updated>2017-12-04T14:59:03Z</updated>
+    <content type="html">&lt;p&gt;We are pleased to announce that Spring Batch 4.0.0.RELEASE is now available through Github, the Pivotal download repository, and Maven Central. This is the generally available release of the 4.0 line. Many thanks to all that contributed to this release.&lt;/p&gt;&lt;h2&gt;&lt;a href="#how-we-got-here" class="anchor" name="how-we-got-here"&gt;&lt;/a&gt;How We Got Here&lt;/h2&gt;
+&lt;p&gt;Spring Batch 4 is the first major version release of Spring Batch since 3.0 went out in 2014. A lot has changed in the Spring ecosystem since that version went out. This release is intended to bring Spring Batch up to date with those changes. When Spring Batch 3 came out, Java configuration was just beginning to take over XML-based configuration. Spring Boot had not been announced yet. Also, while JDK 8 had just come out, Spring Framework 4 (which Spring Batch 3 was based on) still supported java back to JDK 6. Spring Batch 4 brings upgrades to all of these areas. Let&amp;rsquo;s take a look.&lt;/p&gt;&lt;h2&gt;&lt;a href="#new-baseline" class="anchor" name="new-baseline"&gt;&lt;/a&gt;New Baseline&lt;/h2&gt;
+&lt;p&gt;Spring Batch 3 was based on Spring Framework 4, which supported an ecosystem of dependencies that went back to Java 6. Spring Batch 4 takes a fresh look at its dependency tree and brings it up to date with the upcoming Spring Boot 2 dependency tree, including Spring Framework 5 and Java 8 as baseline requirements. While Spring Batch has had a complete Java 8 story for years, this upgrade lets us improve and simplify things internally by allowing us to use Java 8 idioms internally.&lt;/p&gt;&lt;h2&gt;&lt;a href="#improved-java-configuration" class="anchor" name="improved-java-configuration"&gt;&lt;/a&gt;Improved Java Configuration&lt;/h2&gt;
+&lt;p&gt;As mentioned previously, Spring Batch 4 is the first major version release since Spring Boot came out. In this release, we have taken strides to improve the Java configuration experience in all the areas where users felt the most pain. Builders are now available for all &lt;code&gt;ItemReader&lt;/code&gt; and &lt;code&gt;ItemWriter&lt;/code&gt; implementations. An example of the simplification between Spring Batch 3 and 4 is configuring the &lt;code&gt;FlatFileItemReader&lt;/code&gt;. Using the Java configuration capabilities of Spring Batch 3, your configuration would look something like the following:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;@Bean&#xD;
+public FlatFileItemReader&amp;lt;Foo&amp;gt; reader(Resource resource) &#xD;
+    throws Exception {&#xD;
+&#xD;
+        FlatFileItemReader&amp;lt;Foo&amp;gt; reader = new FlatFileItemReader&amp;lt;&amp;gt;();&#xD;
+&#xD;
+        reader.setName(“fooReader”);&#xD;
+        reader.setResource(resource);&#xD;
+&#xD;
+        BeanWrapperFieldSetMapper&amp;lt;Foo&amp;gt; fieldSetMapper = &#xD;
+            new BeanWrapperFieldSetMapper&amp;lt;&amp;gt;();&#xD;
+        fieldSetMapper.setTargetType(Foo.class);&#xD;
+        fieldSetMapper.afterPropertiesSet();&#xD;
+&#xD;
+        DelimitedLineTokenizer tokenizer = new DelimitedLineTokenizer();&#xD;
+        tokenizer.setNames(new String[] {“first”, “second”, “third”});&#xD;
+        tokenizer.afterPropertiesSet();&#xD;
+&#xD;
+        DefaultLineMapper lineMapper = new DefaultLineMapper();&#xD;
+        lineMapper.setLineTokenizer(tokenizer);&#xD;
+        lineMapper.setFieldSetMapper(fieldSetMapper);&#xD;
+&#xD;
+        reader.setLineMapper(lineMapper);&#xD;
+&#xD;
+        return reader;&#xD;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With Spring Batch 4, the previous configuration is reduced to the following:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;@Bean&#xD;
+public FlatFileItemReader&amp;lt;Foo&amp;gt; reader(Resource resource) {&#xD;
+        return new FlatFileItemReaderBuilder&amp;lt;Foo&amp;gt;()&#xD;
+            .name(“fooReader”)&#xD;
+            .resource(resource)&#xD;
+            .delimited()&#xD;
+            .names(new String[]{“first”, “second”, “third”})&#xD;
+            .targetType(Foo.class)&#xD;
+            .build();&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Fluent builders such as that shown in the preceding example are available for all &lt;code&gt;ItemReader&lt;/code&gt; and &lt;code&gt;ItemWriter&lt;/code&gt; implementations with this release.&lt;/p&gt;&lt;h2&gt;&lt;a href="#new-documentation" class="anchor" name="new-documentation"&gt;&lt;/a&gt;New Documentation&lt;/h2&gt;
+&lt;p&gt;Spring Batch&amp;rsquo;s documentation had not had a major overhaul in years. It is time. With this release the documentation has been migrated to Asciidoc to simplify creation of the documentation as well as to become consistent across the Spring portfolio. In addition to that, the reference documentation now has the option to view any example in either Java configuration or XML configuration by using a toggle at the top of each page.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/mminella/blog_images/master/documentation_toggle.png" alt="Java configuration toggle" /&gt;&lt;/p&gt;
+&lt;p&gt;This toggle gives you the option to have the documentation presented to you in the way you need. If you are on a project that is XML-based, the entire file shows what is appropriate for XML configuration. If you use Java configuration, the entire file shows what is appropriate for a project using Java configuration.&lt;/p&gt;&lt;h2&gt;&lt;a href="#wait-there-rsquo-s-more" class="anchor" name="wait-there-rsquo-s-more"&gt;&lt;/a&gt;Wait! There&amp;rsquo;s More!&lt;/h2&gt;
+&lt;p&gt;Beyond all of the above, Spring Batch 4 includes other improvements, including a new &lt;code&gt;ItemProcessor&lt;/code&gt; that delegates to a &lt;code&gt;java.util.Function&lt;/code&gt;, letting you create a processor with zero Spring dependencies. Enhancements provided by the community, such as the &lt;code&gt;Query&lt;/code&gt; support in the &lt;code&gt;MongoItemReader&lt;/code&gt; provided by Takaaki Iida, provide examples of this new feature.&lt;/p&gt;&lt;h2&gt;&lt;a href="#what-do-you-think" class="anchor" name="what-do-you-think"&gt;&lt;/a&gt;What do you think?&lt;/h2&gt;
+&lt;p&gt;We look forward to your feedback on these new features in &lt;a href="https://jira.spring.io/browse/BATCH/"&gt;Jira&lt;/a&gt;, &lt;a href="https://stackoverflow.com/tags/spring-batch"&gt;StackOverflow&lt;/a&gt;, or to me directly via Twitter &lt;a href="https://twitter.com/michaelminella"&gt;@michaelminella&lt;/a&gt; or in person at SpringOne Platform!&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://projects.spring.io/spring-batch/"&gt;Spring Batch Home&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-batch"&gt;Source on GitHub&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-batch/4.0.x/reference/html/index.html"&gt;Reference Documentation&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>Spring Session (Core/MongoDB/Geode) 2.0.0.RC2 released!</title>
     <link rel="alternate" href="https://spring.io/blog/2017/12/03/spring-session-core-mongodb-geode-2-0-0-rc2-released" />
@@ -1359,21 +1419,5 @@ dependencies {&#xD;
 &lt;p&gt;Please note: Our Castor XML support is marked as deprecated now due to the inactivity of the Castor project. On a related note, we are effectively deprecating JDK 6 support in the 4.3.x line, ending our first-class efforts for it; more on this in a &lt;a href="https://spring.io/blog/2017/11/27/end-of-first-class-jdk-6-support"&gt;separate blog post&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Next up is Spring Framework 5.0.3 in late December, accompanied by a 4.3.14 release, wrapping up our core efforts for this year. Please report any issues you might experience against 5.0.2 or 4.3.13, allowing us to provide timely fixes before the end of the year still.&lt;/p&gt;
 &lt;p&gt;Cheers,&lt;br/&gt;Juergen&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>End of first-class JDK 6 support</title>
-    <link rel="alternate" href="https://spring.io/blog/2017/11/27/end-of-first-class-jdk-6-support" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Juergen Hoeller</name>
-    </author>
-    <id>tag:spring.io,2017-11-20:3096</id>
-    <updated>2017-11-27T12:54:38Z</updated>
-    <content type="html">&lt;p&gt;It is about time: The official end of of commercial JDK 6 support is coming up soon, with &lt;a href="http://www.oracle.com/technetwork/java/eol-135779.html"&gt;Oracle&lt;/a&gt; declaring December 2018 and &lt;a href="https://developer.ibm.com/wasdev/docs/end-java-se-6-go/"&gt;IBM&lt;/a&gt; declaring April 2018 as the end of their extended support.&lt;/p&gt;
-&lt;p&gt;From a Spring perspective, we take the opportunity to deemphasize JDK 6 support on our end. We&amp;rsquo;ll keep tolerating a JDK 6 runtime in the entire Spring Framework 4.3.x line for all further maintenance releases. However, we won&amp;rsquo;t make compromises for JDK 6 anymore, asking you to upgrade to JDK 7+ for fixes that we&amp;rsquo;d have to work around specifically for JDK 6 on our end.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Even for JDK 7, we expect a recent patch release to be in use, as provided by Oracle, IBM and Red Hat within their server platforms. If available, consider a straight upgrade to JDK 8!&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;With JDK 9 having arrived, our JDK support range doesn&amp;rsquo;t shrink: Spring Framework 4.3.10+ effectively provides first-class support for JDK 7 and 8 and runtime tolerance for JDK 6 and 9.&lt;/p&gt;
-&lt;p&gt;As a reminder: Spring Framework 5.0 requires JDK 8+ and introduces first-class support for JDK 9, with timely tracking of the pending JDK 10 and 11 releases in the upcoming Spring Framework 5.1 and 5.2 releases next year. We strongly recommend an upgrade to Spring Framework 5.0+ for any use of JDK 9+, in particular in new project development efforts.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;On a related note, &lt;a href="http://start.spring.io/"&gt;start.spring.io&lt;/a&gt; does not provide JDK 6 options anymore. At the same time, it features JDK 9 project options now, aligned with Spring Boot 2.0 on Spring Framework 5.0.&lt;/em&gt;&lt;/p&gt;</content>
   </entry>
 </feed>

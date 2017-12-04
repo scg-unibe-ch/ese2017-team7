@@ -53,7 +53,7 @@ public class RegisterController {
     
   //Maps get requests for /delete-user. The id of the user to be deleted is passed through the URL.
     @GetMapping("/delete-driver")
-    public String deleteOrder(@RequestParam Integer id, Model model) {
+    public String deleteDriver(@RequestParam Integer id, Model model) {
 
     	    	User user;
         	if(id != null) {

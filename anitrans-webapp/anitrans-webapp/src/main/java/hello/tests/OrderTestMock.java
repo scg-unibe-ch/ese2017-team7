@@ -1,4 +1,4 @@
-package hello;
+package hello.tests;
 
 import static org.junit.Assert.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;

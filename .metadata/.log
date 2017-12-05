@@ -8016,3 +8016,6 @@ Caused by: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4
 
 !ENTRY org.eclipse.jface.text 2 0 2017-12-05 12:38:26.221
 !MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.lsp4e 1 0 2017-12-05 13:39:48.513
+!MESSAGE Non IFiles not supported yet

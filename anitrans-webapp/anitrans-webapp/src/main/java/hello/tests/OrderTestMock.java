@@ -2,9 +2,12 @@ package hello.tests;
 
 import static org.junit.Assert.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 import hello.*;
 import hello.controllers.*;
@@ -12,8 +15,14 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.context.WebApplicationContext;
+
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Filter;
+
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -26,6 +35,7 @@ import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import static org.hamcrest.Matchers.containsString;
 import org.springframework.test.web.servlet.*;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 
 
@@ -39,6 +49,19 @@ import org.springframework.test.web.servlet.*;
 public class OrderTestMock {	
 	@Autowired
 	private MockMvc mockMvc;
+	@Autowired
+	private WebApplicationContext context;
+	/*@Autowired
+	private Filter springSecurityFilterChain;
+	
+	
+	@Before
+	public void setup() {
+	    mockMvc = MockMvcBuilders
+	       .webAppContextSetup(context)
+	       .addFilters(springSecurityFilterChain)
+	       .build();
+	}*/
 
 	
 	//Tests the conversion from NewOrder to AniOrder and back
@@ -236,12 +259,41 @@ public class OrderTestMock {
 		
 	}
 
-	
+	//Tests that the orders.html page is not accessible without logging in first
 	@Test
-	public void homeShouldHaveTitle() throws Exception {
-		this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk())
-			.andExpect(content().string(containsString("About Us")));
+	public void ordersShouldBeLocked() throws Exception {
+		this.mockMvc.perform(get("/orders")).andDo(print()).andExpect(status().isFound());
 	}
+	
+	//Tests that the add-order.html page is not accessible without logging in first
+	@Test
+	public void addOrdersShouldBeLocked() throws Exception {
+		this.mockMvc.perform(get("/add-order")).andDo(print()).andExpect(status().isFound());
+	}
+	
+	/*
+	//Tests that the orders.html page is not accessible without logging in first
+	@Test
+	public void loginError() throws Exception {
+		this.mockMvc.perform(post("/login")
+                .param("username", "alfkajf").param("password", "lajdfdlsa"))
+                .andExpect(
+                    model().attributeHasFieldErrors(
+                        "username", "password"
+                    )
+                )
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Login")));
+    }
+	
+	//Tests that the orders.html page is not accessible without logging in first
+		@Test
+		public void loggingInWorks() throws Exception {
+			this.mockMvc.perform(post("/login")
+	                .param("username", "mathias.fuchs@anitrans.ch").param("password", "TheBoss123"))
+	                .andExpect(status().isOk())
+	                .andExpect(content().string(containsString("Logout")));
+	    }*/
 
 }
 

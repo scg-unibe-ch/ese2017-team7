@@ -106,7 +106,7 @@ public class Vehicle {
 	public void setWeight(int weight) {
 		this.weight = weight;
 	}
-	public int weight() {
+	public int getWeight() {
 		return weight;
 	}
 }

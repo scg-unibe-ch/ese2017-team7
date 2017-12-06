@@ -1,5 +1,4 @@
 hello/NewOrder.class
-hello/Login.class
 hello/OrderRepository.class
 hello/CounterService.class
 hello/SortingService.class
@@ -13,7 +12,6 @@ hello/controllers/ErrorHandlingController.class
 hello/UserRepositoryUserDetailsService$CustomUserDetails.class
 hello/controllers/RegisterController.class
 hello/controllers/LoginController.class
-hello/EditedOrderRepository.class
 hello/NewUser.class
 hello/controllers/OrderDetailsController.class
 hello/controllers/DriversController.class

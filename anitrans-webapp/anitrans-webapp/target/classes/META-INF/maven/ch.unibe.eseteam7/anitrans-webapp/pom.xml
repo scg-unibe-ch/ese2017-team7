@@ -63,9 +63,23 @@
         <dependency>
         <groupId>org.thymeleaf.extras</groupId>
         <artifactId>thymeleaf-extras-springsecurity4</artifactId>
-        
+		</dependency> 
+		
+		<!-- test dependency -->
+       <dependency>
+           <groupId>org.springframework</groupId>
+           <artifactId>spring-test</artifactId>
+           <version>4.3.5.RELEASE</version>
+           <scope>test</scope>
+       </dependency>
 
-</dependency>   
+       <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-test -->
+       <dependency>
+           <groupId>org.springframework.security</groupId>
+           <artifactId>spring-security-test</artifactId>
+           <version>4.0.0.RELEASE</version>
+           <scope>test</scope>
+       </dependency>  
         
 
     </dependencies>

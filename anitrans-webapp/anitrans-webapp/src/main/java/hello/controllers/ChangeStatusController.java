@@ -29,7 +29,7 @@ public class ChangeStatusController {
     public String statusForm(@RequestParam Integer id, Model model) {
     	hello.AniOrder order;
 		if(id != null) {
-			order  = orderRepository.findById(id); //finds the correct order using the id passed through the URL.
+			order  = orderRepository.findOrderById(id); //finds the correct order using the id passed through the URL.
 		} else {
 			order = new hello.AniOrder(); //if the order doesn't exists, a new order is created.
 		}
@@ -52,7 +52,7 @@ public class ChangeStatusController {
 			return "change-status"; //return the template
 		}
 		
-    		hello.AniOrder oldOrder = orderRepository.findById(order.getOrderId());
+    		hello.AniOrder oldOrder = orderRepository.findOrderById(order.getOrderId());
     		
     		//create addresses and aniOrders from the data.
     		hello.Address fromAddress = new hello.Address(order.getFromName(), order.getFromStreet(), order.getFromTown(), order.getFromPlz());

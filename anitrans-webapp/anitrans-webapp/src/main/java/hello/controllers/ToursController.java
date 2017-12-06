@@ -41,8 +41,8 @@ public class ToursController {
     			hello.User currentUser = userRepository.findByEmail(getUserName()); //gets the user who is currently logged in
     			
     			//Finds all the orders to be displayed on tours.html (only the ones which the current user is driving).
-    			ArrayList<hello.AniOrder> successfulOrders = service.getSuccessful(orderRepository.findByDriver(currentUser.getName()));
-        	    ArrayList<hello.AniOrder> unsuccessfulOrders = service.getUnsuccessful(orderRepository.findByDriver(currentUser.getName()));
+    			ArrayList<hello.AniOrder> successfulOrders = service.getSuccessful(orderRepository.findByDriverOrderByUntilAsc(currentUser.getName()));
+        	    ArrayList<hello.AniOrder> unsuccessfulOrders = service.getUnsuccessful(orderRepository.findByDriverOrderByUntilDesc(currentUser.getName()));
         	    
         	    if(successfulOrders.size() <= 0) {
     	    			model.addAttribute("successfulOrdersError", "There are no delivered tours.");

@@ -31,7 +31,7 @@ public class OrderDetailsController {
     public String orderDetails(@RequestParam Integer id, Model model) {
     		hello.AniOrder order = null;
 		if (id != null) {
-			order = orderRepository.findById(id); //finds the correct order by id.
+			order = orderRepository.findOrderById(id); //finds the correct order by id.
 		} else {
 			return "edit-order-forbidden"; //if the order doesn't exist, can't view it
 		}
@@ -47,7 +47,7 @@ public class OrderDetailsController {
 	    public String tourDetails(@RequestParam Integer id, Model model) {
 	    		hello.AniOrder order = null;
 			if (id != null) {
-				order = orderRepository.findById(id); //finds the correct order by id.
+				order = orderRepository.findOrderById(id); //finds the correct order by id.
 			} else {
 				return "edit-order-forbidden"; //if the order doesn't exist, can't view it
 			}

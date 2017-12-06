@@ -277,7 +277,7 @@ public class OrderTestMock {
 	}
 	
 
-	//Tests that the orders.html page is not accessible without logging in first
+	/*//Tests that the orders.html page is not accessible without logging in first
 	@Test
 	@WithMockUser(roles={"USER","ADMIN"})
 	public void loginError() throws Exception {
@@ -285,7 +285,7 @@ public class OrderTestMock {
 		.andExpect(content().string(containsString("AniTransHeader.png")));
     }
 	
-	/*
+	
 	//Tests that the orders.html page is not accessible without logging in first
 		@Test
 		public void loggingInWorks() throws Exception {

@@ -29,8 +29,8 @@ public class OrdersController {
     @RequestMapping("/orders")
     	public String orders(Model model) {
     	    
-    	    ArrayList<hello.AniOrder> successfulOrders = service.getSuccessful(orderRepository.findAll());
-    	    ArrayList<hello.AniOrder> unsuccessfulOrders = service.getUnsuccessful(orderRepository.findAll());
+    	    ArrayList<hello.AniOrder> successfulOrders = service.getSuccessful(orderRepository.findAllByOrderByUntilAsc());
+    	    ArrayList<hello.AniOrder> unsuccessfulOrders = service.getUnsuccessful(orderRepository.findAllByOrderByUntilDesc());
     	    
     	    if(successfulOrders.size() <= 0) {
     	    		model.addAttribute("successfulOrdersError", "There are no delivered orders.");

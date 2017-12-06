@@ -28,14 +28,18 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import static org.assertj.core.api.Assertions.assertThat;
 import org.springframework.boot.context.embedded.LocalServerPort;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.security.test.context.support.WithMockUser;
+
 import static org.hamcrest.Matchers.containsString;
 import org.springframework.test.web.servlet.*;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 
 
@@ -43,9 +47,10 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
  * Tests methods which are related to an order and do not access the website or database.
  * The database and website aren't accessible in test cases.
  */
-@RunWith(SpringRunner.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
+@ContextConfiguration
 public class OrderTestMock {	
 	@Autowired
 	private MockMvc mockMvc;
@@ -271,21 +276,16 @@ public class OrderTestMock {
 		this.mockMvc.perform(get("/add-order")).andDo(print()).andExpect(status().isFound());
 	}
 	
-	/*
+
 	//Tests that the orders.html page is not accessible without logging in first
 	@Test
+	@WithMockUser(roles={"USER","ADMIN"})
 	public void loginError() throws Exception {
-		this.mockMvc.perform(post("/login")
-                .param("username", "alfkajf").param("password", "lajdfdlsa"))
-                .andExpect(
-                    model().attributeHasFieldErrors(
-                        "username", "password"
-                    )
-                )
-                .andExpect(status().isOk())
-                .andExpect(content().string(containsString("Login")));
+		this.mockMvc.perform(get("/orders")).andDo(print()).andExpect(status().isOk())
+		.andExpect(content().string(containsString("AniTransHeader.png")));
     }
 	
+	/*
 	//Tests that the orders.html page is not accessible without logging in first
 		@Test
 		public void loggingInWorks() throws Exception {

@@ -44,7 +44,7 @@ public class EditOrderController {
     public String orderForm(@RequestParam Integer id, Model model) {
     		hello.AniOrder order = null;
 				if (id != null) {
-					order = orderRepository.findById(id); //finds the correct order by id.
+					order = orderRepository.findOrderById(id); //finds the correct order by id.
 				} else {
 					return "edit-order-forbidden"; //if the order doesn't exist, can't edit it
 				}
@@ -88,7 +88,7 @@ public class EditOrderController {
         		return new ModelAndView("redirect:/edit-order?id=" + order.getOrderId());
         	}
     	
-    		hello.AniOrder oldOrder = orderRepository.findById(order.getOrderId());
+    		hello.AniOrder oldOrder = orderRepository.findOrderById(order.getOrderId());
     		
     		// create addresses and aniOrders from the data
     		hello.Address fromAddress = new hello.Address(order.getFromName(), order.getFromStreet(), order.getFromTown(), order.getFromPlz());
@@ -112,7 +112,7 @@ public class EditOrderController {
 
     	    	hello.AniOrder order;
         	if(id != null) {
-        		order  = orderRepository.findById(id); //finds the order to be deleted.
+        		order  = orderRepository.findOrderById(id); //finds the order to be deleted.
         	} else {
         		order = new hello.AniOrder(); //if it doesn't exist a new order is created.
         	}

@@ -15,7 +15,10 @@ import hello.AniOrder;
  */
 public interface OrderRepository extends CrudRepository<AniOrder, Long> {
 	
-	hello.AniOrder findById(Integer id); //returns a single order, because the ID is unique
-	List<hello.AniOrder> findByDriver(String driver); //returns a list, because a driver may drive multiple orders.
+	hello.AniOrder findOrderById(Integer id); //returns a single order, because the ID is unique
+	List<hello.AniOrder> findByDriverOrderByUntilDesc(String driver); //returns a list, because a driver may drive multiple orders. is sorted by date
+	List<hello.AniOrder> findAllByOrderByUntilDesc(); //Finds all the orders sorted by date
 	
+	List<hello.AniOrder> findByDriverOrderByUntilAsc(String driver); //returns a list, because a driver may drive multiple orders. is sorted by date
+	List<hello.AniOrder> findAllByOrderByUntilAsc(); //Finds all the orders sorted by date
 }

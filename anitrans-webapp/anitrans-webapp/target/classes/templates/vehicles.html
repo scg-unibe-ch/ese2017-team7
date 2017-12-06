@@ -38,6 +38,7 @@
 		    <th>Image</th> 
 		    <th>Count</th>
 		    <th>Name</th>
+		    <th>Length</th>
 		    <th>Available Vehicles</th>
 		    <th>Add Vehicle</th>
 		    <th>Delete Vehicle</th>
@@ -49,6 +50,9 @@
  		   </td> 
  		   <td th:text="${vehicle.vehicle.numberOfVehicles}" align="center"></td>
  		   <td th:text="${vehicle.vehicle.name}"></td>
+ 		   <td th:text="${vehicle.vehicle.length} + m"></td>
+ 		   <td th:text="${vehicle.vehicle.Weight} + tons"></td>
+ 		   <td th:text="${vehicle.vehicle.Width} + m"></td>
  		   <td th:text="${vehicle.availableVehicles}" align="center"></td>
  		   <td><a th:href="@{/add-vehicle(id=${vehicle.vehicle.id})}"><button class='b4'>+</button></a></td>
  		   <td><a th:href="@{/delete-vehicle(id=${vehicle.vehicle.id})}" onclick="return confirm('Are you sure you would like to DELETE one of these vehicles?')"><button class='b4'>-</button></a></td>	 

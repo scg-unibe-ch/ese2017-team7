@@ -24,20 +24,32 @@ public class Vehicle {
     @NotNull
     @Size(min=2, max=255, message = "Please enter the name of the vehicle (at least two characters in length).")
     private String name; 
+    @NotNull
+    private float length;
+    @NotNull
+    private float width;
+    @NotNull
+    private int weight;
     
     
-    public Vehicle(Integer id, int numberOfVehicles, String image, String name) {
+    public Vehicle(Integer id, int numberOfVehicles, String image, String name, float length, float width, int weight) {
     		this.id = id;
     		this.numberOfVehicles = numberOfVehicles;
     		this.image = image;
     		this.name = name;
+    		this.length = length;
+    		this.width = width;
+    		this.weight = weight;
     }
     
     public Vehicle(Vehicle vehicle) {
     		this.id = vehicle.getId();
     		this.numberOfVehicles = vehicle.getNumberOfVehicles();
     		this.image = vehicle.getImage();
-		this.name = vehicle.getName();
+    		this.name = vehicle.getName();
+    		this.length = vehicle.getLength();
+    		this.width = vehicle.getWidth();
+    		this.weight = vehicle.getWeight();
     }
     
     public Vehicle() {
@@ -78,7 +90,24 @@ public class Vehicle {
 	
 	public String toString() {
 		return name;
-}
-
+		}
+	public void setLength(float length) {
+		this.length = length;
+	}
+	public float getLength() {
+		return length;
+	}
+	public void setWidth(float width) {
+		this.width = width;
+	}
+	public float getWidth() {
+		return width;
+	}
+	public void setWeight(int weight) {
+		this.weight = weight;
+	}
+	public int weight() {
+		return weight;
+	}
 }
 

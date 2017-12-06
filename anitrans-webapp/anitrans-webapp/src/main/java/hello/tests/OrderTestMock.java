@@ -56,6 +56,7 @@ public class OrderTestMock {
 	private MockMvc mockMvc;
 	@Autowired
 	private WebApplicationContext context;
+	
 	/*@Autowired
 	private Filter springSecurityFilterChain;
 	
@@ -277,23 +278,20 @@ public class OrderTestMock {
 	}
 	
 
-	/*//Tests that the orders.html page is not accessible without logging in first
+	//Tests that the orders.html page is not accessible without logging in first
 	@Test
 	@WithMockUser(roles={"USER","ADMIN"})
 	public void loginError() throws Exception {
 		this.mockMvc.perform(get("/orders")).andDo(print()).andExpect(status().isOk())
-		.andExpect(content().string(containsString("AniTransHeader.png")));
+		.andExpect(content().string(containsString("Undelivered Orders")));
     }
 	
-	
-	//Tests that the orders.html page is not accessible without logging in first
-		@Test
-		public void loggingInWorks() throws Exception {
-			this.mockMvc.perform(post("/login")
-	                .param("username", "mathias.fuchs@anitrans.ch").param("password", "TheBoss123"))
-	                .andExpect(status().isOk())
-	                .andExpect(content().string(containsString("Logout")));
-	    }*/
+	@Test
+	@WithMockUser(roles={"USER"})
+	public void onlyAdminCanSeeOrders() throws Exception {
+		this.mockMvc.perform(post("/orders")).andDo(print())
+        .andExpect(status().isForbidden());
+    }
 
 }
 

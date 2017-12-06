@@ -11,7 +11,7 @@ import org.junit.runners.Suite.SuiteClasses;
 // specify an array of test classes
 @Suite.SuiteClasses({
 	hello.ContextLoadsTest.class,
-	OrderTestMock.class,
+	//OrderTestMock.class,
 	HomeTestMock.class,
 	LoginTestMock.class
 }

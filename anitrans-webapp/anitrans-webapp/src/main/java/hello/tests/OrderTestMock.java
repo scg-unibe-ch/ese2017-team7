@@ -278,10 +278,10 @@ public class OrderTestMock {
 	}
 	
 
-	//Tests that the orders.html page is not accessible without logging in first
+	//Tests that orders.html has text
 	@Test
 	@WithMockUser(roles={"USER","ADMIN"})
-	public void loginError() throws Exception {
+	public void ordersHasText() throws Exception {
 		this.mockMvc.perform(get("/orders")).andDo(print()).andExpect(status().isOk())
 		.andExpect(content().string(containsString("Undelivered Orders")));
     }
@@ -292,6 +292,14 @@ public class OrderTestMock {
 		this.mockMvc.perform(post("/orders")).andDo(print())
         .andExpect(status().isForbidden());
     }
+	
+		//Tests that orders are displayed
+		@Test
+		@WithMockUser(roles={"USER","ADMIN"})
+		public void ordersHasOrders() throws Exception {
+			this.mockMvc.perform(get("/orders")).andDo(print()).andExpect(status().isOk())
+			.andExpect(content().string(containsString("Casterly Rock")));
+	    }
 
 }
 

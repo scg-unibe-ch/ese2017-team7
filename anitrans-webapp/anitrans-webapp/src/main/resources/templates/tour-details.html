@@ -113,8 +113,13 @@
     
       function calculateAndDisplayRoute(directionsService, directionsDisplay) {
           directionsService.route({
-            origin: [[${order.fromStreet + ', ' + order.fromPlz + ' ' + order.fromTown}]],
-            destination: [[${order.toStreet + ', ' + order.toPlz + ' ' + order.toTown}]],
+        	  	 origin: 'Hochschulstrasse 6, 3012 Bern',
+              destination: [[${order.toStreet + ', ' + order.toPlz + ' ' + order.toTown}]],
+              waypoints: [
+                  {
+                    location: [[${order.fromStreet + ', ' + order.fromPlz + ' ' + order.fromTown}]],
+                    stopover: true
+                  }],
             travelMode: 'DRIVING'
           }, function(response, status) {
             if (status === 'OK') {

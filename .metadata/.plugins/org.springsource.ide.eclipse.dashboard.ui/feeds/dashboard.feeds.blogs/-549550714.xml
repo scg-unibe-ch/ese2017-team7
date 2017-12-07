@@ -32,7 +32,7 @@
   &lt;li&gt;not one to rest on his laurels, &lt;a href="https://spring.io/blog/2017/11/28/spring-rest-docs-2-0-0-release"&gt;Spring REST Docs Andy Wilkinson just announced Spring REST Docs 2.0.0&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Spring Security lead &lt;a href="https://spring.io/blog/2017/11/28/spring-security-5-0-0-release-released"&gt;Rob Winch just announced Spring Security 5.0&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Spring REST Docs lead &lt;a href="https://spring.io/blog/2017/11/28/spring-rest-docs-1-2-3-release"&gt;Andy Wilkinson &lt;em&gt;also&lt;/em&gt; announced Spring REST Docs 1.2.3&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Boot ninja &lt;a href="https://spring.io/blog/2017/11/28/spring-boot-1-5-9-available-now"&gt;St√©phane Nicoll just announced Spring Boot 1.5.9&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Boot ninja &lt;a href="https://spring.io/blog/2017/11/28/spring-boot-1-5-9-available-now"&gt;StÈphane Nicoll just announced Spring Boot 1.5.9&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Spring Data ninja Mark Paluch pulled together an amazing look at &lt;a href="https://spring.io/blog/2017/11/28/binding-applications-to-hashicorp-s-vault-with-spring-in-cloud-foundry"&gt;binding applications to Hashicorp&amp;rsquo;s Vault with Spring in Cloud Foundry&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content>
   </entry>
@@ -244,7 +244,7 @@ dependencies {&#xD;
 &lt;p&gt;&lt;img src="https://github.com/spring-projects/sts4/wiki/images/screenshot-navigation.png" alt="smart code completion" /&gt;&lt;/p&gt;
 &lt;p&gt;The all-new Spring Tools 4 analyze your projects on the fly, understand the Spring constructs inside, and provide easy and super quick navigation to all your Spring elements. Finding a specific request mapping, an exact bean definition, or a newly created function was never as easy as with the new Spring Tools 4.&lt;/p&gt;&lt;h2&gt;&lt;a href="#information-from-live-running-apps" class="anchor" name="information-from-live-running-apps"&gt;&lt;/a&gt;Information from live-running apps&lt;/h2&gt;
 &lt;p&gt;&lt;img src="https://raw.githubusercontent.com/wiki/spring-projects/sts4/images/screenshot-live-hovers.png" alt="in-depth information from live-running applications" /&gt;&lt;/p&gt;
-&lt;p&gt;The all-new Spring Tools 4 introduce a new concept of overlaying your source code with detailed information from live-running Spring Boot apps. As soon as you run your boot app on your machine, additional information from this app with show up directly in your source code editor. That way, you can see (and directly jump to) available request mappings, for example. But the most powerful part here are the detailed wiring reports for your beans. You can see exactly which bean (from which source) got injected into your @Autowired-annotated dependency (for example), and where your bean got injected in your application. This provides a unique insight into the running application directly in your source code. You don‚Äôt have to collect that data yourself and find the right lines of code manually. The tooling does that for you automatically.&lt;/p&gt;&lt;h2&gt;&lt;a href="#ide-agnostic" class="anchor" name="ide-agnostic"&gt;&lt;/a&gt;IDE agnostic&lt;/h2&gt;
+&lt;p&gt;The all-new Spring Tools 4 introduce a new concept of overlaying your source code with detailed information from live-running Spring Boot apps. As soon as you run your boot app on your machine, additional information from this app with show up directly in your source code editor. That way, you can see (and directly jump to) available request mappings, for example. But the most powerful part here are the detailed wiring reports for your beans. You can see exactly which bean (from which source) got injected into your @Autowired-annotated dependency (for example), and where your bean got injected in your application. This provides a unique insight into the running application directly in your source code. You donít have to collect that data yourself and find the right lines of code manually. The tooling does that for you automatically.&lt;/p&gt;&lt;h2&gt;&lt;a href="#ide-agnostic" class="anchor" name="ide-agnostic"&gt;&lt;/a&gt;IDE agnostic&lt;/h2&gt;
 &lt;p&gt;We know that Spring developers love their IDEs and code editors. And we want them to continue to use the tools that they love. Therefore we implemented most parts of the Spring Tools 4 in an IDE-agnostic way. You can use them in:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;Eclipse&lt;/strong&gt; (or download a ready-to-use distribution of Eclipse, as usual)&lt;/li&gt;
@@ -254,7 +254,7 @@ dependencies {&#xD;
 &lt;p&gt;And that is just the beginning. We expect more environments to join this party in the future.&lt;/p&gt;&lt;h2&gt;&lt;a href="#re-built-from-scratch" class="anchor" name="re-built-from-scratch"&gt;&lt;/a&gt;Re-built from scratch&lt;/h2&gt;
 &lt;p&gt;To realize these all-new Spring Tools 4, we decided to re-write most of the Spring tooling from scratch - with these goals in mind from the beginning:&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Let‚Äôs be IDE agnostic&lt;/strong&gt; - let every developer continue to use the environments they love.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Letís be IDE agnostic&lt;/strong&gt; - let every developer continue to use the environments they love.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Build for performance right from the start&lt;/strong&gt; - we hate to wait for our IDE or editor to finish before we can continue coding. Therefore the Spring Tools 4 are designed to never block the user plus deliver results quickly.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Build for modern Spring technologies&lt;/strong&gt; - the tools focus on Spring Boot and annotation-driven Spring app development.&lt;/li&gt;
 &lt;/ul&gt;&lt;h2&gt;&lt;a href="#download" class="anchor" name="download"&gt;&lt;/a&gt;Download&lt;/h2&gt;
@@ -286,7 +286,7 @@ public FlatFileItemReader&amp;lt;Foo&amp;gt; reader(Resource resource) &#xD;
 &#xD;
         FlatFileItemReader&amp;lt;Foo&amp;gt; reader = new FlatFileItemReader&amp;lt;&amp;gt;();&#xD;
 &#xD;
-        reader.setName(‚ÄúfooReader‚Äù);&#xD;
+        reader.setName(ìfooReaderî);&#xD;
         reader.setResource(resource);&#xD;
 &#xD;
         BeanWrapperFieldSetMapper&amp;lt;Foo&amp;gt; fieldSetMapper = &#xD;
@@ -295,7 +295,7 @@ public FlatFileItemReader&amp;lt;Foo&amp;gt; reader(Resource resource) &#xD;
         fieldSetMapper.afterPropertiesSet();&#xD;
 &#xD;
         DelimitedLineTokenizer tokenizer = new DelimitedLineTokenizer();&#xD;
-        tokenizer.setNames(new String[] {‚Äúfirst‚Äù, ‚Äúsecond‚Äù, ‚Äúthird‚Äù});&#xD;
+        tokenizer.setNames(new String[] {ìfirstî, ìsecondî, ìthirdî});&#xD;
         tokenizer.afterPropertiesSet();&#xD;
 &#xD;
         DefaultLineMapper lineMapper = new DefaultLineMapper();&#xD;
@@ -311,10 +311,10 @@ public FlatFileItemReader&amp;lt;Foo&amp;gt; reader(Resource resource) &#xD;
 &lt;pre&gt;&lt;code class="prettyprint"&gt;@Bean&#xD;
 public FlatFileItemReader&amp;lt;Foo&amp;gt; reader(Resource resource) {&#xD;
         return new FlatFileItemReaderBuilder&amp;lt;Foo&amp;gt;()&#xD;
-            .name(‚ÄúfooReader‚Äù)&#xD;
+            .name(ìfooReaderî)&#xD;
             .resource(resource)&#xD;
             .delimited()&#xD;
-            .names(new String[]{‚Äúfirst‚Äù, ‚Äúsecond‚Äù, ‚Äúthird‚Äù})&#xD;
+            .names(new String[]{ìfirstî, ìsecondî, ìthirdî})&#xD;
             .targetType(Foo.class)&#xD;
             .build();&#xD;
 }
@@ -453,7 +453,7 @@ public FlatFileItemReader&amp;lt;Foo&amp;gt; reader(Resource resource) {&#xD;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;We hope to see you at &lt;a href="https://springoneplatform.io/"&gt;SpringOne Platform&lt;/a&gt; this week. It will be packed with many Spring talks, opportunities to learn about the latest and greatest features and of course some previews about what we‚Äôre planning to do next.&lt;/p&gt;
+&lt;p&gt;We hope to see you at &lt;a href="https://springoneplatform.io/"&gt;SpringOne Platform&lt;/a&gt; this week. It will be packed with many Spring talks, opportunities to learn about the latest and greatest features and of course some previews about what weíre planning to do next.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;</content>
@@ -694,7 +694,7 @@ In accordance with &lt;a href="https://pivotal.io/security/cve-2017-4995"&gt;CVE
 &lt;p&gt;The stream update feature is implemented by delegating the deployment process to a new Spring Cloud project called Skipper. Introduced in &lt;a href="https://spring.io/blog/2017/10/30/spring-cloud-skipper-1-0-m1-released"&gt;this blog&lt;/a&gt;, Spring Cloud Skipper is a standalone server that deploys Spring Boot applications to multiple cloud platforms. It also keeps track of the application version, application properties, and deployment properties of the deployed application or applications so that the changes to any of these properties can be calculated upon an update request.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;When a request is made to update applications in a Stream, only the application or applications that need to be changed are updated. A simple red/black update is performed and the design relies on Spring Boot‚Äôs health endpoint associated with the new application(s).  By keeping track of the deployments, Skipper can also rollback to previous versions of the stream.&lt;/p&gt;
+&lt;p&gt;When a request is made to update applications in a Stream, only the application or applications that need to be changed are updated. A simple red/black update is performed and the design relies on Spring Bootís health endpoint associated with the new application(s).  By keeping track of the deployments, Skipper can also rollback to previous versions of the stream.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;The following new Data Flow commands show the basic lifecycle of updating the log sink from version 1.1.0 to version 1.2.0 and then rolling back to 1.1.0. This assumes that both version 1.1.0 and 1.2.0 of the log sink were deployed as maven artifacts. Note that the HTTP source application remains deployed throughout the changes to the log sink.&lt;/p&gt;
@@ -731,7 +731,7 @@ dataflow:&amp;gt; stream skipper rollback --name httptest&lt;/pre&gt;
 &lt;div class="ulist"&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;The ‚Äúdefinition‚Äù style keeps the feel of using the pipes and filters textual DSL in the shell. This style is selected by using the definition method after setting the stream name, e.g.&lt;/p&gt;
+&lt;p&gt;The ìdefinitionî style keeps the feel of using the pipes and filters textual DSL in the shell. This style is selected by using the definition method after setting the stream name, e.g.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
@@ -746,7 +746,7 @@ dataflow:&amp;gt; stream skipper rollback --name httptest&lt;/pre&gt;
 &lt;div class="ulist"&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;The ‚Äúfluent‚Äù style lets you chain together sources, processors and sinks by passing in an instance of a StreamApplication, e.g.&lt;/p&gt;
+&lt;p&gt;The ìfluentî style lets you chain together sources, processors and sinks by passing in an instance of a StreamApplication, e.g.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
@@ -772,7 +772,7 @@ StreamDefinition streamDefinition = Stream.builder(dataFlowOperations)
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;With a Stream instance you can ask for the stream‚Äôs status, undeploy, or destroy the stream.&lt;/p&gt;
+&lt;p&gt;With a Stream instance you can ask for the streamís status, undeploy, or destroy the stream.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;The &lt;a href="https://docs.spring.io/spring-cloud-dataflow/docs/1.3.0.BUILD-SNAPSHOT/reference/htmlsingle/#spring-cloud-dataflow-stream-java-dsl"&gt;Java DSL section&lt;/a&gt; of the reference guide provides a more complete introduction to the DSL and Spring Data Flow Samples repository provides a &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow-samples/tree/master/javadsl"&gt;working example&lt;/a&gt; for you to get started using in your own projects.&lt;/p&gt;
@@ -794,7 +794,7 @@ StreamDefinition streamDefinition = Stream.builder(dataFlowOperations)
 &lt;h2 id="dashboard-flo"&gt;&lt;a class="anchor" href="#dashboard-flo"&gt;&lt;/a&gt;Dashboard / Flo&lt;/h2&gt;
 &lt;div class="sectionbody"&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;We are excited to announce that this release brings feature-parity on the SCDF&amp;#8217;s Dashboard. All the feature capabilities that were supported in the older UI-stack are ported and upgraded to the Angular 4.0 stack. The stream, task, job, analytics, runtime, and apps tabs are fully featured. The Spring Flo designer for streams and composed-task is operational and functionally complete. For the curious, we have also published the Spring Flo‚Äôs &lt;a href="https://github.com/spring-projects/spring-flo"&gt;core library&lt;/a&gt; as an &lt;a href="https://www.npmjs.com/package/spring-flo"&gt;NPM package&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We are excited to announce that this release brings feature-parity on the SCDF&amp;#8217;s Dashboard. All the feature capabilities that were supported in the older UI-stack are ported and upgraded to the Angular 4.0 stack. The stream, task, job, analytics, runtime, and apps tabs are fully featured. The Spring Flo designer for streams and composed-task is operational and functionally complete. For the curious, we have also published the Spring Floís &lt;a href="https://github.com/spring-projects/spring-flo"&gt;core library&lt;/a&gt; as an &lt;a href="https://www.npmjs.com/package/spring-flo"&gt;NPM package&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -992,7 +992,7 @@ They are available from Maven Central, JCenter, and our &lt;a href="https://repo
     <link rel="alternate" href="https://spring.io/blog/2017/11/28/spring-boot-1-5-9-available-now" />
     <category term="releases" label="Releases" />
     <author>
-      <name>St√©phane Nicoll</name>
+      <name>StÈphane Nicoll</name>
     </author>
     <id>tag:spring.io,2017-11-28:3109</id>
     <updated>2017-11-28T13:21:27Z</updated>
@@ -1014,13 +1014,13 @@ They are available from Maven Central, JCenter, and our &lt;a href="https://repo
 &lt;p&gt;In this article, we will dive in how to bind a Spring application to &lt;a href="https://github.com/hashicorp/vault-service-broker"&gt;HashiCorp&amp;#8217;s Vault service broker on Cloud Foundry&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;Spring Boot provides a lot of autoconfiguration and external binding features, some of which are relevant to Cloud Foundry, and many of which are not. &lt;a href="http://cloud.spring.io/spring-cloud-connectors/"&gt;Spring Cloud Connectors&lt;/a&gt; is a library that you can use in your application if you want to create your own components programmatically, but it doesn‚Äôt do anything ‚Äúmagical‚Äù by itself.&lt;/p&gt;
+&lt;p&gt;Spring Boot provides a lot of autoconfiguration and external binding features, some of which are relevant to Cloud Foundry, and many of which are not. &lt;a href="http://cloud.spring.io/spring-cloud-connectors/"&gt;Spring Cloud Connectors&lt;/a&gt; is a library that you can use in your application if you want to create your own components programmatically, but it doesnít do anything ìmagicalî by itself.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;Spring Cloud Connectors lays the foundation for connectors that integrate with various Cloud services. It has ships components that allow correct middleware configuration. Using CloudFoundry‚Äôs java buildpack comes with an ‚Äúauto-reconfiguration‚Äù feature that tries to ease the burden of moving simple applications to the cloud.&lt;/p&gt;
+&lt;p&gt;Spring Cloud Connectors lays the foundation for connectors that integrate with various Cloud services. It has ships components that allow correct middleware configuration. Using CloudFoundryís java buildpack comes with an ìauto-reconfigurationî feature that tries to ease the burden of moving simple applications to the cloud.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;The key to correctly configuring middleware services, like HashiCorp‚Äôs Vault, is to understand what each of these tools provides, how they influence each other at runtime. The goal should be a smooth transition from local execution of an application on a developer‚Äôs desktop to a test environment in Cloud Foundry, and ultimately to production in CloudFoundry (or otherwise) with no changes in source code or packaging, per the twelve-factor application guidelines.&lt;/p&gt;
+&lt;p&gt;The key to correctly configuring middleware services, like HashiCorpís Vault, is to understand what each of these tools provides, how they influence each other at runtime. The goal should be a smooth transition from local execution of an application on a developerís desktop to a test environment in Cloud Foundry, and ultimately to production in CloudFoundry (or otherwise) with no changes in source code or packaging, per the twelve-factor application guidelines.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="sect1"&gt;
 &lt;h2 id="the-libraries"&gt;&lt;a class="anchor" href="#the-libraries"&gt;&lt;/a&gt;The libraries&lt;/h2&gt;
@@ -1101,7 +1101,7 @@ public class HelloWorldApplication {
 
     public MyComponent(@Value("${some-property}") String someProperty, &lt;b class="conum"&gt;(1)&lt;/b&gt;
                         VaultOperations vaultOperations) {             &lt;b class="conum"&gt;(2)&lt;/b&gt;
-      // ‚Ä¶
+      // Ö
     }
   }
 }&lt;/code&gt;&lt;/pre&gt;
@@ -1169,7 +1169,7 @@ class VaultConfig {
 
   @Bean
   public SslConfiguration sslConfiguration() {                            &lt;b class="conum"&gt;(2)&lt;/b&gt;
-    return SslConfiguration.forTrustStore(‚Ä¶);
+    return SslConfiguration.forTrustStore(Ö);
   }
 
   @Bean
@@ -1282,7 +1282,7 @@ class VaultConfig {
 &lt;/div&gt;
 &lt;div class="listingblock"&gt;
 &lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-properties" data-lang="properties"&gt;spring.application.name=‚Ä¶
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-properties" data-lang="properties"&gt;spring.application.name=Ö
 
 spring.cloud.appId=your-app-id
 spring.cloud.my-vault-service=http://localhost:8200?token=my-token
@@ -1296,7 +1296,7 @@ spring.cloud.my-vault-service=http://localhost:8200?token=my-token
 &lt;/div&gt;
 &lt;div class="listingblock"&gt;
 &lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;spring.application.name: ‚Ä¶
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;spring.application.name: Ö
 
 spring.cloud:
     appId: your-app-id
@@ -1339,7 +1339,7 @@ Spring Boot ships with &lt;a href="https://docs.spring.io/spring-boot/docs/curre
 &lt;/div&gt;
 &lt;div class="listingblock"&gt;
 &lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-properties" data-lang="properties"&gt;spring.application.name=‚Ä¶
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-properties" data-lang="properties"&gt;spring.application.name=Ö
 
 spring.cloud.vault.url=${vcap.services.hashicorp-vault.credentials.address}
 spring.cloud.vault.token=${vcap.services.hashicorp-vault.auth.token}
@@ -1351,7 +1351,7 @@ spring.cloud.vault.generic.backend=${vcap.services.hashicorp-vault.credentials.b
 &lt;/div&gt;
 &lt;div class="listingblock"&gt;
 &lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;spring.application.name: ‚Ä¶
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;spring.application.name: Ö
 
 spring.cloud.vault:
     url: ${vcap.services.hashicorp-vault.credentials.address}

@@ -31,7 +31,7 @@ import org.springframework.test.web.servlet.*;
 
 
 /*
- * Tests if the home page loads correctly.
+ * Tests if the home page loads correctly and it contains title, text and images.
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest

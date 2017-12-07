@@ -43,20 +43,22 @@
     <form action="#" th:action="@{/new-vehicle}" th:object="${vehicle}" method="post">
     		<div th:if="${#fields.hasErrors('*')}">
                 <h3 style="color:red;">Please fix the following error(s)</h3>
-        </div>      
+        </div> 
+        <div class="ex9">     
         <p>Name: <input type="text" th:field="*{name}"/> </p>
         <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color:red;">Name Error</p>
         <p>Image: <input type="text" th:field="*{image}" placeholder="image.png"/></p>
         <p th:if="${#fields.hasErrors('image')}" th:errors="*{image}"  style="color:red;">Image Error</p>
-        <p>Length: (meters)<input type="text" th:field="*{length}"/> </p>
+        <p>Length (meters):<input type="text" th:field="*{length}"/> </p>
         <p th:if="${#fields.hasErrors('length')}" th:errors="*{length}" style="color:red;">Length Error</p>
-        <p>Width: (meters)<input type="text" th:field="*{width}"/> </p>
+        <p>Width (meters):<input type="text" th:field="*{width}"/> </p>
         <p th:if="${#fields.hasErrors('width')}" th:errors="*{width}" style="color:red;">Width Error</p>
-        <p>Weight: (tons)<input type="text" th:field="*{weight}"/> </p>
+        <p>Weight (tons):<input type="text" th:field="*{weight}"/> </p>
         <p th:if="${#fields.hasErrors('weight')}" th:errors="*{weight}" style="color:red;">Weight Error</p>
         <p>Number of Vehicles: <input type="text" th:field="*{numberOfVehicles}" /></p>
         <p th:if="${#fields.hasErrors('numberOfVehicles')}" th:errors="*{numberOfVehicles}" style="color:red;">Number of Vehicles Error</p>
         <p><input type="submit" value="Submit" /></p>
+        </div>
     </form>
     </div>
     </div>

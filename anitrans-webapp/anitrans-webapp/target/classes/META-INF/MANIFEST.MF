@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Implementation-Title: anitrans-webapp
 Implementation-Version: 0.1.0
-Built-By: roman
+Built-By: YvesChapuis
 Implementation-Vendor-Id: ch.unibe.eseteam7
-Build-Jdk: 1.8.0_144
+Build-Jdk: 1.8.0_60
 Implementation-URL: http://projects.spring.io/spring-boot/anitrans-web
  app/
 Created-By: Maven Integration for Eclipse

@@ -44,8 +44,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 
 /*
- * Tests methods which are related to an order and do not access the website or database.
- * The database and website aren't accessible in test cases.
+ * Tests all methods related to orders (conversion from newOrder to aniOrder and back, sorting,
+ * and whether the orders page can be accessed by the right people or not.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
@@ -57,17 +57,6 @@ public class OrderTestMock {
 	@Autowired
 	private WebApplicationContext context;
 	
-	/*@Autowired
-	private Filter springSecurityFilterChain;
-	
-	
-	@Before
-	public void setup() {
-	    mockMvc = MockMvcBuilders
-	       .webAppContextSetup(context)
-	       .addFilters(springSecurityFilterChain)
-	       .build();
-	}*/
 
 	
 	//Tests the conversion from NewOrder to AniOrder and back

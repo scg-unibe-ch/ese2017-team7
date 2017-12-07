@@ -36,7 +36,7 @@ import org.springframework.test.web.servlet.*;
 
 
 /*
- * Tests if the home page loads correctly.
+ * Tests if the login page loads correctly and if the logout page is shown to logged in users.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest

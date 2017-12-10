@@ -259,15 +259,15 @@ li.nav_element3 button {
 	display: block;
     color: white;
     text-align:center;
-    padding: 15px 16px;
+    padding: 14px 16px;
     text-decoration: none;
-    width: 100px;
+    width: 95px;
     
     -moz-border-radius: 0px;
     -webkit-border-radius: 0px;
     border-radius: 0px;
-    margin-top: -1px;
-    margin-bottom: -1px;
+    margin-top: 1px;
+    margin-bottom: 1px;
     
     background:transparent;
     border:none; 

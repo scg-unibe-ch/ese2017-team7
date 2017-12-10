@@ -311,13 +311,13 @@ li.nav_element4 a:hover {
     width:50%;
     height: 300px;
     float: left;
-    text-align:left;
+    text-align:center;
     margin-left: 20px;
     margin-right: 20px;
   	border-radius: 10px 10px 10px 10px;
 	-moz-border-radius: 10px 10px 10px 10px;
 	-webkit-border-radius: 10px 10px 10px 10px;
-	border: 0px solid #000000;
+	border: 1px solid #000000;
 	background-color:  #ffe6b3;
 	box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
     
@@ -328,12 +328,12 @@ li.nav_element4 a:hover {
     height: 300px;
     margin-left: 20px;
     margin-right: 20px;
-    text-align:left;
+    text-align:center;
     clear: both;
   	border-radius: 10px 10px 10px 10px;
 	-moz-border-radius: 10px 10px 10px 10px;
 	-webkit-border-radius: 10px 10px 10px 10px;
-	border: 0px solid #000000;
+	border: 1px solid #000000;
 	background-color:  #ffe6b3;
 	box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }
@@ -343,12 +343,12 @@ li.nav_element4 a:hover {
     float: left;
     margin-left: 20px;
     margin-right: 20px;
-    text-align:left;
+    text-align:center;
     clear: both;
       	border-radius: 10px 10px 10px 10px;
 	-moz-border-radius: 10px 10px 10px 10px;
 	-webkit-border-radius: 10px 10px 10px 10px;
-	border: 0px solid #000000;
+	border: 1px solid #000000;
 	background-color:  #ffe6b3;
 	box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }
@@ -358,12 +358,12 @@ li.nav_element4 a:hover {
     float:right;
     margin-left: 20px;
     margin-right: 20px;
-    text-align:left;
+    text-align:center;
     clear: both;
     border-radius: 10px 10px 10px 10px;
 	-moz-border-radius: 10px 10px 10px 10px;
 	-webkit-border-radius: 10px 10px 10px 10px;
-	border: 0px solid #000000;
+	border: 1px solid #000000;
 	background-color:  #ffe6b3;
 	box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }

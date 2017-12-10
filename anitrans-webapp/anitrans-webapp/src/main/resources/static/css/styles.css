@@ -8,42 +8,32 @@ html{
 #header {
     background-color:black;
     width:100%;
-    height:408px;
+    height:25%;
+    overflow:auto;
     }
 
 #header_img{
-    width:1024px;
-    height:350px;
+    width:85%;
+    height:55%;
    	display: block;
-    margin-left: auto;
-    margin-right: auto
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 body {
     width:100%;
     background-color: #333;
-    height: 100%;
-    display: table;
-    margin-left: auto;
-    margin-right: auto;
-    height:100%;
+    height: auto;
 }
 
-#container {
-    background-color: #333;
-    position:relative;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    position: relative;
-    height: inherit;
-    padding-top: 0;
-    
-    
-}
+
 
 #container {
-    padding-top: 0;
+	position:relative;
     background-color: white;
+    height: 90%;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    overflow:auto;
 }
 
 #nav {
@@ -63,11 +53,12 @@ ul { color:#333; font-size:11pt; }
 
 table, th, td {
    border: 1px solid black;
+   width: 80%;
 }
 
 table.details, th.details, td.details {
 	border: none;
-	width: 400px;
+	width: 50%;
 }
 
 .route {
@@ -91,7 +82,8 @@ table.details {
 
 table {
     border-collapse: collapse;
-    width: 100%;
+    width: 80%;
+    height: 40%;
 }
 th {
     text-align: middle;
@@ -120,9 +112,14 @@ a {
 	}
 	
 div.ex0 {
-    padding: 10px 10px;
-    margin-left: 10px;
+    padding: 2% 2%;
+    margin-left: 1%;
     
+}
+
+div.ex01 {
+    padding: 2% 2%;
+    margin-left: 1%;   
 }
 
 div.ex1 {
@@ -211,6 +208,8 @@ li.nav_element1 a {
     color: white;
     text-align:center;
     padding: 14px 16px;
+    margin-top: 1px;
+    margin-bottom: 1px;
     text-decoration: none;
     
 }
@@ -229,6 +228,8 @@ li.nav_element2 a {
     color: white;
     text-align:center;
     padding: 14px 16px;
+    margin-top: 1px;
+    margin-bottom: 1px;
     text-decoration: none;
 }
 
@@ -245,6 +246,8 @@ li.nav_element3 a {
     color: white;
     text-align:center;
     padding: 14px 16px;
+    margin-top: 1px;
+    margin-bottom: 1px;
     text-decoration: none;
 }
 
@@ -285,6 +288,8 @@ li.nav_element4 a {
     color: white;
     text-align:center;
     padding: 14px 16px;
+    margin-top: 1px;
+    margin-bottom: 1px;
     text-decoration: none;
 }
 
@@ -311,13 +316,13 @@ li.nav_element4 a:hover {
     width:50%;
     height: 300px;
     float: left;
-    text-align:left;
+    text-align:center;
     margin-left: 20px;
     margin-right: 20px;
   	border-radius: 10px 10px 10px 10px;
 	-moz-border-radius: 10px 10px 10px 10px;
 	-webkit-border-radius: 10px 10px 10px 10px;
-	border: 0px solid #000000;
+	border: 1px solid #000000;
 	background-color:  #ffe6b3;
 	box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
     
@@ -328,12 +333,12 @@ li.nav_element4 a:hover {
     height: 300px;
     margin-left: 20px;
     margin-right: 20px;
-    text-align:left;
+    text-align:center;
     clear: both;
   	border-radius: 10px 10px 10px 10px;
 	-moz-border-radius: 10px 10px 10px 10px;
 	-webkit-border-radius: 10px 10px 10px 10px;
-	border: 0px solid #000000;
+	border: 1px solid #000000;
 	background-color:  #ffe6b3;
 	box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }
@@ -343,12 +348,12 @@ li.nav_element4 a:hover {
     float: left;
     margin-left: 20px;
     margin-right: 20px;
-    text-align:left;
+    text-align:center;
     clear: both;
       	border-radius: 10px 10px 10px 10px;
 	-moz-border-radius: 10px 10px 10px 10px;
 	-webkit-border-radius: 10px 10px 10px 10px;
-	border: 0px solid #000000;
+	border: 1px solid #000000;
 	background-color:  #ffe6b3;
 	box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }
@@ -358,12 +363,12 @@ li.nav_element4 a:hover {
     float:right;
     margin-left: 20px;
     margin-right: 20px;
-    text-align:left;
+    text-align:center;
     clear: both;
     border-radius: 10px 10px 10px 10px;
 	-moz-border-radius: 10px 10px 10px 10px;
 	-webkit-border-radius: 10px 10px 10px 10px;
-	border: 0px solid #000000;
+	border: 1px solid #000000;
 	background-color:  #ffe6b3;
 	box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }

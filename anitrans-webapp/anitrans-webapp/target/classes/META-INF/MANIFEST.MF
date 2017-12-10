@@ -3,8 +3,14 @@ Built-By: Ratheeban Rajakumar
 Build-Jdk: 9.0.1
 Implementation-Title: anitrans-webapp
 Implementation-Version: 0.1.0
+<<<<<<< HEAD
 Implementation-Vendor-Id: ch.unibe.eseteam7
 Implementation-Vendor: Pivotal Software, Inc.
+=======
+Built-By: micha
+Implementation-Vendor-Id: ch.unibe.eseteam7
+Build-Jdk: 1.8.0_144
+>>>>>>> 111345c1b8f3e2612dacfaa2e7203e8a58594f4c
 Implementation-URL: http://projects.spring.io/spring-boot/anitrans-web
  app/
 Created-By: Maven Integration for Eclipse

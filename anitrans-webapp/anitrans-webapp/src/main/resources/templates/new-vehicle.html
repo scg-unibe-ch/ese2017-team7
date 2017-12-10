@@ -36,10 +36,11 @@
                 </ul>
             </div>
              
-<div class="ex0">
-	<h2>Create new Vehicle Type</h2>
+         <div class="ex0">
+			<h1><img src="images/logo.png" width="45" height="40" alt="logo" id="logo" />Create new Vehicle</h1>
+		</div>
 
-	
+<div class="ex0">	
     <form action="#" th:action="@{/new-vehicle}" th:object="${vehicle}" method="post">
     		<div th:if="${#fields.hasErrors('*')}">
                 <h3 style="color:red;">Please fix the following error(s)</h3>
@@ -57,7 +58,7 @@
         <p th:if="${#fields.hasErrors('weight')}" th:errors="*{weight}" style="color:red;">Weight Error</p>
         <p>Number of Vehicles: <input type="text" th:field="*{numberOfVehicles}" /></p>
         <p th:if="${#fields.hasErrors('numberOfVehicles')}" th:errors="*{numberOfVehicles}" style="color:red;">Number of Vehicles Error</p>
-        <p><input type="submit" value="Submit" /></p>
+        <label><button class='b5'>Submit</button></label>
         </div>
     </form>
     </div>

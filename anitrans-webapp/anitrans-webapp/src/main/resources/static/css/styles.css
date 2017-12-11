@@ -46,18 +46,54 @@ body {
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);  
 }
 
+div.ex12 {
+  /* linearly increase the font-size from 16->32px 
+     between a viewport width of 600px-> 1200px  */
+  @include fluid-type(font-size, 600px, 1200px, 12px, 18px);
+}
+@media screen and (max-width: 600px) {
+  div.ex12 {
+     font-size: 12px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  div.ex12 {
+     font-size: 18px;
+  }
+}
+
+table {
+  /* linearly increase the font-size from 16->32px 
+     between a viewport width of 600px-> 1200px  */
+  @include fluid-type(font-size, 900px, 1500px, 60%, 90%);
+}
+@media screen and (max-width: 900px) {
+  table {
+     font-size:50%;
+  }
+}
+@media screen and (min-width: 1500px) {
+  table {
+     font-size: 90%;
+  }
+}
+
 h1 { color:#333; font-size:20pt; }
 h2 { color:#333; font-size:17pt; font-weight:600; }
 h3 { color:#333; font-size:13pt; font-weight:500; }
 ul { color:#333; font-size:11pt; }
 
 table, th, td, tr {
-   border: 1px solid black;
+   border: 1px solid black;  
 }
 
 tr, td {
 	font-size: 90%;
 	width: 50%;
+}
+
+th, tr, td {
+	
 }
 
 table.details, th.details, td.details {
@@ -102,6 +138,8 @@ th {
     background-color: #ffe6b3;
     padding: 1%;
     font-size: 90%;
+    min-width: 20%;
+    border-collapse: collapse;
 }
    
 td {
@@ -117,7 +155,7 @@ tr {
 	background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
     width: 100%;
-    height: 50%;  
+    height: 50%;
 }
 
    

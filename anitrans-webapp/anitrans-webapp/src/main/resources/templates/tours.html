@@ -31,21 +31,22 @@
 
 	<h2>Undelivered Tours</h2>
 	<button id="undeliveredButton"  class='b3' onclick="toggleUndelivered(this.id)">Hide Table</button>
+    <button id="hidethis1Button"  class='b3' onclick="toggleHidethis1(this.id)">Hide Details</button>
     <table id="undelivered">
  		<tr>
    		 	<th>Order Number</th>
 		    <th>From</th> 
 		    <th>To</th>
 		    <th>Until</th>
-		    <th>Timeframe</th>
-		    <th>Type of Animal</th>
- 		   	<th>Number of Animals</th>
- 		   	<th>Time Estimation</th>
- 		   	<th>Start Time</th>
+		    <th id="hidethis10">Timeframe</th>
+		    <th id="hidethis11">Type of Animal</th>
+ 		   	<th id="hidethis12">Number of Animals</th>
+ 		   	<th id="hidethis13">Time Estimation</th>
+ 		   	<th id="hidethis14">Start Time</th>
  		   	<th>Driver</th>
- 		   	<th>Vehicle</th>
- 		   	<th>Status</th>
- 		   	<th>Status Message</th>
+ 		   	<th id="hidethis15">Vehicle</th>
+ 		   	<th id="hidethis16">Status</th>
+ 		   	<th id="hidethis17">Status Message</th>
  		   	<th></th>
  		 </tr>
  		 <tr th:each="order : ${unsuccessfulOrders}">
@@ -53,15 +54,15 @@
  		   <td th:text="${order.fromAddr}"></td> 
  		   <td  th:text="${order.toAddr}"></td>
  		   <td  th:text="${#dates.format(order.until, 'dd.MM.yyyy')}"></td>
- 		   <td  th:text="${order.timeframe}"></td>
- 		   <td  th:text="${order.typeOfAnimal}"></td>
- 		   <td  th:text="${order.numberOfAnimals}"></td>
- 		   <td  th:text="${order.timeEstimation} +  hours"></td>
- 		   <td  th:text="${#dates.format(order.startTime, 'dd.MM.yyyy, HH:mm')}"></td>
+ 		   <td  id="hidethis20" th:text="${order.timeframe}"></td>
+ 		   <td  id="hidethis21" th:text="${order.typeOfAnimal}"></td>
+ 		   <td  id="hidethis22"  th:text="${order.numberOfAnimals}"></td>
+ 		   <td  id="hidethis23"  th:text="${order.timeEstimation} +  hours"></td>
+ 		   <td  id="hidethis24"  th:text="${#dates.format(order.startTime, 'dd.MM.yyyy, HH:mm')}"></td>
  		   <td th:text="${order.driver}"></td>
- 		   <td th:text="${order.vehicle}"></td>
- 		   <td th:text="${order.orderStatus}"></td>
- 		   <td th:text="${order.statusMessage}"></td>			   
+ 		   <td  id="hidethis25" th:text="${order.vehicle}"></td>
+ 		   <td  id="hidethis26" th:text="${order.orderStatus}"></td>
+ 		   <td  id="hidethis27" th:text="${order.statusMessage}"></td>			   
  		   <td>
  		   <a th:href="@{/tour-details(id=${order.id})}" ><button class='b1'>View Tour</button></a>
  		   <a th:href="@{/change-status(id=${order.id})}" onclick="return confirm('Are you sure you would like to edit this status?')"><button class='b1'>Change Status</button></a>
@@ -71,21 +72,22 @@
 	<p id="undeliveredError" th:text="${unsuccessfulOrdersError}"></p>
 	<h2>Delivered Tours</h2>
 	<button id="deliveredButton"  class='b3' onclick="toggleDelivered(this.id)">Hide Table</button>
+	<button id="hidethis2Button"  class='b3' onclick="toggleHidethis2(this.id)">Hide Details</button>
     <table id="delivered">
  		<tr>
    		 	<th>Order Number</th>
 		    <th>From</th> 
 		    <th>To</th>
 		    <th>Until</th>
-		    <th>Timeframe</th>
-		    <th>Type of Animal</th>
- 		   	<th>Number of Animals</th>
- 		   	<th>Time Estimation</th>
- 		   	<th>Start Time</th>
+		    <th id="hidethis">Timeframe</th>
+		    <th id="hidethis1">Type of Animal</th>
+ 		   	<th id="hidethis2">Number of Animals</th>
+ 		   	<th id="hidethis3">Time Estimation</th>
+ 		   	<th id="hidethis4">Start Time</th>
  		   	<th>Driver</th>
- 		   	<th>Vehicle</th>
- 		   	<th>Status</th>
- 		   	<th>Status Message</th>
+ 		   	<th id="hidethis5">Vehicle</th>
+ 		   	<th id="hidethis6">Status</th>
+ 		   	<th id="hidethis7">Status Message</th>
  		   	<th></th>
  		 </tr>
  		 <tr th:each="order : ${successfulOrders}">
@@ -93,15 +95,15 @@
  		   <td th:text="${order.fromAddr}"></td> 
  		   <td  th:text="${order.toAddr}"></td>
  		   <td  th:text="${#dates.format(order.until, 'dd.MM.yyyy')}"></td>
- 		   <td  th:text="${order.timeframe}"></td>
- 		   <td  th:text="${order.typeOfAnimal}"></td>
- 		   <td  th:text="${order.numberOfAnimals}"></td>
- 		   <td  th:text="${order.timeEstimation} +  hours"></td>
- 		   <td  th:text="${#dates.format(order.startTime, 'dd.MM.yyyy, HH:mm')}"></td>
+ 		   <td id="hidethis00" th:text="${order.timeframe}"></td>
+ 		   <td id="hidethis01"  th:text="${order.typeOfAnimal}"></td>
+ 		   <td id="hidethis02"  th:text="${order.numberOfAnimals}"></td>
+ 		   <td id="hidethis03"  th:text="${order.timeEstimation} +  hours"></td>
+ 		   <td id="hidethis04"  th:text="${#dates.format(order.startTime, 'dd.MM.yyyy, HH:mm')}"></td>
  		   <td th:text="${order.driver}"></td>
- 		   <td th:text="${order.vehicle}"></td>
- 		   <td th:text="${order.orderStatus}"></td>
- 		   <td th:text="${order.statusMessage}"></td>			   
+ 		   <td id="hidethis05" th:text="${order.vehicle}"></td>
+ 		   <td id="hidethis06" th:text="${order.orderStatus}"></td>
+ 		   <td id="hidethis07" th:text="${order.statusMessage}"></td>			   
  		   <td>
  		   <a th:href="@{/tour-details(id=${order.id})}" ><button class='b1'>View Tour</button></a>
  		   <a th:href="@{/change-status(id=${order.id})}" onclick="return confirm('Are you sure you would like to edit this status?')"><button class='b1'>Change Status</button></a>
@@ -114,6 +116,238 @@
 	</div>
 	
 	<script>
+	function toggleHidethis1(id) {
+		var button = document.getElementById(id);
+		 if( document.getElementById("hidethis10").style.display=='none' ){
+		   document.getElementById("hidethis10").style.display = '';
+		   button.firstChild.data = "Hide Details";
+		 }else{
+		   document.getElementById("hidethis10").style.display = 'none';
+		   button.firstChild.data = "Show Details";
+		 }
+		 if( document.getElementById("hidethis11").style.display=='none' ){
+			   document.getElementById("hidethis11").style.display = '';
+			   button.firstChild.data = "Hide Details";
+			 }else{
+			   document.getElementById("hidethis11").style.display = 'none';
+			   button.firstChild.data = "Show Details";
+			 }
+		 if( document.getElementById("hidethis12").style.display=='none' ){
+			   document.getElementById("hidethis12").style.display = '';
+			   button.firstChild.data = "Hide Details";
+			 }else{
+			   document.getElementById("hidethis12").style.display = 'none';
+			   button.firstChild.data = "Show Details";
+			 }
+		 if( document.getElementById("hidethis13").style.display=='none' ){
+			   document.getElementById("hidethis13").style.display = '';
+			   button.firstChild.data = "Hide Details";
+			 }else{
+			   document.getElementById("hidethis13").style.display = 'none';
+			   button.firstChild.data = "Show Details";
+			 }
+		 if( document.getElementById("hidethis14").style.display=='none' ){
+			   document.getElementById("hidethis14").style.display = '';
+			   button.firstChild.data = "Hide Details";
+			 }else{
+			   document.getElementById("hidethis14").style.display = 'none';
+			   button.firstChild.data = "Show Details";
+			 }
+		 if( document.getElementById("hidethis15").style.display=='none' ){
+			   document.getElementById("hidethis15").style.display = '';
+			   button.firstChild.data = "Hide Details";
+			 }else{
+			   document.getElementById("hidethis15").style.display = 'none';
+			   button.firstChild.data = "Show Details";
+			 }
+		 if( document.getElementById("hidethis16").style.display=='none' ){
+			   document.getElementById("hidethis16").style.display = '';
+			   button.firstChild.data = "Hide Details";
+			 }else{
+			   document.getElementById("hidethis16").style.display = 'none';
+			   button.firstChild.data = "Show Details";
+			 }
+		 if( document.getElementById("hidethis17").style.display=='none' ){
+			   document.getElementById("hidethis17").style.display = '';
+			   button.firstChild.data = "Hide Details";
+			 }else{
+			   document.getElementById("hidethis17").style.display = 'none';
+			   button.firstChild.data = "Show Details";
+			 }
+		 if( document.getElementById("hidethis20").style.display=='none' ){
+			   document.getElementById("hidethis20").style.display = '';
+			   button.firstChild.data = "Hide Details";
+			 }else{
+			   document.getElementById("hidethis20").style.display = 'none';
+			   button.firstChild.data = "Show Details";
+			 }
+		 if( document.getElementById("hidethis21").style.display=='none' ){
+			   document.getElementById("hidethis21").style.display = '';
+			   button.firstChild.data = "Hide Details";
+			 }else{
+			   document.getElementById("hidethis21").style.display = 'none';
+			   button.firstChild.data = "Show Details";
+			 }
+		 if( document.getElementById("hidethis22").style.display=='none' ){
+			   document.getElementById("hidethis22").style.display = '';
+			   button.firstChild.data = "Hide Details";
+			 }else{
+			   document.getElementById("hidethis22").style.display = 'none';
+			   button.firstChild.data = "Show Details";
+			 }
+		 if( document.getElementById("hidethis23").style.display=='none' ){
+			   document.getElementById("hidethis23").style.display = '';
+			   button.firstChild.data = "Hide Details";
+			 }else{
+			   document.getElementById("hidethis23").style.display = 'none';
+			   button.firstChild.data = "Show Details";
+			 }
+		 if( document.getElementById("hidethis24").style.display=='none' ){
+			   document.getElementById("hidethis24").style.display = '';
+			   button.firstChild.data = "Hide Details";
+			 }else{
+			   document.getElementById("hidethis24").style.display = 'none';
+			   button.firstChild.data = "Show Details";
+			 }
+		 if( document.getElementById("hidethis25").style.display=='none' ){
+			   document.getElementById("hidethis25").style.display = '';
+			   button.firstChild.data = "Hide Details";
+			 }else{
+			   document.getElementById("hidethis25").style.display = 'none';
+			   button.firstChild.data = "Show Details";
+			 }
+		 if( document.getElementById("hidethis26").style.display=='none' ){
+			   document.getElementById("hidethis26").style.display = '';
+			   button.firstChild.data = "Hide Details";
+			 }else{
+			   document.getElementById("hidethis26").style.display = 'none';
+			   button.firstChild.data = "Show Details";
+			 }
+		 if( document.getElementById("hidethis27").style.display=='none' ){
+			   document.getElementById("hidethis27").style.display = '';
+			   button.firstChild.data = "Hide Details";
+			 }else{
+			   document.getElementById("hidethis27").style.display = 'none';
+			   button.firstChild.data = "Show Details";
+			 }
+		}
+	
+	function toggleHidethis2(id) {
+		var button = document.getElementById(id);
+		 if( document.getElementById("hidethis").style.display=='none' ){
+		   document.getElementById("hidethis").style.display = '';
+		   button.firstChild.data = "Hide Details";
+		 }else{
+		   document.getElementById("hidethis").style.display = 'none';
+		   button.firstChild.data = "Show Details";
+		 }
+		 if( document.getElementById("hidethis1").style.display=='none' ){
+			   document.getElementById("hidethis1").style.display = '';
+			   button.firstChild.data = "Hide Details";
+			 }else{
+			   document.getElementById("hidethis1").style.display = 'none';
+			   button.firstChild.data = "Show Details";
+			 }
+		 if( document.getElementById("hidethis2").style.display=='none' ){
+			   document.getElementById("hidethis2").style.display = '';
+			   button.firstChild.data = "Hide Details";
+			 }else{
+			   document.getElementById("hidethis2").style.display = 'none';
+			   button.firstChild.data = "Show Details";
+			 }
+		 if( document.getElementById("hidethis3").style.display=='none' ){
+			   document.getElementById("hidethis3").style.display = '';
+			   button.firstChild.data = "Hide Details";
+			 }else{
+			   document.getElementById("hidethis3").style.display = 'none';
+			   button.firstChild.data = "Show Details";
+			 }
+		 if( document.getElementById("hidethis4").style.display=='none' ){
+			   document.getElementById("hidethis4").style.display = '';
+			   button.firstChild.data = "Hide Details";
+			 }else{
+			   document.getElementById("hidethis4").style.display = 'none';
+			   button.firstChild.data = "Show Details";
+			 }
+		 if( document.getElementById("hidethis5").style.display=='none' ){
+			   document.getElementById("hidethis5").style.display = '';
+			   button.firstChild.data = "Hide Details";
+			 }else{
+			   document.getElementById("hidethis5").style.display = 'none';
+			   button.firstChild.data = "Show Details";
+			 }
+		 if( document.getElementById("hidethis6").style.display=='none' ){
+			   document.getElementById("hidethis6").style.display = '';
+			   button.firstChild.data = "Hide Details";
+			 }else{
+			   document.getElementById("hidethis6").style.display = 'none';
+			   button.firstChild.data = "Show Details";
+			 }
+		 if( document.getElementById("hidethis7").style.display=='none' ){
+			   document.getElementById("hidethis7").style.display = '';
+			   button.firstChild.data = "Hide Details";
+			 }else{
+			   document.getElementById("hidethis7").style.display = 'none';
+			   button.firstChild.data = "Show Details";
+			 }
+		 if( document.getElementById("hidethis00").style.display=='none' ){
+			   document.getElementById("hidethis00").style.display = '';
+			   button.firstChild.data = "Hide Details";
+			 }else{
+			   document.getElementById("hidethis00").style.display = 'none';
+			   button.firstChild.data = "Show Details";
+			 }
+		 if( document.getElementById("hidethis01").style.display=='none' ){
+			   document.getElementById("hidethis01").style.display = '';
+			   button.firstChild.data = "Hide Details";
+			 }else{
+			   document.getElementById("hidethis01").style.display = 'none';
+			   button.firstChild.data = "Show Details";
+			 }
+		 if( document.getElementById("hidethis02").style.display=='none' ){
+			   document.getElementById("hidethis02").style.display = '';
+			   button.firstChild.data = "Hide Details";
+			 }else{
+			   document.getElementById("hidethis02").style.display = 'none';
+			   button.firstChild.data = "Show Details";
+			 }
+		 if( document.getElementById("hidethis03").style.display=='none' ){
+			   document.getElementById("hidethis03").style.display = '';
+			   button.firstChild.data = "Hide Details";
+			 }else{
+			   document.getElementById("hidethis03").style.display = 'none';
+			   button.firstChild.data = "Show Details";
+			 }
+		 if( document.getElementById("hidethis04").style.display=='none' ){
+			   document.getElementById("hidethis04").style.display = '';
+			   button.firstChild.data = "Hide Details";
+			 }else{
+			   document.getElementById("hidethis04").style.display = 'none';
+			   button.firstChild.data = "Show Details";
+			 }
+		 if( document.getElementById("hidethis05").style.display=='none' ){
+			   document.getElementById("hidethis05").style.display = '';
+			   button.firstChild.data = "Hide Details";
+			 }else{
+			   document.getElementById("hidethis05").style.display = 'none';
+			   button.firstChild.data = "Show Details";
+			 }
+		 if( document.getElementById("hidethis06").style.display=='none' ){
+			   document.getElementById("hidethis06").style.display = '';
+			   button.firstChild.data = "Hide Details";
+			 }else{
+			   document.getElementById("hidethis06").style.display = 'none';
+			   button.firstChild.data = "Show Details";
+			 }
+		 if( document.getElementById("hidethis07").style.display=='none' ){
+			   document.getElementById("hidethis07").style.display = '';
+			   button.firstChild.data = "Hide Details";
+			 }else{
+			   document.getElementById("hidethis07").style.display = 'none';
+			   button.firstChild.data = "Show Details";
+			 }
+		}
+	
 		function toggleDelivered(id) {
     			var table = document.getElementById("delivered");
     			var error = document.getElementById("deliveredError");

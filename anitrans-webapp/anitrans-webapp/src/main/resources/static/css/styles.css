@@ -69,7 +69,7 @@ table {
 }
 @media screen and (max-width: 900px) {
   table {
-     font-size:50%;
+     font-size:60%;
   }
 }
 @media screen and (min-width: 1500px) {

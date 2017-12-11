@@ -19,10 +19,8 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
-<<<<<<< HEAD
 import org.springframework.test.context.ContextConfiguration;
-=======
->>>>>>> parent of 7fe2228... added .jar
+
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -37,16 +35,10 @@ import org.springframework.test.web.servlet.*;
 /*
  * Tests if the home page loads correctly and it contains title, text and images.
  */
-<<<<<<< HEAD
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
 @ContextConfiguration
-=======
-@RunWith(SpringRunner.class)
-@SpringBootTest
-@AutoConfigureMockMvc
->>>>>>> parent of 7fe2228... added .jar
 public class HomeTestMock {	
 	@Autowired
 	private MockMvc mockMvc;

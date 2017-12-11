@@ -78,11 +78,7 @@
            <groupId>org.springframework.security</groupId>
            <artifactId>spring-security-test</artifactId>
            <scope>test</scope>
-<<<<<<< HEAD
-       </dependency>
-=======
        </dependency>  
->>>>>>> parent of 7fe2228... added .jar
         
 
     </dependencies>

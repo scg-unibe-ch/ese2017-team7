@@ -13,6 +13,7 @@ import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 import static org.assertj.core.api.Assertions.assertThat;
 import org.springframework.boot.context.embedded.LocalServerPort;
@@ -25,7 +26,7 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
  * Tests methods which are related to an order and do not access the website or database.
  * The database and website aren't accessible in test cases.
  */
-@RunWith(SpringRunner.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class ContextLoadsTest {	
 	@LocalServerPort

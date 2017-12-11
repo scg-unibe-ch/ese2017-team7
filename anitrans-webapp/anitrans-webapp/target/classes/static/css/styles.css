@@ -72,7 +72,8 @@ table.details, th.details, td.details {
 	padding-left: 5%;
 	padding-top: 5%;
 	padding-bottom: 5%;
-	
+	width: 30%;
+	height: 20%;
 }
 
 .orderDetails {
@@ -80,6 +81,8 @@ table.details, th.details, td.details {
 	padding-right: 5%;
 	padding-top: 5%;
 	padding-bottom: 5%;
+	width: 30%;
+	height: 20%;
 }
 
 

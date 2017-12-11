@@ -45,6 +45,10 @@ INDEX VERSION 1.130+/Users/YvesChapuis/Documents/GitHub/ese2017-team7/.metadata/
 1346447116.index
 4101331205.index
 2031501391.index
+<<<<<<< HEAD
+1346447116.index
+=======
+>>>>>>> parent of 7fe2228... added .jar
 1363705607.index
 1313677965.index
 2083848413.index

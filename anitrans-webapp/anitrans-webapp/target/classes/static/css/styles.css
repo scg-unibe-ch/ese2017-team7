@@ -47,8 +47,6 @@ body {
 }
 
 div.ex12 {
-  /* linearly increase the font-size from 16->32px 
-     between a viewport width of 600px-> 1200px  */
   @include fluid-type(font-size, 600px, 1200px, 12px, 18px);
 }
 @media screen and (max-width: 600px) {
@@ -63,19 +61,19 @@ div.ex12 {
 }
 
 table {
-  /* linearly increase the font-size from 16->32px 
-     between a viewport width of 600px-> 1200px  */
-  @include fluid-type(font-size, 900px, 1500px, 60%, 90%);
+  @include fluid-type(font-size, 1200px, 1500px, 11px, 18px);
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1200px) {
   table {
-     font-size:60%;
+     font-size:11px; 
   }
+  
 }
 @media screen and (min-width: 1500px) {
   table {
-     font-size: 90%;
+     font-size: 18px;
   }
+
 }
 
 h1 { color:#333; font-size:20pt; }
@@ -84,7 +82,7 @@ h3 { color:#333; font-size:13pt; font-weight:500; }
 ul { color:#333; font-size:11pt; }
 
 table, th, td, tr {
-   border: 1px solid black;  
+   border: 1px solid black; 
 }
 
 tr, td {
@@ -137,7 +135,7 @@ th {
     text-align: middle;
     background-color: #ffe6b3;
     padding: 1%;
-    font-size: 90%;
+    font-size: 100%;
     min-width: 20%;
     border-collapse: collapse;
 }
@@ -653,10 +651,10 @@ input[type=text] {
 }
 
 input[name=username]{
-    width: 80%;
+    width: 50%;
     background-color:#ffffff;
     color: black;
-    padding: 9% 25%;
+    padding: 5% 25%;
     margin: 8px 0;
     border: 1px solid #000000;
     border-radius: 4px;
@@ -672,8 +670,9 @@ input[type=password] {
     border: 1px solid #000000;
     border-radius: 4px;
 }
-input[name=password] {
-    width: 80%;
+
+input[name=passwort] {
+    width: 50%;
     background-color:#ffffff;
     color: black;
     padding: 9% 25%;

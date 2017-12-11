@@ -219,6 +219,17 @@ div.ex11 {
     border-radius: 4px;
 }
 
+div.ex12 {
+	max-width: 90%;
+	max-height: 50%;
+ 	width: 100%;
+ 	height: auto;
+    padding: 3% 3%;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+}
+
 ul#nav .active{
     border-color: white;
     border-left-color: black; 
@@ -406,8 +417,8 @@ img#logo{
 	}
 	
 img#route{
+	min-width: 320px;
     width: 40%;
-    height: 300px;
     margin-right: 2%;
     margin-top: 18px;
    	-webkit-box-shadow: -2px -1px 5px 0px rgba(0,0,0,0.75);
@@ -416,19 +427,18 @@ img#route{
    }
 
 img#storage{
-        
         width: 40%;
-        height: 300px;
         margin-left: 2%;
         margin-top: 16px;
+        margin-bottom: 1%;
    		-webkit-box-shadow: -2px -1px 5px 0px rgba(0,0,0,0.75);
 		-moz-box-shadow: -2px -1px 5px 0px rgba(0,0,0,0.75);
 		box-shadow: -2px -1px 5px 0px rgba(0,0,0,0.75);        
        }
 
 img#forest{
+	min-width: 320px;
     width: 40%;
-    height: 300px;
     margin-right: 2%;
     margin-top: 18px;
    	-webkit-box-shadow: -2px -1px 5px 0px rgba(0,0,0,0.75);
@@ -439,7 +449,6 @@ img#forest{
 img#sunset{
         float: left;
         width: 40%;
-        height: 300px;
         margin-left: 2%;
         margin-top: 16px;
         margin-bottom: 2%;

@@ -427,6 +427,7 @@ img#route{
    }
 
 img#storage{
+		min-width: 320px;
         width: 40%;
         margin-left: 2%;
         margin-top: 16px;
@@ -447,6 +448,7 @@ img#forest{
 }
 
 img#sunset{
+		min-width: 320px;
         float: left;
         width: 40%;
         margin-left: 2%;

@@ -1,14 +1,9 @@
 Manifest-Version: 1.0
 Implementation-Title: anitrans-webapp
 Implementation-Version: 0.1.0
-<<<<<<< HEAD
+Built-By: YvesChapuis
 Implementation-Vendor-Id: ch.unibe.eseteam7
-Implementation-Vendor: Pivotal Software, Inc.
-=======
-Built-By: micha
-Implementation-Vendor-Id: ch.unibe.eseteam7
-Build-Jdk: 1.8.0_144
->>>>>>> c76f987ca35cf1303fa65498119303ac25d4fe4a
+Build-Jdk: 1.8.0_60
 Implementation-URL: http://projects.spring.io/spring-boot/anitrans-web
  app/
 Created-By: Maven Integration for Eclipse

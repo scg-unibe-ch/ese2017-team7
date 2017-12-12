@@ -53,7 +53,6 @@ ul { color:#333; font-size:11pt; }
 
 table, th, td {
    border: 1px solid black;
-   width: 80%;
 }
 
 table.details, th.details, td.details {

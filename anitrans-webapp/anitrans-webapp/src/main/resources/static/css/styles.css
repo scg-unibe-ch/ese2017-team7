@@ -87,7 +87,6 @@ table, th, td, tr {
 
 tr, td {
 	font-size: 90%;
-	width: 50%;
 }
 
 th, tr, td {
@@ -136,7 +135,6 @@ th {
     background-color: #ffe6b3;
     padding: 1%;
     font-size: 100%;
-    /*min-width: 20%;*/
     border-collapse: collapse;
 }
    

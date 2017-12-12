@@ -44,14 +44,11 @@
 		    <th>To</th>
 		    <th>Until</th>
 		    <th>Timeframe</th>
-		    <th>Type of Animal</th>
- 		   	<th>Number of Animals</th>
- 		   	<th>Time Estimation</th>
+
  		   	<th>Start Time</th>
  		   	<th>Driver</th>
  		   	<th>Vehicle</th>
  		   	<th>Status</th>
- 		   	<th>Status Message</th>
  		   	<th></th>
  		 </tr>
 		  <tr th:each="order : ${unsuccessfulOrders}">
@@ -60,14 +57,10 @@
  		   <td  th:text="${order.toAddr}"></td>
  		   <td  th:text="${#dates.format(order.until, 'dd.MM.yyyy')}"></td>
  		   <td  th:text="${order.timeframe}"></td>
- 		   <td  th:text="${order.typeOfAnimal}"></td>
- 		   <td  th:text="${order.numberOfAnimals}"></td>
- 		   <td  th:text="${order.timeEstimation} +  hours"></td>
  		   <td  th:text="${#dates.format(order.startTime, 'dd.MM.yyy, HH:mm')}"></td>
  		   <td th:text="${order.driver}"></td>
  		   <td th:text="${order.vehicle}"></td>
  		   <td th:text="${order.orderStatus}"></td>
- 		   <td th:text="${order.statusMessage}"></td>			   
  		   <td>
  		   <a th:href="@{/order-details(id=${order.id})}" ><button class='b1'>View Order</button></a>
  		   <a th:href="@{/edit-order(id=${order.id})}" onclick="return confirm('Are you sure you would like to edit this entry?')"><button class='b1'>Edit Order</button></a>
@@ -85,14 +78,10 @@
 		    <th>To</th>
 		    <th>Until</th>
 		    <th>Timeframe</th>
-		    <th>Type of Animal</th>
- 		   	<th>Number of Animals</th>
- 		   	<th>Time Estimation</th>
  		   	<th>Start Time</th>
  		   	<th>Driver</th>
  		   	<th>Vehicle</th>
  		   	<th>Status</th>
- 		   	<th>Status Message</th>
  		   	<th></th>
  		 </tr>
 		  <tr th:each="order : ${successfulOrders}">
@@ -101,14 +90,10 @@
  		   <td  th:text="${order.toAddr}"></td>
  		   <td  th:text="${#dates.format(order.until, 'dd.MM.yyyy')}"></td>
  		   <td  th:text="${order.timeframe}"></td>
- 		   <td  th:text="${order.typeOfAnimal}"></td>
- 		   <td  th:text="${order.numberOfAnimals}"></td>
- 		   <td  th:text="${order.timeEstimation} +  hours"></td>
  		   <td  th:text="${#dates.format(order.startTime, 'dd.MM.yyy, HH:mm')}"></td>
  		   <td th:text="${order.driver}"></td>
  		   <td th:text="${order.vehicle}"></td>
  		   <td th:text="${order.orderStatus}"></td>
- 		   <td th:text="${order.statusMessage}"></td>	
  		   <td><a th:href="@{/order-details(id=${order.id})}" ><button class='b1'>View Order</button></a></td>	  		   
 		  </tr>
 	</table>

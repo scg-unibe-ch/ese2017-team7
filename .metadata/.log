@@ -878,3 +878,26 @@ java.io.FileNotFoundException: /Users/YvesChapuis/Documents/GitHub/ese2017-team7
 
 !ENTRY org.eclipse.lsp4e 1 0 2017-12-12 11:32:54.711
 !MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 4 0 2017-12-12 10:54:08.322
+!MESSAGE Resource is out of sync with the file system: '/anitrans-webapp/src/main/resources/templates/tours.html'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource is out of sync with the file system: '/anitrans-webapp/src/main/resources/templates/tours.html'.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:845)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:277)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:268)
+	at org.eclipse.lsp4e.LanguageServiceAccessor.getLSWrappers(LanguageServiceAccessor.java:148)
+	at org.eclipse.lsp4e.LanguageServiceAccessor.getLSPDocumentInfosFor(LanguageServiceAccessor.java:261)
+	at org.eclipse.lsp4e.ConnectDocumentToLanguageServerSetupParticipant$1.run(ConnectDocumentToLanguageServerSetupParticipant.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 org.eclipse.core.resources 4 274 2017-12-12 10:54:08.322
+!MESSAGE Resource is out of sync with the file system: '/anitrans-webapp/src/main/resources/templates/tours.html'.
+
+!ENTRY org.eclipse.lsp4e 1 0 2017-12-12 10:54:10.306
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2017-12-12 11:34:24.433
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2017-12-12 11:35:00.427
+!MESSAGE Non IFiles not supported yet

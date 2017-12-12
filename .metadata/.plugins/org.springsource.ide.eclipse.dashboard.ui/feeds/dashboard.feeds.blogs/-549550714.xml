@@ -5,7 +5,18 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2017-12-06T02:26:07Z</updated>
+  <updated>2017-12-12T13:06:46Z</updated>
+  <entry>
+    <title>Dependency Management Plugin 1.0.4.RELEASE</title>
+    <link rel="alternate" href="https://spring.io/blog/2017/12/12/dependency-management-plugin-1-0-4-release" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Andy Wilkinson</name>
+    </author>
+    <id>tag:spring.io,2017-12-12:3126</id>
+    <updated>2017-12-12T13:06:46Z</updated>
+    <content type="html">&lt;p&gt;I am pleased to announce that &lt;a href="https://github.com/spring-gradle-plugins/dependency-management-plugin"&gt;Gradle dependency management plugin&lt;/a&gt; 1.0.4.RELEASE is now available from Maven Central, Bintray, and the &lt;a href="https://plugins.gradle.org/plugin/io.spring.dependency-management"&gt;Gradle Plugin Portal&lt;/a&gt;. This maintenance release fixes a &lt;a href="https://github.com/spring-gradle-plugins/dependency-management-plugin/milestone/24?closed=1"&gt;handful of issues&lt;/a&gt; and is a recommended upgrade for all users of the plugin.&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>This Week in Spring - December 5th, 2017</title>
     <link rel="alternate" href="https://spring.io/blog/2017/12/06/this-week-in-spring-december-5th-2017" />
@@ -1391,36 +1402,5 @@ spring.cloud.vault:
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - November 28th, 2017</title>
-    <link rel="alternate" href="https://spring.io/blog/2017/11/28/this-week-in-spring-november-28th-2017" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2017-11-28:3108</id>
-    <updated>2017-11-28T07:55:00Z</updated>
-    <content type="html">&lt;p&gt;Hi Spring fans and welcome to another installation of &lt;em&gt;This Week in Spring&lt;/em&gt;! This week I&amp;rsquo;m in San Francisco and then off to Austin, TX &lt;a href="https://g3summit.com/conference/austin/2017/11/home"&gt;for the epic G3 Summit&lt;/a&gt;. If you&amp;rsquo;re around don&amp;rsquo;t hesitate to say hi. Then, it&amp;rsquo;s straight back to San Francisco for next week&amp;rsquo;s premier agile, ops, apps and cloud-centric event worldwide, &lt;a href="http://springoneplatform.io"&gt;SpringOne Platform 2017&lt;/a&gt;. Do &lt;em&gt;not&lt;/em&gt; miss this! &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;In last week&amp;rsquo;s &lt;a href="https://spring.io/blog/2017/11/22/spring-tips-bootiful-testing"&gt;installment of Spring Tips&lt;/a&gt;, I look at testing in Spring-based applications. Check it out!&lt;/li&gt;
-  &lt;li&gt;Spring Framework &lt;a href="https://spring.io/blog/2017/11/27/end-of-first-class-jdk-6-support"&gt;lead Juergen Hoeller delves deeper into our decision to end first-class JDK 6 support&lt;/a&gt; for Spring in this blog post.&lt;/li&gt;
-  &lt;li&gt;Spring Framework lead and Spring co-founder Juergen Hoeller just &lt;a href="https://spring.io/blog/2017/11/27/spring-framework-5-0-2-and-4-3-13-available-now"&gt;released Spring Framework 5.0.2 and 4.3.13&lt;/a&gt;. The new releases are recommended refinements. Of particular note, our Castor XML support has been deprecated, and we&amp;rsquo;re effectively deprecating support for JDK 6.&lt;/li&gt;
-  &lt;li&gt;Spring Data lead Mark Paluch just announced &lt;a href="https://spring.io/blog/2017/11/27/spring-data-ingalls-sr9-and-kay-sr2-released"&gt;Spring Data Ingalls SR9 and Spring Data Kay SR2&lt;/a&gt;. The new release ships over 90 issues fixed and is a recommended upgrade for all users.&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2017/11/27/spring-cloud-edgware-release-available"&gt;Spring Cloud co-founder Spencer Gibb &lt;a href="_URL_"&gt;just announced Spring Cloud Edgware.RELEASE Available &lt;/a&gt;. The new release features updates to Spring Cloud Bus, Spring Cloud Sleuth and Zipkin, Spring Cloud Contract, Spring Cloud Security, and Spring Cloud Stre&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Integration ninja Artem Bilan just &lt;a href="https://spring.io/blog/2017/11/27/spring-integration-for-aws-1-1-ga-available"&gt;announced Spring Integration for AWS 1.1 GA&lt;/a&gt; is now available. The release includes great support for S3, Kinesis, and DynamoDB.&lt;/li&gt;
-  &lt;li&gt;Dr. Mark Pollack just announced &lt;a href="https://spring.io/blog/2017/11/21/spring-cloud-skipper-1-0-m2-released"&gt;Spring Cloud Skipper 1.0 M2&lt;/a&gt;. From the post: &amp;ldquo;Skipper is a lightweight tool that allows you to discover Spring Boot applications and manage their lifecycle on multiple Cloud Platforms. You can use Skipper standalone or integrate it with Continuous Integration pipelines to help implement the practice of Continuous Deployment.&amp;rdquo;&lt;/li&gt;
-  &lt;li&gt;Spring Security OAuth ninja Joe Grandja has just released &lt;a href="https://spring.io/blog/2017/11/21/spring-security-oauth-2-2-1-released"&gt;Spring Security OAuth 2.2.1&lt;/a&gt;. This release is primarily a bug fix release&lt;/li&gt;
-  &lt;li&gt;Alright, this post doesn&amp;rsquo;t have all that much to do with Spring, &lt;em&gt;per se&lt;/em&gt;, but it is newsworthy nonetheless. It&amp;rsquo;s a really interesting read on &lt;a href="https://johnfergusonsmart.com/exponential-learning-the-key-to-effective-leanagile-practices/"&gt;what motivates and animates the agile philosophy: to learn and improve&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;I really liked this post by Arne Vandamme on &lt;a href="https://foreach.be/blog/spring-cache-annotations-some-tips-tricks"&gt;tips and tricks for the Spring &lt;code&gt;CacheManager&lt;/code&gt; abstraction&lt;/a&gt; and - in particular - the annnotations that support it.&lt;/li&gt;
-  &lt;li&gt;I liked this German-language post that &lt;a href="https://www.heise.de/amp/meldung/Accenture-und-Pivotal-gruenden-gemeinsame-IT-Beratungsgesellschaft-3899624.html"&gt;looks at the Accenture and Pivotal partnership&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;This is a great look at just some of the great content coming &lt;a href="https://seroter.wordpress.com/2017/11/26/cant-figure-out-which-springone-platform-sessions-to-attend-ill-help-you-out/amp/"&gt;in the SpringOne Platform 2017 conference event&lt;/a&gt; here in beautiful San Francisco in just a few days.&lt;/li&gt;
-  &lt;li&gt;Community friend Eberhard Wolff looks at &lt;a href="https://www.youtube.com/watch?v=sHNYcEOsxp4&amp;app=desktop"&gt;building microservices with Spring Boot and Java&lt;/a&gt; in this interesting video. Check it out!&lt;/li&gt;
-  &lt;li&gt;Michael Simons looks at integration testing &lt;a href="http://info.michael-simons.eu/2017/11/20/integration-testing-with-docker-compose-gradle-and-spring-boot/"&gt;with Spring Boot, Gradle and Docker Compose&lt;/a&gt; in this article. Well worth a look, as always.&lt;/li&gt;
-  &lt;li&gt;I really like this article that looks at the integration of JUnit 5 and AssertJ. Hat tip to my &lt;a href="http://blog.codeleak.pl/2017/11/junit-5-meets-assertj.html?spref=tw&amp;m=1"&gt;friend Billy Korando for this link&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;It&amp;rsquo;s with great joy that we announce that Reactive Couchbase support has now been added &lt;a href="https://twitter.com/snicoll/status/930866250120646663"&gt;to the Spring Initializr&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Christophe Bornet &lt;a href="https://twitter.com/cbornet_/status/933738622674759680"&gt;tweets&lt;/a&gt; that &amp;ldquo;Reactive-gRPC the @grpcio binding for reactive implementations with backpressure v0.7 is out with support for @RxJava 2 and @ProjectReactor. Check it out!&amp;rdquo; So, do.&lt;/li&gt;
-  &lt;li&gt;It&amp;rsquo;s a big honor to &lt;a href="https://amp.businessinsider.com/51-enterprise-startups-to-bet-your-career-on-in-2018-2017-11"&gt;see Pivotal in this list of the 51 best enterprise startups to bet your career on in 2018&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;</content>
   </entry>
 </feed>

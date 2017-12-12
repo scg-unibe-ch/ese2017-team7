@@ -2,8 +2,8 @@
 -- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Nov 24, 2017 at 12:47 PM
+-- Host: 127.0.0.1
+-- Generation Time: Dec 12, 2017 at 11:40 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -194,10 +194,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `email`, `enabled`, `first_name`, `last_name`, `password`, `phone`, `role`, `address_id`) VALUES
-(5, 'mathias.fuchs@anitrans.ch', b'1', 'Mathias', 'Fuchs', 0x2432612431302451327763426c2e767a70534262765245774c424f5a4f556d2e6f4e46315934416346397a646f58737464445733674a2f584c74714f, '0795556677', 'ROLE_ADMIN', 17),
-(6, 'arya.stark@anitrans.ch', b'1', 'Arya', 'Stark', 0x243261243130244d38685153444c4533637653643255676a53376679756f434856345a44476e514e4d4a3168586773664d3844626937444341413179, '0776667788', 'ROLE_USER', 18),
-(7, 'john.snow@anitrans.ch', b'1', 'John', 'Snow', 0x243261243130245053425576534a7847486347642f45306752656d392e617555794c646a3149716b6e63416b33697152316d71636d504c4963457947, '0324445566', 'ROLE_USER', 19),
-(8, 'tyrion.lannister@anitrans.ch', b'1', 'Tyrion', 'Lannister', 0x243261243130246575523963496a59636475523472314c563553396d2e624578675049697776716539594e55352f7644523072567447764c484c3457, '0554446677', 'ROLE_USER', 20);
+(5, 'mathias.fuchs@anitrans.ch', b'1111111111111111111111111111111', 'Mathias', 'Fuchs', 0x2432612431302451327763426c2e767a70534262765245774c424f5a4f556d2e6f4e46315934416346397a646f58737464445733674a2f584c74714f, '0795556677', 'ROLE_ADMIN', 17),
+(6, 'arya.stark@anitrans.ch', b'1111111111111111111111111111111', 'Arya', 'Stark', 0x243261243130244d38685153444c4533637653643255676a53376679756f434856345a44476e514e4d4a3168586773664d3844626937444341413179, '0776667788', 'ROLE_USER', 18),
+(7, 'john.snow@anitrans.ch', b'1111111111111111111111111111111', 'John', 'Snow', 0x243261243130245053425576534a7847486347642f45306752656d392e617555794c646a3149716b6e63416b33697152316d71636d504c4963457947, '0324445566', 'ROLE_USER', 19),
+(8, 'tyrion.lannister@anitrans.ch', b'1111111111111111111111111111111', 'Tyrion', 'Lannister', 0x243261243130246575523963496a59636475523472314c563553396d2e624578675049697776716539594e55352f7644523072567447764c484c3457, '0554446677', 'ROLE_USER', 20);
 
 -- --------------------------------------------------------
 
@@ -209,19 +209,22 @@ CREATE TABLE `vehicle` (
   `id` int(11) NOT NULL,
   `image` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `number_of_vehicles` int(11) NOT NULL
+  `number_of_vehicles` int(11) NOT NULL,
+  `length` float NOT NULL,
+  `weight` int(11) NOT NULL,
+  `width` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `vehicle`
 --
 
-INSERT INTO `vehicle` (`id`, `image`, `name`, `number_of_vehicles`) VALUES
-(1, 'images/bigTransporter.jpg', 'Big Transporter', 3),
-(2, 'images/mediumTransporter.jpg', 'Medium Transporter', 3),
-(3, 'images/smallTransporter.jpg', 'Small Transporter', 5),
-(4, 'images/tinyTransporter.jpg', 'Tiny Transporter', 7),
-(6, 'images/car.jpg', 'Car', 2);
+INSERT INTO `vehicle` (`id`, `image`, `name`, `number_of_vehicles`, `length`, `weight`, `width`) VALUES
+(1, 'images/bigTransporter.jpg', 'Big Transporter', 4, 25.25, 60, 2.5),
+(2, 'images/mediumTransporter.jpg', 'Medium Transporter', 3, 13.6, 40, 2.5),
+(3, 'images/smallTransporter.jpg', 'Small Transporter', 5, 7.82, 20, 2.5),
+(4, 'images/tinyTransporter.jpg', 'Tiny Transporter', 7, 6, 10, 2.5),
+(6, 'images/car.jpg', 'Car', 2, 4, 5, 2);
 
 --
 -- Indexes for dumped tables
@@ -280,19 +283,19 @@ ALTER TABLE `vehicle`
 -- AUTO_INCREMENT for table `address`
 --
 ALTER TABLE `address`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT for table `ani_order`
 --
 ALTER TABLE `ani_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `edited_order`
 --
 ALTER TABLE `edited_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `new_order`
@@ -310,7 +313,7 @@ ALTER TABLE `new_user`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `vehicle`

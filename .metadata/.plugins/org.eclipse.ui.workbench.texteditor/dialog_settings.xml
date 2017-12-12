@@ -2,12 +2,14 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="spring-test" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="hidethis10"/>
+			<item value="hidethis"/>
 			<item value="spring-test"/>
 			<item value="spring--test"/>
 			<item value="spring-security-test"/>
@@ -21,8 +23,6 @@
 			<item value="class=&quot;details&quot;"/>
 			<item value="details"/>
 			<item value="align"/>
-			<item value="callback"/>
-			<item value="async"/>
 		</list>
 		<list key="replacehistory">
 			<item value="ani"/>

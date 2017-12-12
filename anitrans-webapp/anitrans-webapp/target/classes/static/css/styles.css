@@ -136,7 +136,7 @@ th {
     background-color: #ffe6b3;
     padding: 1%;
     font-size: 100%;
-    min-width: 20%;
+    /*min-width: 20%;*/
     border-collapse: collapse;
 }
    
@@ -146,7 +146,6 @@ td {
 
 th, td {
     text-align: middle;
-	width: 50%;
 }
 
 tr {

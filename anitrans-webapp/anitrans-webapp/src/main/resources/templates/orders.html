@@ -43,9 +43,6 @@
 		    <th>From</th> 
 		    <th>To</th>
 		    <th>Until</th>
-		    <th>Timeframe</th>
-
- 		   	<th>Start Time</th>
  		   	<th>Driver</th>
  		   	<th>Vehicle</th>
  		   	<th>Status</th>
@@ -56,8 +53,6 @@
  		   <td th:text="${order.fromAddr}"></td> 
  		   <td  th:text="${order.toAddr}"></td>
  		   <td  th:text="${#dates.format(order.until, 'dd.MM.yyyy')}"></td>
- 		   <td  th:text="${order.timeframe}"></td>
- 		   <td  th:text="${#dates.format(order.startTime, 'dd.MM.yyy, HH:mm')}"></td>
  		   <td th:text="${order.driver}"></td>
  		   <td th:text="${order.vehicle}"></td>
  		   <td th:text="${order.orderStatus}"></td>
@@ -77,8 +72,6 @@
 		    <th>From</th> 
 		    <th>To</th>
 		    <th>Until</th>
-		    <th>Timeframe</th>
- 		   	<th>Start Time</th>
  		   	<th>Driver</th>
  		   	<th>Vehicle</th>
  		   	<th>Status</th>
@@ -89,8 +82,6 @@
  		   <td th:text="${order.fromAddr}"></td> 
  		   <td  th:text="${order.toAddr}"></td>
  		   <td  th:text="${#dates.format(order.until, 'dd.MM.yyyy')}"></td>
- 		   <td  th:text="${order.timeframe}"></td>
- 		   <td  th:text="${#dates.format(order.startTime, 'dd.MM.yyy, HH:mm')}"></td>
  		   <td th:text="${order.driver}"></td>
  		   <td th:text="${order.vehicle}"></td>
  		   <td th:text="${order.orderStatus}"></td>

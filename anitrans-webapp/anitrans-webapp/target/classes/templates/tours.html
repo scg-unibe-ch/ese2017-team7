@@ -31,15 +31,13 @@
 
 	<h2>Undelivered Tours</h2>
 	<button id="undeliveredButton"  class='b3' onclick="toggleUndelivered(this.id)">Hide Table</button>
-    <button id="hidethis1Button"  class='b3' onclick="toggleHidethis1(this.id)">Hide Details</button>
     <table id="undelivered">
  		<tr>
    		 	<th>Order Number</th>
 		    <th>From</th> 
 		    <th>To</th>
 		    <th>Until</th>
-		    <th>Timeframe</th>
- 		   	<th>Start Time</th>
+
  		   	<th>Driver</th>
  		   	<th>Vehicle</th>
  		   	<th>Status</th>
@@ -50,8 +48,6 @@
  		   <td th:text="${order.fromAddr}"></td> 
  		   <td  th:text="${order.toAddr}"></td>
  		   <td  th:text="${#dates.format(order.until, 'dd.MM.yyyy')}"></td>
- 		   <td th:text="${order.timeframe}"></td>
- 		   <td  id="hidethis24"  th:text="${#dates.format(order.startTime, 'dd.MM.yyyy, HH:mm')}"></td>
  		   <td th:text="${order.driver}"></td>
  		   <td th:text="${order.vehicle}"></td>
  		   <td  th:text="${order.orderStatus}"></td>
@@ -64,16 +60,12 @@
 	<p id="undeliveredError" th:text="${unsuccessfulOrdersError}"></p>
 	<h2>Delivered Tours</h2>
 	<button id="deliveredButton"  class='b3' onclick="toggleDelivered(this.id)">Hide Table</button>
-	<button id="hidethis2Button"  class='b3' onclick="toggleHidethis2(this.id)">Hide Details</button>
     <table id="delivered">
  		<tr>
    		 	<th>Order Number</th>
 		    <th>From</th> 
 		    <th>To</th>
 		    <th>Until</th>
-		    <th >Timeframe</th>
-
- 		   	<th >Start Time</th>
  		   	<th>Driver</th>
  		   	<th>Vehicle</th>
  		   	<th>Status</th>
@@ -84,8 +76,6 @@
  		   <td th:text="${order.fromAddr}"></td> 
  		   <td  th:text="${order.toAddr}"></td>
  		   <td  th:text="${#dates.format(order.until, 'dd.MM.yyyy')}"></td>
- 		   <td th:text="${order.timeframe}"></td>
- 		   <td th:text="${#dates.format(order.startTime, 'dd.MM.yyyy, HH:mm')}"></td>
  		   <td th:text="${order.driver}"></td>
  		   <td th:text="${order.vehicle}"></td>
  		   <td th:text="${order.orderStatus}"></td>

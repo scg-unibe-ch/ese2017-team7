@@ -5,7 +5,45 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2017-12-12T13:06:46Z</updated>
+  <updated>2017-12-12T16:12:00Z</updated>
+  <entry>
+    <title>This Week in Spring, December 12th, 2017</title>
+    <link rel="alternate" href="https://spring.io/blog/2017/12/12/this-week-in-spring-december-12th-2017" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2017-12-12:3127</id>
+    <updated>2017-12-12T16:12:00Z</updated>
+    <content type="html">&lt;p&gt;Hi Spring fans and welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! I&amp;rsquo;m still reeling from the &lt;em&gt;incredible&lt;/em&gt;, larger-and-better-than-ever SpringOne Platform 2017 event last week! Ouch! My brain&amp;hellip; &lt;/p&gt;
+&lt;p&gt;This week I&amp;rsquo;m speaking to customers and am presenting at two User Groups (in &lt;a href="https://www.meetup.com/AtlantaSpring/events/242466199/"&gt;Atlanta, GA&lt;/a&gt; and &lt;a href="http://java.ociweb.com/javasig/"&gt;St. Louis, MO&lt;/a&gt;) on testing and all things Spring with my &lt;a href="http://twitter.com/mariogray"&gt;new teammate Mario Gray (@mariogray)&lt;/a&gt;! Join us. &lt;/p&gt;
+&lt;p&gt;This Sunday, it&amp;rsquo;s off to London for a few days customer visits. If you&amp;rsquo;re around, &lt;a href="httP://twitter.com/Starbuxman"&gt;don&amp;rsquo;t hesitate to say hello (@starbuxman)&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Last week, in the final &lt;em&gt;Spring Tips&lt;/em&gt; installment for this third season, &lt;a href="https://spring.io/blog/2017/12/04/spring-tips-spring-tool-suite-4"&gt;I looked at the amazing new tooling in Spring Tool Suite 4, VS Code&lt;/a&gt; (and Atom).&lt;/li&gt;
+  &lt;li&gt;Spring Boot, tooling and dependency management legend Andy Wilkinson &lt;a href="https://spring.io/blog/2017/12/12/dependency-management-plugin-1-0-4-release"&gt;just announced the dependency management 1.0.4 RELEASE&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Simon Wardley gave a very nice SpringOne 2017 keynote introducing the concept of value stream mapping. &lt;a href="https://content.pivotal.io/springone-platform-2017/simon-wardley"&gt;This is a must watch&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://lankydanblog.com/2017/11/12/multiple-keyspaces-using-a-single-spring-data-cassandratemplate/"&gt;Multiple keyspaces using a single Spring Data CassandraTemplate – Lanky Dan Dev Blog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://lankydanblog.com/2017/11/26/more-complex-modelling-with-spring-data-cassandra/"&gt;More complex modelling with Spring Data Cassandra – Lanky Dan Dev Blog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I also liked Dan Newton&amp;rsquo;s look at using reactive &lt;a href="https://lankydanblog.com/2017/12/11/reactive-streams-with-spring-data-cassandra/"&gt;streams with Spring Data Cassandra&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I enjoyed &lt;a href="http://twitter.com/meaghnk"&gt;Meaghan Kjelland‏ (@meaghnk)&lt;/a&gt;&amp;rsquo;s SpringOne talk and &lt;a href="https://github.com/mkjelland/spring-boot-postgres-on-k8s-sample/blob/master/README.md"&gt;demo&lt;/a&gt; on &lt;a href="https://twitter.com/meaghnk/status/939895320028233728"&gt;deploying Spring Boot and PostgresSQL to Kubernetes&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;I liked &lt;a href="http://www.bryanfriedman.com/2017/12/08/five-things-that-blew-my-mind-at-springone-platform-2017/?_lrsc=44a561fa-95a4-41b3-8888-0e707ca8a558"&gt;Bryan Friedman&amp;rsquo;s SpringOne Platform 2017 wrapup&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://twitter.com/mraible"&gt;Matt Raible&lt;/a&gt; and I were interviewed at Devoxx Belgium on &lt;a href="https://www.youtube.com/watch?v=wUL02eI0eB4"&gt;the topic of Progressive Web Applications&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Built to Adapt&lt;/em&gt; was at SpringOne Platform 2017 and they &lt;a href="https://builttoadapt.io/the-contagious-platform-71a4ad40cf7a"&gt;did an interview with Cerner&amp;rsquo;s Rob Rose&lt;/a&gt;. Rob Rose is a brilliant leader and technologist &lt;a href="https://builttoadapt.io/the-contagious-platform-71a4ad40cf7a"&gt;so this is well worth a watch&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Dormain Drewitz&amp;rsquo; looks &lt;a href="https://medium.com/@dormaindrewitz/digital-transformation-anti-patterns-81f6190e2c4c?source=twitterShare-66b327076f33-1512834888"&gt;at digital transformation anti-patterns&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Jared Ruckle &lt;a href="https://medium.com/@jruckle_27729/a-journey-through-springone-platform-2017-6e67bdfb2c7f?_lrsc=74eeaa75-826f-4d58-87b5-8c853fec8db7"&gt;looks at SpringOne Platform 2017&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;RedMonk&amp;rsquo;s James Governor &lt;a href="https://redmonk.com/jgovernor/2017/12/07/the-world-caught-up-and-the-future-happened-what-now-my-talk-at-springone-2017/?_lrsc=e8786bce-5747-4c12-ab9e-9b44ea83d657"&gt;revisits his SpringOne Platform 2017 keynote&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;You should watch computing legend and Microsoft luminary Eric Gamma&amp;rsquo;s SpringOne Platform 2017 keynote. He talks about &lt;a href="https://www.youtube.com/watch?v=Vs3AGfeuNKU&amp;app=desktop"&gt;his work on tooling, and even mentions Spring Tool Suite&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Axel Fontaine has just &lt;a href="https://flywaydb.org/blog/flyway-5.0.0"&gt;announced Flyway 5.0.0, which supports database migrations&lt;/a&gt;. Flyway is a convenient arrow in any Spring Boot developers&amp;rsquo;s quill.&lt;/li&gt;
+  &lt;li&gt;I loved this InfoQ roundup of &lt;a href="https://www.infoq.com/news/2017/12/SpringOne-2017-conference-day1"&gt;SpringOne Platform 2017&lt;/a&gt;, day one.&lt;/li&gt;
+  &lt;li&gt;Last week, one of the largest new features demonstrated in Spring Boot was the introduction &lt;em&gt;of animated ASCII art&lt;/em&gt;, as &lt;a href="https://twitter.com/jkuipers/status/938541184091410432"&gt;community member Joris Kuipers demonstrates here&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;James Ma looks at some of &lt;a href="https://medium.com/concourse-ci/concourse-at-springone-2017-87c3ccac3b68?_lrsc=41748487-4b31-4750-b134-207d0ae83b92"&gt;the folks using Concourse CI&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;This is interesting - it&amp;rsquo;s a set of sample applications that &lt;a href="https://github.com/IBM/greeting-cloudant-spring/blob/master/README.md"&gt;demonstrate Spring Boot integrations with IBM middleware&lt;/a&gt; like Cloudant, OpenLiberty and more.&lt;/li&gt;
+  &lt;li&gt;Richard Seroter reviews &lt;a href="https://www.linkedin.com/pulse/springone-platform-day-1-its-learning-richard-seroter"&gt;the SpringOne Platform 2017 day one keynote&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Microsoft talks about their starters that have &lt;a href="https://azure.microsoft.com/en-us/blog/bringing-hybrid-cloud-java-and-spring-apps-to-azure-and-azure-stack/"&gt;been listed on the Spring Initializr&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Dan Newton looks at how to configure startup and shutdown &lt;a href="https://lankydanblog.com/2017/12/03/startup-and-shutdown-scripts-in-spring-data-cassandra/"&gt;scripts for Spring Data Cassandra&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring community legend and Okta advocate Matt Raible looks at how to build a CRUD &lt;a href="https://developer.okta.com/blog/2017/12/04/basic-crud-angular-and-spring-boot"&gt;application with Angular 5.0 and Spring boot 2.0&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
   <entry>
     <title>Dependency Management Plugin 1.0.4.RELEASE</title>
     <link rel="alternate" href="https://spring.io/blog/2017/12/12/dependency-management-plugin-1-0-4-release" />
@@ -1011,396 +1049,5 @@ They are available from Maven Central, JCenter, and our &lt;a href="https://repo
 &lt;p&gt;Spring Boot 1.5.9 includes &lt;a href="https://github.com/spring-projects/spring-boot/milestone/93?closed=1"&gt;over 40 fixes, improvements and dependency updates&lt;/a&gt;. Thanks to all that have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
 &lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://projects.spring.io/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/1.5.9.RELEASE/reference/htmlsingle"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Binding applications to HashiCorp's Vault with Spring in Cloud Foundry</title>
-    <link rel="alternate" href="https://spring.io/blog/2017/11/28/binding-applications-to-hashicorp-s-vault-with-spring-in-cloud-foundry" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Mark Paluch</name>
-    </author>
-    <id>tag:spring.io,2017-11-23:3101</id>
-    <updated>2017-11-28T12:10:52Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;In this article, we will dive in how to bind a Spring application to &lt;a href="https://github.com/hashicorp/vault-service-broker"&gt;HashiCorp&amp;#8217;s Vault service broker on Cloud Foundry&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Spring Boot provides a lot of autoconfiguration and external binding features, some of which are relevant to Cloud Foundry, and many of which are not. &lt;a href="http://cloud.spring.io/spring-cloud-connectors/"&gt;Spring Cloud Connectors&lt;/a&gt; is a library that you can use in your application if you want to create your own components programmatically, but it doesn’t do anything “magical” by itself.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Spring Cloud Connectors lays the foundation for connectors that integrate with various Cloud services. It has ships components that allow correct middleware configuration. Using CloudFoundry’s java buildpack comes with an “auto-reconfiguration” feature that tries to ease the burden of moving simple applications to the cloud.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The key to correctly configuring middleware services, like HashiCorp’s Vault, is to understand what each of these tools provides, how they influence each other at runtime. The goal should be a smooth transition from local execution of an application on a developer’s desktop to a test environment in Cloud Foundry, and ultimately to production in CloudFoundry (or otherwise) with no changes in source code or packaging, per the twelve-factor application guidelines.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="the-libraries"&gt;&lt;a class="anchor" href="#the-libraries"&gt;&lt;/a&gt;The libraries&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Spring Cloud Vault connectors ship with four libraries:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;spring-cloud-vault-connector-core&lt;/code&gt; provides common bits used by the other three libraries.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;spring-cloud-vault-spring-connector&lt;/code&gt; configures Spring Framework and Spring Boot (Spring Cloud)-based applications with a Vault connector.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;spring-cloud-vault-cloudfoundry-connector&lt;/code&gt; is required to pick up CloudFoundry&amp;#8217;s service configuration and provide the service configuration to the actual Spring connector.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;spring-cloud-vault-localconfig-connector&lt;/code&gt; lets you provide a property-based configuration if you want to configure the service yourself, e.g. within a CI or local runtime environment without providing additional code to distinguish between cloud and non-cloud runtimes.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-xml" data-lang="xml"&gt;&amp;lt;dependencies&amp;gt;
-
-  &amp;lt;dependency&amp;gt;
-    &amp;lt;groupId&amp;gt;io.pivotal.spring.cloud&amp;lt;/groupId&amp;gt;
-    &amp;lt;artifactId&amp;gt;spring-cloud-vault-connector-core&amp;lt;/artifactId&amp;gt;
-    &amp;lt;version&amp;gt;1.0.0.RELEASE&amp;lt;/version&amp;gt;
-  &amp;lt;/dependency&amp;gt;
-
-  &amp;lt;dependency&amp;gt;
-    &amp;lt;groupId&amp;gt;io.pivotal.spring.cloud&amp;lt;/groupId&amp;gt;
-    &amp;lt;artifactId&amp;gt;spring-cloud-vault-spring-connector&amp;lt;/artifactId&amp;gt;
-    &amp;lt;version&amp;gt;1.0.0.RELEASE&amp;lt;/version&amp;gt;
-  &amp;lt;/dependency&amp;gt;
-
-  &amp;lt;!-- If you intend to deploy the app on CloudFoundry, add the following --&amp;gt;
-  &amp;lt;dependency&amp;gt;
-    &amp;lt;groupId&amp;gt;io.pivotal.spring.cloud&amp;lt;/groupId&amp;gt;
-    &amp;lt;artifactId&amp;gt;spring-cloud-vault-cloudfoundry-connector&amp;lt;/artifactId&amp;gt;
-    &amp;lt;version&amp;gt;1.0.0.RELEASE&amp;lt;/version&amp;gt;
-  &amp;lt;/dependency&amp;gt;
-
-  &amp;lt;!-- If you want to test your application locally, add the following --&amp;gt;
-  &amp;lt;dependency&amp;gt;
-    &amp;lt;groupId&amp;gt;io.pivotal.spring.cloud&amp;lt;/groupId&amp;gt;
-    &amp;lt;artifactId&amp;gt;spring-cloud-vault-localconfig-connector&amp;lt;/artifactId&amp;gt;
-    &amp;lt;version&amp;gt;1.0.0.RELEASE&amp;lt;/version&amp;gt;
-  &amp;lt;/dependency&amp;gt;
-
-&amp;lt;/dependencies&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="your-application"&gt;&lt;a class="anchor" href="#your-application"&gt;&lt;/a&gt;Your application&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;If you&amp;#8217;re using Spring Boot and Spring Cloud Vault, then you can actually get away with not doing anything else besides dropping in the Spring and CloudFoundry connector.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The Spring connector comes with a &lt;a href="https://github.com/pivotal-cf/spring-cloud-vault-connector/blob/e675cfbb0ae2fa3e83bcb2d4f49589ff6be9bdf9/spring-cloud-vault-spring-connector/src/main/java/io/pivotal/spring/cloud/vault/config/java/VaultConnectorBootstrapConfiguration.java"&gt;bootstrap configuration&lt;/a&gt; that uses the token and endpoint from the service configuration to configure Spring&amp;#8217;s Vault client. Spring Cloud Vault configures a property source by default that points to &lt;code&gt;${spring.application.name}/${profile-name}&lt;/code&gt;. HashiCorp&amp;#8217;s service broker configures generic backends in the application, space and organization namespace. The connector picks up the backends and shared backends (in the mentioned order) to obtain its configuration properties from these backends.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@SpringBootApplication
-public class HelloWorldApplication {
-
-  public static void main(String[] args) {
-    SpringApplication.run(HelloWorldApplication.class, args);
-  }
-
-  static class MyComponent {
-
-    public MyComponent(@Value("${some-property}") String someProperty, &lt;b class="conum"&gt;(1)&lt;/b&gt;
-                        VaultOperations vaultOperations) {             &lt;b class="conum"&gt;(2)&lt;/b&gt;
-      // …
-    }
-  }
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="colist arabic"&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Inject a configuration property directly. Spring attempts to resolve the property from its &lt;code&gt;Environment&lt;/code&gt; that is configured with Vault&amp;#8217;s &lt;code&gt;PropertySource&lt;/code&gt;s.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Inject &lt;code&gt;VaultOperations&lt;/code&gt; configured to use the connected Vault service.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;If your application is purely Spring Framework-based or a Spring Boot application without Spring Cloud Vault, then enabling &lt;code&gt;@ServiceScan&lt;/code&gt; on one of your configuration classes is sufficient to pick up authentication and endpoint.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;public class CloudFoundryApplication {
-
-  @Configuration
-  @ServiceScan                                                            &lt;b class="conum"&gt;(1)&lt;/b&gt;
-  static class VaultConfig {
-  }
-
-  public static void main(String[] args) {
-
-    GenericApplicationContext ctx =
-                    new AnnotationConfigApplicationContext(VaultConnectorsConfig.class,
-                                            VaultConfig.class);
-
-    ctx.start();
-
-    VaultOperations vaultOperations = ctx.getBean(VaultOperations.class); &lt;b class="conum"&gt;(2)&lt;/b&gt;
-
-    ctx.stop();
-  }
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="colist arabic"&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;@ServiceScan&lt;/code&gt; enables scanning for services that are bound to your application. It creates beans for all found services.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;VaultOperations&lt;/code&gt; was created by the service scan so you can use it directly in your application.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Do you rather want to configure your bean yourself without activating &lt;code&gt;@ServiceScan&lt;/code&gt; or your want to provide a customized client configuration? Then use &lt;code&gt;Cloud&lt;/code&gt; directly. The &lt;code&gt;Cloud&lt;/code&gt; object gives you access to the service information and lets you create &lt;code&gt;VaultTemplate&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Configuration
-class VaultConfig {
-
-  @Bean
-  public Cloud cloud() {                                                  &lt;b class="conum"&gt;(1)&lt;/b&gt;
-    return new CloudFactory().getCloud();
-  }
-
-  @Bean
-  public SslConfiguration sslConfiguration() {                            &lt;b class="conum"&gt;(2)&lt;/b&gt;
-    return SslConfiguration.forTrustStore(…);
-  }
-
-  @Bean
-  VaultOperations vaultOperations() {                                     &lt;b class="conum"&gt;(3)&lt;/b&gt;
-
-    VaultServiceInfo vaultServiceInfo = (VaultServiceInfo) cloud()
-          .getServiceInfos(VaultOperations.class).get(0);
-
-    VaultServiceConnectorConfig config = VaultServiceConnectorConfig.builder()
-                .sslConfiguration(sslConfiguration())
-                .build();
-
-    return cloud().getSingletonServiceConnector(VaultOperations.class, config);
-  }
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="colist arabic"&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;The &lt;code&gt;Cloud&lt;/code&gt; object parses bound service. Registering it as bean requires parsing onlly once without the need to re-parse the services each time you need a &lt;code&gt;Cloud&lt;/code&gt; object.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Going forward with your configuration, it can be required to customize SSL or client configuration options. Here&amp;#8217;s an example how to supply a trust store for Spring&amp;#8217;s Vault client.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The cloud object exposes methods to create service connectors. Pass the &lt;code&gt;VaultServiceConnectorConfig&lt;/code&gt; along the &lt;code&gt;VaultOperations&lt;/code&gt; service type to these methods to create a template API instance. The &lt;code&gt;Cloud&lt;/code&gt; object gives you also access to the service information carrying details about authentication and the managed Vault backends.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="hashicorp-s-vault-service-broker"&gt;&lt;a class="anchor" href="#hashicorp-s-vault-service-broker"&gt;&lt;/a&gt;HashiCorp&amp;#8217;s Vault service broker&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;HashiCorp provides a &lt;a href="https://github.com/hashicorp/vault-service-broker"&gt;service broker to configure Vault services&lt;/a&gt; that can be bound to your application. It uses Token-based authentication and spins up a couple of backends. These are, in particular:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;a &lt;code&gt;generic&lt;/code&gt; secret backend exclusive to the application instances&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;a &lt;code&gt;transit&lt;/code&gt; backend exclusive to the application instances&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;a shared &lt;code&gt;generic&lt;/code&gt; secret backend in the scope of your space&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;a shared &lt;code&gt;generic&lt;/code&gt; secret backend in the scope of your organization&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;a set of policies per application to e.g. restrict the shared org backend to read-only for the application.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Details about the service instance are provided via &lt;code&gt;VCAP_SERVICES&lt;/code&gt;, an environment variable visible to your application. Typically, it would look like:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id="vcap" class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-json" data-lang="json"&gt;{
-"hashicorp-vault": [
-    {
-    "credentials": {
-      "address": "https://your-server:8200/",
-      "auth": {
-          "token": "00000000-0000-0000-0000-000000000000"
-      },
-      "backends": {
-          "generic": "cf/20fffe9d-d8d1-4825-9977-1426840a13db/secret",
-          "transit": "cf/20fffe9d-d8d1-4825-9977-1426840a13db/transit"
-      },
-      "backends_shared": {
-          "organization": "cf/1a558498-59ad-488c-b395-8b983aacb7da/secret",
-          "space": "cf/d007583f-5617-4b02-a5a7-550648827cfa/secret"
-      }
-    },
-    "label": "hashicorp-vault",
-    "name": "hashicorp-vault",
-    }
-]
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The token is managed and refreshed by the service broker and should not be touched by the application. Revoking the token will shut down access of all your application instances within the bound application.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="wait-what-about-localconfig"&gt;&lt;a class="anchor" href="#wait-what-about-localconfig"&gt;&lt;/a&gt;Wait, what about LocalConfig?&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Oh, right, thanks for the reminder. Once in a while you want to test your application locally before deploying it to the Cloud or you don&amp;#8217;t want to use the service bindings. Spring Cloud Vault LocalConfig Connector fits exactly this purpose. It allows you to specify a configuration property that is picked up by the connector and provides the same set of configuration keys as &lt;code&gt;VCAP_SERVICES&lt;/code&gt; on CloudFoundry.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Bootstrap configuration requires at least two keys set:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;spring.cloud.appId&lt;/code&gt;: Application identifier name. Any descriptive application name (maybe even &lt;code&gt;${spring.application.name}&lt;/code&gt;) will do the job.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;A key below the &lt;code&gt;spring.cloud.&lt;/code&gt; namespace set to a HTTP/HTTPS url.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-properties" data-lang="properties"&gt;spring.application.name=…
-
-spring.cloud.appId=your-app-id
-spring.cloud.my-vault-service=http://localhost:8200?token=my-token
-                &amp;amp;backend.generic=cf/secret
-                &amp;amp;backend.transit=cf/transit
-                &amp;amp;shared_backend.space=cf/space&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Or written as YAML:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;spring.application.name: …
-
-spring.cloud:
-    appId: your-app-id
-    my-vault-service: http://localhost:8200?token=my-token
-                      &amp;amp;backend.generic=cf/secret
-                      &amp;amp;backend.transit=cf/transit
-                      &amp;amp;shared_backend.space=cf/space&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;You might have noticed that the URL looks a bit different than your usual Vault endpoint prefix URL. The connector requires additional configuration options which are represented as query parameters. The connector only uses scheme, host and port to configure the endpoint. The additional query parameters represent the keys which are usually transported via &lt;code&gt;VCAP_SERVICES&lt;/code&gt;:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;token&lt;/code&gt; the authentication token (required)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;backend.(.*)&lt;/code&gt; Context path to a dedicated backend. The property key after &lt;code&gt;backend.&lt;/code&gt; represents the dedicated backend name.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;shared_backend.(.*)&lt;/code&gt; Context path to a shared backend. The property key after &lt;code&gt;shared_backend.&lt;/code&gt; represents the shared backend name.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;You can configure multiple backends and shared backends.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="can-i-connect-to-hashicorp-s-vault-without-connector-libraries"&gt;&lt;a class="anchor" href="#can-i-connect-to-hashicorp-s-vault-without-connector-libraries"&gt;&lt;/a&gt;Can I connect to HashiCorp&amp;#8217;s Vault without connector libraries?&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Yes, you can! In scenarios where you want to keep more control over what&amp;#8217;s going on, or you want to omit additional dependencies there&amp;#8217;s another possibility how you can connect to Vault.
-Spring Boot ships with &lt;a href="https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/cloud/CloudFoundryVcapEnvironmentPostProcessor.html"&gt;&lt;code&gt;CloudFoundryVcapEnvironmentPostProcessor&lt;/code&gt;&lt;/a&gt; that exports CloudFoundry&amp;#8217;s &lt;code&gt;VCAP&lt;/code&gt; variables through property sources to your application. These properties are prefixed with &lt;code&gt;vcap.application&lt;/code&gt; for &lt;code&gt;VCAP_APPLICATION&lt;/code&gt; respective &lt;code&gt;vcap.services&lt;/code&gt; for &lt;code&gt;VCAP_SERVICES&lt;/code&gt;. You can reference VCAP properties in your configuration like any other property.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Configuring a Vault connection through &lt;code&gt;VCAP_SERVICES&lt;/code&gt; requires knowledge over the &lt;a href="#vcap"&gt;actual structure of &lt;code&gt;VCAP_SERVICES&lt;/code&gt;&lt;/a&gt;. Configuring the URL and token authentication are the only two properties required to get Spring Boot with Spring Cloud Vault working. From the example &lt;a href="#vcap"&gt;above&lt;/a&gt;, your bootstrap configuration would look like:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-properties" data-lang="properties"&gt;spring.application.name=…
-
-spring.cloud.vault.url=${vcap.services.hashicorp-vault.credentials.address}
-spring.cloud.vault.token=${vcap.services.hashicorp-vault.auth.token}
-spring.cloud.vault.generic.backend=${vcap.services.hashicorp-vault.credentials.backend.generic}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Or written as YAML:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;spring.application.name: …
-
-spring.cloud.vault:
-    url: ${vcap.services.hashicorp-vault.credentials.address}
-    token: ${vcap.services.hashicorp-vault.auth.token}
-    generic.backend: ${vcap.services.hashicorp-vault.credentials.backend.generic}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;You have full control without any additional auto-configuration library. Using properties allows you to leverage profiles for conditional activation.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="further-resources"&gt;&lt;a class="anchor" href="#further-resources"&gt;&lt;/a&gt;Further resources&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Spring Vault: &lt;a href="https://projects.spring.io/spring-vault/" class="bare"&gt;https://projects.spring.io/spring-vault/&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Spring Cloud Vault: &lt;a href="https://cloud.spring.io/spring-cloud-vault/" class="bare"&gt;https://cloud.spring.io/spring-cloud-vault/&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Spring Cloud Connectors: &lt;a href="http://cloud.spring.io/spring-cloud-connectors/" class="bare"&gt;http://cloud.spring.io/spring-cloud-connectors/&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Spring Vault and Spring Cloud Vault samples: &lt;a href="https://github.com/mp911de/spring-cloud-vault-config-samples" class="bare"&gt;https://github.com/mp911de/spring-cloud-vault-config-samples&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Project repository: &lt;a href="https://github.com/pivotal-cf/spring-cloud-vault-connector" class="bare"&gt;https://github.com/pivotal-cf/spring-cloud-vault-connector&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://spring.io/team/dsyer"&gt;Dave Syer&lt;/a&gt;'s excellent article aboud bound data services on CloudFoundry: &lt;a href="https://spring.io/blog/2015/04/27/binding-to-data-services-with-spring-boot-in-cloud-foundry" class="bare"&gt;https://spring.io/blog/2015/04/27/binding-to-data-services-with-spring-boot-in-cloud-foundry&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</content>
   </entry>
 </feed>

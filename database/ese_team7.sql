@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 24, 2017 at 12:47 PM
+-- Generation Time: Dec 13, 2017 at 01:03 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -209,19 +209,22 @@ CREATE TABLE `vehicle` (
   `id` int(11) NOT NULL,
   `image` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `number_of_vehicles` int(11) NOT NULL
+  `number_of_vehicles` int(11) NOT NULL,
+  `length` float NOT NULL,
+  `weight` int(11) NOT NULL,
+  `width` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `vehicle`
 --
 
-INSERT INTO `vehicle` (`id`, `image`, `name`, `number_of_vehicles`) VALUES
-(1, 'images/bigTransporter.jpg', 'Big Transporter', 3),
-(2, 'images/mediumTransporter.jpg', 'Medium Transporter', 3),
-(3, 'images/smallTransporter.jpg', 'Small Transporter', 5),
-(4, 'images/tinyTransporter.jpg', 'Tiny Transporter', 7),
-(6, 'images/car.jpg', 'Car', 2);
+INSERT INTO `vehicle` (`id`, `image`, `name`, `number_of_vehicles`, `length`, `weight`, `width`) VALUES
+(1, 'images/bigTransporter.jpg', 'Big Transporter', 4, 25.25, 60, 2.5),
+(2, 'images/mediumTransporter.jpg', 'Medium Transporter', 3, 13.6, 40, 2.5),
+(3, 'images/smallTransporter.jpg', 'Small Transporter', 5, 7.82, 20, 2.5),
+(4, 'images/tinyTransporter.jpg', 'Tiny Transporter', 7, 6, 10, 2.5),
+(6, 'images/car.jpg', 'Car', 2, 4, 5, 2);
 
 --
 -- Indexes for dumped tables
@@ -280,19 +283,19 @@ ALTER TABLE `vehicle`
 -- AUTO_INCREMENT for table `address`
 --
 ALTER TABLE `address`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT for table `ani_order`
 --
 ALTER TABLE `ani_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `edited_order`
 --
 ALTER TABLE `edited_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `new_order`
@@ -310,7 +313,7 @@ ALTER TABLE `new_user`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `vehicle`

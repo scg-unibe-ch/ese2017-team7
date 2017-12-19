@@ -88,19 +88,32 @@ public class EditOrderController {
         		return new ModelAndView("redirect:/edit-order?id=" + order.getOrderId());
         	}
     	
-    		hello.AniOrder oldOrder = orderRepository.findOrderById(order.getOrderId());
+    		hello.AniOrder aniOrder = orderRepository.findOrderById(order.getOrderId());
     		
     		// create addresses and aniOrders from the data
     		hello.Address fromAddress = new hello.Address(order.getFromName(), order.getFromStreet(), order.getFromTown(), order.getFromPlz());
     		hello.Address toAddress = new hello.Address(order.getToName(), order.getToStreet(), order.getToTown(), order.getToPlz());
-    		hello.AniOrder aniOrder = new hello.AniOrder(order, fromAddress, toAddress);
-    		
-    		orderRepository.delete(oldOrder);	
-    		addressRepository.delete(oldOrder.getFromAddr()); //delete the old addresses to avoid duplicates
-    		addressRepository.delete(oldOrder.getToAddr());
+    		hello.Address oldFrom = aniOrder.getFromAddr();
+    		hello.Address oldTo = aniOrder.getToAddr();
     		
     		addressRepository.save(fromAddress); //save the address to the database.
     		addressRepository.save(toAddress); //save the address to the database.
+    		
+    		aniOrder.setTimeframe(order.getTimeframe());
+    		aniOrder.setTypeOfAnimal(order.getTypeOfAnimal());
+    		aniOrder.setNumberOfAnimals(order.getNumberOfAnimals());
+    		aniOrder.setTimeEstimation(order.getTimeEstimation());
+    		aniOrder.setStartTime(order.getStartTime());
+    		aniOrder.setVehicle(order.getVehicle());
+    		aniOrder.setDriver(order.getDriver());
+    		aniOrder.setOrderStatus(order.getOrderStatus());
+    		aniOrder.setStatusMessage(order.getStatusMessage());
+    		aniOrder.setFromAddr(fromAddress);
+    		aniOrder.setToAddr(toAddress);
+    		
+    		
+    		addressRepository.delete(oldFrom); //delete the old addresses to avoid duplicates
+    		addressRepository.delete(oldTo);
 		orderRepository.save(aniOrder); //save the order to the database.	
 		
 		return new ModelAndView("redirect:/edit-order-success"); //return the template
